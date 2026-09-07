@@ -14,10 +14,10 @@ const ROOT = path.join(__dirname, '..');
   let h = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   const set = (re, w, hh) => { h = h.replace(re, (m) => m.replace(/width="\d+" height="\d+"/, 'width="' + w + '" height="' + hh + '"')); };
 
-  const navW = Math.round(20 * d.wordmark[0] / d.wordmark[1]);
+  const navW = Math.round(32 * d.wordmark[0] / d.wordmark[1]);
   const footW = Math.round(26 * d['wordmark-ink'][0] / d['wordmark-ink'][1]);
-  set(/<img class="lg-paper"[^>]*>/, navW, 20);
-  set(/<img class="lg-ink"[^>]*>/, navW, 20);
+  set(/<img class="lg-paper"[^>]*>/, navW, 32);
+  set(/<img class="lg-ink"[^>]*>/, navW, 32);
   set(/<img class="foot__logo"[^>]*>/, footW, 26);
   set(/<img class="loader__badge"[^>]*>/, d.badge[0], d.badge[1]);
   set(/<img class="hero__seal"[^>]*>/, d.badge[0], d.badge[1]);

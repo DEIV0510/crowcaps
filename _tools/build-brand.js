@@ -33,7 +33,7 @@ async function emit(buf, name, size) {
       out[i * 4 + 3] = 255 - data[i * info.channels];
     }
     await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
-      .flatten({ background: bg }).webp({ quality: 90, effort: 6 }).toFile(path.join(OUT, file));
+      .flatten({ background: bg }).webp({ lossless: true, effort: 6 }).toFile(path.join(OUT, file));
   };
   await mk([17, 17, 16], PAPER, name + '.webp');
   await mk([239, 234, 225], INK, name + '-ink.webp');

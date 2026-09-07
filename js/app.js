@@ -128,11 +128,17 @@
     });
   })();
 
-  /* ---------- 6. Filtros + buscador ---------- */
-  (function filters() {
+  /* ---------- 6. Filtros, buscador y tandas ---------- */
+  (function coleccion() {
     var chips = $('#chips'), grid = $('#grid'), q = $('#q'), empty = $('#empty');
+    var more = $('#more'), moreBtn = $('#moreBtn'), moreTxt = $('#moreTxt'), tally = $('#tally');
     if (!chips || !grid) return;
+
+    var PASO = 12;                 // cuantas gorras entran por tanda
     var cards = $$('.card', grid);
+    var limite = PASO;
+    var active = 'todas';
+
     var count = {};
     P.forEach(function (p) { p.colors.forEach(function (c) { count[c] = (count[c] || 0) + 1; }); });
 
@@ -145,7 +151,6 @@
       ['azules', 'Azules', count.azules],
       ['bicolor', 'Bicolor', count.bicolor]
     ];
-    var active = 'todas';
 
     defs.forEach(function (d) {
       if (!d[2]) return;
@@ -154,33 +159,63 @@
       b.setAttribute('aria-pressed', String(d[0] === 'todas'));
       b.innerHTML = d[1] + '<b>' + d[2] + '</b>';
       b.addEventListener('click', function () {
-        active = d[0];
+        active = d[0]; limite = PASO;
         $$('.chip', chips).forEach(function (c) { c.setAttribute('aria-pressed', String(c === b)); });
         apply();
       });
       chips.appendChild(b);
     });
 
-    function norm(s) {
-      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    function norm(s2) {
+      return (s2 || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
-    function apply() {
+
+    function apply(foco) {
       var term = norm(q ? q.value.trim() : '');
-      var shown = 0;
+      var visto = 0, total = 0, primeroNuevo = null;
       cards.forEach(function (c) {
         var okF = active === 'todas' || (c.dataset.colors || '').split(' ').indexOf(active) > -1;
         var okQ = !term || norm(c.dataset.search).indexOf(term) > -1;
-        var show = okF && okQ;
-        c.classList.toggle('is-hidden', !show);
-        if (show) shown++;
+        if (okF && okQ) {
+          total++;
+          var dentro = visto < limite;
+          if (dentro) {
+            if (foco && c.classList.contains('is-hidden') && !primeroNuevo) primeroNuevo = c;
+            visto++;
+          }
+          c.classList.toggle('is-hidden', !dentro);
+        } else {
+          c.classList.add('is-hidden');
+        }
       });
-      if (empty) empty.hidden = shown > 0;
-      grid.hidden = shown === 0;
+
+      // La ficha grande solo tiene sentido cuando la tanda esta completa.
+      cards.forEach(function (c) {
+        if (c.classList.contains('card--big')) c.classList.toggle('no-span', total < 6);
+      });
+
+      if (empty) empty.hidden = total > 0;
+      grid.hidden = total === 0;
+      if (tally) tally.textContent = total ? visto + ' / ' + total : '';
+      if (more) {
+        var faltan = total - visto;
+        more.hidden = faltan <= 0;
+        if (moreTxt) moreTxt.textContent = 'Ver ' + Math.min(PASO, faltan) + ' más';
+      }
+      if (primeroNuevo) primeroNuevo.focus({ preventScroll: true });
+    }
+
+    if (moreBtn) {
+      moreBtn.addEventListener('click', function () { limite += PASO; apply(true); });
     }
     if (q) {
       var t;
-      q.addEventListener('input', function () { clearTimeout(t); t = setTimeout(apply, 120); });
+      q.addEventListener('input', function () {
+        clearTimeout(t);
+        t = setTimeout(function () { limite = PASO; apply(); }, 120);
+      });
     }
+    apply();
   })();
 
   /* ---------- 7. Drawer de producto ---------- */

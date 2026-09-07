@@ -105,11 +105,13 @@
     </div>
 
     <div class="hero__stage reveal reveal-d1">
-      <div class="hero__shot">
-        <img id="heroImg" src="assets/img/yankees-navy-hueso.webp" width="640" height="891"
-             alt="Gorra Yankees azul marino con visera hueso sostenida frente a un muro de grafiti"
-             fetchpriority="high" decoding="async">
-        <span class="hero__tag" id="heroTag">Yankees Navy / Hueso</span>
+      <div class="hero__frame">
+        <div class="hero__shot">
+          <img id="heroImg" src="assets/img/yankees-navy-hueso.webp" width="640" height="891"
+               alt="Gorra Yankees azul marino con visera hueso sostenida frente a un muro de grafiti"
+               fetchpriority="high" decoding="async">
+          <span class="hero__tag" id="heroTag">Yankees Navy / Hueso</span>
+        </div>
         <img class="hero__seal" src="assets/brand/badge.webp" width="340" height="341" alt="" aria-hidden="true">
       </div>
       <div class="hero__pick" id="heroPick" role="group" aria-label="Cambiar gorra destacada"></div>
@@ -134,10 +136,13 @@
 
   <div class="tools">
     <div class="chips" id="chips" role="group" aria-label="Filtrar por color"></div>
-    <div class="search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <label class="sr" for="q">Buscar gorra</label>
-      <input id="q" type="search" placeholder="Buscar equipo o color…" autocomplete="off">
+    <div class="tools__right">
+      <span class="tally" id="tally" aria-live="polite"></span>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label class="sr" for="q">Buscar gorra</label>
+        <input id="q" type="search" placeholder="Buscar equipo o color…" autocomplete="off">
+      </div>
     </div>
   </div>
 
@@ -605,6 +610,10 @@
     </span>
   </button>
     <!-- grid:end -->
+  </div>
+
+  <div class="more" id="more" hidden>
+    <button class="btn btn--ghost" id="moreBtn" type="button"><span id="moreTxt">Ver 12 más</span> <span class="arw">↓</span></button>
   </div>
 
   <div class="empty" id="empty" hidden>

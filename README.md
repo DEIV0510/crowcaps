@@ -40,6 +40,13 @@ Después de tocar `js/products.js` hay que correr `node _tools/build-html.js`.
 
 Las fotos fuente viven en `C:\Users\Lenovo\Desktop\crowcaps` (`build-img.js`, constante `SRC`).
 
+## Colección por tandas
+
+La grilla trae las 38 fichas escritas en el HTML (SEO y funciona sin JS), pero el JS
+muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 38` en la barra de
+filtros. Filtrar o buscar reinicia la tanda. El tamaño de tanda es la constante `PASO`
+en `js/app.js`.
+
 ## Decisiones que hay que respetar
 
 - **No se inventa información.** Las fichas describen solo lo que se ve en la foto:

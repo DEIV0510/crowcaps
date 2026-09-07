@@ -1,0 +1,379 @@
+{
+  "rangers-white": [
+    {
+      "file": "rangers-white.webp",
+      "w": 640,
+      "h": 829,
+      "srcW": 507,
+      "srcH": 657
+    }
+  ],
+  "nationals-white": [
+    {
+      "file": "nationals-white.webp",
+      "w": 640,
+      "h": 799,
+      "srcW": 510,
+      "srcH": 637
+    }
+  ],
+  "nationals-red": [
+    {
+      "file": "nationals-red.webp",
+      "w": 640,
+      "h": 768,
+      "srcW": 510,
+      "srcH": 612
+    }
+  ],
+  "nationals-navy": [
+    {
+      "file": "nationals-navy.webp",
+      "w": 640,
+      "h": 815,
+      "srcW": 526,
+      "srcH": 670
+    }
+  ],
+  "yankees-script-vino": [
+    {
+      "file": "yankees-script-vino.webp",
+      "w": 640,
+      "h": 796,
+      "srcW": 536,
+      "srcH": 667
+    }
+  ],
+  "whitesox-taupe": [
+    {
+      "file": "whitesox-taupe.webp",
+      "w": 640,
+      "h": 798,
+      "srcW": 535,
+      "srcH": 667
+    }
+  ],
+  "whitesox-vino": [
+    {
+      "file": "whitesox-vino.webp",
+      "w": 640,
+      "h": 736,
+      "srcW": 532,
+      "srcH": 612
+    }
+  ],
+  "bulls-black": [
+    {
+      "file": "bulls-black.webp",
+      "w": 640,
+      "h": 914,
+      "srcW": 526,
+      "srcH": 751
+    }
+  ],
+  "padres-black-gold": [
+    {
+      "file": "padres-black-gold.webp",
+      "w": 640,
+      "h": 809,
+      "srcW": 535,
+      "srcH": 676
+    }
+  ],
+  "giants-mint": [
+    {
+      "file": "giants-mint.webp",
+      "w": 640,
+      "h": 806,
+      "srcW": 532,
+      "srcH": 670
+    }
+  ],
+  "yankees-white": [
+    {
+      "file": "yankees-white.webp",
+      "w": 640,
+      "h": 830,
+      "srcW": 530,
+      "srcH": 687
+    }
+  ],
+  "whitesox-marfil": [
+    {
+      "file": "whitesox-marfil.webp",
+      "w": 640,
+      "h": 813,
+      "srcW": 535,
+      "srcH": 680
+    }
+  ],
+  "braves-piedra": [
+    {
+      "file": "braves-piedra.webp",
+      "w": 640,
+      "h": 818,
+      "srcW": 532,
+      "srcH": 680
+    }
+  ],
+  "yankees-tophat-red": [
+    {
+      "file": "yankees-tophat-red.webp",
+      "w": 640,
+      "h": 770,
+      "srcW": 532,
+      "srcH": 640
+    }
+  ],
+  "boston-carmesi": [
+    {
+      "file": "boston-carmesi.webp",
+      "w": 640,
+      "h": 810,
+      "srcW": 531,
+      "srcH": 672
+    }
+  ],
+  "oveja-negra": [
+    {
+      "file": "oveja-negra.webp",
+      "w": 640,
+      "h": 852,
+      "srcW": 535,
+      "srcH": 712
+    }
+  ],
+  "mets-royal": [
+    {
+      "file": "mets-royal.webp",
+      "w": 640,
+      "h": 770,
+      "srcW": 525,
+      "srcH": 632
+    }
+  ],
+  "redsox-navy-naranja": [
+    {
+      "file": "redsox-navy-naranja.webp",
+      "w": 640,
+      "h": 768,
+      "srcW": 547,
+      "srcH": 656
+    }
+  ],
+  "royal-b-nike": [
+    {
+      "file": "royal-b-nike.webp",
+      "w": 640,
+      "h": 771,
+      "srcW": 531,
+      "srcH": 640
+    }
+  ],
+  "dodgers-blanca-roja": [
+    {
+      "file": "dodgers-blanca-roja.webp",
+      "w": 640,
+      "h": 799,
+      "srcW": 522,
+      "srcH": 652
+    }
+  ],
+  "hornets-piedra": [
+    {
+      "file": "hornets-piedra.webp",
+      "w": 640,
+      "h": 816,
+      "srcW": 527,
+      "srcH": 672
+    }
+  ],
+  "whitesox-roja": [
+    {
+      "file": "whitesox-roja.webp",
+      "w": 640,
+      "h": 843,
+      "srcW": 532,
+      "srcH": 701
+    }
+  ],
+  "tigers-blanca": [
+    {
+      "file": "tigers-blanca.webp",
+      "w": 640,
+      "h": 793,
+      "srcW": 530,
+      "srcH": 657
+    }
+  ],
+  "padres-piedra-navy": [
+    {
+      "file": "padres-piedra-navy.webp",
+      "w": 640,
+      "h": 820,
+      "srcW": 532,
+      "srcH": 682
+    }
+  ],
+  "padres-rosa-azul": [
+    {
+      "file": "padres-rosa-azul.webp",
+      "w": 640,
+      "h": 825,
+      "srcW": 537,
+      "srcH": 692
+    }
+  ],
+  "padres-blanca-navy": [
+    {
+      "file": "padres-blanca-navy.webp",
+      "w": 640,
+      "h": 828,
+      "srcW": 535,
+      "srcH": 692
+    }
+  ],
+  "yankees-crema": [
+    {
+      "file": "yankees-crema.webp",
+      "w": 640,
+      "h": 827,
+      "srcW": 535,
+      "srcH": 691
+    }
+  ],
+  "yankees-hueso": [
+    {
+      "file": "yankees-hueso.webp",
+      "w": 640,
+      "h": 869,
+      "srcW": 517,
+      "srcH": 702
+    }
+  ],
+  "tigers-camel": [
+    {
+      "file": "tigers-camel.webp",
+      "w": 640,
+      "h": 767,
+      "srcW": 515,
+      "srcH": 617
+    }
+  ],
+  "whitesox-arena": [
+    {
+      "file": "whitesox-arena.webp",
+      "w": 640,
+      "h": 790,
+      "srcW": 515,
+      "srcH": 636
+    }
+  ],
+  "redsox-navy-blanca": [
+    {
+      "file": "redsox-navy-blanca.webp",
+      "w": 640,
+      "h": 859,
+      "srcW": 512,
+      "srcH": 687
+    }
+  ],
+  "dodgers-negra": [
+    {
+      "file": "dodgers-negra.webp",
+      "w": 640,
+      "h": 837,
+      "srcW": 516,
+      "srcH": 675
+    }
+  ],
+  "dodgers-negra-1999": [
+    {
+      "file": "dodgers-negra-1999.webp",
+      "w": 640,
+      "h": 845,
+      "srcW": 511,
+      "srcH": 675
+    }
+  ],
+  "mets-navy": [
+    {
+      "file": "mets-navy.webp",
+      "w": 640,
+      "h": 845,
+      "srcW": 511,
+      "srcH": 675
+    },
+    {
+      "file": "mets-navy-2.webp",
+      "w": 640,
+      "h": 831,
+      "srcW": 512,
+      "srcH": 665
+    }
+  ],
+  "yankees-roja-navy": [
+    {
+      "file": "yankees-roja-navy.webp",
+      "w": 640,
+      "h": 897,
+      "srcW": 510,
+      "srcH": 715
+    },
+    {
+      "file": "yankees-roja-navy-2.webp",
+      "w": 640,
+      "h": 901,
+      "srcW": 501,
+      "srcH": 705
+    }
+  ],
+  "yankees-navy-hueso": [
+    {
+      "file": "yankees-navy-hueso.webp",
+      "w": 640,
+      "h": 891,
+      "srcW": 515,
+      "srcH": 717
+    },
+    {
+      "file": "yankees-navy-hueso-2.webp",
+      "w": 640,
+      "h": 915,
+      "srcW": 505,
+      "srcH": 722
+    }
+  ],
+  "redsox-khaki-roja": [
+    {
+      "file": "redsox-khaki-roja.webp",
+      "w": 640,
+      "h": 896,
+      "srcW": 515,
+      "srcH": 721
+    },
+    {
+      "file": "redsox-khaki-roja-2.webp",
+      "w": 640,
+      "h": 899,
+      "srcW": 507,
+      "srcH": 712
+    }
+  ],
+  "braves-khaki-lila": [
+    {
+      "file": "braves-khaki-lila.webp",
+      "w": 640,
+      "h": 875,
+      "srcW": 512,
+      "srcH": 700
+    },
+    {
+      "file": "braves-khaki-lila-2.webp",
+      "w": 640,
+      "h": 888,
+      "srcW": 512,
+      "srcH": 710
+    }
+  ]
+}

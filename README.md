@@ -42,8 +42,8 @@ Las fotos fuente viven en `C:\Users\Lenovo\Desktop\crowcaps` (`build-img.js`, co
 
 ## Colección por tandas
 
-La grilla trae las 38 fichas escritas en el HTML (SEO y funciona sin JS), pero el JS
-muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 38` en la barra de
+La grilla trae las 37 fichas escritas en el HTML (SEO y funciona sin JS), pero el JS
+muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 37` en la barra de
 filtros. Filtrar o buscar reinicia la tanda. El tamaño de tanda es la constante `PASO`
 en `js/app.js`.
 
@@ -51,7 +51,8 @@ en `js/app.js`.
 
 - **No se inventa información.** Las fichas describen solo lo que se ve en la foto:
   colores, bordados, parches y forma. Nada de materiales, tallas, tecnologías ni
-  certificaciones. **No hay precios**: el CTA lleva a WhatsApp a confirmar.
+  certificaciones. **Precio único de $85.000** en `price` (pesos colombianos), por
+  producto para poder variarlo después; el CTA lleva a WhatsApp con el precio en el mensaje.
 - **Sin punto físico.** En ningún lado se muestra dirección ni mapa.
 - **Fotos reales, sin filtros** que alteren el color del producto.
 - Los logos de equipos/marcas que aparecen bordados se nombran tal cual se ven;
@@ -65,8 +66,8 @@ en `js/app.js`.
 
 ## Pendientes para publicar
 
-1. **Precios**: cuando existan, agregar `price` en `js/products.js` y mostrarlo en
-   ficha y tarjeta (hoy el sitio dice "precio por WhatsApp").
+1. **Precios por producto**: hoy las 37 comparten `price: 85000`. Si alguna cambia,
+   basta editar su `price` y correr `node _tools/build-html.js`.
 2. **URLs reales de redes**: los enlaces asumen `instagram.com/crowcaps.co`,
    `tiktok.com/@crowcaps.co` y `facebook.com/crowcaps`. Confirmar antes de salir.
 3. **Dominio**: `canonical` y `og:url` apuntan a `https://crowcaps.co/`; cambiar si

@@ -11,6 +11,7 @@ const P = global.window.CROWCAPS_PRODUCTS;
 const MAN = require('./img-manifest.json');
 
 const BIG = [0, 14];               // fichas destacadas (ocupan 2x2)
+const cop = n => '$' + Number(n).toLocaleString('es-CO');
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 function card(p, i) {
@@ -38,6 +39,7 @@ function card(p, i) {
       <span class="card__team">${esc(p.team)}</span>
       <span class="card__name">${esc(p.name)}</span>
       <span class="card__color">${esc(p.colorway)}</span>
+      <span class="card__price">${cop(p.price)}</span>
     </span>
   </button>`;
 }
@@ -51,7 +53,7 @@ if (i < 0 || j < 0) throw new Error('No encuentro los marcadores grid:start / gr
 const grid = P.map(card).join('\n');
 html = html.slice(0, i + A.length) + '\n' + grid + '\n    ' + html.slice(j);
 
-// JSON-LD del catalogo (sin precios: no existen todavia)
+// JSON-LD del catalogo
 const ld = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -59,7 +61,11 @@ const ld = {
   numberOfItems: P.length,
   itemListElement: P.map((p, k) => ({
     '@type': 'ListItem', position: k + 1,
-    item: { '@type': 'Product', name: `Gorra ${p.name}`, brand: { '@type': 'Brand', name: 'CrowCaps' }, description: p.desc, image: `assets/img/${p.imgs[0]}` }
+    item: {
+      '@type': 'Product', name: `Gorra ${p.name}`, brand: { '@type': 'Brand', name: 'CrowCaps' },
+      description: p.desc, image: `assets/img/${p.imgs[0]}`,
+      offers: { '@type': 'Offer', price: p.price, priceCurrency: 'COP', availability: 'https://schema.org/InStock' }
+    }
   }))
 };
 const L1 = '<!-- ld:start -->', L2 = '<!-- ld:end -->';

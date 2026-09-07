@@ -226,10 +226,13 @@
     P.forEach(function (p, i) { byId[p.id] = { p: p, n: i + 1 }; });
     var lastFocus = null;
 
+    function cop(n) { return '$' + Number(n).toLocaleString('es-CO'); }
+
     function waLink(p) {
       return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(
         'Hola CrowCaps, estoy interesado en la Gorra ' + p.name +
-        ' (' + p.team + '). Quisiera conocer disponibilidad y realizar mi pedido.');
+        ' (' + p.team + ') de ' + cop(p.price) +
+        '. Quisiera conocer disponibilidad y realizar mi pedido.');
     }
 
     function open(id) {
@@ -240,6 +243,8 @@
       $('#dTeam').textContent = p.team;
       $('#dName').textContent = p.name;
       $('#dDesc').textContent = p.desc;
+      $('#dPrice').innerHTML = cop(p.price) + ' <small>COP · envío gratis</small>';
+      $('#dWaTxt').textContent = 'Pedir por ' + cop(p.price);
       $('#dTags').innerHTML = '<span class="tag">' + p.colorway + '</span>' +
         p.colors.map(function (c) { return '<span class="tag">' + c + '</span>'; }).join('');
       $('#dFeats').innerHTML = p.features.map(function (f) { return '<li>' + f + '</li>'; }).join('');

@@ -278,18 +278,16 @@
       "srcH": 687
     }
   ],
-  "dodgers-negra": [
+  "dodgers-negra-1999": [
     {
-      "file": "dodgers-negra.webp",
+      "file": "dodgers-negra-1999.webp",
       "w": 640,
       "h": 837,
       "srcW": 516,
       "srcH": 675
-    }
-  ],
-  "dodgers-negra-1999": [
+    },
     {
-      "file": "dodgers-negra-1999.webp",
+      "file": "dodgers-negra-1999-2.webp",
       "w": 640,
       "h": 845,
       "srcW": 511,

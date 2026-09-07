@@ -92,7 +92,7 @@
     var words = ['Crowcaps', 'Streetwear', 'Medellín', 'Envíos gratis', 'Crowcaps', 'Colombia'];
     var html = words.map(function (w, i) {
       return '<span' + (i % 2 ? ' class="o"' : '') + '>' + w + '</span>' +
-        (i === 2 ? '<img src="assets/brand/mascot-ink.webp" width="32" height="29" alt="" loading="lazy">' : '<span>·</span>');
+        (i === 2 ? '<img src="assets/brand/mascot.webp" width="320" height="286" alt="" loading="lazy">' : '<span>·</span>');
     }).join('');
     rows.forEach(function (r) { r.innerHTML = html; });
   })();

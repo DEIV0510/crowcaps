@@ -46,18 +46,11 @@ window.CROWCAPS_PRODUCTS = [
     imgs: ['mets-navy.webp', 'mets-navy-2.webp']
   },
   {
-    id: 'dodgers-negra', team: 'Los Angeles Dodgers', name: 'Dodgers Negra',
-    colorway: 'Negro · Blanco', colors: ['negras'],
-    desc: 'La base de cualquier clóset. Negra, el LA en blanco y nada más. Si solo vas a llevar una, que sea esta.',
-    features: ['Corona negra lisa', 'Logo «LA» bordado en blanco', 'Bordado lateral de marca en blanco', 'Visera curva negra'],
-    imgs: ['dodgers-negra.webp']
-  },
-  {
     id: 'dodgers-negra-1999', team: 'Los Angeles Dodgers', name: 'Dodgers Negra 1999',
-    colorway: 'Negro · Crema', colors: ['negras'],
-    desc: 'Misma silueta oscura, otra historia: el LA en crema y un parche conmemorativo del 99 en el costado. Detalle de coleccionista.',
-    features: ['Corona negra con logo «LA» bordado en crema', 'Parche lateral 1999 World Series', 'Interior de visera en verde', 'Visera curva negra'],
-    imgs: ['dodgers-negra-1999.webp']
+    colorway: 'Negro · Blanco', colors: ['negras'],
+    desc: 'La base de cualquier clóset. Negra, el LA en blanco y nada más de frente; por el costado aparece el parche conmemorativo del 99 y el interior de la visera en verde. Si solo vas a llevar una, que sea esta.',
+    features: ['Corona negra lisa', 'Logo «LA» bordado en blanco', 'Parche lateral 1999 World Series', 'Interior de visera en verde'],
+    imgs: ['dodgers-negra-1999.webp', 'dodgers-negra-1999-2.webp']
   },
   {
     id: 'padres-black-gold', team: 'San Diego Padres', name: 'Padres Negra / Dorada',

@@ -70,5 +70,11 @@ if (a > -1 && b > -1) {
     html.slice(b);
 }
 
+// sincroniza el numero de referencias en el copy para que nunca se desfase
+html = html.replace(/(<span id="refCount">)\d+(<\/span>)/, '$1' + P.length + '$2');
+html = html.replace(/(<div><b>)\d+(<\/b><span>Referencias)/, '$1' + P.length + '$2');
+html = html.replace(/Ver las \d+/g, 'Ver las ' + P.length);
+html = html.replace(/\d+ referencias reales/g, P.length + ' referencias reales');
+
 fs.writeFileSync(file, html);
 console.log('index.html actualizado ·', P.length, 'fichas ·', BIG.length, 'destacadas');

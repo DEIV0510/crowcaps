@@ -90,7 +90,8 @@
     "gorra30.png"
   ],
   "redsox-navy-blanca": [
-    "gorra31.png"
+    "gorra31.png",
+    "gorra59.png"
   ],
   "dodgers-negra-1999": [
     "gorra32.png",
@@ -115,5 +116,105 @@
   "braves-khaki-lila": [
     "gorra43.png",
     "gorra42.png"
+  ],
+  "whitesox-crema-camel": [
+    "gorra46.png",
+    "gorra45.png",
+    "gorra47.png",
+    "gorra44.png"
+  ],
+  "whitesox-khaki-tonal": [
+    "gorra81.png",
+    "gorra80.png"
+  ],
+  "whitesox-negra-tonal": [
+    "gorra91.png",
+    "gorra92.png"
+  ],
+  "yankees-piedra-negra": [
+    "gorra49.png",
+    "gorra48.png"
+  ],
+  "yankees-piedra-navy": [
+    "gorra50.png"
+  ],
+  "yankees-roja-crema": [
+    "gorra71.png",
+    "gorra54.png"
+  ],
+  "yankees-crema-azul": [
+    "gorra70.png"
+  ],
+  "yankees-negra-1996": [
+    "gorra87.png",
+    "gorra86.png"
+  ],
+  "dodgers-camel-menta": [
+    "gorra52.png"
+  ],
+  "dodgers-malva": [
+    "gorra53.png"
+  ],
+  "dodgers-crema-tonal": [
+    "gorra73.png",
+    "gorra72.png"
+  ],
+  "dodgers-camel-tonal": [
+    "gorra77.png",
+    "gorra79.png",
+    "gorra78.png"
+  ],
+  "dodgers-negra-tonal": [
+    "gorra90.png",
+    "gorra89.png"
+  ],
+  "redsox-negra-roja": [
+    "gorra69.png",
+    "gorra68.png"
+  ],
+  "redsox-negra-ws": [
+    "gorra85.png",
+    "gorra83.png",
+    "gorra84.png"
+  ],
+  "angels-crema": [
+    "gorra74.png",
+    "gorra75.png"
+  ],
+  "angels-negra": [
+    "gorra82.png"
+  ],
+  "angels-navy-blanca": [
+    "gorra97.png",
+    "gorra98.png",
+    "gorra99.png"
+  ],
+  "tigers-navy-tonal": [
+    "gorra64.png",
+    "gorra65.png",
+    "gorra63.png"
+  ],
+  "tigers-trigo": [
+    "gorra76.png"
+  ],
+  "braves-navy-hueso": [
+    "gorra57.png",
+    "gorra56.png",
+    "gorra55.png"
+  ],
+  "athletics-crema": [
+    "gorra61.png",
+    "gorra60.png"
+  ],
+  "bluejays-crema-azul": [
+    "gorra93.png",
+    "gorra94.png"
+  ],
+  "pirates-negra-dorada": [
+    "gorra67.png",
+    "gorra66.png"
+  ],
+  "nike-cafe-tonal": [
+    "gorra96.png"
   ]
 }

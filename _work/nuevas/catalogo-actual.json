@@ -1,0 +1,298 @@
+[
+ {
+  "n": 1,
+  "id": "yankees-navy-hueso",
+  "team": "New York Yankees",
+  "name": "Yankees Navy / Hueso",
+  "colorway": "Azul marino · Hueso",
+  "fuentes": "gorra39.png,gorra38.png"
+ },
+ {
+  "n": 2,
+  "id": "bulls-black",
+  "team": "Chicago Bulls",
+  "name": "Bulls Negra",
+  "colorway": "Negro · Rojo",
+  "fuentes": "gorra8.png"
+ },
+ {
+  "n": 3,
+  "id": "braves-khaki-lila",
+  "team": "Atlanta Braves",
+  "name": "Braves Khaki / Lila",
+  "colorway": "Khaki · Lila",
+  "fuentes": "gorra43.png,gorra42.png"
+ },
+ {
+  "n": 4,
+  "id": "redsox-khaki-roja",
+  "team": "Boston Red Sox",
+  "name": "Red Sox Khaki / Roja",
+  "colorway": "Khaki · Rojo",
+  "fuentes": "gorra41.png,gorra40.png"
+ },
+ {
+  "n": 5,
+  "id": "yankees-roja-navy",
+  "team": "New York Yankees",
+  "name": "Yankees Roja / Navy",
+  "colorway": "Rojo · Azul marino",
+  "fuentes": "gorra37.png,gorra36.png"
+ },
+ {
+  "n": 6,
+  "id": "mets-navy",
+  "team": "New York Mets",
+  "name": "Mets Navy",
+  "colorway": "Azul marino · Azul",
+  "fuentes": "gorra34.png,gorra35.png"
+ },
+ {
+  "n": 7,
+  "id": "dodgers-negra-1999",
+  "team": "Los Angeles Dodgers",
+  "name": "Dodgers Negra 1999",
+  "colorway": "Negro · Blanco",
+  "fuentes": "gorra32.png,gorra33.png"
+ },
+ {
+  "n": 8,
+  "id": "padres-black-gold",
+  "team": "San Diego Padres",
+  "name": "Padres Negra / Dorada",
+  "colorway": "Negro · Dorado",
+  "fuentes": "gorra9.png"
+ },
+ {
+  "n": 9,
+  "id": "oveja-negra",
+  "team": "La Oveja Negra",
+  "name": "La Oveja Negra",
+  "colorway": "Negro · Cuero natural",
+  "fuentes": "gorra16.png"
+ },
+ {
+  "n": 10,
+  "id": "yankees-white",
+  "team": "New York Yankees",
+  "name": "Yankees Blanca",
+  "colorway": "Blanco · Negro",
+  "fuentes": "gorra11.png"
+ },
+ {
+  "n": 11,
+  "id": "yankees-crema",
+  "team": "New York Yankees",
+  "name": "Yankees Crema",
+  "colorway": "Crema · Azul marino",
+  "fuentes": "gorra27.png"
+ },
+ {
+  "n": 12,
+  "id": "yankees-hueso",
+  "team": "New York Yankees",
+  "name": "Yankees Hueso Tonal",
+  "colorway": "Hueso · Tonal",
+  "fuentes": "gorra28.png"
+ },
+ {
+  "n": 13,
+  "id": "yankees-script-vino",
+  "team": "New York Yankees",
+  "name": "Yankees Script Vino",
+  "colorway": "Vino · Crema",
+  "fuentes": "gorra5.png"
+ },
+ {
+  "n": 14,
+  "id": "yankees-tophat-red",
+  "team": "New York Yankees",
+  "name": "Top Hat Roja / Verde",
+  "colorway": "Rojo · Verde azulado",
+  "fuentes": "gorra14.png"
+ },
+ {
+  "n": 15,
+  "id": "redsox-navy-naranja",
+  "team": "Boston Red Sox",
+  "name": "Red Sox Navy / Naranja",
+  "colorway": "Azul marino · Naranja",
+  "fuentes": "gorra18.png"
+ },
+ {
+  "n": 16,
+  "id": "redsox-navy-blanca",
+  "team": "Boston Red Sox",
+  "name": "Red Sox Navy / Blanca",
+  "colorway": "Azul marino · Blanco",
+  "fuentes": "gorra31.png"
+ },
+ {
+  "n": 17,
+  "id": "boston-carmesi",
+  "team": "Boston Red Sox",
+  "name": "Boston Carmesí",
+  "colorway": "Carmesí · Rojo",
+  "fuentes": "gorra15.png"
+ },
+ {
+  "n": 18,
+  "id": "whitesox-roja",
+  "team": "Chicago White Sox",
+  "name": "White Sox Roja",
+  "colorway": "Rojo · Blanco",
+  "fuentes": "gorra22.png"
+ },
+ {
+  "n": 19,
+  "id": "whitesox-vino",
+  "team": "Chicago White Sox",
+  "name": "White Sox Vino Tonal",
+  "colorway": "Vino · Tonal",
+  "fuentes": "gorra7.png"
+ },
+ {
+  "n": 20,
+  "id": "whitesox-taupe",
+  "team": "Chicago White Sox",
+  "name": "White Sox Taupe",
+  "colorway": "Taupe · Azul rey",
+  "fuentes": "gorra6.png"
+ },
+ {
+  "n": 21,
+  "id": "whitesox-marfil",
+  "team": "Chicago White Sox",
+  "name": "White Sox Marfil",
+  "colorway": "Marfil · Azul cielo",
+  "fuentes": "gorra12.png"
+ },
+ {
+  "n": 22,
+  "id": "whitesox-arena",
+  "team": "Chicago White Sox",
+  "name": "White Sox Arena Tonal",
+  "colorway": "Arena · Tonal",
+  "fuentes": "gorra30.png"
+ },
+ {
+  "n": 23,
+  "id": "padres-piedra-navy",
+  "team": "San Diego Padres",
+  "name": "Padres Piedra / Navy",
+  "colorway": "Piedra · Azul marino",
+  "fuentes": "gorra24.png"
+ },
+ {
+  "n": 24,
+  "id": "padres-blanca-navy",
+  "team": "San Diego Padres",
+  "name": "Padres Blanca / Navy",
+  "colorway": "Blanco · Azul marino",
+  "fuentes": "gorra26.png"
+ },
+ {
+  "n": 25,
+  "id": "padres-rosa-azul",
+  "team": "San Diego Padres",
+  "name": "Padres Rosa / Azul",
+  "colorway": "Rosa · Azul cielo",
+  "fuentes": "gorra25.png"
+ },
+ {
+  "n": 26,
+  "id": "nationals-white",
+  "team": "Washington Nationals",
+  "name": "Nationals Blanca",
+  "colorway": "Blanco · Azul marino",
+  "fuentes": "gorra2.png"
+ },
+ {
+  "n": 27,
+  "id": "nationals-red",
+  "team": "Washington Nationals",
+  "name": "Nationals Roja / Blanca",
+  "colorway": "Rojo · Blanco",
+  "fuentes": "gorra3.png"
+ },
+ {
+  "n": 28,
+  "id": "nationals-navy",
+  "team": "Washington Nationals",
+  "name": "Nationals Navy Tonal",
+  "colorway": "Azul marino · Tonal",
+  "fuentes": "gorra4.png"
+ },
+ {
+  "n": 29,
+  "id": "mets-royal",
+  "team": "New York Mets",
+  "name": "Mets Azul Rey",
+  "colorway": "Azul rey · Naranja",
+  "fuentes": "gorra17.png"
+ },
+ {
+  "n": 30,
+  "id": "tigers-blanca",
+  "team": "Detroit Tigers",
+  "name": "Tigers Blanca",
+  "colorway": "Blanco · Negro",
+  "fuentes": "gorra23.png"
+ },
+ {
+  "n": 31,
+  "id": "tigers-camel",
+  "team": "Detroit Tigers",
+  "name": "Tigers Camel Tonal",
+  "colorway": "Camel · Tonal",
+  "fuentes": "gorra29.png"
+ },
+ {
+  "n": 32,
+  "id": "braves-piedra",
+  "team": "Atlanta Braves",
+  "name": "Braves Piedra",
+  "colorway": "Piedra · Azul rey",
+  "fuentes": "gorra13.png"
+ },
+ {
+  "n": 33,
+  "id": "giants-mint",
+  "team": "San Francisco Giants",
+  "name": "Giants Gris Menta",
+  "colorway": "Gris menta · Naranja",
+  "fuentes": "gorra10.png"
+ },
+ {
+  "n": 34,
+  "id": "hornets-piedra",
+  "team": "Charlotte Hornets",
+  "name": "Hornets Piedra",
+  "colorway": "Piedra · Azul",
+  "fuentes": "gorra21.png"
+ },
+ {
+  "n": 35,
+  "id": "dodgers-blanca-roja",
+  "team": "Los Angeles Dodgers",
+  "name": "Dodgers Blanca / Roja",
+  "colorway": "Blanco · Rojo",
+  "fuentes": "gorra20.png"
+ },
+ {
+  "n": 36,
+  "id": "rangers-white",
+  "team": "Texas Rangers",
+  "name": "Rangers Blanca",
+  "colorway": "Blanco · Rojo",
+  "fuentes": "gorra.png"
+ },
+ {
+  "n": 37,
+  "id": "royal-b-nike",
+  "team": "Nike",
+  "name": "Royal B",
+  "colorway": "Azul rey · Blanco",
+  "fuentes": "gorra19.png"
+ }
+]

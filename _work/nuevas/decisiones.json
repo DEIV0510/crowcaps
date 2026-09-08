@@ -1,0 +1,38 @@
+{
+  "nuevas": [
+    { "id": "whitesox-crema-camel",  "fotos": ["g46", "g45", "g47", "g44"] },
+    { "id": "whitesox-khaki-tonal",  "fotos": ["g81", "g80"] },
+    { "id": "whitesox-negra-tonal",  "fotos": ["g91", "g92"] },
+    { "id": "yankees-piedra-negra",  "fotos": ["g49", "g48"] },
+    { "id": "yankees-piedra-navy",   "fotos": ["g50"] },
+    { "id": "yankees-roja-crema",    "fotos": ["g71", "g54"] },
+    { "id": "yankees-crema-azul",    "fotos": ["g70"] },
+    { "id": "yankees-negra-1996",    "fotos": ["g87", "g86"] },
+    { "id": "dodgers-camel-menta",   "fotos": ["g52"] },
+    { "id": "dodgers-malva",         "fotos": ["g53"] },
+    { "id": "dodgers-crema-tonal",   "fotos": ["g73", "g72"] },
+    { "id": "dodgers-camel-tonal",   "fotos": ["g77", "g79", "g78"] },
+    { "id": "dodgers-negra-tonal",   "fotos": ["g90", "g89"] },
+    { "id": "redsox-negra-roja",     "fotos": ["g69", "g68"] },
+    { "id": "redsox-negra-ws",       "fotos": ["g85", "g83", "g84"] },
+    { "id": "angels-crema",          "fotos": ["g74", "g75"] },
+    { "id": "angels-negra",          "fotos": ["g82"] },
+    { "id": "angels-navy-blanca",    "fotos": ["g97", "g98", "g99"] },
+    { "id": "tigers-navy-tonal",     "fotos": ["g64", "g65", "g63"] },
+    { "id": "tigers-trigo",          "fotos": ["g76"] },
+    { "id": "braves-navy-hueso",     "fotos": ["g57", "g56", "g55"] },
+    { "id": "athletics-crema",       "fotos": ["g61", "g60"] },
+    { "id": "bluejays-crema-azul",   "fotos": ["g93", "g94"] },
+    { "id": "pirates-negra-dorada",  "fotos": ["g67", "g66"] },
+    { "id": "nike-cafe-tonal",       "fotos": ["g96"] }
+  ],
+  "ampliar": [
+    { "id": "redsox-navy-blanca", "fotos": ["g59"] }
+  ],
+  "descartadas": {
+    "g51": "macro del parche 75th World Series: los dos escépticos probaron que NO es la gorra de g52 (relleno crema/dorado vs menta) y no hay ninguna otra foto de esa gorra",
+    "g58": "es el mismo encuadre que gorra31, ya en el catálogo como redsox-navy-blanca",
+    "g62": "trasera de una gorra crema con parche World Series azul y bajo-visera negro: no coincide con la A's (bajo-visera lila) y no se ve el frente",
+    "g95": "macro del cierre trasero Nike de una gorra blanca: no hay foto del frente de esa gorra"
+  }
+}

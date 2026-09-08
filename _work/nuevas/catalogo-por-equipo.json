@@ -1,0 +1,65 @@
+{
+ "yankees": [
+  "yankees-navy-hueso",
+  "yankees-roja-navy",
+  "yankees-white",
+  "yankees-crema",
+  "yankees-hueso",
+  "yankees-script-vino",
+  "yankees-tophat-red"
+ ],
+ "bulls": [
+  "bulls-black"
+ ],
+ "braves": [
+  "braves-khaki-lila",
+  "braves-piedra"
+ ],
+ "redsox": [
+  "redsox-khaki-roja",
+  "redsox-navy-naranja",
+  "redsox-navy-blanca",
+  "boston-carmesi"
+ ],
+ "mets": [
+  "mets-navy",
+  "mets-royal"
+ ],
+ "dodgers": [
+  "dodgers-negra-1999",
+  "dodgers-blanca-roja"
+ ],
+ "padres": [
+  "padres-black-gold",
+  "padres-piedra-navy",
+  "padres-blanca-navy",
+  "padres-rosa-azul"
+ ],
+ "otras": [
+  "oveja-negra",
+  "rangers-white",
+  "royal-b-nike"
+ ],
+ "whitesox": [
+  "whitesox-roja",
+  "whitesox-vino",
+  "whitesox-taupe",
+  "whitesox-marfil",
+  "whitesox-arena"
+ ],
+ "nationals": [
+  "nationals-white",
+  "nationals-red",
+  "nationals-navy"
+ ],
+ "tigers": [
+  "tigers-blanca",
+  "tigers-camel"
+ ],
+ "giants": [
+  "giants-mint"
+ ],
+ "hornets": [
+  "hornets-piedra"
+ ]
+}

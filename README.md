@@ -18,7 +18,7 @@ index.html            página completa; la grilla de producto va escrita en el H
 css/style.css         sistema visual completo (tokens, componentes, responsive)
 js/products.js        catálogo: 38 gorras (datos separados de la presentación)
 js/app.js             loader, nav, filtros, buscador, drawer, cursor, reveal
-assets/img/           43 fotos reales en WebP, en 2 tamaños (340w y 640w)
+assets/img/           94 fotos reales en WebP, en 2 tamaños (340w y 640w)
 assets/brand/         logo, sello, mascota y wordmark extraídos del PDF de marca
 _tools/               scripts de build (imágenes, marca, grilla)
 _work/                material intermedio (rasterizado del PDF, previews)
@@ -42,8 +42,8 @@ Las fotos fuente viven en `C:\Users\Lenovo\Desktop\crowcaps` (`build-img.js`, co
 
 ## Colección por tandas
 
-La grilla trae las 37 fichas escritas en el HTML (SEO y funciona sin JS), pero el JS
-muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 37` en la barra de
+La grilla trae las 62 fichas escritas en el HTML (SEO y funciona sin JS), pero el JS
+muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 62` en la barra de
 filtros. Filtrar o buscar reinicia la tanda. El tamaño de tanda es la constante `PASO`
 en `js/app.js`.
 
@@ -66,7 +66,7 @@ en `js/app.js`.
 
 ## Pendientes para publicar
 
-1. **Precios por producto**: hoy las 37 comparten `price: 85000`. Si alguna cambia,
+1. **Precios por producto**: hoy las 62 comparten `price: 85000`. Si alguna cambia,
    basta editar su `price` y correr `node _tools/build-html.js`.
 2. **URLs reales de redes**: los enlaces asumen `instagram.com/crowcaps.co`,
    `tiktok.com/@crowcaps.co` y `facebook.com/crowcaps`. Confirmar antes de salir.

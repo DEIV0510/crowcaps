@@ -1,0 +1,204 @@
+{
+ "productos": [
+  {
+   "id": "whitesox-crema-camel",
+   "fotos": [
+    "g46",
+    "g45",
+    "g47",
+    "g44"
+   ],
+   "descripcion": "Chicago White Sox New Era: corona crema/hueso, visera de gamuza camel-tostado (con parte inferior negra), logo Sox frontal y logo New Era lateral bordados en café chocolate, botón superior camel. Sin parche lateral bordado."
+  },
+  {
+   "id": "whitesox-khaki-tonal",
+   "fotos": [
+    "g81",
+    "g80"
+   ],
+   "descripcion": "Chicago White Sox New Era 59FIFTY en caqui/camello monocromático: corona y visera del mismo tono caqui, logo Sox frontal y script 'CHICAGO White Sox' en el lateral izquierdo bordados tono sobre tono (crema-caqui), etiqueta 59FIFTY"
+  },
+  {
+   "id": "whitesox-negra-tonal",
+   "fotos": [
+    "g91",
+    "g92"
+   ],
+   "descripcion": "Chicago White Sox New Era 59FIFTY negro total: corona y visera negras, logo Sox frontal y script 'White Sox' lateral bordados en negro tono sobre tono, etiqueta 59FIFTY en la visera."
+  },
+  {
+   "id": "yankees-piedra-negra",
+   "fotos": [
+    "g49",
+    "g48"
+   ],
+   "descripcion": "New York Yankees 59FIFTY corona gris piedra/greige con visera NEGRA lisa; logo NY bordado en negro con contorno blanco y sombra gris, calcomanía dorada 59FIFTY sobre la visera negra."
+  },
+  {
+   "id": "yankees-piedra-navy",
+   "fotos": [
+    "g50"
+   ],
+   "descripcion": "New York Yankees corona gris piedra con visera AZUL MARINO (navy) lisa; logo NY navy con contorno blanco y logo New Era navy bordado en el panel lateral. Sin parche lateral."
+  },
+  {
+   "id": "yankees-roja-crema",
+   "fotos": [
+    "g71",
+    "g54"
+   ],
+   "descripcion": "New York Yankees corona ROJA con visera crema/hueso; logo NY bordado en crema sólido (sin contorno), logo New Era crema en el panel lateral y botón superior crema. Sin parche lateral."
+  },
+  {
+   "id": "yankees-crema-azul",
+   "fotos": [
+    "g70"
+   ],
+   "descripcion": "New York Yankees corona crema/marfil con visera AZUL MARINO en gamuza (suede) y botón navy; logo NY en azul sólido brillante sin contorno, New Era navy en el lateral y calcomanía dorada 59FIFTY. Sin parche lateral."
+  },
+  {
+   "id": "yankees-negra-1996",
+   "fotos": [
+    "g87",
+    "g86"
+   ],
+   "descripcion": "New York Yankees TOTALMENTE NEGRA (black on black): corona, visera y bordados negros; logo NY tonal negro, parche lateral 1996 World Series bordado tonal negro con logo MLB debajo y calcomanía dorada 59FIFTY en la visera."
+  },
+  {
+   "id": "dodgers-camel-menta",
+   "fotos": [
+    "g52"
+   ],
+   "descripcion": "Dodgers LA A-Frame bicolor camel/menta: corona frontal color camel-caqui, paneles traseros y visera en verde menta claro, logo LA bordado en menta/blanco y parche lateral \"75TH WORLD SERIES\" (con la pelota de costuras rojas y el l"
+  },
+  {
+   "id": "dodgers-malva",
+   "fotos": [
+    "g53"
+   ],
+   "descripcion": "Dodgers LA A-Frame en malva/taupe: corona color topo-lila, visera y ribete en lila claro (lavanda), logo LA bordado en blanco, logo New Era blanco en el panel derecho. Trae la etiqueta colgante de New Era puesta. Foto de calle sob"
+  },
+  {
+   "id": "dodgers-crema-tonal",
+   "fotos": [
+    "g73",
+    "g72"
+   ],
+   "descripcion": "Dodgers LA A-Frame monocromatica crema/marfil: corona, visera y bordados en el mismo tono hueso (logo LA tonal) y parche lateral \"Los Angeles\" (banderola con pelota, home y logo MLB) bordado tono sobre tono en crema. Foto de estud"
+  },
+  {
+   "id": "dodgers-camel-tonal",
+   "fotos": [
+    "g77",
+    "g79",
+    "g78"
+   ],
+   "descripcion": "Dodgers LA A-Frame en caqui/camel tonal: corona y visera color arena-camel, logo LA bordado en crema, parche lateral \"Los Angeles\" (banderola con pelota, home y logo MLB) bordado en crema, costuras de panel en amarillo-mostaza y s"
+  },
+  {
+   "id": "dodgers-negra-tonal",
+   "fotos": [
+    "g90",
+    "g89"
+   ],
+   "descripcion": "Dodgers LA A-Frame negra total (black on black): corona y visera negras, logo LA bordado en negro tono sobre tono y parche lateral \"Los Angeles\" tambien bordado en negro. Foto de estudio sobre fondo gris claro."
+  },
+  {
+   "id": "redsox-negra-roja",
+   "fotos": [
+    "g69",
+    "g68"
+   ],
+   "descripcion": "New Era A-Frame de Boston Red Sox: corona negra, visera ROJA y botón rojo, logo \"B\" bordado en rojo con contorno blanco al frente. Sin parche lateral; solo la bandera New Era bordada en el panel lateral. Foto de estudio sobre fond"
+  },
+  {
+   "id": "redsox-negra-ws",
+   "fotos": [
+    "g85",
+    "g83",
+    "g84"
+   ],
+   "descripcion": "New Era A-Frame de Boston Red Sox all black: corona negra, visera NEGRA, logo \"B\" bordado en rojo sólido (sin contorno blanco) al frente y parche lateral \"WORLD SERIES\" con el globo bordado en rojo sobre el panel izquierdo. Foto d"
+  },
+  {
+   "id": "angels-crema",
+   "fotos": [
+    "g74",
+    "g75"
+   ],
+   "descripcion": "Los Angeles Angels — snapback A-Frame color crema/marfil (hueso) completo: corona crema, visera crema y botón crema. Al frente, logo \"A\" con halo bordado en crema con contorno dorado. Parche lateral \"ANGELS\" tono sobre tono (crema"
+  },
+  {
+   "id": "angels-negra",
+   "fotos": [
+    "g82"
+   ],
+   "descripcion": "Los Angeles Angels — snapback A-Frame all-black (blackout): corona negra, visera negra, logo \"A\" bordado en negro tono sobre tono con el halo en dorado/amarillo como único acento de color. Parche lateral \"ANGELS\" bordado en negro "
+  },
+  {
+   "id": "angels-navy-blanca",
+   "fotos": [
+    "g97",
+    "g98",
+    "g99"
+   ],
+   "descripcion": "Los Angeles Angels — snapback dos tonos: corona azul marino y VISERA BLANCA. Al frente, \"ANGELS\" en letras de bloque blancas con contorno dorado y el logo \"A\" con halo dorado bajo las letras. Parche bordado de World Series (escudo"
+  },
+  {
+   "id": "tigers-navy-tonal",
+   "fotos": [
+    "g64",
+    "g65",
+    "g63"
+   ],
+   "descripcion": "New Era Detroit Tigers A-Frame en azul marino total (corona, visera y botón marino). Bordado 100% tonal: la \"D\" gótica en el panel frontal derecho y el parche lateral izquierdo \"BASEBALL CLUB · DETROIT TIGERS\" (skyline) van en el "
+  },
+  {
+   "id": "tigers-trigo",
+   "fotos": [
+    "g76"
+   ],
+   "descripcion": "New Era Detroit Tigers A-Frame en camel cálido / trigo (khaki dorado): corona y visera del mismo tono, \"D\" gótica bordada en crema claro y parche lateral izquierdo \"BASEBALL CLUB · DETROIT TIGERS\" también en crema. Sticker 59FIFTY"
+  },
+  {
+   "id": "braves-navy-hueso",
+   "fotos": [
+    "g57",
+    "g56",
+    "g55"
+   ],
+   "descripcion": "Atlanta Braves New Era 59FIFTY: corona azul marino de perfil alto (tipo A-Frame) con visera curva color hueso/chrome, «A» bordada en tono piedra/greige (más cálido que la visera), bandera New Era blanca en el costado izquierdo y s"
+  },
+  {
+   "id": "athletics-crema",
+   "fotos": [
+    "g61",
+    "g60"
+   ],
+   "descripcion": "Gorra fitted tipo New Era 59FIFTY de los Oakland Athletics: corona crema/hueso, logo \"A's\" bordado en alto relieve color café chocolate, visera plana café muy oscuro (casi negra) y bajo-visera negro, bandera New Era bordada en caf"
+  },
+  {
+   "id": "bluejays-crema-azul",
+   "fotos": [
+    "g93",
+    "g94"
+   ],
+   "descripcion": "Gorra New Era 59FIFTY de los Toronto Blue Jays: corona crema/blanco hueso (chrome white), visera y botón royal blue, bordado frontal del pájaro azul con hoja de maple roja y contorno blanco, costuras blancas en el borde de la vise"
+  },
+  {
+   "id": "pirates-negra-dorada",
+   "fotos": [
+    "g67",
+    "g66"
+   ],
+   "descripcion": "Gorra New Era estilo A-Frame/snapback de los Pittsburgh Pirates: corona negra lisa, visera negra curva con parte inferior (undervisor) amarilla, logo frontal de la 'P' de Pirates bordado en amarillo dorado en relieve, bandera New "
+  },
+  {
+   "id": "nike-cafe-tonal",
+   "fotos": [
+    "g96"
+   ],
+   "descripcion": "Gorra Nike de corona baja (estilo dad cap / 5 paneles) en marrón oscuro chocolate-topo, monocromática: corona y visera curva del mismo tono, con la visera en tejido ligeramente más oscuro y texturizado. Bordado tonal grande de cab"
+  }
+ ]
+}

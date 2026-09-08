@@ -62,6 +62,18 @@ node _tools/build-img.js && node _tools/build-html.js && node _tools/fix-dims-im
 node _tools/verificar-imagenes.js   # falla si algo se amplió o el srcset miente
 ```
 
+## SEO e iconos
+
+- `favicon.ico` va en la RAÍZ (Google lo busca ahí) y lleva 16+32+48 dentro.
+  Se genera con `node _tools/build-favicon.js` a partir de la CARA de la
+  mascota: el sello con el aro de texto no se lee a 16 px.
+- `robots.txt` y `sitemap.xml` también en la raíz.
+- El `<head>` declara Organization + WebSite + ItemList en JSON-LD, con URL y
+  logo absolutos: eso es lo que Google usa para el nombre y el icono de marca.
+- Si el snippet de Google se ve viejo, no es el sitio: hay que pedir la
+  reindexación en Search Console. El HTML servido se comprueba con
+  `curl -s https://crowcaps.co | grep description`.
+
 ## Decisiones que hay que respetar
 
 - **No se inventa información.** Las fichas describen solo lo que se ve en la foto:

@@ -59,27 +59,63 @@ if (i < 0 || j < 0) throw new Error('No encuentro los marcadores grid:start / gr
 const grid = P.map(card).join('\n');
 html = html.slice(0, i + A.length) + '\n' + grid + '\n    ' + html.slice(j);
 
-// JSON-LD del catalogo
-const ld = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Colección CrowCaps',
-  numberOfItems: P.length,
-  itemListElement: P.map((p, k) => ({
-    '@type': 'ListItem', position: k + 1,
-    item: {
-      '@type': 'Product', name: `Gorra ${p.name}`, brand: { '@type': 'Brand', name: 'CrowCaps' },
-      description: p.desc, image: `assets/img/${p.imgs[0]}`,
-      offers: { '@type': 'Offer', price: p.price, priceCurrency: 'COP', availability: 'https://schema.org/InStock' }
-    }
-  }))
-};
+// JSON-LD: negocio + sitio + catalogo. Lo primero es lo que Google usa para
+// asociar el nombre y el logo de la marca al resultado de busqueda, en vez de
+// mostrar el icono generico. Las URL van absolutas: los rastreadores no
+// resuelven rutas relativas.
+const SITIO = 'https://crowcaps.co';
+const ld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'CrowCaps',
+    alternateName: 'Crow Caps',
+    url: SITIO + '/',
+    logo: { '@type': 'ImageObject', url: SITIO + '/assets/brand/icon-512.png', width: 512, height: 512 },
+    image: SITIO + '/assets/brand/icon-512.png',
+    description: 'Gorras y streetwear seleccionados en Medellín. Venta online con envíos gratis a toda Colombia.',
+    slogan: 'It was a collective decision',
+    areaServed: { '@type': 'Country', name: 'Colombia' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Medellín', addressRegion: 'Antioquia', addressCountry: 'CO' },
+    contactPoint: {
+      '@type': 'ContactPoint', contactType: 'sales', telephone: '+57-320-722-4241',
+      areaServed: 'CO', availableLanguage: ['es'],
+    },
+    sameAs: [
+      'https://instagram.com/crowcaps.co',
+      'https://tiktok.com/@crowcaps.co',
+      'https://facebook.com/crowcaps',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'CrowCaps',
+    url: SITIO + '/',
+    inLanguage: 'es-CO',
+    publisher: { '@type': 'Organization', name: 'CrowCaps' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Colección CrowCaps',
+    numberOfItems: P.length,
+    itemListElement: P.map((p, k) => ({
+      '@type': 'ListItem', position: k + 1,
+      item: {
+        '@type': 'Product', name: `Gorra ${p.name}`, brand: { '@type': 'Brand', name: 'CrowCaps' },
+        description: p.desc, image: `${SITIO}/assets/img/${p.imgs[0]}`,
+        offers: { '@type': 'Offer', price: p.price, priceCurrency: 'COP', availability: 'https://schema.org/InStock', url: SITIO + '/' }
+      }
+    }))
+  },
+];
 const L1 = '<!-- ld:start -->', L2 = '<!-- ld:end -->';
 const a = html.indexOf(L1), b = html.indexOf(L2);
 if (a > -1 && b > -1) {
-  html = html.slice(0, a + L1.length) +
-    '\n<script type="application/ld+json">' + JSON.stringify(ld) + '</script>\n' +
-    html.slice(b);
+  html = html.slice(0, a + L1.length) + '\n' +
+    ld.map(x => '<script type="application/ld+json">' + JSON.stringify(x) + '</script>').join('\n') +
+    '\n' + html.slice(b);
 }
 
 // sincroniza el numero de referencias en el copy para que nunca se desfase

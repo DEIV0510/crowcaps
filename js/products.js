@@ -324,21 +324,14 @@ window.CROWCAPS_PRODUCTS = [
     features: ['Logo SOX cruzado bordado al frente en negro, tono sobre tono', 'Script «White Sox» bordado en el panel lateral, también en negro', 'Visera curva con varias líneas de costura a la vista en el mismo negro', 'Sticker dorado de New Era en la visera («59FIFTY»), el único punto que no es negro'],
     imgs: ['whitesox-negra-tonal.webp', 'whitesox-negra-tonal-2.webp']
   },
-  {
-    id: 'yankees-piedra-negra', team: 'New York Yankees', name: 'Yankees Piedra / Negra',
-    colorway: 'Piedra · Negro', colors: ['bicolor', 'beige', 'negras'],
-    price: 85000,
-    desc: 'Piedra arriba, negro abajo, cortado en seco justo en el borde de la visera. El NY no va plano: el filo blanco y la sombra gris en capas lo levantan del paño, y ese relieve es lo único que hace ruido en toda la gorra.',
-    features: ['Corona en piedra cálido con visera negra lisa', 'NY bordado en negro, con filo blanco y sombra gris en capas', 'Calcomanía dorada 59FIFTY todavía pegada en la visera', 'Botón negro en la copa y bandera New Era bordada en el lateral'],
-    imgs: ['yankees-piedra-negra.webp', 'yankees-piedra-negra-2.webp']
-  },
+
   {
     id: 'yankees-piedra-navy', team: 'New York Yankees', name: 'Yankees Piedra / Marino',
-    colorway: 'Piedra · Navy', colors: ['beige', 'azules', 'bicolor'],
+    colorway: 'Piedra · Azul marino', colors: ['beige', 'azules', 'bicolor'],
     price: 85000,
-    desc: 'Corona gris clara y visera navy: dos bloques de color y nada más. El NY va bordado en navy con contorno blanco que lo separa del panel, y la bandera New Era repite ese navy en el costado. Visera curva de fábrica.',
-    features: ['Corona gris clara y lisa, con las costuras de los paneles a la vista en el mismo tono', 'NY bordado en navy con contorno blanco sobre el panel frontal', 'Visera navy lisa y curva, sin estampados ni logos', 'Bandera New Era bordada en navy sobre el panel lateral'],
-    imgs: ['yankees-piedra-navy.webp']
+    desc: 'Piedra arriba y azul marino abajo, cortado en seco en el borde de la visera. El NY no va plano: el filo blanco y la sombra gris en capas lo despegan del panel, y ese relieve es lo único que hace ruido en toda la gorra.',
+    features: ['Corona en piedra cálido con visera azul marino lisa', 'NY bordado con filo blanco y sombra gris en capas', 'Bandera New Era bordada en el panel lateral', 'Calcomanía dorada de la visera todavía puesta'],
+    imgs: ['yankees-piedra-navy.webp', 'yankees-piedra-navy-2.webp', 'yankees-piedra-navy-3.webp']
   },
   {
     id: 'yankees-roja-crema', team: 'New York Yankees', name: 'Yankees Escarlata / Crema',

@@ -599,28 +599,6 @@
       "srcH": 716
     }
   ],
-  "yankees-piedra-negra": [
-    {
-      "file": "yankees-piedra-negra.webp",
-      "w": 512,
-      "h": 702,
-      "smFile": "yankees-piedra-negra-sm.webp",
-      "smW": 360,
-      "smH": 494,
-      "srcW": 512,
-      "srcH": 702
-    },
-    {
-      "file": "yankees-piedra-negra-2.webp",
-      "w": 510,
-      "h": 717,
-      "smFile": "yankees-piedra-negra-2-sm.webp",
-      "smW": 360,
-      "smH": 506,
-      "srcW": 510,
-      "srcH": 717
-    }
-  ],
   "yankees-piedra-navy": [
     {
       "file": "yankees-piedra-navy.webp",
@@ -631,6 +609,26 @@
       "smH": 470,
       "srcW": 510,
       "srcH": 666
+    },
+    {
+      "file": "yankees-piedra-navy-2.webp",
+      "w": 512,
+      "h": 702,
+      "smFile": "yankees-piedra-navy-2-sm.webp",
+      "smW": 360,
+      "smH": 494,
+      "srcW": 512,
+      "srcH": 702
+    },
+    {
+      "file": "yankees-piedra-navy-3.webp",
+      "w": 510,
+      "h": 717,
+      "smFile": "yankees-piedra-navy-3-sm.webp",
+      "smW": 360,
+      "smH": 506,
+      "srcW": 510,
+      "srcH": 717
     }
   ],
   "yankees-roja-crema": [

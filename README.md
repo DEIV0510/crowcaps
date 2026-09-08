@@ -42,8 +42,8 @@ Las fotos fuente viven en `C:\Users\Lenovo\Desktop\crowcaps` (`build-img.js`, co
 
 ## Colección por tandas
 
-La grilla trae las 62 fichas escritas en el HTML (SEO y funciona sin JS), pero el JS
-muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 62` en la barra de
+La grilla trae las 61 fichas escritas en el HTML (SEO y funciona sin JS), pero el JS
+muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 61` en la barra de
 filtros. Filtrar o buscar reinicia la tanda. El tamaño de tanda es la constante `PASO`
 en `js/app.js`.
 
@@ -81,7 +81,7 @@ node _tools/verificar-imagenes.js   # falla si algo se amplió o el srcset mient
 
 ## Pendientes para publicar
 
-1. **Precios por producto**: hoy las 62 comparten `price: 85000`. Si alguna cambia,
+1. **Precios por producto**: hoy las 61 comparten `price: 85000`. Si alguna cambia,
    basta editar su `price` y correr `node _tools/build-html.js`.
 2. **URLs reales de redes**: los enlaces asumen `instagram.com/crowcaps.co`,
    `tiktok.com/@crowcaps.co` y `facebook.com/crowcaps`. Confirmar antes de salir.

@@ -23,9 +23,15 @@ function card(p, i) {
     ? '(max-width: 760px) 100vw, (max-width: 1180px) 66vw, 50vw'
     : '(max-width: 760px) 50vw, (max-width: 1180px) 33vw, 25vw';
   const src = f => `assets/img/${f}`;
-  const set = f => `${src(f.replace('.webp', '-sm.webp'))} 340w, ${src(f)} 640w`;
+  // el srcset lleva el ancho REAL de cada archivo (lo da el manifest), si no el
+  // navegador cree que la version grande mide mas de lo que mide y elige mal
+  const info = f => (MAN[p.id] || []).find(x => x.file === f) || { w: 640, smW: 360 };
+  const set = f => {
+    const m = info(f);
+    return `${src(f.replace('.webp', '-sm.webp'))} ${m.smW || 360}w, ${src(f)} ${m.w}w`;
+  };
   const alt2 = p.imgs[1]
-    ? `\n      <img class="alt" src="${src(p.imgs[1])}" srcset="${set(p.imgs[1])}" sizes="${sizes}" width="${meta.w}" height="${meta.h}" alt="" loading="lazy" decoding="async">`
+    ? `\n      <img class="alt" src="${src(p.imgs[1])}" srcset="${set(p.imgs[1])}" sizes="${sizes}" width="${info(p.imgs[1]).w}" height="${info(p.imgs[1]).h}" alt="" loading="lazy" decoding="async">`
     : '';
   const search = esc([p.name, p.team, p.colorway, p.colors.join(' ')].join(' '));
 

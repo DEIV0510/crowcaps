@@ -47,6 +47,21 @@ muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 62` en la 
 filtros. Filtrar o buscar reinicia la tanda. El tamaño de tanda es la constante `PASO`
 en `js/app.js`.
 
+## Calidad de imagen (no romper esto)
+
+Los originales miden **~510 px de ancho**. `build-img.js` NUNCA amplía
+(`withoutEnlargement: true`): la versión grande sale al tamaño nativo con
+calidad 88, y la chica a 360 px con un enfoque leve. Ampliar a 640 y comprimir
+a 76 —como se hacía antes— costaba ~10 dB de PSNR y se notaba borroso.
+
+El `srcset` lleva el ancho REAL de cada archivo, tomado del manifest.
+Después de tocar imágenes:
+
+```bash
+node _tools/build-img.js && node _tools/build-html.js && node _tools/fix-dims-img.js
+node _tools/verificar-imagenes.js   # falla si algo se amplió o el srcset miente
+```
+
 ## Decisiones que hay que respetar
 
 - **No se inventa información.** Las fichas describen solo lo que se ve en la foto:

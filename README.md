@@ -28,10 +28,27 @@ cambios y la tienda seguiría igual. (Pasó; por eso el respaldo vive en
 ```bash
 npm install
 node _tools/sembrar.js          # vuelca el catálogo a _datos/crowcaps.db
-SETUP_TOKEN=loquesea npm run dev
+npm run dev
 ```
 
 → http://localhost:5325 y http://localhost:5325/admin
+
+Si no pones `SETUP_TOKEN`, el servidor local inventa uno en cada arranque y lo
+imprime en la consola: es el código para crear el primer administrador.
+
+| Comando | Qué hace |
+|---|---|
+| `npm test` | comprueba el filtro de HTML de los titulares y las validaciones |
+| `npm run sitio` | regenera `_plantilla/respaldo.html` desde la base |
+| `npm run plantilla` | rehace `_plantilla/index.html` (los `{{marcadores}}`) |
+| `npm run verificar` | ninguna imagen ampliada y ningún `srcset` que mienta |
+| `npm run imagenes` | reconstruye las fotos y luego el respaldo |
+| `npm run sembrar` | vuelca `js/products.js` a la base (`--rehacer` borra antes) |
+
+**Regla al tocar los textos:** ningún valor editable puede empezar ni terminar
+con espacio. El espacio va en el HTML de la plantilla (`{{clave}} <span…`),
+porque el panel recorta los textos al guardar. `npm run plantilla` se planta si
+alguien la incumple.
 
 En local la base es un archivo SQLite y las fotos se guardan en `assets/img`.
 En Vercel, lo mismo pero con Turso y Vercel Blob: el código es el mismo.

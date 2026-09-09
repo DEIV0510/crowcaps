@@ -15,6 +15,15 @@ const path = require('path');
 
 const PUERTO = process.env.PORT || 5325;
 const RAIZ = __dirname;
+
+/* Código para crear el primer administrador. En producción SIEMPRE viene de una
+   variable de entorno; aquí, si no la pusiste, se inventa uno distinto en cada
+   arranque y se imprime al final. Nunca hay una clave fija escrita en el código. */
+if (!process.env.SETUP_TOKEN) {
+  process.env.SETUP_TOKEN = require('crypto').randomBytes(12).toString('hex');
+  process.env.SETUP_TOKEN_DEL_MOMENTO = '1';
+}
+
 const handler = require('./api/index.js');
 
 const TIPOS = {
@@ -54,4 +63,8 @@ http.createServer(async (req, res) => {
 }).listen(PUERTO, () => {
   console.log('CrowCaps  ->  http://localhost:' + PUERTO);
   console.log('Panel     ->  http://localhost:' + PUERTO + '/admin');
+  if (process.env.SETUP_TOKEN_DEL_MOMENTO) {
+    console.log('Código para crear el primer administrador (solo para esta sesión):');
+    console.log('  ' + process.env.SETUP_TOKEN);
+  }
 });

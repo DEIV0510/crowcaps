@@ -5,7 +5,9 @@
   "description": "CrowCaps — tienda de gorras (Medellín) con panel de administración propio",
   "scripts": {
     "dev": "node servidor-local.js",
+    "test": "node _tools/probar.js",
     "sitio": "node _tools/build-html.js",
+    "plantilla": "node _tools/hacer-plantilla.js",
     "imagenes": "node _tools/build-img.js && node _tools/build-html.js",
     "verificar": "node _tools/verificar-imagenes.js",
     "sembrar": "node _tools/sembrar.js"

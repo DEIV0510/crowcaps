@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "crowcaps", "runtimeExecutable": "node", "runtimeArgs": ["serve.js"], "port": 5325 }
+    { "name": "crowcaps", "runtimeExecutable": "node", "runtimeArgs": ["servidor-local.js"], "port": 5325, "autoPort": true }
   ]
 }

@@ -17,13 +17,25 @@ const path = require('path');
 const { MAPA } = require('./mapa-contenido');
 
 const RAIZ = path.join(__dirname, '..');
-const ENTRADA = path.join(RAIZ, '_plantilla', 'respaldo.html');
+/* Por defecto se parte de la última copia buena de la tienda. Se puede pasar
+   otro archivo como argumento (útil para rehacerla desde una versión de git). */
+const ENTRADA = process.argv[2] ? path.resolve(process.argv[2]) : path.join(RAIZ, '_plantilla', 'respaldo.html');
 const SALIDA = path.join(RAIZ, '_plantilla', 'index.html');
 
 const contar = (texto, aguja) => texto.split(aguja).length - 1;
 
 let html = fs.readFileSync(ENTRADA, 'utf8');
 const problemas = [];
+
+/* Ningún texto puede depender de un espacio al principio o al final: al guardar
+   desde el panel se recorta, y el dueño rompería la página sin ver por qué.
+   El espacio va en el HTML de la plantilla (…}} <span…), no en el contenido. */
+for (const e of MAPA) {
+  if (typeof e.literal === 'string' && e.literal !== e.literal.trim()) {
+    problemas.push(`«${e.clave}»: el texto empieza o termina con espacio (${JSON.stringify(e.literal)}). ` +
+      'Recórtalo y pon el espacio en el HTML, con busca/pon.');
+  }
+}
 
 /* 1. El bloque de fichas y el de datos se sustituyen enteros */
 const A = '<!-- grid:start -->', B = '<!-- grid:end -->';
@@ -37,12 +49,31 @@ if (a < 0 || b < 0) throw new Error('No encuentro los marcadores del JSON-LD');
 html = html.slice(0, a + L1.length) + '\n{{{JSONLD}}}\n' + html.slice(b);
 
 /* El catálogo deja de venir de un archivo suelto: se inyecta en la página para
-   que los datos y el HTML no puedan quedar desfasados entre sí. */
-if (!html.includes('<script src="js/products.js"></script>')) {
-  problemas.push('no encuentro el <script> de products.js');
+   que los datos y el HTML no puedan quedar desfasados entre sí.
+
+   Se aceptan las dos formas porque el respaldo se regenera: la primera vez ahí
+   había un <script src>, y a partir de entonces hay un bloque ya inyectado. Y
+   hay que sacarlo ANTES de contar los textos: ese bloque repite las mismas
+   frases (envío, empaque…) y si no, los conteos de abajo salen al doble. */
+const DATOS_VIEJO = '<script src="js/products.js"></script>';
+const DATOS_NUEVO = /<script>window\.CROWCAPS_PRODUCTS=.*?<\/script>/s;
+if (html.includes(DATOS_VIEJO)) {
+  html = html.replace(DATOS_VIEJO, '{{{DATOS}}}');
+} else if (DATOS_NUEVO.test(html)) {
+  html = html.replace(DATOS_NUEVO, '{{{DATOS}}}');
 } else {
-  html = html.replace('<script src="js/products.js"></script>', '{{{DATOS}}}');
+  problemas.push('no encuentro el bloque de datos (ni el <script src> ni window.CROWCAPS_PRODUCTS)');
 }
+
+/* Contadores que dependen de cuántas gorras hay publicadas. Van ANTES del mapa
+   de textos y por expresión regular: si dependieran del número de hoy, mañana
+   —con una gorra más— la plantilla dejaría de generarse. */
+const antesN = html;
+html = html
+  .replace(/(<span id="refCount">)\d+(<\/span>)/, '$1{{N}}$2')
+  .replace(/(<div><b>)\d+(<\/b><span>)/, '$1{{N}}$2')
+  .replace(/(>Ver las )\d+( <span class="arw">)/, '$1{{N}}$2');
+if (html === antesN) problemas.push('no encuentro ningún contador de referencias');
 
 /* 2. Textos editables.
    Los que traen "busca" se aplican primero y de más largo a más corto: así el
@@ -81,11 +112,6 @@ html = html.replace('<span class="hero__tag" id="heroTag">Yankees Navy / Hueso</
   '<span class="hero__tag" id="heroTag">{{hero.img_titulo}}</span>');
 html = html.replace('<link rel="preload" as="image" href="assets/img/yankees-navy-hueso.webp" fetchpriority="high">',
   '<link rel="preload" as="image" href="{{hero.img_src}}" fetchpriority="high">');
-
-/* Contadores que dependen de cuántas gorras hay publicadas */
-html = html.replace('<span id="refCount">61</span>', '<span id="refCount">{{N}}</span>');
-html = html.replace('<div><b>61</b><span>', '<div><b>{{N}}</b><span>');
-html = html.replace('{{editorial.cta}}61 <span class="arw">', '{{editorial.cta}}{{N}} <span class="arw">');
 
 /* La imagen del editorial y el mosaico del feed salen del CMS */
 html = html.replace(/<img src="assets\/img\/nationals-navy\.webp" width="\d+" height="\d+" loading="lazy" decoding="async"\n\s+alt="\{\{editorial\.img_alt\}\}">/,

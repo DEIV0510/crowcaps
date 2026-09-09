@@ -426,8 +426,11 @@ async function verContenido(req, res) {
 
 async function guardarContenido(req, res, usuario) {
   const d = await cuerpoJson(req);
-  const n = await C.guardar(d.cambios || {});
-  await anotar(usuario, 'editar', 'contenido', null, Object.keys(d.cambios || {}).join(', ').slice(0, 200));
+  const cambios = d.cambios || {};
+  const n = await C.guardar(cambios);
+  /* Si no cambió nada no se anota: el historial sirve para ver qué se tocó, y
+     llenarlo de líneas vacías es la manera más rápida de volverlo inútil. */
+  if (n > 0) await anotar(usuario, 'editar', 'contenido', null, Object.keys(cambios).join(', ').slice(0, 200));
   return ok(res, { guardados: n });
 }
 

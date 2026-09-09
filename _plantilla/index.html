@@ -90,7 +90,7 @@
 <!--sec:hero--><section class="hero" id="hero">
   <div class="hero__grid">
     <div>
-      <p class="eyebrow reveal">{{hero.eyebrow_pre}}<span id="refCount">{{N}}</span>{{hero.eyebrow_post}}</p>
+      <p class="eyebrow reveal">{{hero.eyebrow_pre}} <span id="refCount">{{N}}</span> {{hero.eyebrow_post}}</p>
       <h1 class="hero__title">
         <span><i>{{hero.titulo1}}</i></span>
         <span><i>{{hero.titulo2}}</i></span>
@@ -98,7 +98,7 @@
       </h1>
       <p class="hero__lead reveal reveal-d1">{{hero.lead}}</p>
       <div class="hero__cta reveal reveal-d2">
-        <a class="btn" href="#coleccion">{{hero.cta1}}<span class="arw">→</span></a>
+        <a class="btn" href="#coleccion">{{hero.cta1}} <span class="arw">→</span></a>
         <a class="btn btn--ghost" href="{{nav.wa_url}}" target="_blank" rel="noopener">{{hero.cta2}}</a>
       </div>
       <div class="hero__stats reveal reveal-d3">
@@ -163,7 +163,7 @@
   <div class="empty" id="empty" hidden>
     <h3>{{coleccion.vacio_titulo}}</h3>
     <p>{{coleccion.vacio_texto}}</p>
-    <a class="btn" href="{{coleccion.vacio_wa}}" target="_blank" rel="noopener">{{coleccion.vacio_cta}}<span class="arw">→</span></a>
+    <a class="btn" href="{{coleccion.vacio_wa}}" target="_blank" rel="noopener">{{coleccion.vacio_cta}} <span class="arw">→</span></a>
   </div>
 </section><!--/sec:coleccion-->
 
@@ -187,7 +187,7 @@
     <p class="eyebrow reveal">{{editorial.eyebrow}}</p>
     <h2 class="reveal reveal-d1">{{{editorial.titulo}}}</h2>
     <p class="reveal reveal-d2">{{editorial.texto}}</p>
-    <div class="reveal reveal-d3"><a class="btn" href="#coleccion">{{editorial.cta}}{{N}} <span class="arw">→</span></a></div>
+    <div class="reveal reveal-d3"><a class="btn" href="#coleccion">{{editorial.cta}} {{N}} <span class="arw">→</span></a></div>
   </div>
 </section><!--/sec:editorial-->
 
@@ -291,8 +291,8 @@
         <p class="drawer__amount" id="dPrice"></p>
         <div class="drawer__ship">
           <span>📦 <b>Incluye:</b> {{ficha.incluye}}</span>
-          <span>🚚 <b>Envíos GRATIS</b>{{ficha.envio}}</span>
-          <span>💬 <b>Disponibilidad</b>{{ficha.disponibilidad}}</span>
+          <span>🚚 <b>Envíos GRATIS</b> {{ficha.envio}}</span>
+          <span>💬 <b>Disponibilidad</b> {{ficha.disponibilidad}}</span>
         </div>
       </div>
     </div>

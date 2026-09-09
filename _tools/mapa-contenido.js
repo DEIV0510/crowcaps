@@ -47,13 +47,19 @@ const MAPA = [
   { clave: 'nav.menu_ciudad', literal: 'Medellín · CO' },
 
   /* ── Hero ────────────────────────────────────────────────────────────── */
-  { clave: 'hero.eyebrow_pre', literal: 'Medellín · Colombia — ' },
-  { clave: 'hero.eyebrow_post', literal: ' referencias' },
+  /* El espacio va en el HTML, NUNCA dentro del texto: al guardar desde el panel
+     los textos se recortan (y con razón), así que un texto que dependa de un
+     espacio invisible al final se rompe la primera vez que el dueño lo edita. */
+  { clave: 'hero.eyebrow_pre', literal: 'Medellín · Colombia —',
+    busca: '>Medellín · Colombia — <span id="refCount">', pon: '>{{hero.eyebrow_pre}} <span id="refCount">' },
+  { clave: 'hero.eyebrow_post', literal: 'referencias',
+    busca: '</span> referencias</p>', pon: '</span> {{hero.eyebrow_post}}</p>' },
   { clave: 'hero.titulo1', literal: 'La gorra' },
   { clave: 'hero.titulo2', literal: 'decide' },
   { clave: 'hero.titulo3', literal: 'el <em>resto</em>.', html: true },
   { clave: 'hero.lead', literal: 'Gorras elegidas una por una y fotografiadas como llegan. Ni catálogo infinito ni relleno: solo las que aguantan el outfit completo.' },
-  { clave: 'hero.cta1', literal: 'Ver colección ' },
+  { clave: 'hero.cta1', literal: 'Ver colección',
+    busca: '>Ver colección <span class="arw">', pon: '>{{hero.cta1}} <span class="arw">' },
   { clave: 'hero.cta2', literal: 'Pedir por WhatsApp', veces: 4 },
   { clave: 'hero.stat1_etiqueta', literal: 'Referencias' },
   { clave: 'hero.stat2_valor', literal: 'Gratis' },
@@ -67,7 +73,8 @@ const MAPA = [
   { clave: 'coleccion.buscador', literal: 'Buscar equipo o color…' },
   { clave: 'coleccion.vacio_titulo', literal: 'Nada por aquí' },
   { clave: 'coleccion.vacio_texto', literal: 'No encontramos gorras con esa búsqueda. Prueba con otro equipo o escríbenos y te decimos qué hay disponible.' },
-  { clave: 'coleccion.vacio_cta', literal: 'Preguntar por WhatsApp ' },
+  { clave: 'coleccion.vacio_cta', literal: 'Preguntar por WhatsApp',
+    busca: '>Preguntar por WhatsApp <span class="arw">', pon: '>{{coleccion.vacio_cta}} <span class="arw">' },
   { clave: 'coleccion.vacio_wa', literal: 'https://wa.me/573207224241?text=Hola%20CrowCaps%2C%20estoy%20buscando%20una%20gorra%20en%20espec%C3%ADfico.' },
 
   /* ── Beneficios ──────────────────────────────────────────────────────── */
@@ -85,7 +92,10 @@ const MAPA = [
   { clave: 'editorial.eyebrow', literal: 'Capítulo 01' },
   { clave: 'editorial.titulo', literal: 'No es solo una gorra.<br>Es la primera <em>decisión</em> del día.', html: true },
   { clave: 'editorial.texto', literal: 'Te la pones antes de salir y ya definiste el tono de todo lo demás. Por eso no vendemos cualquiera: si no aporta, no entra.' },
-  { clave: 'editorial.cta', literal: 'Ver las ' },
+  /* El número ya viene como {{N}}: hacer-plantilla.js cambia los contadores antes
+     de aplicar este mapa, para no depender de cuántas gorras haya hoy. */
+  { clave: 'editorial.cta', literal: 'Ver las',
+    busca: '>Ver las {{N}} <span class="arw">', pon: '>{{editorial.cta}} {{N}} <span class="arw">' },
 
   /* ── Sobre la marca ──────────────────────────────────────────────────── */
   { clave: 'about.eyebrow', literal: 'Sobre nosotros' },
@@ -118,8 +128,10 @@ const MAPA = [
 
   /* ── Ficha de producto (drawer) ──────────────────────────────────────── */
   { clave: 'ficha.incluye', literal: 'gorra + empaque especial.' },
-  { clave: 'ficha.envio', literal: ' a todo Colombia.' },
-  { clave: 'ficha.disponibilidad', literal: ' confirmada por WhatsApp.' },
+  { clave: 'ficha.envio', literal: 'a todo Colombia.',
+    busca: '</b> a todo Colombia.</span>', pon: '</b> {{ficha.envio}}</span>' },
+  { clave: 'ficha.disponibilidad', literal: 'confirmada por WhatsApp.',
+    busca: '</b> confirmada por WhatsApp.</span>', pon: '</b> {{ficha.disponibilidad}}</span>' },
   { clave: 'ficha.nota_precio', literal: 'Envío gratis incluido · Confirmamos disponibilidad por WhatsApp.' },
 
   /* ── Redes (URLs) ────────────────────────────────────────────────────── */

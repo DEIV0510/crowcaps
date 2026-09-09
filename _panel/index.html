@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Panel · CrowCaps</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/admin/panel.css">
+</head>
+<body>
+
+<!-- ═════════ ACCESO (instalar o entrar) ═════════ -->
+<div class="acceso" id="acceso" hidden>
+  <div class="acceso__caja">
+    <div class="acceso__marca">
+      <img src="/assets/brand/icon-192.png" alt="">
+      <div><b>CrowCaps</b><span>Panel de administración</span></div>
+    </div>
+
+    <!-- Primera vez: crear el administrador -->
+    <form id="formInstalar" hidden autocomplete="off">
+      <h1>Instalar el panel</h1>
+      <p class="sub">Todavía no hay ningún administrador. Crea el tuyo con el código de instalación que te dieron.</p>
+      <div class="aviso" id="errInstalar" hidden></div>
+      <div class="campo">
+        <label for="iToken">Código de instalación</label>
+        <input id="iToken" type="password" required autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="iNombre">Tu nombre</label>
+        <input id="iNombre" type="text" required>
+      </div>
+      <div class="campo">
+        <label for="iCorreo">Correo</label>
+        <input id="iCorreo" type="email" required autocomplete="username">
+      </div>
+      <div class="campo">
+        <label for="iClave">Contraseña</label>
+        <input id="iClave" type="password" required autocomplete="new-password">
+        <span class="pista">Mínimo 10 caracteres, con letras y números.</span>
+      </div>
+      <button class="btn btn--primario" type="submit" style="width:100%">Crear administrador</button>
+    </form>
+
+    <!-- Entrar -->
+    <form id="formEntrar" hidden>
+      <h1>Entrar</h1>
+      <p class="sub">Zona privada de CrowCaps.</p>
+      <div class="aviso" id="errEntrar" hidden></div>
+      <div class="campo">
+        <label for="eCorreo">Correo</label>
+        <input id="eCorreo" type="email" required autocomplete="username">
+      </div>
+      <div class="campo">
+        <label for="eClave">Contraseña</label>
+        <input id="eClave" type="password" required autocomplete="current-password">
+      </div>
+      <button class="btn btn--primario" type="submit" style="width:100%">Iniciar sesión</button>
+    </form>
+  </div>
+</div>
+
+<!-- ═════════ PANEL ═════════ -->
+<div class="app" id="app" hidden>
+  <aside class="lateral" id="lateral">
+    <div class="lateral__marca">
+      <img src="/assets/brand/icon-192.png" alt="">
+      <div><b>CrowCaps</b><span>Administración</span></div>
+    </div>
+    <nav id="menu">
+      <button data-vista="panel" class="on"><i>▦</i> Panel</button>
+      <button data-vista="productos"><i>◍</i> Gorras</button>
+      <button data-vista="categorias"><i>⌗</i> Categorías</button>
+      <button data-vista="home"><i>▤</i> Portada</button>
+      <button data-vista="textos"><i>¶</i> Textos</button>
+      <button data-vista="marca"><i>◈</i> Marca y contacto</button>
+      <button data-vista="seo"><i>◎</i> SEO</button>
+      <button data-vista="cuenta"><i>⚙</i> Cuenta</button>
+    </nav>
+    <div class="lateral__pie">
+      <a href="/" target="_blank" rel="noopener">Ver la tienda ↗</a>
+      <a href="/vista-previa" target="_blank" rel="noopener">Vista previa (con borradores) ↗</a>
+      <div class="lateral__quien" id="quien"></div>
+      <button id="salir">Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <main class="principal">
+    <div class="barra">
+      <button class="hamburguesa" id="hamburguesa" aria-label="Menú">☰</button>
+      <h1 id="titulo">Panel</h1>
+      <div id="accionesBarra"></div>
+    </div>
+    <div class="contenido" id="vista"></div>
+  </main>
+</div>
+
+<div class="avisos" id="avisos"></div>
+<div id="modales"></div>
+
+<script src="/admin/panel.js"></script>
+</body>
+</html>

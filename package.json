@@ -1,0 +1,21 @@
+{
+  "name": "crowcaps",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CrowCaps — tienda de gorras (Medellín) con panel de administración propio",
+  "scripts": {
+    "dev": "node servidor-local.js",
+    "sitio": "node _tools/build-html.js",
+    "imagenes": "node _tools/build-img.js && node _tools/build-html.js",
+    "verificar": "node _tools/verificar-imagenes.js",
+    "sembrar": "node _tools/sembrar.js"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "@vercel/blob": "^0.27.0",
+    "sharp": "^0.33.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

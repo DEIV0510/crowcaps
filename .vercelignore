@@ -1,5 +1,4 @@
 _work/
-_tools/
-serve.js
-.claude/
-README.md
+_datos/
+.env*
+node_modules/.cache/

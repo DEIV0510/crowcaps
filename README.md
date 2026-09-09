@@ -1,51 +1,70 @@
-# CrowCaps · Gorras y Streetwear (Medellín, Colombia)
+# CrowCaps · tienda + panel de administración
 
-Experiencia web de una sola página, sin frameworks ni build step. HTML + CSS + JS
-vanilla, imágenes optimizadas a WebP y venta 100% por WhatsApp.
+Tienda de gorras (Medellín) con su propio CMS. Un solo proyecto: la parte
+pública y el panel comparten código, datos y despliegue.
 
-## Correr el proyecto
+- **Tienda:** https://crowcaps.co
+- **Panel:** https://crowcaps.co/admin
+
+## Cómo funciona
+
+```
+Navegador  ─▶  api/index.js  ─┬─▶  /            portada armada desde la base
+                              ├─▶  /admin       panel privado (no indexable)
+                              └─▶  /api/...     API, con sesión obligatoria
+
+_plantilla/index.html   la página con {{marcadores}}
+_tools/render.js        el ÚNICO sitio donde se arma el HTML
+_plantilla/respaldo.html  copia de seguridad: si la base falla, se sirve esto
+```
+
+**Importante:** no puede existir un `index.html` en la raíz. Si existe, Vercel
+lo sirve como archivo estático y la función nunca corre: el dueño guardaría
+cambios y la tienda seguiría igual. (Pasó; por eso el respaldo vive en
+`_plantilla/`.)
+
+## Trabajar en el computador
 
 ```bash
-node serve.js
+npm install
+node _tools/sembrar.js          # vuelca el catálogo a _datos/crowcaps.db
+SETUP_TOKEN=loquesea npm run dev
 ```
 
-→ http://localhost:5325 (también funciona abriendo `index.html` directo: todas las rutas son relativas).
+→ http://localhost:5325 y http://localhost:5325/admin
 
-## Estructura
+En local la base es un archivo SQLite y las fotos se guardan en `assets/img`.
+En Vercel, lo mismo pero con Turso y Vercel Blob: el código es el mismo.
 
-```
-index.html            página completa; la grilla de producto va escrita en el HTML
-css/style.css         sistema visual completo (tokens, componentes, responsive)
-js/products.js        catálogo: 38 gorras (datos separados de la presentación)
-js/app.js             loader, nav, filtros, buscador, drawer, cursor, reveal
-assets/img/           94 fotos reales en WebP, en 2 tamaños (340w y 640w)
-assets/brand/         logo, sello, mascota y wordmark extraídos del PDF de marca
-_tools/               scripts de build (imágenes, marca, grilla)
-_work/                material intermedio (rasterizado del PDF, previews)
-```
+## Variables de entorno (Vercel)
 
-## Scripts de build
+| Variable | Para qué |
+|---|---|
+| `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN` | base de datos (las pone la integración) |
+| `BLOB_READ_WRITE_TOKEN` | fotos que se suben desde el panel |
+| `SETUP_TOKEN` | código para crear el PRIMER administrador |
 
-Necesitan `sharp`. Si no está instalado en el proyecto, se puede apuntar a otro:
+`/api/estado` dice si todo está conectado, sin exponer nada sensible.
+
+## Seguridad
+
+- La contraseña se guarda como hash **scrypt** con sal; nunca en claro.
+- La sesión es una **cookie httpOnly**; en la base solo queda su hash.
+- **Cada** ruta `/api/admin/*` comprueba la sesión en el servidor.
+- Máximo 8 intentos de acceso por IP y por correo cada 15 minutos.
+- Las peticiones que cambian algo exigen mismo origen (anti-CSRF).
+- Los titulares admiten solo `<em>`, `<strong>` y `<br>`; lo demás se escapa.
+- El panel va con `noindex`, `no-store` y `X-Frame-Options: DENY`.
+
+## Órdenes útiles
 
 ```bash
-export NODE_PATH="C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/capsclub/node_modules"
-node _tools/build-img.js     # PNG originales -> WebP responsive + manifest
-node _tools/build-brand.js   # lámina del logo -> sello/mascota/wordmark (papel e ink)
-node _tools/build-html.js    # vuelca products.js dentro de index.html (+ JSON-LD)
-node _tools/fix-dims.js      # sincroniza width/height de las imágenes de marca
+node _tools/build-html.js        # regenera el respaldo desde la base
+node _tools/hacer-plantilla.js   # regenera la plantilla desde el respaldo
+node _tools/build-img.js         # PNG originales -> WebP (nunca amplía)
+node _tools/verificar-imagenes.js
+node _tools/build-favicon.js
 ```
-
-Después de tocar `js/products.js` hay que correr `node _tools/build-html.js`.
-
-Las fotos fuente viven en `C:\Users\Lenovo\Desktop\crowcaps` (`build-img.js`, constante `SRC`).
-
-## Colección por tandas
-
-La grilla trae las 61 fichas escritas en el HTML (SEO y funciona sin JS), pero el JS
-muestra **tandas de 12** con el botón "Ver más" y un contador `12 / 61` en la barra de
-filtros. Filtrar o buscar reinicia la tanda. El tamaño de tanda es la constante `PASO`
-en `js/app.js`.
 
 ## Calidad de imagen (no romper esto)
 

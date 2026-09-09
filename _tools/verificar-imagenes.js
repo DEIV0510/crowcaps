@@ -32,7 +32,7 @@ const IMG = path.join(ROOT, 'assets', 'img');
   }
 
   // 2. los anchos del srcset tienen que ser los reales
-  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const html = fs.readFileSync(path.join(ROOT, '_plantilla', 'respaldo.html'), 'utf8');
   const sets = html.match(/srcset="[^"]+"/g) || [];
   for (const s of sets) {
     for (const par of s.slice(8, -1).split(',')) {

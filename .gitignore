@@ -5,3 +5,8 @@ _work/preview/
 
 .vercel
 .vercel/
+_datos/
+node_modules/
+.env*
+
+.env*

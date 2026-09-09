@@ -7,8 +7,11 @@
   'use strict';
 
   var P = window.CROWCAPS_PRODUCTS || [];
-  var WA = '573207224241';
-  var IMG = 'assets/img/';
+  var CFG = window.CROWCAPS_CONFIG || {};
+  /* Las rutas de imagen llegan completas desde el CMS (pueden ser locales o de
+     un almacenamiento externo), así que aquí ya no se arma ninguna ruta. */
+  var foto = function (p, i) { return (p.imgs && p.imgs[i]) || ''; };
+  var mini = function (p, i) { return (p.thumbs && p.thumbs[i]) || foto(p, i); };
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
@@ -89,7 +92,7 @@
   (function ticker() {
     var rows = [$('#tickRow'), $('#tickRow2')].filter(Boolean);
     if (!rows.length) return;
-    var words = ['Crowcaps', 'Streetwear', 'Medellín', 'Envíos gratis', 'Crowcaps', 'Colombia'];
+    var words = (CFG.ticker && CFG.ticker.length) ? CFG.ticker : ['Crowcaps', 'Streetwear', 'Medellín', 'Envíos gratis', 'Crowcaps', 'Colombia'];
     var html = words.map(function (w, i) {
       return '<span' + (i % 2 ? ' class="o"' : '') + '>' + w + '</span>' +
         (i === 2 ? '<img src="assets/brand/mascot.webp" width="320" height="286" alt="" loading="lazy">' : '<span>·</span>');
@@ -101,7 +104,7 @@
   (function heroPick() {
     var wrap = $('#heroPick'), img = $('#heroImg'), tag = $('#heroTag');
     if (!wrap || !img || !P.length) return;
-    var ids = ['yankees-navy-hueso', 'redsox-khaki-roja', 'padres-rosa-azul'];
+    var ids = (CFG.destacadas && CFG.destacadas.length) ? CFG.destacadas : P.slice(0, 3).map(function (x) { return x.id; });
     var picks = ids.map(function (id) {
       return P.filter(function (p) { return p.id === id; })[0];
     }).filter(Boolean);
@@ -112,13 +115,13 @@
       b.type = 'button';
       b.setAttribute('aria-current', i === 0 ? 'true' : 'false');
       b.setAttribute('aria-label', 'Ver ' + p.name);
-      b.innerHTML = '<img src="' + IMG + p.imgs[0].replace('.webp', '-sm.webp') + '" width="170" height="212" alt="" loading="lazy" decoding="async">';
+      b.innerHTML = '<img src="' + mini(p, 0) + '" width="170" height="212" alt="" loading="lazy" decoding="async">';
       b.addEventListener('click', function () {
         $$('button', wrap).forEach(function (x) { x.setAttribute('aria-current', 'false'); });
         b.setAttribute('aria-current', 'true');
         img.classList.add('is-out');
         setTimeout(function () {
-          img.src = IMG + p.imgs[0];
+          img.src = foto(p, 0);
           img.alt = 'Gorra ' + p.name + ' — ' + p.colorway;
           if (tag) tag.textContent = p.name;
           img.classList.remove('is-out');
@@ -142,15 +145,16 @@
     var count = {};
     P.forEach(function (p) { p.colors.forEach(function (c) { count[c] = (count[c] || 0) + 1; }); });
 
-    var defs = [
-      ['todas', 'Todas', P.length],
-      ['negras', 'Negras', count.negras],
-      ['blancas', 'Blancas', count.blancas],
-      ['beige', 'Beige', count.beige],
-      ['rojas', 'Rojas', count.rojas],
-      ['azules', 'Azules', count.azules],
-      ['bicolor', 'Bicolor', count.bicolor]
+    /* Las categorías se administran desde el panel; si no llegan, se usan las
+       de siempre para que la tienda nunca quede sin filtros. */
+    var cats = (CFG.categorias && CFG.categorias.length) ? CFG.categorias : [
+      { slug: 'negras', nombre: 'Negras' }, { slug: 'blancas', nombre: 'Blancas' },
+      { slug: 'beige', nombre: 'Beige' }, { slug: 'rojas', nombre: 'Rojas' },
+      { slug: 'azules', nombre: 'Azules' }, { slug: 'bicolor', nombre: 'Bicolor' }
     ];
+    var defs = [['todas', (CFG.textos && CFG.textos.todas) || 'Todas', P.length]].concat(
+      cats.map(function (c) { return [c.slug, c.nombre, count[c.slug]]; })
+    );
 
     defs.forEach(function (d) {
       if (!d[2]) return;
@@ -228,12 +232,9 @@
 
     function cop(n) { return '$' + Number(n).toLocaleString('es-CO'); }
 
-    function waLink(p) {
-      return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(
-        'Hola CrowCaps, estoy interesado en la Gorra ' + p.name +
-        ' (' + p.team + ') de ' + cop(p.price) +
-        '. Quisiera conocer disponibilidad y realizar mi pedido.');
-    }
+    /* El enlace viene ya armado del servidor con el número y el mensaje que
+       haya configurado el administrador. */
+    function waLink(p) { return p.wa || '#'; }
 
     function open(id) {
       var rec = byId[id];
@@ -251,7 +252,7 @@
       $('#dWa').href = waLink(p);
 
       var main = $('#dImg');
-      main.src = IMG + p.imgs[0];
+      main.src = foto(p, 0);
       main.alt = 'Gorra ' + p.name + ' — ' + p.colorway;
 
       var th = $('#dThumbs');
@@ -262,9 +263,9 @@
           b.type = 'button';
           b.setAttribute('aria-current', i === 0 ? 'true' : 'false');
           b.setAttribute('aria-label', 'Imagen ' + (i + 1) + ' de ' + p.imgs.length);
-          b.innerHTML = '<img src="' + IMG + f.replace('.webp', '-sm.webp') + '" alt="" decoding="async">';
+          b.innerHTML = '<img src="' + mini(p, i) + '" alt="" decoding="async">';
           b.addEventListener('click', function () {
-            main.src = IMG + f;
+            main.src = f;
             $$('button', th).forEach(function (x) { x.setAttribute('aria-current', 'false'); });
             b.setAttribute('aria-current', 'true');
           });

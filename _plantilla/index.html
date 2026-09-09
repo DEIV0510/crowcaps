@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es-CO" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{seo.titulo}}</title>
+<meta name="description" content="{{seo.descripcion}}">
+<meta name="theme-color" content="#efeae1">
+<link rel="canonical" href="{{seo.canonical}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{marca.nombre}}">
+<meta property="og:title" content="{{seo.titulo}}">
+<meta property="og:description" content="{{seo.og_descripcion}}">
+<meta property="og:url" content="{{seo.og_url}}">
+<meta property="og:image" content="{{seo.og_imagen}}">
+<meta property="og:image:alt" content="{{seo.og_imagen_alt}}">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/brand/icon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/brand/icon-192.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="{{hero.img_src}}" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rubik:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- ld:start -->
+{{{JSONLD}}}
+<!-- ld:end -->
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+<a class="skip" href="#coleccion">Saltar a la colección</a>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__in">
+    <img class="loader__badge" src="assets/brand/badge.webp" width="340" height="341" alt="">
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <div class="loader__meta">
+      <span class="eyebrow">{{marca.nombre_loader}}</span>
+      <span class="eyebrow" id="loaderPct">00</span>
+    </div>
+  </div>
+</div>
+<div class="loader__curtain" id="curtain" aria-hidden="true"></div>
+
+<!-- ============ CURSOR ============ -->
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorTxt">VER</span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="CrowCaps, inicio">
+    <img class="lg-paper" src="assets/brand/wordmark.webp" width="87" height="32" alt="CrowCaps">
+    <img class="lg-ink" src="assets/brand/wordmark-ink.webp" width="87" height="32" alt="" aria-hidden="true">
+  </a>
+  <nav class="nav__menu" aria-label="Principal">
+    <a href="#coleccion">{{nav.coleccion}}</a>
+    <a href="#marca">{{nav.marca}}</a>
+    <a href="#feed">{{nav.feed}}</a>
+  </nav>
+  <div class="nav__right">
+    <a class="btn btn--sm" href="{{nav.wa_url}}" target="_blank" rel="noopener">{{nav.cta}} <span class="arw">→</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mmenu" aria-label="Abrir menú"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <nav aria-label="Menú móvil">
+    <a href="#coleccion" data-close>{{nav.coleccion_movil}}</a>
+    <a href="#marca" data-close>{{nav.marca_movil}}</a>
+    <a href="#feed" data-close>{{nav.feed_movil}}</a>
+    <a href="#contacto" data-close>{{nav.contacto}}</a>
+  </nav>
+  <div class="mmenu__foot">
+    <a class="btn btn--light" href="{{nav.wa_url}}" target="_blank" rel="noopener">{{hero.cta2}} <span class="arw">→</span></a>
+    <div class="mmenu__soc">
+      <a href="{{redes.instagram_url}}" target="_blank" rel="noopener">Instagram</a>
+      <a href="{{redes.tiktok_url}}" target="_blank" rel="noopener">TikTok</a>
+      <span>{{nav.menu_ciudad}}</span>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<!--sec:hero--><section class="hero" id="hero">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow reveal">{{hero.eyebrow_pre}}<span id="refCount">{{N}}</span>{{hero.eyebrow_post}}</p>
+      <h1 class="hero__title">
+        <span><i>{{hero.titulo1}}</i></span>
+        <span><i>{{hero.titulo2}}</i></span>
+        <span><i>{{{hero.titulo3}}}</i></span>
+      </h1>
+      <p class="hero__lead reveal reveal-d1">{{hero.lead}}</p>
+      <div class="hero__cta reveal reveal-d2">
+        <a class="btn" href="#coleccion">{{hero.cta1}}<span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="{{nav.wa_url}}" target="_blank" rel="noopener">{{hero.cta2}}</a>
+      </div>
+      <div class="hero__stats reveal reveal-d3">
+        <div><b>{{N}}</b><span>{{hero.stat1_etiqueta}}</span></div>
+        <div><b>{{hero.stat2_valor}}</b><span>{{hero.stat2_etiqueta}}</span></div>
+        <div><b>{{hero.stat3_valor}}</b><span>{{hero.stat3_etiqueta}}</span></div>
+      </div>
+    </div>
+
+    <div class="hero__stage reveal reveal-d1">
+      <div class="hero__frame">
+        <div class="hero__shot">
+          <img id="heroImg" src="{{hero.img_src}}" width="{{hero.img_w}}" height="{{hero.img_h}}"
+               alt="{{hero.img_alt}}"
+               fetchpriority="high" decoding="async">
+          <span class="hero__tag" id="heroTag">{{hero.img_titulo}}</span>
+        </div>
+        <img class="hero__seal" src="assets/brand/badge.webp" width="340" height="341" alt="" aria-hidden="true">
+      </div>
+      <div class="hero__pick" id="heroPick" role="group" aria-label="Cambiar gorra destacada"></div>
+    </div>
+  </div>
+
+  <!-- ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__row" id="tickRow"></div>
+    <div class="ticker__row" id="tickRow2"></div>
+  </div>
+</section><!--/sec:hero-->
+
+<!-- ============ COLECCIÓN ============ -->
+<!--sec:coleccion--><section id="coleccion" class="wrap">
+  <div class="shead">
+    <div class="shead__top">
+      <h2 class="reveal">{{coleccion.titulo}}</h2>
+      <p class="reveal reveal-d1">{{coleccion.texto}}</p>
+    </div>
+  </div>
+
+  <div class="tools">
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por color"></div>
+    <div class="tools__right">
+      <span class="tally" id="tally" aria-live="polite"></span>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label class="sr" for="q">Buscar gorra</label>
+        <input id="q" type="search" placeholder="{{coleccion.buscador}}" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" id="grid">
+    <!-- grid:start -->
+{{{GRID}}}
+    <!-- grid:end -->
+  </div>
+
+  <div class="more" id="more" hidden>
+    <button class="btn btn--ghost" id="moreBtn" type="button"><span id="moreTxt">Ver 12 más</span> <span class="arw">↓</span></button>
+  </div>
+
+  <div class="empty" id="empty" hidden>
+    <h3>{{coleccion.vacio_titulo}}</h3>
+    <p>{{coleccion.vacio_texto}}</p>
+    <a class="btn" href="{{coleccion.vacio_wa}}" target="_blank" rel="noopener">{{coleccion.vacio_cta}}<span class="arw">→</span></a>
+  </div>
+</section><!--/sec:coleccion-->
+
+<!-- ============ BENEFICIOS ============ -->
+<!--sec:perks--><section class="perks">
+  <div class="perks__grid">
+    <div class="reveal"><span class="num">01</span><h3>{{perks.1_titulo}}</h3><p>{{perks.1_texto}}</p></div>
+    <div class="reveal reveal-d1"><span class="num">02</span><h3>{{perks.2_titulo}}</h3><p>{{perks.2_texto}}</p></div>
+    <div class="reveal reveal-d2"><span class="num">03</span><h3>{{perks.3_titulo}}</h3><p>{{perks.3_texto}}</p></div>
+    <div class="reveal reveal-d3"><span class="num">04</span><h3>{{perks.4_titulo}}</h3><p>{{perks.4_texto}}</p></div>
+  </div>
+</section><!--/sec:perks-->
+
+<!-- ============ EDITORIAL ============ -->
+<!--sec:editorial--><section class="edito">
+  <div class="edito__img reveal">
+    <img src="{{editorial.imagen}}" width="{{editorial.img_w}}" height="{{editorial.img_h}}" loading="lazy" decoding="async"
+         alt="{{editorial.img_alt}}">
+  </div>
+  <div class="edito__txt">
+    <p class="eyebrow reveal">{{editorial.eyebrow}}</p>
+    <h2 class="reveal reveal-d1">{{{editorial.titulo}}}</h2>
+    <p class="reveal reveal-d2">{{editorial.texto}}</p>
+    <div class="reveal reveal-d3"><a class="btn" href="#coleccion">{{editorial.cta}}{{N}} <span class="arw">→</span></a></div>
+  </div>
+</section><!--/sec:editorial-->
+
+<!-- ============ MARCA ============ -->
+<!--sec:about--><section class="about wrap" id="marca">
+  <div class="about__grid">
+    <img class="about__stamp reveal" src="assets/brand/arch.webp" width="420" height="502" loading="lazy" decoding="async" alt="Sello CrowCaps">
+    <div>
+      <p class="eyebrow reveal">{{about.eyebrow}}</p>
+      <h2 class="reveal reveal-d1">CrowCaps</h2>
+      <p class="reveal reveal-d2">{{about.p1}}</p>
+      <p class="reveal reveal-d2">{{about.p2}}</p>
+      <p class="about__quote reveal reveal-d3">{{about.cita}} <span>{{about.cita_autor}}</span></p>
+    </div>
+  </div>
+</section><!--/sec:about-->
+
+<!-- ============ FEED ============ -->
+<!--sec:feed--><section class="wrap" id="feed">
+  <div class="shead">
+    <div class="shead__top">
+      <h2 class="reveal">{{feed.titulo}}</h2>
+      <p class="reveal reveal-d1">{{feed.texto}}</p>
+    </div>
+  </div>
+  <div class="feed__grid">
+{{{FEED}}}
+  </div>
+</section><!--/sec:feed-->
+
+<!-- ============ CTA FINAL ============ -->
+<!--sec:final--><section class="final" id="contacto">
+  <img class="final__mascot" src="assets/brand/mascot.webp" width="320" height="286" loading="lazy" decoding="async" alt="">
+  <h2 class="reveal">{{{final.titulo}}}</h2>
+  <p class="reveal reveal-d1">{{final.texto}}</p>
+  <a class="btn btn--light reveal reveal-d2" href="{{final.cta_wa}}" target="_blank" rel="noopener">{{hero.cta2}} <span class="arw">→</span></a>
+</section><!--/sec:final-->
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="foot__grid">
+    <div>
+      <img class="foot__logo" src="assets/brand/wordmark-ink.webp" width="71" height="26" loading="lazy" decoding="async" alt="CrowCaps">
+      <p>{{footer.nota}}</p>
+    </div>
+    <div>
+      <h4>{{footer.col2}}</h4>
+      <ul>
+        <li><a href="#coleccion">{{footer.col2_l1}}</a></li>
+        <li><a href="#marca">{{footer.col2_l2}}</a></li>
+        <li><a href="#feed">{{footer.col2_l3}}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>{{footer.col3}}</h4>
+      <ul>
+        <li><a href="https://wa.me/573207224241" target="_blank" rel="noopener">{{footer.col3_wa}}</a></li>
+        <li><a href="#coleccion">{{footer.col3_envio}}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>{{footer.col4}}</h4>
+      <ul>
+        <li><a href="{{redes.instagram_url}}" target="_blank" rel="noopener">{{redes.instagram_etiqueta}}</a></li>
+        <li><a href="{{redes.tiktok_url}}" target="_blank" rel="noopener">{{redes.tiktok_etiqueta}}</a></li>
+        <li><a href="{{redes.facebook_url}}" target="_blank" rel="noopener">{{redes.facebook_etiqueta}}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot__bot">
+    <span>{{footer.copyright}}</span>
+    <span>{{footer.lema}}</span>
+  </div>
+</footer>
+
+<a class="wafab" href="{{nav.wa_url}}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.09c-.25.69-1.43 1.32-1.98 1.4-.53.08-1.19.11-1.92-.12-.44-.14-1.01-.33-1.74-.64-3.06-1.32-5.05-4.4-5.2-4.6-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.28-.31.61-.38.81-.38.2 0 .41 0 .58.01.19.01.44-.7.69.53.25.6.86 2.1.94 2.25.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.68-.15.28.1 1.77.83 2.07.98.3.15.5.23.58.35.08.13.08.73-.17 1.42Z"/></svg>
+</a>
+
+<!-- ============ DRAWER ============ -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dName" aria-hidden="true">
+  <div class="drawer__bg" data-dclose></div>
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <span class="eyebrow" id="dNum">Nº 001</span>
+      <button class="drawer__close" data-dclose aria-label="Cerrar ficha">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <div class="drawer__body" id="dBody">
+      <div class="drawer__hero"><img id="dImg" alt="" width="640" height="800" decoding="async"></div>
+      <div class="drawer__thumbs" id="dThumbs"></div>
+      <div class="drawer__txt">
+        <p class="eyebrow" id="dTeam"></p>
+        <h3 id="dName"></h3>
+        <div class="drawer__meta" id="dTags"></div>
+        <p class="drawer__desc" id="dDesc"></p>
+        <ul class="drawer__feats" id="dFeats"></ul>
+        <p class="drawer__amount" id="dPrice"></p>
+        <div class="drawer__ship">
+          <span>📦 <b>Incluye:</b> {{ficha.incluye}}</span>
+          <span>🚚 <b>Envíos GRATIS</b>{{ficha.envio}}</span>
+          <span>💬 <b>Disponibilidad</b>{{ficha.disponibilidad}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="drawer__foot">
+      <a class="btn" id="dWa" href="#" target="_blank" rel="noopener"><span id="dWaTxt">{{hero.cta2}}</span> <span class="arw">→</span></a>
+      <span class="drawer__price">{{ficha.nota_precio}}</span>
+    </div>
+  </div>
+</div>
+
+{{{DATOS}}}
+<script src="js/app.js"></script>
+</body>
+</html>

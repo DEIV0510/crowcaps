@@ -1,128 +1,93 @@
-/* CrowCaps · inyecta la grilla de productos dentro de index.html
-   El grid queda en el HTML (SEO + sin salto de layout + funciona sin JS).
-   Uso: node _tools/build-html.js                                            */
+/* ═══════════════════════════════════════════════════════════════════════════
+   ESCRIBE _plantilla/respaldo.html (la copia de seguridad del sitio)
+   ───────────────────────────────────────────────────────────────────────────
+   Desde que existe el panel, la fuente de verdad es la base de datos y la
+   página se sirve en caliente. Este archivo sigue existiendo por dos razones:
+
+     · deja en el repo una copia revisable del sitio tal como quedó
+     · es la RED DE SEGURIDAD: si la base falla, el servidor sirve este HTML
+
+   Toma los datos de la base si la hay; si no, de js/products.js + los valores
+   por defecto del contenido. En los dos casos usa el MISMO renderizador que
+   el servidor, así que no hay dos versiones del HTML.
+
+   Uso: node _tools/build-html.js
+   ═══════════════════════════════════════════════════════════════════════════ */
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
+const { renderizar } = require('./render');
+const { valoresPorDefecto } = require('./mapa-contenido');
 
-const ROOT = path.join(__dirname, '..');
-global.window = {};
-require(path.join(ROOT, 'js', 'products.js'));
-const P = global.window.CROWCAPS_PRODUCTS;
-const MAN = require('./img-manifest.json');
+const RAIZ = path.join(__dirname, '..');
+const MAN = JSON.parse(fs.readFileSync(path.join(__dirname, 'img-manifest.json'), 'utf8'));
 
-const BIG = [0, 14];               // fichas destacadas (ocupan 2x2)
-const cop = n => '$' + Number(n).toLocaleString('es-CO');
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
-function card(p, i) {
-  const meta = (MAN[p.id] || [])[0] || { w: 640, h: 800 };
-  const big = BIG.indexOf(i) > -1;
-  const n = String(i + 1).padStart(3, '0');
-  const alt = `Gorra ${p.name} de ${p.team}, colorway ${p.colorway}`;
-  const sizes = big
-    ? '(max-width: 760px) 100vw, (max-width: 1180px) 66vw, 50vw'
-    : '(max-width: 760px) 50vw, (max-width: 1180px) 33vw, 25vw';
-  const src = f => `assets/img/${f}`;
-  // el srcset lleva el ancho REAL de cada archivo (lo da el manifest), si no el
-  // navegador cree que la version grande mide mas de lo que mide y elige mal
-  const info = f => (MAN[p.id] || []).find(x => x.file === f) || { w: 640, smW: 360 };
-  const set = f => {
-    const m = info(f);
-    return `${src(f.replace('.webp', '-sm.webp'))} ${m.smW || 360}w, ${src(f)} ${m.w}w`;
-  };
-  const alt2 = p.imgs[1]
-    ? `\n      <img class="alt" src="${src(p.imgs[1])}" srcset="${set(p.imgs[1])}" sizes="${sizes}" width="${info(p.imgs[1]).w}" height="${info(p.imgs[1]).h}" alt="" loading="lazy" decoding="async">`
-    : '';
-  const search = esc([p.name, p.team, p.colorway, p.colors.join(' ')].join(' '));
-
-  return `    <button class="card${big ? ' card--big' : ''} reveal" type="button" data-id="${p.id}" data-colors="${p.colors.join(' ')}" data-search="${search}" aria-label="Ver ficha de la gorra ${esc(p.name)}">
-    <span class="card__media">
-      <span class="card__n">Nº ${n}</span>
-      <img src="${src(p.imgs[0])}" srcset="${set(p.imgs[0])}" sizes="${sizes}" width="${meta.w}" height="${meta.h}" alt="${esc(alt)}" loading="lazy" decoding="async">${alt2}
-      <span class="card__go">Ver ficha</span>
-    </span>
-    <span class="card__info">
-      <span class="card__team">${esc(p.team)}</span>
-      <span class="card__name">${esc(p.name)}</span>
-      <span class="card__color">${esc(p.colorway)}</span>
-      <span class="card__price">${cop(p.price)}</span>
-    </span>
-  </button>`;
+/* Añade a cada producto el tamaño real de sus fotos (sale del manifest) */
+function conImagenes(p) {
+  const lista = MAN[p.id] || [];
+  const imagenes = p.imgs.map((f) => {
+    const m = lista.find((x) => x.file === f) || {};
+    return {
+      src: 'assets/img/' + f,
+      sm: 'assets/img/' + f.replace('.webp', '-sm.webp'),
+      w: m.w || 515, h: m.h || 717, smW: m.smW || 360, smH: m.smH || 501,
+    };
+  });
+  return { ...p, imagenes };
 }
 
-const file = path.join(ROOT, 'index.html');
-let html = fs.readFileSync(file, 'utf8');
-const A = '<!-- grid:start -->', B = '<!-- grid:end -->';
-const i = html.indexOf(A), j = html.indexOf(B);
-if (i < 0 || j < 0) throw new Error('No encuentro los marcadores grid:start / grid:end');
-
-const grid = P.map(card).join('\n');
-html = html.slice(0, i + A.length) + '\n' + grid + '\n    ' + html.slice(j);
-
-// JSON-LD: negocio + sitio + catalogo. Lo primero es lo que Google usa para
-// asociar el nombre y el logo de la marca al resultado de busqueda, en vez de
-// mostrar el icono generico. Las URL van absolutas: los rastreadores no
-// resuelven rutas relativas.
-const SITIO = 'https://crowcaps.co';
-const ld = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'CrowCaps',
-    alternateName: 'Crow Caps',
-    url: SITIO + '/',
-    logo: { '@type': 'ImageObject', url: SITIO + '/assets/brand/icon-512.png', width: 512, height: 512 },
-    image: SITIO + '/assets/brand/icon-512.png',
-    description: 'Gorras y streetwear seleccionados en Medellín. Venta online con envíos gratis a toda Colombia.',
-    slogan: 'It was a collective decision',
-    areaServed: { '@type': 'Country', name: 'Colombia' },
-    address: { '@type': 'PostalAddress', addressLocality: 'Medellín', addressRegion: 'Antioquia', addressCountry: 'CO' },
-    contactPoint: {
-      '@type': 'ContactPoint', contactType: 'sales', telephone: '+57-320-722-4241',
-      areaServed: 'CO', availableLanguage: ['es'],
-    },
-    sameAs: [
-      'https://instagram.com/crowcaps.co',
-      'https://tiktok.com/@crowcaps.co',
-      'https://facebook.com/crowcaps',
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'CrowCaps',
-    url: SITIO + '/',
-    inLanguage: 'es-CO',
-    publisher: { '@type': 'Organization', name: 'CrowCaps' },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Colección CrowCaps',
-    numberOfItems: P.length,
-    itemListElement: P.map((p, k) => ({
-      '@type': 'ListItem', position: k + 1,
-      item: {
-        '@type': 'Product', name: `Gorra ${p.name}`, brand: { '@type': 'Brand', name: 'CrowCaps' },
-        description: p.desc, image: `${SITIO}/assets/img/${p.imgs[0]}`,
-        offers: { '@type': 'Offer', price: p.price, priceCurrency: 'COP', availability: 'https://schema.org/InStock', url: SITIO + '/' }
-      }
-    }))
-  },
-];
-const L1 = '<!-- ld:start -->', L2 = '<!-- ld:end -->';
-const a = html.indexOf(L1), b = html.indexOf(L2);
-if (a > -1 && b > -1) {
-  html = html.slice(0, a + L1.length) + '\n' +
-    ld.map(x => '<script type="application/ld+json">' + JSON.stringify(x) + '</script>').join('\n') +
-    '\n' + html.slice(b);
+async function datosDesdeLaBase() {
+  try {
+    const C = require(path.join(RAIZ, 'api', '_lib', 'contenido.js'));
+    const paquete = await C.paqueteDelSitio();
+    if (paquete && paquete.productos.length) return paquete;
+  } catch (_) { /* sin base: seguimos con los archivos */ }
+  return null;
 }
 
-// sincroniza el numero de referencias en el copy para que nunca se desfase
-html = html.replace(/(<span id="refCount">)\d+(<\/span>)/, '$1' + P.length + '$2');
-html = html.replace(/(<div><b>)\d+(<\/b><span>Referencias)/, '$1' + P.length + '$2');
-html = html.replace(/Ver las \d+/g, 'Ver las ' + P.length);
-html = html.replace(/\d+ referencias reales/g, P.length + ' referencias reales');
+async function construir() {
+  let productos, contenido;
+  const deLaBase = await datosDesdeLaBase();
 
-fs.writeFileSync(file, html);
-console.log('index.html actualizado ·', P.length, 'fichas ·', BIG.length, 'destacadas');
+  if (deLaBase) {
+    ({ productos, contenido } = deLaBase);
+    console.log('datos: base de datos');
+  } else {
+    global.window = {};
+    delete require.cache[require.resolve(path.join(RAIZ, 'js', 'products.js'))];
+    require(path.join(RAIZ, 'js', 'products.js'));
+    productos = global.window.CROWCAPS_PRODUCTS.map(conImagenes);
+    contenido = valoresPorDefecto();
+    contenido.feed.imagenes = feedPorDefecto();
+    console.log('datos: js/products.js + contenido por defecto');
+  }
+
+  const html = renderizar({ productos, contenido });
+  /* OJO: el respaldo NO puede vivir en la raíz. Si existe /index.html, Vercel
+     lo sirve como archivo estático y la función (que es la que lee el CMS)
+     nunca se ejecuta: el dueño guardaba cambios y la tienda seguía igual. */
+  fs.mkdirSync(path.join(RAIZ, '_plantilla'), { recursive: true });
+  fs.writeFileSync(path.join(RAIZ, '_plantilla', 'respaldo.html'), html);
+  console.log('respaldo escrito ·', productos.length, 'fichas ·', html.length, 'bytes');
+}
+
+if (require.main === module) construir().catch((e) => { console.error(e); process.exit(1); });
+
+/* Las nueve fotos del mosaico tal como estaban antes del CMS */
+function feedPorDefecto() {
+  const f = (src, alt, w, h) => ({ src: 'assets/img/' + src, alt, w, h });
+  return [
+    f('yankees-navy-hueso.webp', 'Gorra Yankees navy y hueso frente a un muro de grafiti', 515, 717),
+    f('mets-royal-sm.webp', 'Gorra Mets azul rey puesta', 360, 433),
+    f('boston-carmesi-sm.webp', 'Gorra Boston carmesí puesta', 360, 456),
+    f('oveja-negra-sm.webp', 'Gorra negra con parche La Oveja Negra', 360, 479),
+    f('yankees-hueso-sm.webp', 'Gorra Yankees hueso tonal', 360, 489),
+    f('redsox-khaki-roja-2-sm.webp', 'Gorra Red Sox khaki con visera roja sobre una banca', 360, 506),
+    f('braves-piedra-sm.webp', 'Gorra Braves piedra puesta', 360, 460),
+    f('whitesox-arena-sm.webp', 'Gorra White Sox arena tonal en la mano', 360, 445),
+    f('yankees-roja-navy-sm.webp', 'Gorra Yankees roja con visera azul marino', 360, 505),
+  ];
+}
+
+module.exports = { conImagenes, feedPorDefecto, construir };

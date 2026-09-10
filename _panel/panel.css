@@ -56,6 +56,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: 650; letter-spacing: -.01em; }
 
 /* ── Estructura ─────────────────────────────────────────────────────────── */
 .app { display: grid; grid-template-columns: var(--lateral) 1fr; min-height: 100vh; }
+/* El velo del menú del celular NO puede contar como columna de la rejilla:
+   sin este display:none corría la barra lateral y partía el panel en ancho. */
+.velo { display: none; }
 
 .lateral {
   background: var(--tinta); color: #d7d7db; display: flex; flex-direction: column;
@@ -283,7 +286,6 @@ textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
   body.menu .lateral { transform: none; box-shadow: 0 0 60px rgba(0,0,0,.35); }
   /* El velo es un elemento de verdad para que se pueda TOCAR y cerrar el menú:
      como pseudo-elemento tapaba la hamburguesa y el menú no se podía cerrar. */
-  .velo { display: none; }
   body.menu .velo { display: block; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 50; }
   .hamburguesa { display: block; }
   .contenido { padding: 16px; }

@@ -14,6 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const FUENTE = path.join(ROOT, '_work', 'logo-1.png');   // lámina del sello, 4500x4500
 const BRAND = path.join(ROOT, 'assets', 'brand');
 const PAPEL = { r: 239, g: 234, b: 225 };
+const TINTA = { r: 17, g: 17, b: 16 };
 
 // Empaqueta varios PNG en un .ico (el formato admite PNG embebido desde Vista)
 function ico(pngs) {
@@ -86,12 +87,36 @@ function ico(pngs) {
   const arte = await sharp(rgba, { raw: { width: W, height: H, channels: 4 } })
     .trim({ threshold: 20 }).png().toBuffer();
 
-  // 2. lo centro en un cuadrado de papel con aire (mejor lectura en miniatura)
+  /* 2. Cara negra dentro de un círculo de papel, sobre un cuadrado de tinta.
+
+     Antes era la cara sobre un cuadrado de papel y en Google no se leía: el
+     papel es casi blanco, así que contra la página blanca de resultados el
+     icono no tenía silueta y la cara quedaba flotando como una mancha. Con el
+     círculo claro sobre fondo oscuro se distingue la marca a 16 px aunque los
+     ojos y la sonrisa ya no se separen, y aguanta el recorte circular que
+     Google le hace en el móvil.
+
+     Es el mismo tratamiento que usa la página sobre fondo oscuro: la mascota
+     NUNCA va en negativo, va la original negra dentro de un círculo de papel. */
   const cuadro = async (size) => {
-    const dentro = Math.round(size * 0.78);
-    const capa = await sharp(arte).resize({ width: dentro, height: dentro, fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).toBuffer();
-    return sharp({ create: { width: size, height: size, channels: 3, background: PAPEL } })
-      .composite([{ input: capa, gravity: 'center' }]).png({ compressionLevel: 9 }).toBuffer();
+    /* En los tamaños chicos la cara va algo más grande: al reducir se comen los
+       detalles y conviene que la mancha llene más el círculo. */
+    const dentro = Math.max(1, Math.round(size * (size <= 32 ? 0.68 : 0.62)));
+    const capa = await sharp(arte)
+      .resize({ width: dentro, height: dentro, fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+      .toBuffer();
+
+    /* El círculo se dibuja a 8x y se reduce: así el borde no queda dentado */
+    const G = 8;
+    const circulo = await sharp(Buffer.from(
+      '<svg width="' + size * G + '" height="' + size * G + '">' +
+      '<circle cx="' + (size * G / 2) + '" cy="' + (size * G / 2) + '" r="' + (size * G * 0.455) + '" ' +
+      'fill="rgb(' + PAPEL.r + ',' + PAPEL.g + ',' + PAPEL.b + ')"/></svg>'
+    )).resize(size, size).png().toBuffer();
+
+    return sharp({ create: { width: size, height: size, channels: 3, background: TINTA } })
+      .composite([{ input: circulo, gravity: 'center' }, { input: capa, gravity: 'center' }])
+      .png({ compressionLevel: 9 }).toBuffer();
   };
 
   fs.mkdirSync(BRAND, { recursive: true });

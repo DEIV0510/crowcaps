@@ -11,7 +11,7 @@
 'use strict';
 
 const path = require('path');
-const { todos, uno, correr, ahora, RAIZ } = require('./db');
+const { todos, uno, correr, enLote, ahora, RAIZ } = require('./db');
 const { valoresPorDefecto, poner, sacar } = require(path.join(RAIZ, '_tools', 'mapa-contenido.js'));
 const { ErrorDeDatos, limpio, parrafo, telefono, enlace, bandera, lista } = require('./validar');
 
@@ -82,9 +82,34 @@ async function contenido() {
 }
 
 /* ── Escritura ───────────────────────────────────────────────────────────── */
+
+/* Los interruptores van en una lista explícita. Antes bastaba con que la clave
+   terminara en `_visible`, y `contacto.whatsapp_visible` —que es el número TAL
+   COMO SE ESCRIBE en la página, un texto— se guardaba como `false`: el dueño
+   volvía a la pantalla y encontraba la palabra «false» en la casilla. */
+const INTERRUPTORES = new Set([
+  'redes.instagram_visible', 'redes.tiktok_visible', 'redes.facebook_visible',
+]);
+
+/* Cómo se llama cada campo en la pantalla, para que el error diga dónde mirar */
+const NOMBRES = {
+  'contacto.whatsapp': 'Número de WhatsApp',
+  'contacto.whatsapp_visible': 'Número como se muestra',
+  'redes.instagram_url': 'Enlace de Instagram',
+  'redes.tiktok_url': 'Enlace de TikTok',
+  'redes.facebook_url': 'Enlace de Facebook',
+  'seo.canonical': 'Dirección oficial del sitio',
+  'seo.og_url': 'Dirección para redes',
+  'seo.og_imagen': 'Imagen para redes',
+  'editorial.imagen': 'Imagen del bloque editorial',
+  'feed.imagenes': 'Fotos del feed',
+  'ticker.palabras': 'Palabras de la cinta',
+  'hero.destacadas': 'Gorras destacadas de la portada',
+};
+
 function normalizar(clave, valor) {
   if (clave === 'contacto.whatsapp') return telefono(valor);
-  if (clave.startsWith('secciones.') || clave.endsWith('_visible')) return !!bandera(valor);
+  if (clave.startsWith('secciones.') || INTERRUPTORES.has(clave)) return !!bandera(valor);
   if (clave === 'ticker.palabras') return lista(valor, 12, 30);
   if (clave === 'hero.destacadas') return lista(valor, 6, 60);
   if (clave === 'feed.imagenes') {
@@ -114,18 +139,26 @@ async function guardar(cambios) {
   const desconocidas = entradas.filter(([k]) => !EDITABLES.has(k)).map(([k]) => k);
   if (desconocidas.length) throw new ErrorDeDatos('No reconozco estos campos: ' + desconocidas.join(', '));
 
-  let n = 0;
+  /* Primero se revisa TODO y después se escribe: antes se guardaba campo por
+     campo, así que un enlace mal escrito a mitad de la pantalla dejaba la
+     primera parte guardada y la segunda no, y el dueño no sabía qué quedó.
+     Además el error dice de qué campo habla. */
+  const listos = [];
+  const problemas = [];
   for (const [clave, bruto] of entradas) {
-    const valor = normalizar(clave, bruto);
-    const texto = typeof valor === 'string' ? JSON.stringify(valor) : JSON.stringify(valor);
-    await correr(
-      `INSERT INTO ajustes (clave, valor, actualizado) VALUES (?, ?, ?)
-       ON CONFLICT(clave) DO UPDATE SET valor = excluded.valor, actualizado = excluded.actualizado`,
-      [clave, texto, ahora()]
-    );
-    n++;
+    try {
+      listos.push([clave, JSON.stringify(normalizar(clave, bruto))]);
+    } catch (e) {
+      problemas.push((NOMBRES[clave] || clave) + ': ' + (e && e.message ? e.message : 'valor no válido'));
+    }
   }
-  return n;
+  if (problemas.length) throw new ErrorDeDatos(problemas);
+
+  const ahoraMismo = ahora();
+  const SQL = `INSERT INTO ajustes (clave, valor, actualizado) VALUES (?, ?, ?)
+       ON CONFLICT(clave) DO UPDATE SET valor = excluded.valor, actualizado = excluded.actualizado`;
+  await enLote(listos.map(([clave, texto]) => [SQL, [clave, texto, ahoraMismo]]));
+  return listos.length;
 }
 
 /* ── Productos ───────────────────────────────────────────────────────────── */
@@ -145,6 +178,10 @@ function armarProducto(fila, fotos) {
     desc_corta: fila.descripcion_corta,
     features: car,
     colors: cat,
+    /* Sin estos dos, el editor los pintaba vacíos al reabrir la gorra y el
+       siguiente guardado los borraba de la base sin que nadie lo pidiera. */
+    incluye: fila.incluye || '',
+    envio: fila.envio || '',
     destacado: !!fila.destacado,
     publicado: !!fila.publicado,
     orden: fila.orden,
@@ -157,11 +194,15 @@ function armarProducto(fila, fotos) {
   };
 }
 
-async function productos({ soloPublicados = true } = {}) {
+/* papelera: true devuelve SOLO las eliminadas, para poder recuperarlas. La
+   tienda nunca pide esto: allí siempre se piden las publicadas. */
+async function productos({ soloPublicados = true, papelera = false } = {}) {
   const filas = await todos(
-    `SELECT * FROM productos
-      WHERE eliminado IS NULL ${soloPublicados ? 'AND publicado = 1' : ''}
-      ORDER BY orden ASC, id ASC`
+    papelera
+      ? 'SELECT * FROM productos WHERE eliminado IS NOT NULL ORDER BY eliminado DESC, id DESC'
+      : `SELECT * FROM productos
+          WHERE eliminado IS NULL ${soloPublicados ? 'AND publicado = 1' : ''}
+          ORDER BY orden ASC, id ASC`
   );
   if (!filas.length) return [];
   const fotos = await todos('SELECT * FROM imagenes ORDER BY producto_id ASC, orden ASC, id ASC');

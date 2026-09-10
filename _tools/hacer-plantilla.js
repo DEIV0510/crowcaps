@@ -65,6 +65,12 @@ if (html.includes(DATOS_VIEJO)) {
   problemas.push('no encuentro el bloque de datos (ni el <script src> ni window.CROWCAPS_PRODUCTS)');
 }
 
+/* El enlace de WhatsApp del pie llevaba el número escrito a mano (sin mensaje),
+   así que cambiarlo en el panel no lo cambiaba. Se normaliza al mismo enlace
+   que los demás ANTES de aplicar el mapa, y así queda administrable. */
+const { WA_GENERAL } = require('./mapa-contenido');
+html = html.replace(/href="https:\/\/wa\.me\/\d+"/g, 'href="' + WA_GENERAL + '"');
+
 /* Contadores que dependen de cuántas gorras hay publicadas. Van ANTES del mapa
    de textos y por expresión regular: si dependieran del número de hoy, mañana
    —con una gorra más— la plantilla dejaría de generarse. */
@@ -125,6 +131,19 @@ else {
 }
 
 /* 4. Secciones que se pueden apagar desde el panel */
+/* Cada enlace de red del pie va entre marcas propias, para que el interruptor
+   «Mostrar Facebook» pueda quitarlo de verdad de la página. */
+for (const [red, aguja] of [
+  ['instagram', '{{redes.instagram_url}}'],
+  ['tiktok', '{{redes.tiktok_url}}'],
+  ['facebook', '{{redes.facebook_url}}'],
+]) {
+  const re = new RegExp('<li><a href="' + aguja.replace(/[{}]/g, '\\$&') + '"[^>]*>[^<]*</a></li>');
+  const m = html.match(re);
+  if (!m) { problemas.push('no encuentro el enlace de ' + red + ' en el pie'); continue; }
+  html = html.replace(re, `<!--red:${red}-->${m[0]}<!--/red:${red}-->`);
+}
+
 const SECCIONES = [
   ['hero', '<section class="hero" id="hero">', '</section>'],
   ['perks', '<section class="perks">', '</section>'],

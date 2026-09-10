@@ -151,7 +151,8 @@ async function listarProductos(req, res, usuario, url) {
   const estado = url.searchParams.get('estado') || 'todos';
   const orden = url.searchParams.get('orden') || 'manual';
 
-  let P = await C.productos({ soloPublicados: false });
+  /* La papelera es una consulta aparte: son justo las que las demás excluyen */
+  let P = await C.productos({ soloPublicados: false, papelera: estado === 'papelera' });
   if (estado === 'publicados') P = P.filter((p) => p.publicado);
   if (estado === 'ocultos') P = P.filter((p) => !p.publicado);
   if (estado === 'destacados') P = P.filter((p) => p.destacado);
@@ -198,7 +199,7 @@ async function crearProducto(req, res, usuario) {
   p.slug = await slugLibre(p.slug);
 
   const ultimo = await uno('SELECT MAX(orden) AS m FROM productos WHERE eliminado IS NULL');
-  const orden = d.orden !== undefined ? p.orden : Number(ultimo && ultimo.m ? ultimo.m : 0) + 1;
+  const orden = p.orden !== undefined ? p.orden : Number(ultimo && ultimo.m ? ultimo.m : 0) + 1;
 
   const r = await correr(
     `INSERT INTO productos (slug, nombre, equipo, modelo, colorway, precio, precio_antes,

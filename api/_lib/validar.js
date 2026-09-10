@@ -44,8 +44,10 @@ function entero(v, { min = null, max = null } = {}) {
   if (!/\d/.test(soloDigitos)) return null;
   const n = Number(soloDigitos);
   if (!Number.isFinite(n)) return null;
-  if (min !== null && n < min) return min;
-  if (max !== null && n > max) return max;
+  /* Fuera de rango se descarta, no se recorta: recortar convertía un -85000
+     mal tecleado en 0, y la gorra salía a "$0" en la tienda. */
+  if (min !== null && n < min) return null;
+  if (max !== null && n > max) return null;
   return Math.round(n);
 }
 
@@ -78,8 +80,14 @@ function correoValido(v) {
 
 /* Solo dígitos: el número de WhatsApp viaja así en el enlace wa.me */
 function telefono(v) {
-  const s = texto(v).replace(/\D/g, '');
-  if (s.length < 8 || s.length > 15) throw new ErrorDeDatos('El número de WhatsApp no parece válido. Escríbelo con indicativo, por ejemplo 573207224241.');
+  let s = texto(v).replace(/\D/g, '');
+  /* Un celular colombiano escrito como se marca aquí (3xx xxx xxxx, 10 dígitos)
+     es lo más natural de teclear, y sin el 57 delante wa.me contesta "el número
+     no existe": todos los botones de la tienda quedarían muertos. Se completa. */
+  if (/^3\d{9}$/.test(s)) s = '57' + s;
+  if (s.length < 10 || s.length > 15) {
+    throw new ErrorDeDatos('Ese número de WhatsApp no parece válido. Escríbelo con el indicativo del país, por ejemplo 573207224241.');
+  }
   return s;
 }
 
@@ -98,8 +106,12 @@ function producto(d, { esNuevo = false } = {}) {
   p.slug = slugificar(d.slug || p.nombre);
   if (!p.slug) errores.push('No pude armar la dirección (slug) de la gorra. Revisa el nombre.');
 
-  p.precio = entero(d.precio, { min: 0, max: 99999999 });
-  p.precio_antes = entero(d.precio_antes, { min: 0, max: 99999999 });
+  /* min 1: un precio de 0 saldría en la tienda como "$0" y se podría comprar */
+  p.precio = entero(d.precio, { min: 1, max: 99999999 });
+  p.precio_antes = entero(d.precio_antes, { min: 1, max: 99999999 });
+  if (p.precio === null && texto(d.precio) !== '') {
+    errores.push('El precio tiene que ser un número mayor que cero, en pesos. Ejemplo: 85000.');
+  }
   if (p.precio_antes !== null && p.precio !== null && p.precio_antes <= p.precio) {
     errores.push('El precio anterior tiene que ser mayor que el precio actual.');
   }
@@ -112,7 +124,11 @@ function producto(d, { esNuevo = false } = {}) {
   p.envio = limpio(d.envio, 200);
   p.destacado = bandera(d.destacado);
   p.publicado = bandera(d.publicado);
-  p.orden = entero(d.orden, { min: 0, max: 99999 }) || 0;
+  /* Se deja SIN DEFINIR si no vino: el editor no manda `orden`, y forzarlo a 0
+     mandaba la gorra al primer puesto de la tienda cada vez que se guardaba,
+     deshaciendo el orden que el dueño armó a mano. */
+  const ordenPedido = entero(d.orden, { min: 0, max: 99999 });
+  if (ordenPedido !== null) p.orden = ordenPedido;
 
   /* Publicar exige lo mínimo para que la ficha no salga coja */
   if (p.publicado) {

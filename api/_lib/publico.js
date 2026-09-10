@@ -51,8 +51,11 @@ async function portada(req, res, { vistaPrevia = false } = {}) {
       productos = todosP.filter((p) => p.imagenes.length);
     }
 
-    if (!productos.length) throw new Error('sin productos en la base');
-
+    /* OJO: quedarse sin gorras publicadas NO es un fallo, es una decisión del
+       dueño (ocultarlas todas mientras repone). Antes se servía el respaldo y
+       la tienda seguía enseñando el catálogo viejo —con precios y botón de
+       compra— sin forma de quitarlo. La plantilla ya trae el bloque de
+       «colección vacía» justo para esto. */
     const html = renderizar({ productos, contenido: paquete.contenido, plantilla: leerPlantilla() });
     cabecerasSeguras(res);
     res.statusCode = 200;

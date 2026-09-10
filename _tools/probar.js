@@ -66,9 +66,29 @@ igual('precio con puntos', V.entero('85.000'), 85000);
 igual('un precio en letras queda vacío, no en 0', V.entero('ochenta mil'), null);
 igual('un precio vacío queda vacío', V.entero(''), null);
 
+igual('un precio negativo no pasa', V.entero('-85000', { min: 1 }), null);
+igual('un precio de 0 no pasa', V.entero('0', { min: 1 }), null);
+igual('el celular sin indicativo se completa', V.telefono('320 722 4241'), '573207224241');
+igual('el que ya trae indicativo se queda igual', V.telefono('+57 320 722 4241'), '573207224241');
+revienta('un número demasiado corto no pasa', () => V.telefono('12345'));
+
 /* ── Producto ────────────────────────────────────────────────────────────── */
-revienta('una gorra sin nombre no entra', () => V.producto({ name: '   ' }));
-revienta('publicar sin precio no se puede', () => V.producto({ name: 'X', publicado: true, price: null, desc: 'algo' }));
+revienta('una gorra sin nombre no entra', () => V.producto({ nombre: '   ' }));
+revienta('publicar sin precio no se puede',
+  () => V.producto({ nombre: 'X', publicado: true, precio: '', descripcion: 'algo' }));
+/* Con precio 0 la ficha salía a "$0" y se podía comprar */
+revienta('publicar con precio 0 no se puede',
+  () => V.producto({ nombre: 'X', publicado: true, precio: 0, descripcion: 'algo' }));
+revienta('publicar con precio negativo tampoco',
+  () => V.producto({ nombre: 'X', publicado: true, precio: -85000, descripcion: 'algo' }));
+igual('un precio normal se guarda tal cual',
+  V.producto({ nombre: 'X', precio: '85.000' }).precio, 85000);
+
+/* El editor no manda `orden`: si se forzara a 0, guardar una gorra la mandaría
+   al primer puesto de la tienda y desharía el orden hecho a mano. */
+cierto('guardar sin tocar el orden lo deja sin definir',
+  V.producto({ nombre: 'X', descripcion: 'algo' }).orden === undefined);
+igual('si se manda un orden, se respeta', V.producto({ nombre: 'X', orden: 7 }).orden, 7);
 
 /* ── Entrar por enlace ───────────────────────────────────────────────────── */
 const A = require(path.join(RAIZ, 'api', '_lib', 'auth.js'));
@@ -104,6 +124,35 @@ cierto('ningún texto por defecto trae una dirección',
 const claves = MAPA.map((e) => e.clave);
 cierto('no hay claves repetidas en el mapa', new Set(claves).size === claves.length,
   claves.filter((c, i) => claves.indexOf(c) !== i).join(', '));
+
+/* ── El renderizador ─────────────────────────────────────────────────────── */
+const fs = require('fs');
+const { renderizar } = require(path.join(RAIZ, '_tools', 'render.js'));
+const PLANTILLA = fs.readFileSync(path.join(RAIZ, '_plantilla', 'index.html'), 'utf8');
+const pintar = (productos, extra) => renderizar({
+  productos, plantilla: PLANTILLA,
+  contenido: Object.assign(valoresPorDefecto(), extra || {}),
+});
+
+const vacia = pintar([]);
+cierto('sin gorras publicadas la tienda se pinta igual', vacia.length > 5000);
+cierto('sin gorras no queda ninguna img sin src', !/src=""/.test(vacia));
+cierto('sin gorras no quedan marcadores a medio poner', !/\{\{[\w.]+\}\}/.test(vacia));
+
+const conCat = pintar([], { categorias: [{ slug: 'camo', nombre: 'Camufladas' }] });
+cierto('las categorías del panel llegan a la tienda', conCat.includes('"camo"') && conCat.includes('Camufladas'));
+
+const sinFace = pintar([], { redes: Object.assign({}, valoresPorDefecto().redes, { facebook_visible: false }) });
+cierto('apagar Facebook lo quita del pie', !sinFace.includes('facebook.com/crowcaps'));
+cierto('y no toca Instagram', sinFace.includes('instagram.com/crowcaps.co'));
+
+const otroWa = pintar([], { contacto: Object.assign({}, valoresPorDefecto().contacto, { whatsapp: '573001112233' }) });
+cierto('cambiar el WhatsApp cambia TODOS los enlaces, también el del pie',
+  !otroWa.includes('wa.me/573207224241') && otroWa.includes('wa.me/573001112233'));
+
+const otroMenu = pintar([], { nav: Object.assign({}, valoresPorDefecto().nav, { coleccion: 'Catálogo' }) });
+cierto('el menú del celular sigue al del computador',
+  (otroMenu.match(/Catálogo/g) || []).length >= 2);
 
 /* ── Resultado ───────────────────────────────────────────────────────────── */
 console.log('');

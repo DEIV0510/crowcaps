@@ -161,7 +161,11 @@
       var b = document.createElement('button');
       b.className = 'chip'; b.type = 'button'; b.dataset.f = d[0];
       b.setAttribute('aria-pressed', String(d[0] === 'todas'));
-      b.innerHTML = d[1] + '<b>' + d[2] + '</b>';
+      /* textContent, no innerHTML: el nombre lo escribe el dueño en el panel */
+      b.appendChild(document.createTextNode(d[1]));
+      var cuantas = document.createElement('b');
+      cuantas.textContent = d[2];
+      b.appendChild(cuantas);
       b.addEventListener('click', function () {
         active = d[0]; limite = PASO;
         $$('.chip', chips).forEach(function (c) { c.setAttribute('aria-pressed', String(c === b)); });

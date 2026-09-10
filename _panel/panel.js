@@ -24,17 +24,48 @@
       opciones.headers['Content-Type'] = 'application/json';
       opciones.body = JSON.stringify(datos);
     }
-    return fetch(ruta, opciones).then(function (r) {
-      return r.json().catch(function () { return { ok: false, error: 'El servidor respondió algo inesperado.' }; })
-        .then(function (j) {
-          if (!r.ok || j.ok === false) {
-            var e = new Error(j.error || 'No se pudo completar la operación.');
-            e.codigo = r.status; e.errores = j.errores || [];
-            throw e;
-          }
-          return j;
-        });
+    return fetch(ruta, opciones).catch(function () {
+      /* Sin esto el dueño veía «Failed to fetch», que no le dice nada */
+      throw new Error('No pude conectarme. Revisa tu internet y vuelve a intentarlo; no se perdió nada.');
+    }).then(function (r) {
+      return r.json().catch(function () {
+        return { ok: false, error: r.status === 413
+          ? 'El archivo es demasiado grande para enviarlo.'
+          : 'El servidor respondió algo inesperado.' };
+      }).then(function (j) {
+        if (!r.ok || j.ok === false) {
+          var e = new Error(j.error || 'No se pudo completar la operación.');
+          e.codigo = r.status; e.errores = j.errores || [];
+          if (r.status === 401) sesionCaida();
+          throw e;
+        }
+        return j;
+      });
     });
+  }
+
+  /* La sesión se venció (o se cerró desde otro dispositivo). Hay que avisar de
+     verdad: un aviso que se va solo deja al dueño escribiendo en un formulario
+     que ya no puede guardar. La pestaña NO se recarga, para no perder lo escrito. */
+  var avisandoSesion = false;
+  function sesionCaida() {
+    if (avisandoSesion) return;
+    avisandoSesion = true;
+    var caja = document.createElement('div');
+    caja.className = 'modal';
+    caja.innerHTML = '<div class="modal__fondo"></div><div class="modal__caja">' +
+      '<h3>Tu sesión se cerró</h3>' +
+      '<p>Por seguridad la sesión se cierra cada tanto. Vuelve a entrar en otra pestaña ' +
+      'y regresa aquí: lo que tienes escrito sigue en pantalla.</p>' +
+      '<div class="modal__acc">' +
+      '<button class="btn" data-seguir>Seguir aquí</button>' +
+      '<a class="btn btn--primario" href="/admin" target="_blank" rel="noopener">Entrar otra vez ↗</a>' +
+      '</div></div>';
+    $('#modales').appendChild(caja);
+    var cerrar = function () { caja.remove(); avisandoSesion = false; };
+    $('[data-seguir]', caja).onclick = cerrar;
+    $('.modal__fondo', caja).onclick = cerrar;
+    $('[data-seguir]', caja).focus();
   }
 
   /* ── Avisos ─────────────────────────────────────────────────────────────── */
@@ -125,6 +156,16 @@
     irA(b.dataset.vista);
   });
   $('#hamburguesa').addEventListener('click', function () { document.body.classList.toggle('menu'); });
+  /* Tocar fuera cierra el menú del celular; Escape también */
+  $('#velo').addEventListener('click', function () { document.body.classList.remove('menu'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (document.body.classList.contains('menu')) return document.body.classList.remove('menu');
+    var m = $('#modales .modal:last-child');
+    if (!m) return;
+    var no = $('[data-no]', m) || $('[data-seguir]', m);
+    if (no) no.click();
+  });
 
   var VISTAS = {};
   function irA(nombre, args) {
@@ -162,7 +203,10 @@
           cifra(d.ocultos, 'Borradores') +
           cifra(d.destacados, 'Destacadas') +
           (d.sinFoto ? cifra(d.sinFoto, 'Sin foto', ' aviso') : '') +
-          (d.papelera ? cifra(d.papelera, 'En papelera') : '') +
+          /* La papelera lleva a su listado: si no, el número dice que hay algo
+             recuperable y no hay forma de llegar a ello. */
+          (d.papelera ? '<button class="cifra cifra--ir" data-ir="productos:papelera">' +
+            '<b>' + d.papelera + '</b><span>En papelera →</span></button>' : '') +
         '</div>' +
         '<div class="tarjeta" style="margin-top:16px"><div class="tarjeta__cab"><h2>Últimos cambios</h2></div>' +
         '<div class="tarjeta__cuerpo"><div class="movs">' + movs + '</div></div></div>' +
@@ -174,7 +218,11 @@
         '</div></div>';
 
       $$('#vista [data-ir]').forEach(function (b) {
-        b.onclick = function () { b.dataset.ir === 'nueva' ? editor(null) : irA(b.dataset.ir); };
+        b.onclick = function () {
+          if (b.dataset.ir === 'nueva') return editor(null);
+          var partes = b.dataset.ir.split(':');
+          irA(partes[0], partes[1] ? { estado: partes[1] } : undefined);
+        };
       });
     });
   };
@@ -199,50 +247,102 @@
   }
 
   /* ── Vista: productos ───────────────────────────────────────────────────── */
-  VISTAS.productos = function () {
+  VISTAS.productos = function (args) {
     $('#titulo').textContent = 'Gorras';
     $('#accionesBarra').innerHTML = '<button class="btn btn--primario" id="btnNueva">+ Nueva gorra</button>';
     $('#btnNueva').onclick = function () { editor(null); };
 
-    var filtros = { q: '', estado: 'todos', orden: 'manual' };
+    var filtros = { q: '', estado: (args && args.estado) || 'todos', orden: 'manual' };
 
     function pintar() {
       var url = '/api/admin/productos?q=' + encodeURIComponent(filtros.q) +
         '&estado=' + filtros.estado + '&orden=' + filtros.orden;
       return api('GET', url).then(function (d) {
+        var papelera = filtros.estado === 'papelera';
         estado.productos = d.productos;
+        $('#avisoOrden').hidden = sePuedeOrdenar() || papelera;
         $('#listaP').innerHTML = d.productos.length ? d.productos.map(fila).join('') : '';
         $('#vacioP').hidden = d.productos.length > 0;
-        $('#cuenta').textContent = d.total + (d.total === 1 ? ' gorra' : ' gorras');
+        $('#vacioP').innerHTML = papelera
+          ? '<b>La papelera está vacía</b><p>Aquí aparecen las gorras que elimines, por si te arrepientes.</p>'
+          : '<b>No hay gorras que mostrar</b><p>Cambia los filtros o crea la primera.</p>' +
+            '<button class="btn btn--primario" id="btnPrimera">+ Crear la primera gorra</button>';
+        if ($('#btnPrimera')) $('#btnPrimera').onclick = function () { editor(null); };
+        $('#cuenta').textContent = papelera
+          ? d.total + (d.total === 1 ? ' gorra eliminada' : ' gorras eliminadas')
+          : d.total + (d.total === 1 ? ' gorra' : ' gorras');
         conectarLista();
+      }).catch(function (e) {
+        /* Sin esto la lista se quedaba con las gorras de antes y el dueño creía
+           que el filtro no tenía resultados. */
+        avisar(e.message, true);
+        $('#cuenta').textContent = 'No pude actualizar la lista';
+        throw e;
       });
     }
 
-    function fila(p) {
+    /* Reordenar arrastrando solo tiene sentido con la lista COMPLETA: con un
+       filtro o una búsqueda puestos solo se ven algunas, y guardar ese orden
+       renumeraba únicamente las visibles y revolvía el resto de la tienda. */
+    function sePuedeOrdenar() {
+      return filtros.orden === 'manual' && filtros.estado === 'todos' && !filtros.q;
+    }
+
+    function fila(p, i, todas) {
       var foto = p.imagenes[0] ? p.imagenes[0].sm : '';
-      return '<div class="item" data-id="' + p.dbId + '" draggable="' + (filtros.orden === 'manual') + '">' +
-        '<div class="item__asa" title="Arrastra para ordenar">⠿</div>' +
+      var enPapelera = filtros.estado === 'papelera';
+      var ordenable = sePuedeOrdenar();
+      return '<div class="item" data-id="' + p.dbId + '" draggable="' + ordenable + '">' +
+        (ordenable
+          ? '<div class="item__asa" title="Arrastra para ordenar">⠿' +
+            /* Botones además del arrastre: en el celular no se puede arrastrar */
+            '<button class="mover" data-mover="-1" title="Subir"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
+            '<button class="mover" data-mover="1" title="Bajar"' + (i === todas.length - 1 ? ' disabled' : '') + '>▼</button>' +
+            '</div>'
+          : '<div class="item__asa item__asa--off" title="Para ordenar, quita el filtro y la búsqueda">⠿</div>') +
         (foto ? '<img class="item__foto" src="' + esc(foto) + '" alt="" loading="lazy">'
               : '<div class="item__foto" title="Sin foto"></div>') +
         '<div class="item__txt"><b>' + esc(p.name) + '</b>' +
         '<span>' + esc(p.team || 'Sin equipo') + ' · ' + cop(p.price) + ' · ' + esc(p.colorway || '') + '</span></div>' +
         '<div class="item__acc">' +
-          (p.publicado ? '<span class="etiqueta etiqueta--ok">Publicada</span>'
-                       : '<span class="etiqueta etiqueta--off">Borrador</span>') +
-          (p.destacado ? '<span class="etiqueta etiqueta--dest">Destacada</span>' : '') +
-          (!p.imagenes.length ? '<span class="etiqueta etiqueta--aviso">Sin foto</span>' : '') +
-          '<button class="btn btn--sm" data-act="editar">Editar</button>' +
-          '<button class="btn btn--sm" data-act="publicar">' + (p.publicado ? 'Ocultar' : 'Publicar') + '</button>' +
-          '<button class="btn btn--sm" data-act="destacar">' + (p.destacado ? 'Quitar' : 'Destacar') + '</button>' +
-          '<button class="btn btn--sm" data-act="duplicar">Duplicar</button>' +
-          '<button class="btn btn--sm btn--peligro" data-act="borrar">Eliminar</button>' +
+          (enPapelera
+            ? '<span class="etiqueta etiqueta--aviso">Eliminada</span>' +
+              '<button class="btn btn--sm btn--primario" data-act="restaurar">Restaurar</button>'
+            : (p.publicado ? '<span class="etiqueta etiqueta--ok">Publicada</span>'
+                           : '<span class="etiqueta etiqueta--off">Borrador</span>') +
+              (p.destacado ? '<span class="etiqueta etiqueta--dest">Destacada</span>' : '') +
+              (!p.imagenes.length ? '<span class="etiqueta etiqueta--aviso">Sin foto</span>' : '') +
+              '<button class="btn btn--sm" data-act="editar">Editar</button>' +
+              '<button class="btn btn--sm" data-act="publicar">' + (p.publicado ? 'Ocultar' : 'Publicar') + '</button>' +
+              '<button class="btn btn--sm" data-act="destacar">' + (p.destacado ? 'Quitar' : 'Destacar') + '</button>' +
+              '<button class="btn btn--sm" data-act="duplicar">Duplicar</button>' +
+              '<button class="btn btn--sm btn--peligro" data-act="borrar">Eliminar</button>') +
         '</div></div>';
+    }
+
+    /* Guarda el orden COMPLETO tal como se ve en pantalla */
+    function guardarOrden(ids) {
+      return api('POST', '/api/admin/productos/orden', { ids: ids.map(Number) })
+        .then(function () { avisar('Orden guardado.'); })
+        .catch(function (e) { avisar(e.message, true); return pintar(); });
     }
 
     function conectarLista() {
       var lista = $('#listaP');
       $$('.item', lista).forEach(function (el) {
         var id = el.dataset.id;
+        $$('[data-mover]', el).forEach(function (b) {
+          b.onclick = function () {
+            var paso = Number(b.dataset.mover);
+            var filas = $$('.item', lista);
+            var i = filas.indexOf(el), j = i + paso;
+            if (j < 0 || j >= filas.length) return;
+            if (paso < 0) lista.insertBefore(el, filas[j]);
+            else lista.insertBefore(filas[j], el);
+            guardarOrden($$('.item', lista).map(function (x) { return x.dataset.id; }))
+              .then(function () { return pintar(); });
+          };
+        });
         $$('[data-act]', el).forEach(function (b) {
           b.onclick = function () {
             var p = estado.productos.filter(function (x) { return String(x.dbId) === id; })[0];
@@ -264,6 +364,11 @@
                 .then(function (r) { avisar('Copia creada como borrador.'); editor(r.id); })
                 .catch(function (e) { avisar(e.message, true); }).then(fin);
             }
+            if (b.dataset.act === 'restaurar') {
+              return api('POST', '/api/admin/productos/' + id + '/restaurar', {})
+                .then(function () { avisar('Gorra recuperada. Está como borrador.'); return pintar(); })
+                .catch(function (e) { avisar(e.message, true); }).then(fin);
+            }
             if (b.dataset.act === 'borrar') {
               fin();
               return confirmar('¿Eliminar «' + p.name + '»?',
@@ -278,11 +383,7 @@
           };
         });
       });
-      if (filtros.orden === 'manual') arrastrable(lista, '.item', function (ids) {
-        api('POST', '/api/admin/productos/orden', { ids: ids.map(Number) })
-          .then(function () { avisar('Orden guardado.'); })
-          .catch(function (e) { avisar(e.message, true); pintar(); });
-      });
+      if (sePuedeOrdenar()) arrastrable(lista, '.item', guardarOrden);
     }
 
     $('#vista').innerHTML =
@@ -290,17 +391,21 @@
         '<input type="search" id="fq" placeholder="Buscar por nombre, equipo o modelo…">' +
         '<select id="fe"><option value="todos">Todas</option><option value="publicados">Publicadas</option>' +
         '<option value="ocultos">Borradores</option><option value="destacados">Destacadas</option>' +
-        '<option value="sin-foto">Sin foto</option></select>' +
+        '<option value="sin-foto">Sin foto</option>' +
+        '<option value="papelera">Papelera</option></select>' +
         '<select id="fo"><option value="manual">Orden de la tienda</option><option value="nuevos">Más recientes</option>' +
         '<option value="viejos">Más antiguas</option><option value="nombre">Nombre</option><option value="precio">Precio</option></select>' +
         '<span id="cuenta" style="color:#8a8a95;font-size:13px"></span>' +
       '</div>' +
+      '<div class="recordatorio" id="avisoOrden" hidden><span>Con un filtro o una búsqueda ' +
+      'puestos no se puede cambiar el orden de la tienda: quítalos y vuelve a «Orden de la tienda».</span></div>' +
       '<div class="lista" id="listaP"></div>' +
       '<div class="vacio" id="vacioP" hidden><b>No hay gorras que mostrar</b>' +
       '<p>Cambia los filtros o crea la primera.</p>' +
       '<button class="btn btn--primario" id="btnPrimera">+ Crear la primera gorra</button></div>';
 
     $('#btnPrimera').onclick = function () { editor(null); };
+    $('#fe').value = filtros.estado;
     var t;
     $('#fq').oninput = function () { clearTimeout(t); filtros.q = this.value; t = setTimeout(pintar, 180); };
     $('#fe').onchange = function () { filtros.estado = this.value; pintar(); };
@@ -437,6 +542,9 @@
       });
       arrastrable($('#cars'), '.caracteristica', function () {
         cars = $$('#cars .caracteristica input').map(function (x) { return x.value; });
+        /* Repintar: si no, los `data-i` se quedan con el orden viejo y la ✕
+           borraba otra fila, o lo que se escribía se guardaba en la de al lado. */
+        pintarCars();
         ensuciar();
       });
     }
@@ -444,6 +552,18 @@
     $('#btnCar').onclick = function () { cars.push(''); pintarCars(); ensuciar(); };
 
     /* Fotos */
+    function ordenarFotos(ids, aviso) {
+      return api('POST', '/api/admin/imagenes/orden', { ids: ids.map(Number), producto_id: id })
+        .then(function (r) {
+          if (r.actualizado) p.actualizado = r.actualizado;
+          p.imagenes.sort(function (a, b) { return ids.indexOf(String(a.id)) - ids.indexOf(String(b.id)); });
+          pintarFotos(); avisar(aviso);
+        })
+        /* Si falla, la pantalla vuelve al orden que de verdad está guardado:
+           antes se quedaba mostrando el nuevo y la tienda con el viejo. */
+        .catch(function (e) { avisar(e.message, true); pintarFotos(); });
+    }
+
     function pintarFotos() {
       if (!id) return;
       var caja = $('#fotos');
@@ -451,10 +571,19 @@
         return '<div class="foto" data-id="' + im.id + '" draggable="true">' +
           (i === 0 ? '<span class="foto__p">Principal</span>' : '') +
           '<img src="' + esc(im.sm || im.src) + '" alt="">' +
+          /* Con el dedo no se puede arrastrar: hace falta un botón */
+          (i === 0 ? '' : '<button class="foto__pri" data-principal title="Poner de principal">Principal</button>') +
           '<button class="foto__x" title="Quitar">✕</button></div>';
       }).join('') + '<div class="soltar" id="soltar">Arrastra fotos aquí<br>o haz clic para elegir</div>';
 
       $$('.foto', caja).forEach(function (el) {
+        var botonP = $('[data-principal]', el);
+        if (botonP) botonP.onclick = function () {
+          var ids = p.imagenes.map(function (x) { return String(x.id); });
+          ids.splice(ids.indexOf(el.dataset.id), 1);
+          ids.unshift(el.dataset.id);
+          ordenarFotos(ids, 'Ya es la principal.');
+        };
         $('.foto__x', el).onclick = function () {
           confirmar('¿Quitar esta foto?', 'Se borra de la gorra. Si no la usa nadie más, se elimina del almacenamiento.', 'Quitar')
             .then(function (si) {
@@ -468,14 +597,7 @@
         };
       });
 
-      arrastrable(caja, '.foto', function (ids) {
-        api('POST', '/api/admin/imagenes/orden', { ids: ids.map(Number), producto_id: id })
-          .then(function (r) {
-            if (r.actualizado) p.actualizado = r.actualizado;
-            p.imagenes.sort(function (a, b) { return ids.indexOf(String(a.id)) - ids.indexOf(String(b.id)); });
-            pintarFotos(); avisar('Orden de fotos guardado.');
-          }).catch(function (e) { avisar(e.message, true); });
-      });
+      arrastrable(caja, '.foto', function (ids) { ordenarFotos(ids, 'Orden de fotos guardado.'); });
 
       var soltar = $('#soltar');
       soltar.onclick = function () { $('#archivo').click(); };
@@ -497,9 +619,9 @@
       lista.reduce(function (cadena, f) {
         return cadena.then(function () {
           if (!/^image\//.test(f.type)) { avisar(f.name + ' no es una imagen.', true); return; }
-          if (f.size > 9 * 1024 * 1024) { avisar(f.name + ' pesa más de 9 MB.', true); return; }
+          if (f.size > 40 * 1024 * 1024) { avisar(f.name + ' pesa demasiado (más de 40 MB).', true); return; }
           soltar.textContent = 'Subiendo ' + (hechas + 1) + ' de ' + lista.length + '…';
-          return leerArchivo(f).then(function (datos) {
+          return prepararFoto(f).then(function (datos) {
             return api('POST', '/api/admin/productos/' + id + '/imagenes', { datos: datos, nombre: f.name });
           }).then(function (r) {
             if (r.actualizado) p.actualizado = r.actualizado;
@@ -522,6 +644,37 @@
       });
     }
 
+    /* Una foto de celular pesa 3–8 MB y en base64 crece un tercio más: pasaba
+       del tope del servidor y el dueño solo veía «El servidor respondió algo
+       inesperado». Se achica aquí antes de mandarla. La tienda nunca guarda más
+       de 1000 px de ancho, así que 1600 va sobrado y no se pierde calidad. */
+    var ANCHO_SUBIDA = 1600;
+
+    function prepararFoto(f) {
+      /* Los PNG con transparencia y los archivos pequeños van tal cual */
+      if (f.size <= 1.2 * 1024 * 1024) return leerArchivo(f);
+      if (!window.createImageBitmap || !document.createElement('canvas').toBlob) return leerArchivo(f);
+
+      return createImageBitmap(f).then(function (bmp) {
+        if (bmp.width <= ANCHO_SUBIDA) { bmp.close && bmp.close(); return leerArchivo(f); }
+        var escala = ANCHO_SUBIDA / bmp.width;
+        var lienzo = document.createElement('canvas');
+        lienzo.width = ANCHO_SUBIDA;
+        lienzo.height = Math.round(bmp.height * escala);
+        lienzo.getContext('2d').drawImage(bmp, 0, 0, lienzo.width, lienzo.height);
+        bmp.close && bmp.close();
+        return new Promise(function (ok, mal) {
+          lienzo.toBlob(function (blob) {
+            if (!blob) return mal(new Error('No pude preparar la foto.'));
+            ok(leerArchivo(blob));
+          }, 'image/jpeg', 0.92);
+        });
+      }).catch(function () {
+        /* Si el navegador no puede con ella, se intenta tal cual */
+        return leerArchivo(f);
+      });
+    }
+
     if (id) {
       pintarFotos();
       $('#archivo').onchange = function () { subirArchivos(this.files); this.value = ''; };
@@ -531,8 +684,12 @@
       };
     }
 
-    /* Guardar */
-    $$('#vista input, #vista textarea, #vista select').forEach(function (el) {
+    /* Guardar.
+       El selector deja fuera el input de archivo a propósito: las fotos se
+       guardan solas al subirlas, así que marcar el formulario como "sin
+       guardar" al elegir una hacía saltar el aviso de cambios pendientes
+       cuando no había ninguno. Un aviso que salta en falso se acaba ignorando. */
+    $$('#vista input:not([type=file]), #vista textarea, #vista select').forEach(function (el) {
       el.addEventListener('input', function () { ensuciar(); });
       el.addEventListener('change', function () { ensuciar(); });
     });
@@ -695,7 +852,18 @@
         '<a class="btn" href="/vista-previa" target="_blank" rel="noopener">Vista previa</a>' +
         '<span class="estado" id="estadoGuardado"></span></div>';
 
+      /* Cómo estaba cada campo al abrir la pantalla: al guardar solo se manda
+         lo que de verdad cambió. Antes se mandaban TODOS, así que guardar desde
+         el computador devolvía a su valor viejo lo que se hubiera corregido
+         desde el celular mientras tanto. */
+      var comoEstaba = {};
+      var leer = function (el) {
+        if (el.type === 'checkbox') return el.checked;
+        if (el.dataset.lista) return el.value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean);
+        return el.value;
+      };
       $$('#vista [data-clave]').forEach(function (el) {
+        comoEstaba[el.dataset.clave] = JSON.stringify(leer(el));
         el.addEventListener('input', function () { ensuciar(); });
         el.addEventListener('change', function () { ensuciar(); });
       });
@@ -705,14 +873,23 @@
         b.disabled = true;
         $('#estadoGuardado').textContent = 'Guardando…';
         var cambios = {};
+        var cuantos = 0;
         $$('#vista [data-clave]').forEach(function (el) {
           var k = el.dataset.clave;
-          if (el.type === 'checkbox') cambios[k] = el.checked;
-          else if (el.dataset.lista) cambios[k] = el.value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean);
-          else cambios[k] = el.value;
+          var v = leer(el);
+          if (JSON.stringify(v) === comoEstaba[k]) return;
+          cambios[k] = v;
+          cuantos++;
         });
+        if (!cuantos) {
+          ensuciar(false);
+          $('#estadoGuardado').textContent = '';
+          avisar('No había nada que guardar.');
+          return;
+        }
         api('PUT', '/api/admin/contenido', { cambios: cambios }).then(function () {
           ensuciar(false);
+          $$('#vista [data-clave]').forEach(function (el) { comoEstaba[el.dataset.clave] = JSON.stringify(leer(el)); });
           $('#estadoGuardado').textContent = 'Guardado ' + new Date().toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' });
           avisar('Cambios guardados. Ya se ven en la tienda.');
         }).catch(function (e) {
@@ -826,6 +1003,8 @@
     return editorContenido('Marca y contacto', [
       { titulo: 'Marca', campos: [
         { clave: 'marca.nombre', etiqueta: 'Nombre' },
+        { clave: 'marca.nombre_loader', etiqueta: 'Nombre en la pantalla de carga',
+          pista: 'Lo que se ve un instante mientras carga la tienda.' },
         { clave: 'nav.menu_ciudad', etiqueta: 'Ciudad (menú móvil)' },
         { clave: 'nav.cta', etiqueta: 'Botón del menú' },
       ] },
@@ -854,6 +1033,11 @@
         { clave: 'nav.marca', etiqueta: 'Menú · marca' },
         { clave: 'nav.feed', etiqueta: 'Menú · feed' },
         { clave: 'nav.contacto', etiqueta: 'Menú móvil · contacto' },
+      ] },
+      { titulo: 'Pie de página · enlaces', campos: [
+        { clave: 'footer.col2_l1', etiqueta: 'Enlace 1 (colección)' },
+        { clave: 'footer.col2_l2', etiqueta: 'Enlace 2 (sobre la marca)' },
+        { clave: 'footer.col2_l3', etiqueta: 'Enlace 3 (feed)' },
       ] },
     ]);
   };

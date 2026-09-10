@@ -43,7 +43,10 @@ const MAPA = [
   { clave: 'nav.feed_movil', literal: 'Feed', busca: '<a href="#feed" data-close>Feed</a>', pon: '<a href="#feed" data-close>{{nav.feed_movil}}</a>' },
   { clave: 'nav.contacto', literal: 'Contacto', busca: '<a href="#contacto" data-close>Contacto</a>', pon: '<a href="#contacto" data-close>{{nav.contacto}}</a>' },
   { clave: 'nav.cta', literal: 'Comprar' },
-  { clave: 'nav.wa_url', literal: WA_GENERAL, veces: 4 },
+  /* 5: los cuatro botones de la página y el enlace del pie. Ese último llevaba
+     el número escrito a mano y no seguía al panel; hacer-plantilla.js lo
+     normaliza antes de aplicar este mapa. */
+  { clave: 'nav.wa_url', literal: WA_GENERAL, veces: 5 },
   { clave: 'nav.menu_ciudad', literal: 'Medellín · CO' },
 
   /* ── Hero ────────────────────────────────────────────────────────────── */

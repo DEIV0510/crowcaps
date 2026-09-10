@@ -86,6 +86,11 @@ function bloqueDatos(productos, c) {
   }));
   const cfg = {
     destacadas: sacar(c, 'hero.destacadas') || [],
+    /* Los botones de filtro de la tienda. Sin esto js/app.js caía en su lista
+       de reserva y la pantalla «Categorías» del panel no cambiaba nada. */
+    categorias: (c.categorias || [])
+      .filter((x) => x && x.slug && x.visible !== false)
+      .map((x) => ({ slug: x.slug, nombre: x.nombre || x.slug })),
     ficha: {
       incluye: sacar(c, 'ficha.incluye'),
       envio: sacar(c, 'ficha.envio'),
@@ -166,16 +171,24 @@ function bloqueFeed(c) {
 }
 
 /* ── Secciones apagadas ──────────────────────────────────────────────────── */
+function quitarTramo(html, abre, cierra, visible) {
+  const i = html.indexOf(abre), j = html.indexOf(cierra);
+  if (i < 0 || j < 0) return html;
+  return visible
+    ? html.slice(0, i) + html.slice(i + abre.length, j) + html.slice(j + cierra.length)
+    : html.slice(0, i) + html.slice(j + cierra.length);
+}
+
 function aplicarSecciones(html, c) {
   const nombres = ['hero', 'coleccion', 'perks', 'editorial', 'about', 'feed', 'final'];
   for (const n of nombres) {
-    const abre = `<!--sec:${n}-->`, cierra = `<!--/sec:${n}-->`;
-    const i = html.indexOf(abre), j = html.indexOf(cierra);
-    if (i < 0 || j < 0) continue;
-    const visible = sacar(c, 'secciones.' + n) !== false;
-    html = visible
-      ? html.slice(0, i) + html.slice(i + abre.length, j) + html.slice(j + cierra.length)
-      : html.slice(0, i) + html.slice(j + cierra.length);
+    html = quitarTramo(html, `<!--sec:${n}-->`, `<!--/sec:${n}-->`, sacar(c, 'secciones.' + n) !== false);
+  }
+  /* Los interruptores «Mostrar Instagram/TikTok/Facebook» apagaban la red en
+     los datos estructurados pero el enlace seguía en el pie: si CrowCaps no
+     tiene Facebook, no puede quedar un enlace a una página que no existe. */
+  for (const red of ['instagram', 'tiktok', 'facebook']) {
+    html = quitarTramo(html, `<!--red:${red}-->`, `<!--/red:${red}-->`, sacar(c, 'redes.' + red + '_visible') !== false);
   }
   return html;
 }
@@ -197,17 +210,26 @@ function renderizar({ productos, contenido, plantilla }) {
   /* Producto del hero: el elegido, o el primero si ese ya no existe */
   const heroId = sacar(c, 'hero.principal');
   const hero = P.find((p) => p.id === heroId) || P[0];
-  const heroImg = hero ? hero.imagenes[0] : { src: '', w: 0, h: 0 };
+  /* Sin ninguna gorra publicada no puede quedar un <img src="">: hay
+     navegadores que con eso vuelven a pedir la página entera. */
+  const heroImg = hero ? hero.imagenes[0] : { src: 'assets/brand/icon-512.png', w: 512, h: 512 };
 
   const extra = {
     N: String(P.length),
     'hero.img_src': heroImg.src,
     'hero.img_w': String(heroImg.w || ''),
     'hero.img_h': String(heroImg.h || ''),
-    'hero.img_alt': hero ? `Gorra ${hero.name} — ${hero.colorway}` : '',
+    'hero.img_alt': hero ? `Gorra ${hero.name} — ${hero.colorway}` : sacar(c, 'marca.nombre') || 'CrowCaps',
     'hero.img_titulo': hero ? hero.name : '',
     'editorial.img_w': String(sacar(c, 'editorial.img_w') || 526),
     'editorial.img_h': String(sacar(c, 'editorial.img_h') || 670),
+
+    /* El menú del celular y el del computador son el MISMO menú: si fueran dos
+       campos aparte, el dueño cambiaría uno y el teléfono seguiría con el texto
+       viejo sin que nadie entienda por qué. */
+    'nav.coleccion_movil': sacar(c, 'nav.coleccion'),
+    'nav.marca_movil': sacar(c, 'nav.marca'),
+    'nav.feed_movil': sacar(c, 'nav.feed'),
   };
 
   let html = aplicarSecciones(tpl, c);

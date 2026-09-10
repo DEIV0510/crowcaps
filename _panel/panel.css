@@ -155,6 +155,11 @@ textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
 .etiqueta--dest { background: var(--azul-suave); color: var(--azul); }
 .etiqueta--aviso { background: var(--ambar-suave); color: var(--ambar); }
 
+/* Una cifra del panel que además lleva a algún sitio */
+.cifra--ir { cursor: pointer; text-align: left; font: inherit; }
+.cifra--ir:hover { border-color: var(--azul); }
+.cifra--ir:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+
 /* Recordatorio de "todavía sin contraseña": informa, no alarma */
 .recordatorio {
   display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
@@ -179,6 +184,23 @@ textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
 .item.arrastrando { opacity: .4; }
 .item.encima { border-color: var(--azul); box-shadow: 0 0 0 3px rgba(47,91,255,.12); }
 .item__asa { cursor: grab; color: var(--tinta-3); text-align: center; font-size: 16px; }
+.item__asa--off { opacity: .3; cursor: default; }
+/* Subir/bajar con un toque: arrastrar no funciona con el dedo */
+.mover {
+  display: block; width: 26px; height: 22px; margin: 2px auto 0; padding: 0;
+  border: 1px solid var(--linea); border-radius: 6px; background: #fff;
+  color: var(--tinta-2); font-size: 10px; line-height: 1; cursor: pointer;
+}
+.mover:hover:not(:disabled) { border-color: var(--azul); color: var(--azul); }
+.mover:disabled { opacity: .3; cursor: default; }
+
+/* Poner una foto de principal sin arrastrarla */
+.foto__pri {
+  position: absolute; left: 5px; bottom: 5px; z-index: 2;
+  border: 0; border-radius: 999px; padding: 3px 8px;
+  background: rgba(255,255,255,.94); color: var(--tinta); font-size: 10px; font-weight: 600; cursor: pointer;
+}
+.foto__pri:hover { background: #fff; color: var(--azul); }
 .item__foto { width: 54px; height: 54px; border-radius: 7px; object-fit: cover; background: #eeedea; }
 .item__txt b { display: block; font-size: 14px; }
 .item__txt span { font-size: 12.5px; color: var(--tinta-3); }
@@ -218,7 +240,9 @@ textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
 .aviso--ok { background: var(--verde-suave); color: var(--verde); border-color: #bfe6cf; }
 .aviso--info { background: var(--azul-suave); color: var(--azul); border-color: #ccd7ff; }
 
-.avisos { position: fixed; right: 16px; bottom: 16px; z-index: 100; display: grid; gap: 8px; }
+/* pointer-events:none — los avisos no se tocan, y flotando sobre el botón
+   «Guardar cambios» del celular se comían el toque durante seis segundos. */
+.avisos { position: fixed; right: 16px; bottom: 16px; z-index: 100; display: grid; gap: 8px; pointer-events: none; }
 .toast {
   background: var(--tinta); color: #fff; padding: 11px 15px; border-radius: 9px;
   box-shadow: 0 10px 30px rgba(0,0,0,.2); font-size: 13.5px; max-width: 340px;
@@ -250,17 +274,34 @@ textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
   .lateral {
-    position: fixed; inset: 0 auto 0 0; width: 260px; z-index: 60; height: 100vh;
+    position: fixed; inset: 0 auto 0 0; width: 260px; z-index: 60;
+    /* dvh + scroll: en horizontal, «Cuenta» y «Cerrar sesión» quedaban fuera
+       de la pantalla y no había forma de llegar a ellos. */
+    height: 100vh; height: 100dvh; overflow-y: auto; overscroll-behavior: contain;
     transform: translateX(-100%); transition: transform .2s;
   }
   body.menu .lateral { transform: none; box-shadow: 0 0 60px rgba(0,0,0,.35); }
-  body.menu::after { content: ""; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 50; }
+  /* El velo es un elemento de verdad para que se pueda TOCAR y cerrar el menú:
+     como pseudo-elemento tapaba la hamburguesa y el menú no se podía cerrar. */
+  .velo { display: none; }
+  body.menu .velo { display: block; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 50; }
   .hamburguesa { display: block; }
   .contenido { padding: 16px; }
   .recordatorio { margin: 12px 16px 0; }
+  /* Los avisos, a lo ancho y arriba del botón de guardar */
+  .avisos { left: 12px; right: 12px; bottom: 12px; }
+  .toast { max-width: none; }
   .editor { grid-template-columns: 1fr; }
-  .item { grid-template-columns: 54px 1fr; grid-template-areas: "foto txt" "acc acc"; }
-  .item__asa { display: none; }
+  /* El asa se queda: ahí viven los botones ▲▼, la única forma de reordenar con
+     el dedo. Solo se esconde el ⠿, que en táctil no hace nada. */
+  .item {
+    grid-template-columns: 34px 54px 1fr;
+    grid-template-areas: "asa foto txt" "acc acc acc";
+  }
+  .item__asa { grid-area: asa; font-size: 0; }
+  .item__asa--off { display: none; }
+  /* Con el dedo, 22px de alto es poco: cuesta acertarle */
+  .mover { height: 26px; }
   .item__foto { grid-area: foto; }
   .item__txt { grid-area: txt; }
   .item__acc { grid-area: acc; justify-content: flex-start; }

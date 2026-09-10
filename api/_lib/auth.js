@@ -136,6 +136,97 @@ async function usuarioActual(req) {
   return { id: fila.id, correo: fila.correo, nombre: fila.nombre, rol: fila.rol };
 }
 
+/* ── Entrar por enlace, sin escribir contraseña ──────────────────────────────
+   Para estrenar el panel sin tener que inventarse una contraseña antes de
+   haber visto nada: se abre `/admin?entrar=<código>` una vez y ya está; la
+   sesión dura una semana, así que después basta con abrir /admin.
+
+   El código NO está en el repositorio: vive en una variable de entorno y son
+   bytes al azar. Es una credencial de verdad, tan fuerte como una contraseña
+   larga; lo único que cambia es que no hay que teclearla. Por eso el panel NO
+   queda abierto a quien pase por ahí.
+
+   La cuenta que crea no tiene contraseña: guarda una marca que verificar()
+   nunca puede dar por buena, así que por el formulario de entrar no se pasa.
+   Cuando el dueño quiera ponerle una, la pone desde Cuenta. */
+
+const SIN_CLAVE = 'sin-clave-todavia';
+const CORREO_DUENO = 'dueno@crowcaps.co';
+
+const tieneClaveDeVerdad = (guardado) => String(guardado || '').startsWith('scrypt$');
+
+/* Comparación en tiempo constante, y de longitudes distintas sin lanzar */
+function mismoSecreto(a, b) {
+  const x = Buffer.from(String(a || ''), 'utf8');
+  const y = Buffer.from(String(b || ''), 'utf8');
+  if (!x.length || x.length !== y.length) return false;
+  return crypto.timingSafeEqual(x, y);
+}
+
+/* ¿Alguien le puso ya contraseña al panel? */
+async function hayClaveDeVerdad() {
+  const fila = await uno("SELECT COUNT(*) AS n FROM usuarios WHERE clave LIKE 'scrypt$%'");
+  return Number(fila ? fila.n : 0) > 0;
+}
+
+/* ¿Este código sirve para entrar por enlace?
+
+   1. ENLACE_ACCESO, si está puesto. Es el caso normal.
+   2. Si no lo está, vale el código de instalación (SETUP_TOKEN), pero SOLO
+      mientras nadie le haya puesto contraseña al panel. En esa ventana ese
+      código ya permitía crear el primer administrador —o sea, quedarse con
+      todo— así que dejarlo entrar no le da ningún poder nuevo. En cuanto hay
+      una contraseña de verdad, deja de servir. */
+function decidirEnlace({ codigo, enlaceAcceso, setupToken, yaHayClave }) {
+  if (enlaceAcceso) return mismoSecreto(codigo, enlaceAcceso);
+  if (!setupToken || !mismoSecreto(codigo, setupToken)) return false;
+  return !yaHayClave;
+}
+
+async function codigoDeEnlaceValido(codigo) {
+  const enlaceAcceso = process.env.ENLACE_ACCESO || '';
+  /* La consulta solo hace falta en el caso 2 */
+  const yaHayClave = enlaceAcceso ? false : await hayClaveDeVerdad();
+  return decidirEnlace({ codigo, enlaceAcceso, setupToken: process.env.SETUP_TOKEN || '', yaHayClave });
+}
+
+/* Devuelve el usuario si el código es el bueno, o null. Nunca lanza.
+   Los intentos fallidos cuentan para el mismo freno que el formulario de
+   entrar: es una URL pública, y sin freno se podría probar a lo bruto. */
+async function entrarPorEnlace(req, res, codigo) {
+  try {
+    const llave = 'enlace:' + ipDe(req);
+    if (await demasiadosIntentos(llave)) return null;
+    if (!(await codigoDeEnlaceValido(codigo))) {
+      await anotarIntento(llave);
+      return null;
+    }
+    await limpiarIntentos(llave);
+
+    let fila = await uno('SELECT id, correo, nombre, rol, activo FROM usuarios WHERE correo = ?', [CORREO_DUENO]);
+    if (!fila) {
+      const r = await correr(
+        'INSERT INTO usuarios (correo, nombre, clave, rol, activo, creado) VALUES (?, ?, ?, ?, 1, ?)',
+        [CORREO_DUENO, 'Dueño', SIN_CLAVE, 'admin', ahora()]
+      );
+      fila = { id: r.id, correo: CORREO_DUENO, nombre: 'Dueño', rol: 'admin', activo: 1 };
+    }
+    if (!fila.activo) return null;
+    await abrirSesion(res, fila.id, req.headers['user-agent']);
+    return { id: fila.id, correo: fila.correo, nombre: fila.nombre, rol: fila.rol };
+  } catch (e) {
+    console.error('[auth] no pude abrir la sesión por enlace:', e && e.message);
+    return null;
+  }
+}
+
+/* ¿La cuenta con la que estoy entrando todavía no tiene contraseña? */
+async function faltaPonerClave(usuario) {
+  if (!usuario) return false;
+  const fila = await uno('SELECT clave FROM usuarios WHERE id = ?', [usuario.id]);
+  return !!fila && !tieneClaveDeVerdad(fila.clave);
+}
+
 /* ── Permisos ────────────────────────────────────────────────────────────── */
 
 class ErrorDeAcceso extends Error {
@@ -189,9 +280,10 @@ const limpiarIntentos = (llave) => correr('DELETE FROM intentos WHERE llave = ?'
 
 module.exports = {
   COOKIE, DIAS_SESION, VENTANA_MINUTOS, MAX_INTENTOS,
-  hashear, verificar, revisarFortaleza,
+  hashear, verificar, revisarFortaleza, tieneClaveDeVerdad,
   leerCookies, ponerCookie, borrarCookie, enProduccion,
   abrirSesion, cerrarSesion, usuarioActual,
+  entrarPorEnlace, faltaPonerClave, decidirEnlace, CORREO_DUENO,
   ErrorDeAcceso, PERMISOS, puede, exigir,
   ipDe, demasiadosIntentos, anotarIntento, limpiarIntentos,
 };

@@ -16,12 +16,15 @@ const path = require('path');
 const PUERTO = process.env.PORT || 5325;
 const RAIZ = __dirname;
 
-/* Código para crear el primer administrador. En producción SIEMPRE viene de una
-   variable de entorno; aquí, si no la pusiste, se inventa uno distinto en cada
-   arranque y se imprime al final. Nunca hay una clave fija escrita en el código. */
-if (!process.env.SETUP_TOKEN) {
-  process.env.SETUP_TOKEN = require('crypto').randomBytes(12).toString('hex');
-  process.env.SETUP_TOKEN_DEL_MOMENTO = '1';
+/* Códigos de acceso. En producción SIEMPRE vienen de variables de entorno;
+   aquí, si no las pusiste, se inventan distintas en cada arranque y se imprimen
+   al final. Nunca hay una clave fija escrita en el código. */
+const inventados = [];
+for (const nombre of ['SETUP_TOKEN', 'ENLACE_ACCESO']) {
+  if (!process.env[nombre]) {
+    process.env[nombre] = require('crypto').randomBytes(12).toString('hex');
+    inventados.push(nombre);
+  }
 }
 
 const handler = require('./api/index.js');
@@ -63,8 +66,11 @@ http.createServer(async (req, res) => {
 }).listen(PUERTO, () => {
   console.log('CrowCaps  ->  http://localhost:' + PUERTO);
   console.log('Panel     ->  http://localhost:' + PUERTO + '/admin');
-  if (process.env.SETUP_TOKEN_DEL_MOMENTO) {
-    console.log('Código para crear el primer administrador (solo para esta sesión):');
-    console.log('  ' + process.env.SETUP_TOKEN);
+  if (inventados.includes('ENLACE_ACCESO')) {
+    console.log('Entrar sin contraseña (solo para este arranque):');
+    console.log('  http://localhost:' + PUERTO + '/admin?entrar=' + process.env.ENLACE_ACCESO);
+  }
+  if (inventados.includes('SETUP_TOKEN')) {
+    console.log('Código para crear el primer administrador: ' + process.env.SETUP_TOKEN);
   }
 });

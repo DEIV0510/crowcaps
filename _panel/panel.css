@@ -155,6 +155,17 @@ textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
 .etiqueta--dest { background: var(--azul-suave); color: var(--azul); }
 .etiqueta--aviso { background: var(--ambar-suave); color: var(--ambar); }
 
+/* Recordatorio de "todavía sin contraseña": informa, no alarma */
+.recordatorio {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  margin: 14px 22px 0; padding: 11px 14px;
+  background: var(--ambar-suave); color: var(--ambar);
+  border: 1px solid currentColor; border-radius: var(--radio);
+  font-size: 13px; line-height: 1.45;
+}
+.recordatorio span { flex: 1; min-width: 220px; }
+.recordatorio .btn { flex: none; background: #fff; }
+
 /* ── Listado de productos ───────────────────────────────────────────────── */
 .filtros { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
 .filtros input[type=search] { flex: 1; min-width: 200px; padding: 9px 11px; border: 1px solid var(--linea); border-radius: 8px; }
@@ -246,6 +257,7 @@ textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
   body.menu::after { content: ""; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 50; }
   .hamburguesa { display: block; }
   .contenido { padding: 16px; }
+  .recordatorio { margin: 12px 16px 0; }
   .editor { grid-template-columns: 1fr; }
   .item { grid-template-columns: 54px 1fr; grid-template-areas: "foto txt" "acc acc"; }
   .item__asa { display: none; }

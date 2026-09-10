@@ -97,13 +97,25 @@ async function logout(req, res) {
 async function yo(req, res) {
   const u = await auth.usuarioActual(req);
   const hay = await uno('SELECT COUNT(*) AS n FROM usuarios');
-  return ok(res, { usuario: u, instalado: Number(hay.n) > 0 });
+  return ok(res, {
+    usuario: u,
+    instalado: Number(hay.n) > 0,
+    /* Para que el panel pueda recordarle que todavía no le puso contraseña */
+    faltaClave: await auth.faltaPonerClave(u),
+  });
 }
 
 async function cambiarClave(req, res, usuario) {
   const d = await cuerpoJson(req);
   const fila = await uno('SELECT * FROM usuarios WHERE id = ?', [usuario.id]);
-  if (!fila || !auth.verificar(d.actual, fila.clave)) throw new ErrorDeDatos('La contraseña actual no es correcta.');
+  if (!fila) throw new ErrorDeDatos('La contraseña actual no es correcta.');
+  /* Si la cuenta entró por enlace y todavía no tiene contraseña, esta es la
+     primera: no hay ninguna anterior que pedir. Para llegar aquí ya hizo falta
+     una sesión válida, así que no se salta ningún control. */
+  const yaTenia = auth.tieneClaveDeVerdad(fila.clave);
+  if (yaTenia && !auth.verificar(d.actual, fila.clave)) {
+    throw new ErrorDeDatos('La contraseña actual no es correcta.');
+  }
   const flojera = auth.revisarFortaleza(d.nueva);
   if (flojera) throw new ErrorDeDatos(flojera);
   await correr('UPDATE usuarios SET clave = ? WHERE id = ?', [auth.hashear(d.nueva), usuario.id]);

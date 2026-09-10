@@ -15,7 +15,7 @@
   };
   var cop = function (n) { return n == null ? '—' : '$' + Number(n).toLocaleString('es-CO'); };
 
-  var estado = { usuario: null, vista: 'panel', sucio: false, productos: [], contenido: null, categorias: [] };
+  var estado = { usuario: null, vista: 'panel', sucio: false, productos: [], contenido: null, categorias: [], faltaClave: false };
 
   /* ── API ────────────────────────────────────────────────────────────────── */
   function api(metodo, ruta, datos) {
@@ -879,14 +879,23 @@
     $('#titulo').textContent = 'Cuenta';
     return Promise.all([api('GET', '/api/estado'), api('GET', '/api/admin/auditoria?n=40')]).then(function (r) {
       var e = r[0], a = r[1];
+      /* Si entró por enlace y todavía no hay contraseña, no se le pide una
+         anterior que no existe: es la primera. */
+      var primera = estado.faltaClave;
       $('#vista').innerHTML =
-        '<div class="tarjeta"><div class="tarjeta__cab"><h2>Cambiar contraseña</h2>' +
-        '<p>Al cambiarla se cierran las demás sesiones.</p></div><div class="tarjeta__cuerpo">' +
+        '<div class="tarjeta"><div class="tarjeta__cab">' +
+        '<h2>' + (primera ? 'Ponerle contraseña a la cuenta' : 'Cambiar contraseña') + '</h2>' +
+        '<p>' + (primera
+          ? 'Ahora entras con tu enlace privado. Si le pones contraseña, podrás entrar también con correo y contraseña.'
+          : 'Al cambiarla se cierran las demás sesiones.') + '</p></div><div class="tarjeta__cuerpo">' +
         '<div class="aviso" id="errClave" hidden></div>' +
-        '<div class="campo"><label>Contraseña actual</label><input type="password" id="cActual" autocomplete="current-password"></div>' +
-        '<div class="campo"><label>Contraseña nueva</label><input type="password" id="cNueva" autocomplete="new-password">' +
+        (primera ? '' :
+          '<div class="campo"><label for="cActual">Contraseña actual</label><input type="password" id="cActual" autocomplete="current-password"></div>') +
+        '<div class="campo"><label for="cNueva">' + (primera ? 'Contraseña' : 'Contraseña nueva') + '</label>' +
+        '<input type="password" id="cNueva" autocomplete="new-password">' +
         '<span class="pista">Mínimo 10 caracteres, con letras y números.</span></div>' +
-        '<button class="btn btn--primario" id="btnClave">Cambiar contraseña</button></div></div>' +
+        '<button class="btn btn--primario" id="btnClave">' +
+        (primera ? 'Guardar contraseña' : 'Cambiar contraseña') + '</button></div></div>' +
 
         '<div class="tarjeta"><div class="tarjeta__cab"><h2>Estado del sistema</h2></div><div class="tarjeta__cuerpo">' +
         '<div class="cifras">' +
@@ -904,8 +913,18 @@
       $('#btnClave').onclick = function () {
         var b = this; b.disabled = true;
         var err = $('#errClave'); err.hidden = true;
-        api('POST', '/api/admin/clave', { actual: $('#cActual').value, nueva: $('#cNueva').value })
-          .then(function () { avisar('Contraseña cambiada.'); $('#cActual').value = ''; $('#cNueva').value = ''; })
+        var actual = $('#cActual') ? $('#cActual').value : '';
+        api('POST', '/api/admin/clave', { actual: actual, nueva: $('#cNueva').value })
+          .then(function () {
+            avisar(primera ? 'Listo, ya tiene contraseña.' : 'Contraseña cambiada.');
+            if ($('#cActual')) $('#cActual').value = '';
+            $('#cNueva').value = '';
+            if (primera) {
+              estado.faltaClave = false;
+              $('#sinClave').hidden = true;
+              irA('cuenta');
+            }
+          })
           .catch(function (e2) { err.textContent = e2.message; err.hidden = false; })
           .then(function () { b.disabled = false; });
       };
@@ -915,15 +934,29 @@
   /* ── Arranque ───────────────────────────────────────────────────────────── */
   function arrancar(d) {
     estado.usuario = (d && d.usuario) || null;
+    estado.faltaClave = !!(d && d.faltaClave);
     $('#acceso').hidden = true;
     $('#app').hidden = false;
     $('#quien').textContent = estado.usuario ? estado.usuario.correo : '';
+    $('#sinClave').hidden = !estado.faltaClave;
     irA('panel');
   }
+
+  $('#irACuenta').addEventListener('click', function () { irA('cuenta'); });
 
   api('GET', '/api/auth/yo').then(function (d) {
     if (d.usuario) return arrancar(d);
     mostrarAcceso(d.instalado);
+    /* Volvió de /admin?entrar=… con un código que no era */
+    if (/[?&]error=enlace/.test(location.search)) {
+      var err = $('#errEntrar');
+      if (err && !$('#formEntrar').hidden) {
+        err.textContent = 'Ese enlace de acceso no es válido. Pide uno nuevo.';
+        err.hidden = false;
+      } else {
+        avisar('Ese enlace de acceso no es válido.', true);
+      }
+    }
   }).catch(function () {
     document.body.innerHTML = '<div class="acceso"><div class="acceso__caja">' +
       '<h1>El panel no está disponible</h1>' +

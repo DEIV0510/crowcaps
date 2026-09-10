@@ -70,6 +70,25 @@ igual('un precio vacío queda vacío', V.entero(''), null);
 revienta('una gorra sin nombre no entra', () => V.producto({ name: '   ' }));
 revienta('publicar sin precio no se puede', () => V.producto({ name: 'X', publicado: true, price: null, desc: 'algo' }));
 
+/* ── Entrar por enlace ───────────────────────────────────────────────────── */
+const A = require(path.join(RAIZ, 'api', '_lib', 'auth.js'));
+const enlace = (o) => A.decidirEnlace(Object.assign({ codigo: '', enlaceAcceso: '', setupToken: '', yaHayClave: false }, o));
+
+cierto('el enlace bueno entra', enlace({ codigo: 'abc123', enlaceAcceso: 'abc123' }));
+cierto('un enlace equivocado no entra', !enlace({ codigo: 'otro', enlaceAcceso: 'abc123' }));
+cierto('sin código no entra nadie', !enlace({ codigo: '', enlaceAcceso: 'abc123' }));
+cierto('sin nada configurado no entra nadie', !enlace({ codigo: 'loquesea' }));
+cierto('si hay ENLACE_ACCESO, el de instalación ya no sirve',
+  !enlace({ codigo: 'instal', enlaceAcceso: 'abc123', setupToken: 'instal' }));
+cierto('sin ENLACE_ACCESO sirve el de instalación mientras no haya contraseña',
+  enlace({ codigo: 'instal', setupToken: 'instal' }));
+cierto('en cuanto hay una contraseña, el de instalación deja de servir',
+  !enlace({ codigo: 'instal', setupToken: 'instal', yaHayClave: true }));
+cierto('una cuenta sin contraseña no se puede abrir con la marca interna',
+  !A.verificar('sin-clave-todavia', 'sin-clave-todavia') && !A.verificar('', 'sin-clave-todavia'));
+cierto('tieneClaveDeVerdad distingue el hash de la marca',
+  A.tieneClaveDeVerdad(A.hashear('UnaClaveLarga1')) && !A.tieneClaveDeVerdad('sin-clave-todavia'));
+
 /* ── Textos editables ────────────────────────────────────────────────────── */
 const conEspacio = MAPA.filter((e) => typeof e.literal === 'string' && e.literal !== e.literal.trim());
 cierto('ningún texto depende de un espacio invisible', conEspacio.length === 0,

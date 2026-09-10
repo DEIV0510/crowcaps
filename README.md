@@ -60,6 +60,12 @@ En Vercel, lo mismo pero con Turso y Vercel Blob: el código es el mismo.
 | `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN` | base de datos (las pone la integración) |
 | `BLOB_READ_WRITE_TOKEN` | fotos que se suben desde el panel |
 | `SETUP_TOKEN` | código para crear el PRIMER administrador |
+| `ENLACE_ACCESO` | código del enlace `/admin?entrar=…`, para entrar sin escribir contraseña |
+
+Si no pones `ENLACE_ACCESO`, el enlace acepta el `SETUP_TOKEN` **mientras nadie
+le haya puesto contraseña al panel**: en esa ventana ese código ya permitía
+crear el primer administrador, así que no da ningún poder nuevo. En cuanto hay
+una contraseña de verdad, deja de servir.
 
 `/api/estado` dice si todo está conectado, sin exponer nada sensible.
 

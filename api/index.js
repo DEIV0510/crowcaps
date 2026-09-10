@@ -48,10 +48,21 @@ module.exports = async function handler(req, res) {
     if (ruta === '/vista-previa') return await publico.portada(req, res, { vistaPrevia: true });
 
     /* ── Panel ───────────────────────────────────────────────────────────── */
-    if (ruta === '/admin') return servirPanel(res, 'index.html');
     if (ruta === '/admin/panel.css') return servirPanel(res, 'panel.css');
     if (ruta === '/admin/panel.js') return servirPanel(res, 'panel.js');
-    if (ruta.startsWith('/admin/')) return servirPanel(res, 'index.html');
+    if (ruta === '/admin' || ruta.startsWith('/admin/')) {
+      /* /admin?entrar=<código> abre la sesión sin escribir nada. Después se
+         quita de la barra de direcciones, para que el código no se quede ahí
+         a la vista ni en el historial de esta página. */
+      const codigo = url.searchParams.get('entrar');
+      if (codigo) {
+        const quien = await auth.entrarPorEnlace(req, res, codigo);
+        res.statusCode = 302;
+        res.setHeader('Location', quien ? '/admin' : '/admin?error=enlace');
+        return res.end();
+      }
+      return servirPanel(res, 'index.html');
+    }
 
     /* ── Diagnóstico (sin datos sensibles) ───────────────────────────────── */
     if (ruta === '/api/estado') {
@@ -65,6 +76,8 @@ module.exports = async function handler(req, res) {
         instalado,
         almacenamiento: process.env.BLOB_READ_WRITE_TOKEN ? 'vercel blob' : 'disco local',
         entorno: process.env.VERCEL_ENV || 'local',
+        /* Solo si existe, nunca el código */
+        enlace: !!process.env.ENLACE_ACCESO,
       });
     }
 

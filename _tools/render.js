@@ -106,6 +106,55 @@ function bloqueDatos(productos, c) {
     ';window.CROWCAPS_CONFIG=' + seguro(cfg) + ';</script>';
 }
 
+/* ── Píxeles de publicidad ───────────────────────────────────────────────────
+   Meta y Google solo se cargan si el dueño pegó su identificador en el panel.
+   Sin identificador no sale ni una etiqueta: la tienda no habla con nadie.
+
+   Los dos van diferidos y al final del body: son para medir, no pueden retrasar
+   la página. Los identificadores ya vienen validados contra un formato estricto
+   (contenido.js), pero igual se vuelven a limpiar aquí antes de meterlos en el
+   script, porque este archivo también lo usa el build. */
+function bloqueMedicion(c) {
+  /* Se valida el valor TAL CUAL, sin quitarle caracteres antes: si primero se
+     limpiara, un identificador mal pegado se «arreglaría» solo y quedaría uno
+     falso montado en la tienda. Lo que no calce exactamente, no se monta. */
+  const meta = String(sacar(c, 'medicion.meta_pixel') || '').trim();
+  const google = String(sacar(c, 'medicion.google_tag') || '').trim().toUpperCase();
+  const partes = [];
+
+  if (/^\d{8,20}$/.test(meta)) {
+    partes.push(
+      '<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?' +
+      'n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;' +
+      'n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;' +
+      't.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}' +
+      '(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");' +
+      'fbq("init","' + meta + '");fbq("track","PageView");</script>' +
+      '<noscript><img height="1" width="1" style="display:none" alt="" ' +
+      'src="https://www.facebook.com/tr?id=' + meta + '&ev=PageView&noscript=1"></noscript>'
+    );
+  }
+
+  if (/^(G-[A-Z0-9]{6,15}|AW-[0-9]{8,13}|GTM-[A-Z0-9]{5,10})$/.test(google)) {
+    if (google.startsWith('GTM-')) {
+      partes.push(
+        '<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),' +
+        'event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?' +
+        '"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;' +
+        'f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","' + google + '");</script>'
+      );
+    } else {
+      partes.push(
+        '<script async src="https://www.googletagmanager.com/gtag/js?id=' + google + '"></script>' +
+        '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}' +
+        'gtag("js",new Date());gtag("config","' + google + '");</script>'
+      );
+    }
+  }
+
+  return partes.join('\n');
+}
+
 /* ── Datos estructurados ─────────────────────────────────────────────────── */
 function bloqueJsonLd(productos, c) {
   const sitio = String(sacar(c, 'seo.canonical') || 'https://crowcaps.co/').replace(/\/$/, '');
@@ -238,7 +287,8 @@ function renderizar({ productos, contenido, plantilla }) {
     .replace('{{{GRID}}}', () => P.map(tarjeta).join('\n'))
     .replace('{{{JSONLD}}}', () => bloqueJsonLd(P, c))
     .replace('{{{DATOS}}}', () => bloqueDatos(P, c))
-    .replace('{{{FEED}}}', () => bloqueFeed(c));
+    .replace('{{{FEED}}}', () => bloqueFeed(c))
+    .replace('{{{PIXELES}}}', () => bloqueMedicion(c));
 
   /* Marcadores sueltos: {{{x}}} entra tal cual, {{x}} se escapa */
   html = html.replace(/\{\{\{([\w.]+)\}\}\}/g, (_, k) => {
@@ -253,4 +303,4 @@ function renderizar({ productos, contenido, plantilla }) {
   return html;
 }
 
-module.exports = { renderizar, tarjeta, bloqueDatos, bloqueJsonLd, bloqueFeed, enlaceWa, mensajeProducto, esc, cop, PLANTILLA, RAIZ };
+module.exports = { renderizar, tarjeta, bloqueDatos, bloqueJsonLd, bloqueFeed, bloqueMedicion, enlaceWa, mensajeProducto, esc, cop, PLANTILLA, RAIZ };

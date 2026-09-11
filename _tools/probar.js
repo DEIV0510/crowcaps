@@ -154,6 +154,26 @@ const otroMenu = pintar([], { nav: Object.assign({}, valoresPorDefecto().nav, { 
 cierto('el menú del celular sigue al del computador',
   (otroMenu.match(/Catálogo/g) || []).length >= 2);
 
+/* ── Píxeles de publicidad ───────────────────────────────────────────────── */
+const { bloqueMedicion } = require(path.join(RAIZ, '_tools', 'render.js'));
+const pixeles = (meta, google) => bloqueMedicion({ medicion: { meta_pixel: meta, google_tag: google } });
+
+igual('sin identificadores no se carga nada', pixeles('', ''), '');
+cierto('la tienda no llama a nadie mientras no haya píxel',
+  !pintar([]).includes('facebook.net') && !pintar([]).includes('googletagmanager'));
+cierto('el píxel de Meta se monta con su ID', pixeles('123456789012345', '').includes('fbq("init","123456789012345")'));
+cierto('Meta deja también la imagen para quien no tenga JavaScript',
+  pixeles('123456789012345', '').includes('facebook.com/tr?id=123456789012345'));
+cierto('GA4 se monta con gtag', pixeles('', 'G-ABCD123456').includes('gtag("config","G-ABCD123456")'));
+cierto('Google Ads también', pixeles('', 'AW-123456789').includes('AW-123456789'));
+cierto('Tag Manager usa su propio arranque', pixeles('', 'GTM-ABC1234').includes('gtm.js?id='));
+cierto('los dos a la vez conviven',
+  pixeles('123456789012345', 'G-ABCD123456').includes('fbevents') &&
+  pixeles('123456789012345', 'G-ABCD123456').includes('googletagmanager'));
+/* Lo que se escriba en el panel acaba DENTRO de un <script> */
+igual('un ID con código colado no se monta', pixeles('</script><script>alert(1)', '" onload="x'), '');
+igual('ni con comillas ni espacios', pixeles('123 456", evil:"1', 'G-ABC"+alert(1)+"'), '');
+
 /* ── Resultado ───────────────────────────────────────────────────────────── */
 console.log('');
 if (!fallos.length) {

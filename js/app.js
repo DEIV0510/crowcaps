@@ -358,4 +358,30 @@
   /* ---------- 11. Conteo real de referencias ---------- */
   var rc = $('#refCount');
   if (rc && P.length) rc.textContent = P.length;
+
+  /* ---------- 12. Avisar del clic a WhatsApp ----------
+     Aquí no hay carrito ni pago: el pedido se hace por WhatsApp, así que ESE
+     clic es la venta. Sin esto, Meta y Google solo contarían visitas y no
+     sabrían qué anuncio trae clientes de verdad.
+     Si no hay píxel configurado, no pasa nada: ninguna de las dos funciones
+     existe y se sale sin hacer nada. */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+    if (!a) return;
+
+    /* De qué gorra se trata, si el clic salió de una ficha abierta */
+    var ficha = $('#dName');
+    var abierto = $('#drawer');
+    var nombre = (abierto && abierto.classList.contains('is-open') && ficha)
+      ? ficha.textContent.trim() : '';
+
+    try {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Contact', nombre ? { content_name: nombre } : {});
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'contacto_whatsapp', nombre ? { gorra: nombre } : {});
+      }
+    } catch (_) { /* medir nunca puede romper el enlace */ }
+  }, true);
 })();

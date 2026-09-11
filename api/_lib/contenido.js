@@ -13,7 +13,7 @@
 const path = require('path');
 const { todos, uno, correr, enLote, ahora, RAIZ } = require('./db');
 const { valoresPorDefecto, poner, sacar } = require(path.join(RAIZ, '_tools', 'mapa-contenido.js'));
-const { ErrorDeDatos, limpio, parrafo, telefono, enlace, bandera, lista } = require('./validar');
+const { ErrorDeDatos, texto, limpio, parrafo, telefono, enlace, bandera, lista } = require('./validar');
 
 /* Claves que el panel puede escribir. Cualquier otra se rechaza: así una
    petición manipulada no puede meter basura en la configuración. */
@@ -46,6 +46,7 @@ const EDITABLES = new Set([
   'contacto.whatsapp', 'contacto.whatsapp_visible', 'contacto.mensaje_general',
   'contacto.mensaje_producto', 'contacto.mensaje_busqueda', 'contacto.mensaje_cierre',
   'envios.texto_corto', 'envios.texto_ficha',
+  'medicion.meta_pixel', 'medicion.google_tag',
   'ticker.palabras',
   'secciones.hero', 'secciones.coleccion', 'secciones.perks', 'secciones.editorial',
   'secciones.about', 'secciones.feed', 'secciones.final',
@@ -104,11 +105,37 @@ const NOMBRES = {
   'editorial.imagen': 'Imagen del bloque editorial',
   'feed.imagenes': 'Fotos del feed',
   'ticker.palabras': 'Palabras de la cinta',
+  'medicion.meta_pixel': 'Píxel de Meta',
+  'medicion.google_tag': 'Etiqueta de Google',
   'hero.destacadas': 'Gorras destacadas de la portada',
 };
 
+/* Los identificadores de los píxeles se comprueban con lupa: lo que se escriba
+   aquí va a acabar DENTRO de un <script> de la tienda, así que solo se aceptan
+   los formatos exactos y nada más. Vacío = no se carga el píxel. */
+function identificadorPixel(clave, valor) {
+  const v = texto(valor).trim();
+  if (!v) return '';
+  if (clave === 'medicion.meta_pixel') {
+    if (!/^\d{8,20}$/.test(v)) {
+      throw new ErrorDeDatos('El ID del píxel de Meta son solo números (15 o 16 dígitos). Cópialo del Administrador de eventos.');
+    }
+    return v;
+  }
+  /* Google: GA4 (G-…), Google Ads (AW-…) o Tag Manager (GTM-…).
+     Se comprueba el texto tal cual (solo en mayúsculas): si se le quitaran los
+     caracteres raros antes, un identificador mal pegado pasaría convertido en
+     otro que no existe y el dueño creería que está midiendo. */
+  const g = v.toUpperCase();
+  if (!/^(G-[A-Z0-9]{6,15}|AW-[0-9]{8,13}|GTM-[A-Z0-9]{5,10})$/.test(g)) {
+    throw new ErrorDeDatos('El ID de Google tiene que empezar por G- (Analytics), AW- (Google Ads) o GTM- (Tag Manager). Ejemplo: G-ABCD123456.');
+  }
+  return g;
+}
+
 function normalizar(clave, valor) {
   if (clave === 'contacto.whatsapp') return telefono(valor);
+  if (clave.startsWith('medicion.')) return identificadorPixel(clave, valor);
   if (clave.startsWith('secciones.') || INTERRUPTORES.has(clave)) return !!bandera(valor);
   if (clave === 'ticker.palabras') return lista(valor, 12, 30);
   if (clave === 'hero.destacadas') return lista(valor, 6, 60);

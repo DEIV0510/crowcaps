@@ -65,6 +65,15 @@ if (html.includes(DATOS_VIEJO)) {
   problemas.push('no encuentro el bloque de datos (ni el <script src> ni window.CROWCAPS_PRODUCTS)');
 }
 
+/* Hueco para los píxeles de Meta y Google. Va al final, después del script de
+   la tienda: medir no puede retrasar la página. Con los identificadores vacíos
+   el hueco se queda vacío y no se carga nada. */
+{
+  const ancla = '<script src="js/app.js"></script>';
+  if (!html.includes(ancla)) problemas.push('no encuentro el <script> de app.js');
+  else if (!html.includes('{{{PIXELES}}}')) html = html.replace(ancla, ancla + '\n{{{PIXELES}}}');
+}
+
 /* El enlace de WhatsApp del pie llevaba el número escrito a mano (sin mensaje),
    así que cambiarlo en el panel no lo cambiaba. Se normaliza al mismo enlace
    que los demás ANTES de aplicar el mapa, y así queda administrable. */

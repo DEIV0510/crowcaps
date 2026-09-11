@@ -1039,6 +1039,14 @@
         { clave: 'footer.col2_l2', etiqueta: 'Enlace 2 (sobre la marca)' },
         { clave: 'footer.col2_l3', etiqueta: 'Enlace 3 (feed)' },
       ] },
+      { titulo: 'Píxeles de publicidad',
+        nota: 'Para medir tus anuncios. Si los dejas vacíos, la tienda no carga nada de Meta ni de Google. Cada clic en un botón de WhatsApp se reporta como contacto.',
+        campos: [
+          { clave: 'medicion.meta_pixel', etiqueta: 'Píxel de Meta (Facebook e Instagram)',
+            pista: 'Solo números. Está en Meta Business → Administrador de eventos → Orígenes de datos.' },
+          { clave: 'medicion.google_tag', etiqueta: 'Etiqueta de Google',
+            pista: 'G-XXXXXXXXXX (Analytics), AW-XXXXXXXXX (Google Ads) o GTM-XXXXXXX (Tag Manager).' },
+        ] },
     ]);
   };
 

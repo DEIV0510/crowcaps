@@ -163,6 +163,11 @@ const EXTRAS = {
   'envios.texto_corto': 'Envíos GRATIS',
   'envios.texto_ficha': 'Incluye',
 
+  /* Píxeles de publicidad. Vacíos = no se carga NADA: la tienda no llama a
+     Meta ni a Google mientras el dueño no pegue sus identificadores. */
+  'medicion.meta_pixel': '',
+  'medicion.google_tag': '',
+
   'secciones.hero': true,
   'secciones.coleccion': true,
   'secciones.perks': true,

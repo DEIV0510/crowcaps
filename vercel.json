@@ -20,6 +20,10 @@
       "destination": "/api/index.js"
     },
     {
+      "source": "/g/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
       "source": "/vista-previa",
       "destination": "/api/index.js"
     },

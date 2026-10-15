@@ -92,7 +92,7 @@
   (function ticker() {
     var rows = [$('#tickRow'), $('#tickRow2')].filter(Boolean);
     if (!rows.length) return;
-    var words = (CFG.ticker && CFG.ticker.length) ? CFG.ticker : ['Crowcaps', 'Streetwear', 'Medellín', 'Envíos gratis', 'Crowcaps', 'Colombia'];
+    var words = (CFG.ticker && CFG.ticker.length) ? CFG.ticker : ['Crowcaps', 'Streetwear', 'Medellín', 'Envío gratis desde 2 gorras', 'Crowcaps', 'Colombia'];
     var html = words.map(function (w, i) {
       return '<span' + (i % 2 ? ' class="o"' : '') + '>' + w + '</span>' +
         (i === 2 ? '<img src="assets/brand/mascot.webp" width="320" height="286" alt="" loading="lazy">' : '<span>·</span>');
@@ -248,8 +248,8 @@
       $('#dTeam').textContent = p.team;
       $('#dName').textContent = p.name;
       $('#dDesc').textContent = p.desc;
-      $('#dPrice').innerHTML = cop(p.price) + ' <small>COP · envío gratis</small>';
-      $('#dWaTxt').textContent = 'Pedir por ' + cop(p.price);
+      $('#dPrice').innerHTML = cop(p.price) + ' <small>COP · envío gratis desde 2 gorras</small>';
+      $('#dWaTxt').textContent = 'Comprar por ' + cop(p.price);
       $('#dTags').innerHTML = '<span class="tag">' + p.colorway + '</span>' +
         p.colors.map(function (c) { return '<span class="tag">' + c + '</span>'; }).join('');
       $('#dFeats').innerHTML = p.features.map(function (f) { return '<li>' + f + '</li>'; }).join('');
@@ -293,6 +293,8 @@
     }
 
     document.addEventListener('click', function (e) {
+      /* «Comprar» es un enlace a WhatsApp: ese clic no abre la ficha */
+      if (e.target.closest && e.target.closest('.card__comprar')) return;
       var card = e.target.closest ? e.target.closest('.card') : null;
       if (card && card.dataset.id) { e.preventDefault(); open(card.dataset.id); return; }
       if (e.target.closest && e.target.closest('[data-dclose]')) close();
@@ -308,6 +310,17 @@
         else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     });
+
+    /* Quien abre el enlace de una gorra (crowcaps.co/g/<slug>, el que viaja por
+       WhatsApp) llega con ?gorra=<slug>: se le abre esa ficha directamente.
+       Se espera a que termine la pantalla de carga para no taparla. */
+    var pedida = null;
+    try { pedida = new URLSearchParams(location.search).get('gorra'); } catch (_) {}
+    if (pedida && byId[pedida]) {
+      var abrirPedida = function () { setTimeout(function () { open(pedida); }, 900); };
+      if (document.readyState === 'complete') abrirPedida();
+      else window.addEventListener('load', abrirPedida);
+    }
   })();
 
   /* ---------- 8. Cursor propio ---------- */
@@ -370,10 +383,13 @@
     if (!a) return;
 
     /* De qué gorra se trata, si el clic salió de una ficha abierta */
+    /* El nombre sale de la tarjeta (botón «Comprar») o de la ficha abierta */
     var ficha = $('#dName');
     var abierto = $('#drawer');
-    var nombre = (abierto && abierto.classList.contains('is-open') && ficha)
-      ? ficha.textContent.trim() : '';
+    var tarjeta = a.closest('.card');
+    var enTarjeta = tarjeta && tarjeta.querySelector('.card__name');
+    var nombre = enTarjeta ? enTarjeta.textContent.trim()
+      : (abierto && abierto.classList.contains('is-open') && ficha) ? ficha.textContent.trim() : '';
 
     try {
       if (typeof window.fbq === 'function') {

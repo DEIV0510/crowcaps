@@ -154,6 +154,43 @@ const otroMenu = pintar([], { nav: Object.assign({}, valoresPorDefecto().nav, { 
 cierto('el menú del celular sigue al del computador',
   (otroMenu.match(/Catálogo/g) || []).length >= 2);
 
+/* ── Comprar: directo a WhatsApp con la foto de la gorra ─────────────────── */
+const R = require(path.join(RAIZ, '_tools', 'render.js'));
+const gorra = {
+  id: 'yankees-navy-hueso', name: 'Yankees Navy / Hueso', team: 'New York Yankees', colorway: 'Azul marino',
+  price: 85000, colors: ['azules'], desc: 'x', features: [],
+  imagenes: [{ src: 'assets/img/yankees-navy-hueso.webp', sm: 'assets/img/yankees-navy-hueso-sm.webp', w: 515, h: 717 }],
+};
+const cont = valoresPorDefecto();
+
+igual('el enlace de la gorra es /g/<slug> en el dominio oficial',
+  R.enlaceFicha(gorra, cont), 'https://crowcaps.co/g/yankees-navy-hueso');
+cierto('el mensaje lleva el enlace al final aunque la plantilla no tenga {enlace}',
+  R.mensajeProducto('Hola, quiero la {producto}', gorra, 'https://x/g/a') === 'Hola, quiero la Yankees Navy / Hueso\nhttps://x/g/a');
+igual('si el dueño pone {enlace}, va donde él lo puso',
+  R.mensajeProducto('{enlace} · quiero la {producto}', gorra, 'https://x/g/a'), 'https://x/g/a · quiero la Yankees Navy / Hueso');
+cierto('el WhatsApp de compra lleva el enlace de ESA gorra (de ahí sale la foto)',
+  decodeURIComponent(R.enlaceCompra(gorra, cont)).includes('https://crowcaps.co/g/yankees-navy-hueso'));
+
+const conGorra = pintar([gorra]);
+const tarj = conGorra.slice(conGorra.indexOf('<article class="card'), conGorra.indexOf('</article>') + 10);
+cierto('cada tarjeta trae su botón «Comprar»', /class="btn btn--ghost card__comprar"/.test(tarj));
+cierto('«Comprar» va directo a WhatsApp con la gorra',
+  /card__comprar" href="https:\/\/wa\.me\/573207224241\?text=[^"]*crowcaps\.co%2Fg%2Fyankees-navy-hueso/.test(tarj));
+cierto('«Comprar» NO va dentro del botón de la ficha (un enlace dentro de un botón no funciona)',
+  tarj.indexOf('card__comprar') > tarj.indexOf('</button>'));
+
+/* ── Envío: gratis solo desde 2 gorras ───────────────────────────────────── */
+/* Se mira el texto visible (sin etiquetas), frase por frase: el título
+   «Envío gratis» va seguido de su condición en el párrafo de al lado. */
+const sinCondicion = (html) => html
+  .replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')
+  .split(/[.·]/)
+  .filter((frase) => /env[ií]os? gratis/i.test(frase) && !/2 gorras|desde 2/i.test(frase))
+  .map((f) => f.trim());
+igual('ningún texto promete envío gratis sin la condición de 2 gorras', sinCondicion(conGorra), []);
+cierto('ya no dice «sin mínimo de compra»', !/sin m[ií]nimo/i.test(conGorra));
+
 /* ── Píxeles de publicidad ───────────────────────────────────────────────── */
 const { bloqueMedicion } = require(path.join(RAIZ, '_tools', 'render.js'));
 const pixeles = (meta, google) => bloqueMedicion({ medicion: { meta_pixel: meta, google_tag: google } });

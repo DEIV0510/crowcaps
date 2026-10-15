@@ -1013,7 +1013,7 @@
         { clave: 'contacto.whatsapp_visible', etiqueta: 'Número como se muestra' },
         { clave: 'contacto.mensaje_general', etiqueta: 'Mensaje general', tipo: 'area' },
         { clave: 'contacto.mensaje_producto', etiqueta: 'Mensaje al pedir una gorra', tipo: 'area',
-          pista: 'Usa {producto}, {equipo} y {precio}: se reemplazan solos.' },
+          pista: 'Usa {producto}, {equipo} y {precio}: se reemplazan solos. Al final se añade el enlace de la gorra, que en WhatsApp sale con su foto (o pon {enlace} donde lo quieras).' },
         { clave: 'contacto.mensaje_busqueda', etiqueta: 'Mensaje cuando no encuentra nada', tipo: 'area' },
         { clave: 'contacto.mensaje_cierre', etiqueta: 'Mensaje del cierre', tipo: 'area' },
       ] },

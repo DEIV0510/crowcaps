@@ -69,9 +69,19 @@ if (html.includes(DATOS_VIEJO)) {
    la tienda: medir no puede retrasar la página. Con los identificadores vacíos
    el hueco se queda vacío y no se carga nada. */
 {
+  /* Va entre marcas, como el grid y el JSON-LD: así se sustituye entero (esté
+     vacío o con los píxeles puestos) y regenerar no va sumando líneas. */
   const ancla = '<script src="js/app.js"></script>';
-  if (!html.includes(ancla)) problemas.push('no encuentro el <script> de app.js');
-  else if (!html.includes('{{{PIXELES}}}')) html = html.replace(ancla, ancla + '\n{{{PIXELES}}}');
+  const X1 = '<!-- pixeles:start -->', X2 = '<!-- pixeles:end -->';
+  const x = html.indexOf(X1), y = html.indexOf(X2);
+  if (x >= 0 && y > x) {
+    html = html.slice(0, x + X1.length) + '\n{{{PIXELES}}}\n' + html.slice(y);
+  } else if (!html.includes(ancla)) {
+    problemas.push('no encuentro el <script> de app.js');
+  } else {
+    html = html.replace(/\n?\{\{\{PIXELES\}\}\}\n?/, '\n')
+      .replace(ancla, ancla + '\n' + X1 + '\n{{{PIXELES}}}\n' + X2);
+  }
 }
 
 /* El enlace de WhatsApp del pie llevaba el número escrito a mano (sin mensaje),

@@ -47,6 +47,16 @@ module.exports = async function handler(req, res) {
     if (ruta === '/' || ruta === '/index.html') return await publico.portada(req, res);
     if (ruta === '/vista-previa') return await publico.portada(req, res, { vistaPrevia: true });
 
+    /* La gorra que viaja por WhatsApp: /g/<slug> y su foto /g/<slug>/foto.jpg */
+    {
+      const g = ruta.match(/^\/g\/([a-z0-9-]{1,80})(\/foto\.jpg)?$/);
+      if (g) {
+        return g[2]
+          ? await publico.fotoCompartida(req, res, g[1])
+          : await publico.fichaCompartida(req, res, g[1]);
+      }
+    }
+
     /* ── Panel ───────────────────────────────────────────────────────────── */
     if (ruta === '/admin/panel.css') return servirPanel(res, 'panel.css');
     if (ruta === '/admin/panel.js') return servirPanel(res, 'panel.js');

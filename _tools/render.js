@@ -33,16 +33,35 @@ function enlaceWa(numero, mensaje) {
   return 'https://wa.me/' + n + '?text=' + encodeURIComponent(String(mensaje || ''));
 }
 
-/* El mensaje por producto admite {producto}, {equipo} y {precio} */
-function mensajeProducto(plantilla, p) {
-  return String(plantilla || '')
+/* Enlace propio de cada gorra (/g/<slug>). Es el que viaja en el mensaje de
+   WhatsApp: esa página lleva la foto de la gorra en og:image, y WhatsApp la
+   enseña como vista previa en el chat. Por un enlace wa.me no se puede adjuntar
+   una imagen; esta es la forma de que llegue la foto. */
+function enlaceFicha(p, c) {
+  const base = String(sacar(c, 'seo.canonical') || 'https://crowcaps.co/').replace(/\/+$/, '');
+  return base + '/g/' + encodeURIComponent(p.id);
+}
+
+/* El mensaje por producto admite {producto}, {equipo}, {precio} y {enlace}.
+   Si el dueño lo reescribió sin {enlace}, el enlace se añade al final igual:
+   sin él no llega la foto, y es justo lo que identifica la gorra. */
+function mensajeProducto(plantilla, p, enlace) {
+  let m = String(plantilla || '')
     .replace(/\{producto\}/g, p.name || '')
     .replace(/\{equipo\}/g, p.team || '')
     .replace(/\{precio\}/g, cop(p.price));
+  if (!enlace) return m.replace(/\{enlace\}/g, '').trim();
+  return /\{enlace\}/.test(m) ? m.replace(/\{enlace\}/g, enlace) : m.trim() + '\n' + enlace;
+}
+
+/* El enlace de WhatsApp de una gorra concreta, con su foto */
+function enlaceCompra(p, c) {
+  return enlaceWa(sacar(c, 'contacto.whatsapp'),
+    mensajeProducto(sacar(c, 'contacto.mensaje_producto'), p, enlaceFicha(p, c)));
 }
 
 /* ── Tarjeta de producto ─────────────────────────────────────────────────── */
-function tarjeta(p, i) {
+function tarjeta(p, i, c) {
   const grande = BIG.indexOf(i) > -1;
   const n = String(i + 1).padStart(3, '0');
   const sizes = grande ? PASO_SIZES_GRANDE : PASO_SIZES_NORMAL;
@@ -59,7 +78,12 @@ function tarjeta(p, i) {
 
   const segunda = p.imagenes[1] ? '\n      ' + img(p.imagenes[1], 'alt') : '';
 
-  return `    <button class="card${grande ? ' card--big' : ''} reveal" type="button" data-id="${esc(p.id)}" data-colors="${esc((p.colors || []).join(' '))}" data-search="${buscar}" aria-label="Ver ficha de la gorra ${esc(p.name)}">
+  /* La tarjeta ya no es un único <button>: dentro de un botón no puede ir un
+     enlace. Queda un botón que abre la ficha y, al lado, «Comprar», que va
+     directo a WhatsApp con la foto de esta gorra. */
+  const compra = c ? enlaceCompra(p, c) : '#';
+  return `    <article class="card${grande ? ' card--big' : ''} reveal" data-id="${esc(p.id)}" data-colors="${esc((p.colors || []).join(' '))}" data-search="${buscar}">
+    <button class="card__ver" type="button" aria-label="Ver ficha de la gorra ${esc(p.name)}">
     <span class="card__media">
       <span class="card__n">Nº ${n}</span>
       ${img(p.imagenes[0])}${segunda}
@@ -71,7 +95,9 @@ function tarjeta(p, i) {
       <span class="card__color">${esc(p.colorway)}</span>
       <span class="card__price">${cop(p.price)}</span>
     </span>
-  </button>`;
+    </button>
+    <a class="btn btn--ghost card__comprar" href="${esc(compra)}" target="_blank" rel="noopener" data-cursor="COMPRAR" aria-label="Comprar la gorra ${esc(p.name)} por WhatsApp">Comprar <span class="arw">→</span></a>
+  </article>`;
 }
 
 /* ── Datos que consume js/app.js en el navegador ─────────────────────────── */
@@ -82,7 +108,7 @@ function bloqueDatos(productos, c) {
     desc: p.desc, features: p.features || [],
     imgs: p.imagenes.map((im) => im.src),
     thumbs: p.imagenes.map((im) => im.sm || im.src),
-    wa: enlaceWa(sacar(c, 'contacto.whatsapp'), mensajeProducto(sacar(c, 'contacto.mensaje_producto'), p)),
+    wa: enlaceCompra(p, c),
   }));
   const cfg = {
     destacadas: sacar(c, 'hero.destacadas') || [],
@@ -284,7 +310,7 @@ function renderizar({ productos, contenido, plantilla }) {
   let html = aplicarSecciones(tpl, c);
 
   html = html
-    .replace('{{{GRID}}}', () => P.map(tarjeta).join('\n'))
+    .replace('{{{GRID}}}', () => P.map((p, i) => tarjeta(p, i, c)).join('\n'))
     .replace('{{{JSONLD}}}', () => bloqueJsonLd(P, c))
     .replace('{{{DATOS}}}', () => bloqueDatos(P, c))
     .replace('{{{FEED}}}', () => bloqueFeed(c))
@@ -303,4 +329,4 @@ function renderizar({ productos, contenido, plantilla }) {
   return html;
 }
 
-module.exports = { renderizar, tarjeta, bloqueDatos, bloqueJsonLd, bloqueFeed, bloqueMedicion, enlaceWa, mensajeProducto, esc, cop, PLANTILLA, RAIZ };
+module.exports = { renderizar, tarjeta, bloqueDatos, bloqueJsonLd, bloqueFeed, bloqueMedicion, enlaceWa, enlaceFicha, enlaceCompra, mensajeProducto, esc, cop, PLANTILLA, RAIZ };

@@ -298,10 +298,12 @@ body.is-locked { overflow: hidden; }
 }
 .card { position: relative; display: flex; flex-direction: column; text-align: left; padding: 0; }
 .card--big { grid-column: span 2; grid-row: span 2; }
+/* La tarjeta tiene dos acciones: ver la ficha (este botón) y «Comprar» */
+.card__ver { display: flex; flex-direction: column; flex: 1 1 auto; width: 100%; text-align: left; padding: 0; }
 .card__media {
   display: block; position: relative; aspect-ratio: 3 / 4; background: var(--paper-2); overflow: hidden;
 }
-.card--big .card__media { aspect-ratio: auto; height: 100%; min-height: 340px; }
+.card--big .card__media { aspect-ratio: auto; flex: 1 1 auto; min-height: 340px; }
 .card__media img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   transition: transform .8s var(--ease-out), opacity .5s var(--ease);
@@ -320,7 +322,7 @@ body.is-locked { overflow: hidden; }
   font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
   transform: translateY(120%); opacity: 0; transition: transform .45s var(--ease-out), opacity .3s;
 }
-.card:hover .card__go, .card:focus-visible .card__go { transform: none; opacity: 1; }
+.card__ver:hover .card__go, .card__ver:focus-visible .card__go { transform: none; opacity: 1; }
 .card__info { display: grid; gap: 2px; padding: 12px 2px 0; border-top: 1px solid var(--ink); margin-top: 10px; }
 .card__team { font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
 .card__name { font-family: var(--f-display); font-weight: 700; font-size: clamp(14px, 1.15vw, 17px); letter-spacing: -.015em; text-transform: uppercase; line-height: 1.1; }
@@ -329,6 +331,9 @@ body.is-locked { overflow: hidden; }
 .card__price { margin-top: 4px; font-family: var(--f-display); font-weight: 700; font-size: 14px; letter-spacing: -.01em; }
 .card--big .card__price { font-size: 18px; font-weight: 900; }
 .card--big.no-span .card__price { font-size: 14px; font-weight: 700; }
+/* «Comprar»: el mismo botón de la marca, en compacto y a lo ancho de la tarjeta */
+.card__comprar { margin-top: 12px; width: 100%; justify-content: center; padding: 11px 14px; gap: 8px; font-size: 11px; }
+.card--big:not(.no-span) .card__comprar { padding-block: 14px; font-size: 12px; }
 .grid[hidden] { display: none; }
 .card.is-hidden { display: none; }
 .card--big.no-span { grid-column: auto; grid-row: auto; }

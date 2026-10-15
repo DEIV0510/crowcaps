@@ -23,10 +23,10 @@ const WA_GENERAL = 'https://wa.me/573207224241?text=Hola%20CrowCaps%2C%20quiero%
 const MAPA = [
   /* ── SEO ─────────────────────────────────────────────────────────────── */
   { clave: 'seo.titulo', literal: 'CrowCaps | Gorras y Streetwear en Colombia', veces: 2 },
-  { clave: 'seo.descripcion', literal: 'Gorras seleccionadas en Medellín: beisboleras, urbanas y de equipo. 61 referencias reales, envíos GRATIS a todo Colombia y pedidos directo por WhatsApp.' },
+  { clave: 'seo.descripcion', literal: 'Gorras seleccionadas en Medellín: beisboleras, urbanas y de equipo. 61 referencias reales, envío GRATIS a todo Colombia desde 2 gorras y pedidos directo por WhatsApp.' },
   { clave: 'seo.canonical', literal: 'https://crowcaps.co/', busca: 'href="https://crowcaps.co/"', pon: 'href="{{seo.canonical}}"' },
   { clave: 'seo.og_url', literal: 'https://crowcaps.co/', busca: '<meta property="og:url" content="https://crowcaps.co/">', pon: '<meta property="og:url" content="{{seo.og_url}}">' },
-  { clave: 'seo.og_descripcion', literal: 'Gorras seleccionadas en Medellín. Envíos GRATIS a todo Colombia. Pide la tuya por WhatsApp.' },
+  { clave: 'seo.og_descripcion', literal: 'Gorras seleccionadas en Medellín. Envío GRATIS a todo Colombia desde 2 gorras. Pide la tuya por WhatsApp.' },
   { clave: 'seo.og_imagen', literal: 'https://crowcaps.co/assets/img/yankees-navy-hueso.webp' },
   { clave: 'seo.og_imagen_alt', literal: 'Gorra Yankees azul marino con visera hueso', busca: '<meta property="og:image:alt" content="Gorra Yankees azul marino con visera hueso">', pon: '<meta property="og:image:alt" content="{{seo.og_imagen_alt}}">' },
 
@@ -66,7 +66,7 @@ const MAPA = [
   { clave: 'hero.cta2', literal: 'Pedir por WhatsApp', veces: 4 },
   { clave: 'hero.stat1_etiqueta', literal: 'Referencias' },
   { clave: 'hero.stat2_valor', literal: 'Gratis' },
-  { clave: 'hero.stat2_etiqueta', literal: 'Envíos a todo el país' },
+  { clave: 'hero.stat2_etiqueta', literal: 'Envío desde 2 gorras' },
   { clave: 'hero.stat3_valor', literal: 'MED' },
   { clave: 'hero.stat3_etiqueta', literal: 'Origen' },
 
@@ -81,8 +81,8 @@ const MAPA = [
   { clave: 'coleccion.vacio_wa', literal: 'https://wa.me/573207224241?text=Hola%20CrowCaps%2C%20estoy%20buscando%20una%20gorra%20en%20espec%C3%ADfico.' },
 
   /* ── Beneficios ──────────────────────────────────────────────────────── */
-  { clave: 'perks.1_titulo', literal: 'Envíos gratis', busca: '<h3>Envíos gratis</h3>', pon: '<h3>{{perks.1_titulo}}</h3>' },
-  { clave: 'perks.1_texto', literal: 'A todo Colombia, sin mínimo de compra.' },
+  { clave: 'perks.1_titulo', literal: 'Envío gratis', busca: '<h3>Envío gratis</h3>', pon: '<h3>{{perks.1_titulo}}</h3>' },
+  { clave: 'perks.1_texto', literal: 'Llevando 2 gorras o más, a cualquier ciudad de Colombia.' },
   { clave: 'perks.2_titulo', literal: 'Compra online' },
   { clave: 'perks.2_texto', literal: 'Sin punto físico: pides, confirmamos y despachamos.' },
   { clave: 'perks.3_titulo', literal: 'Atención por WhatsApp' },
@@ -103,7 +103,7 @@ const MAPA = [
   /* ── Sobre la marca ──────────────────────────────────────────────────── */
   { clave: 'about.eyebrow', literal: 'Sobre nosotros' },
   { clave: 'about.p1', literal: 'Nacimos en Medellín con una idea sencilla: que conseguir una buena gorra no dependa de la suerte. Buscamos, elegimos y fotografiamos cada pieza como es, sin retoques que cambien el color real.' },
-  { clave: 'about.p2', literal: 'No tenemos local. Tenemos WhatsApp, y del otro lado responde una persona que sabe qué hay disponible. Enviamos gratis a cualquier ciudad del país.' },
+  { clave: 'about.p2', literal: 'No tenemos local. Tenemos WhatsApp, y del otro lado responde una persona que sabe qué hay disponible. Enviamos a cualquier ciudad del país, y desde 2 gorras el envío es gratis.' },
   { clave: 'about.cita', literal: '“It was a collective decision.”' },
   { clave: 'about.cita_autor', literal: '— Lema de la casa' },
 
@@ -113,7 +113,7 @@ const MAPA = [
 
   /* ── Cierre ──────────────────────────────────────────────────────────── */
   { clave: 'final.titulo', literal: '¿Ya encontraste<br><em>la tuya?</em>', html: true },
-  { clave: 'final.texto', literal: 'Escríbenos con el nombre de la gorra y te confirmamos disponibilidad al instante. Envío gratis a toda Colombia.' },
+  { clave: 'final.texto', literal: 'Escríbenos con el nombre de la gorra y te confirmamos disponibilidad al instante. Desde 2 gorras, el envío es gratis a toda Colombia.' },
   { clave: 'final.cta_wa', literal: 'https://wa.me/573207224241?text=Hola%20CrowCaps%2C%20quiero%20pedir%20una%20gorra.' },
 
   /* ── Footer ──────────────────────────────────────────────────────────── */
@@ -124,18 +124,18 @@ const MAPA = [
   { clave: 'footer.col2_l3', literal: 'Feed', busca: '<li><a href="#feed">Feed</a></li>', pon: '<li><a href="#feed">{{footer.col2_l3}}</a></li>' },
   { clave: 'footer.col3', literal: 'Contacto', busca: '<h4>Contacto</h4>', pon: '<h4>{{footer.col3}}</h4>' },
   { clave: 'footer.col3_wa', literal: 'WhatsApp +57 320 722 4241' },
-  { clave: 'footer.col3_envio', literal: 'Envíos gratis a todo Colombia', busca: '<li><a href="#coleccion">Envíos gratis a todo Colombia</a></li>', pon: '<li><a href="#coleccion">{{footer.col3_envio}}</a></li>' },
+  { clave: 'footer.col3_envio', literal: 'Envío gratis desde 2 gorras', busca: '<li><a href="#coleccion">Envío gratis desde 2 gorras</a></li>', pon: '<li><a href="#coleccion">{{footer.col3_envio}}</a></li>' },
   { clave: 'footer.col4', literal: 'Redes' },
   { clave: 'footer.copyright', literal: '© 2026 CrowCaps. Todos los derechos reservados.' },
   { clave: 'footer.lema', literal: 'It was a collective decision' },
 
   /* ── Ficha de producto (drawer) ──────────────────────────────────────── */
   { clave: 'ficha.incluye', literal: 'gorra + empaque especial.' },
-  { clave: 'ficha.envio', literal: 'a todo Colombia.',
-    busca: '</b> a todo Colombia.</span>', pon: '</b> {{ficha.envio}}</span>' },
+  { clave: 'ficha.envio', literal: 'llevando 2 gorras o más.',
+    busca: '</b> llevando 2 gorras o más.</span>', pon: '</b> {{ficha.envio}}</span>' },
   { clave: 'ficha.disponibilidad', literal: 'confirmada por WhatsApp.',
     busca: '</b> confirmada por WhatsApp.</span>', pon: '</b> {{ficha.disponibilidad}}</span>' },
-  { clave: 'ficha.nota_precio', literal: 'Envío gratis incluido · Confirmamos disponibilidad por WhatsApp.' },
+  { clave: 'ficha.nota_precio', literal: 'Envío gratis desde 2 gorras · Confirmamos disponibilidad por WhatsApp.' },
 
   /* ── Redes (URLs) ────────────────────────────────────────────────────── */
   { clave: 'redes.instagram_url', literal: 'https://instagram.com/crowcaps.co', veces: 11 },
@@ -160,7 +160,7 @@ const EXTRAS = {
   'redes.tiktok_visible': true,
   'redes.facebook_visible': true,
 
-  'envios.texto_corto': 'Envíos GRATIS',
+  'envios.texto_corto': 'Envío GRATIS',
   'envios.texto_ficha': 'Incluye',
 
   /* Píxeles de publicidad. Vacíos = no se carga NADA: la tienda no llama a
@@ -180,7 +180,7 @@ const EXTRAS = {
   'hero.principal': 'yankees-navy-hueso',
   'editorial.imagen': 'assets/img/nationals-navy.webp',
   'feed.imagenes': [],   // lo llena el seed con las 9 actuales
-  'ticker.palabras': ['Crowcaps', 'Streetwear', 'Medellín', 'Envíos gratis', 'Crowcaps', 'Colombia'],
+  'ticker.palabras': ['Crowcaps', 'Streetwear', 'Medellín', 'Envío gratis desde 2 gorras', 'Crowcaps', 'Colombia'],
 };
 
 /* ── Utilidades de rutas con puntos ──────────────────────────────────────── */

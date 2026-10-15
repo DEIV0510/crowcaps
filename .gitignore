@@ -10,3 +10,8 @@ node_modules/
 .env*
 
 .env*
+
+# Material de trabajo pesado de las fotos nuevas (se regenera)
+_work/nuevas2/min/
+_work/nuevas2/ver/
+_work/nuevas2/*.jpg

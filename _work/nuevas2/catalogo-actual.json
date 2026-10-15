@@ -1,0 +1,798 @@
+[
+ {
+  "id": "yankees-navy-hueso",
+  "nombre": "Yankees Navy / Hueso",
+  "equipo": "New York Yankees",
+  "colorway": "Azul marino · Hueso",
+  "colores": [
+   "azules",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/yankees-navy-hueso.webp",
+   "assets/img/yankees-navy-hueso-2.webp"
+  ]
+ },
+ {
+  "id": "bulls-black",
+  "nombre": "Bulls Negra",
+  "equipo": "Chicago Bulls",
+  "colorway": "Negro · Rojo",
+  "colores": [
+   "negras"
+  ],
+  "fotos": [
+   "assets/img/bulls-black.webp"
+  ]
+ },
+ {
+  "id": "braves-khaki-lila",
+  "nombre": "Braves Khaki / Lila",
+  "equipo": "Atlanta Braves",
+  "colorway": "Khaki · Lila",
+  "colores": [
+   "beige",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/braves-khaki-lila.webp",
+   "assets/img/braves-khaki-lila-2.webp"
+  ]
+ },
+ {
+  "id": "redsox-khaki-roja",
+  "nombre": "Red Sox Khaki / Roja",
+  "equipo": "Boston Red Sox",
+  "colorway": "Khaki · Rojo",
+  "colores": [
+   "beige",
+   "rojas",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/redsox-khaki-roja.webp",
+   "assets/img/redsox-khaki-roja-2.webp"
+  ]
+ },
+ {
+  "id": "yankees-roja-navy",
+  "nombre": "Yankees Roja / Navy",
+  "equipo": "New York Yankees",
+  "colorway": "Rojo · Azul marino",
+  "colores": [
+   "rojas",
+   "azules",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/yankees-roja-navy.webp",
+   "assets/img/yankees-roja-navy-2.webp"
+  ]
+ },
+ {
+  "id": "mets-navy",
+  "nombre": "Mets Navy",
+  "equipo": "New York Mets",
+  "colorway": "Azul marino · Azul",
+  "colores": [
+   "azules"
+  ],
+  "fotos": [
+   "assets/img/mets-navy.webp",
+   "assets/img/mets-navy-2.webp"
+  ]
+ },
+ {
+  "id": "dodgers-negra-1999",
+  "nombre": "Dodgers Negra 1999",
+  "equipo": "Los Angeles Dodgers",
+  "colorway": "Negro · Blanco",
+  "colores": [
+   "negras"
+  ],
+  "fotos": [
+   "assets/img/dodgers-negra-1999.webp",
+   "assets/img/dodgers-negra-1999-2.webp"
+  ]
+ },
+ {
+  "id": "padres-black-gold",
+  "nombre": "Padres Negra / Dorada",
+  "equipo": "San Diego Padres",
+  "colorway": "Negro · Dorado",
+  "colores": [
+   "negras"
+  ],
+  "fotos": [
+   "assets/img/padres-black-gold.webp"
+  ]
+ },
+ {
+  "id": "oveja-negra",
+  "nombre": "La Oveja Negra",
+  "equipo": "La Oveja Negra",
+  "colorway": "Negro · Cuero natural",
+  "colores": [
+   "negras"
+  ],
+  "fotos": [
+   "assets/img/oveja-negra.webp"
+  ]
+ },
+ {
+  "id": "yankees-white",
+  "nombre": "Yankees Blanca",
+  "equipo": "New York Yankees",
+  "colorway": "Blanco · Negro",
+  "colores": [
+   "blancas"
+  ],
+  "fotos": [
+   "assets/img/yankees-white.webp"
+  ]
+ },
+ {
+  "id": "yankees-crema",
+  "nombre": "Yankees Crema",
+  "equipo": "New York Yankees",
+  "colorway": "Crema · Azul marino",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/yankees-crema.webp"
+  ]
+ },
+ {
+  "id": "yankees-hueso",
+  "nombre": "Yankees Hueso Tonal",
+  "equipo": "New York Yankees",
+  "colorway": "Hueso · Tonal",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/yankees-hueso.webp"
+  ]
+ },
+ {
+  "id": "yankees-script-vino",
+  "nombre": "Yankees Script Vino",
+  "equipo": "New York Yankees",
+  "colorway": "Vino · Crema",
+  "colores": [
+   "rojas"
+  ],
+  "fotos": [
+   "assets/img/yankees-script-vino.webp"
+  ]
+ },
+ {
+  "id": "yankees-tophat-red",
+  "nombre": "Top Hat Roja / Verde",
+  "equipo": "New York Yankees",
+  "colorway": "Rojo · Verde azulado",
+  "colores": [
+   "rojas",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/yankees-tophat-red.webp"
+  ]
+ },
+ {
+  "id": "redsox-navy-naranja",
+  "nombre": "Red Sox Navy / Naranja",
+  "equipo": "Boston Red Sox",
+  "colorway": "Azul marino · Naranja",
+  "colores": [
+   "azules"
+  ],
+  "fotos": [
+   "assets/img/redsox-navy-naranja.webp"
+  ]
+ },
+ {
+  "id": "redsox-navy-blanca",
+  "nombre": "Red Sox Navy / Blanca",
+  "equipo": "Boston Red Sox",
+  "colorway": "Azul marino · Blanco",
+  "colores": [
+   "azules",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/redsox-navy-blanca.webp",
+   "assets/img/redsox-navy-blanca-2.webp"
+  ]
+ },
+ {
+  "id": "boston-carmesi",
+  "nombre": "Boston Carmesí",
+  "equipo": "Boston Red Sox",
+  "colorway": "Carmesí · Rojo",
+  "colores": [
+   "rojas"
+  ],
+  "fotos": [
+   "assets/img/boston-carmesi.webp"
+  ]
+ },
+ {
+  "id": "whitesox-roja",
+  "nombre": "White Sox Roja",
+  "equipo": "Chicago White Sox",
+  "colorway": "Rojo · Blanco",
+  "colores": [
+   "rojas"
+  ],
+  "fotos": [
+   "assets/img/whitesox-roja.webp"
+  ]
+ },
+ {
+  "id": "whitesox-vino",
+  "nombre": "White Sox Vino Tonal",
+  "equipo": "Chicago White Sox",
+  "colorway": "Vino · Tonal",
+  "colores": [
+   "rojas"
+  ],
+  "fotos": [
+   "assets/img/whitesox-vino.webp"
+  ]
+ },
+ {
+  "id": "whitesox-taupe",
+  "nombre": "White Sox Taupe",
+  "equipo": "Chicago White Sox",
+  "colorway": "Taupe · Azul rey",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/whitesox-taupe.webp"
+  ]
+ },
+ {
+  "id": "whitesox-marfil",
+  "nombre": "White Sox Marfil",
+  "equipo": "Chicago White Sox",
+  "colorway": "Marfil · Azul cielo",
+  "colores": [
+   "blancas",
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/whitesox-marfil.webp"
+  ]
+ },
+ {
+  "id": "whitesox-arena",
+  "nombre": "White Sox Arena Tonal",
+  "equipo": "Chicago White Sox",
+  "colorway": "Arena · Tonal",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/whitesox-arena.webp"
+  ]
+ },
+ {
+  "id": "padres-piedra-navy",
+  "nombre": "Padres Piedra / Navy",
+  "equipo": "San Diego Padres",
+  "colorway": "Piedra · Azul marino",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/padres-piedra-navy.webp"
+  ]
+ },
+ {
+  "id": "padres-blanca-navy",
+  "nombre": "Padres Blanca / Navy",
+  "equipo": "San Diego Padres",
+  "colorway": "Blanco · Azul marino",
+  "colores": [
+   "blancas"
+  ],
+  "fotos": [
+   "assets/img/padres-blanca-navy.webp"
+  ]
+ },
+ {
+  "id": "padres-rosa-azul",
+  "nombre": "Padres Rosa / Azul",
+  "equipo": "San Diego Padres",
+  "colorway": "Rosa · Azul cielo",
+  "colores": [
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/padres-rosa-azul.webp"
+  ]
+ },
+ {
+  "id": "nationals-white",
+  "nombre": "Nationals Blanca",
+  "equipo": "Washington Nationals",
+  "colorway": "Blanco · Azul marino",
+  "colores": [
+   "blancas"
+  ],
+  "fotos": [
+   "assets/img/nationals-white.webp"
+  ]
+ },
+ {
+  "id": "nationals-red",
+  "nombre": "Nationals Roja / Blanca",
+  "equipo": "Washington Nationals",
+  "colorway": "Rojo · Blanco",
+  "colores": [
+   "rojas",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/nationals-red.webp"
+  ]
+ },
+ {
+  "id": "nationals-navy",
+  "nombre": "Nationals Navy Tonal",
+  "equipo": "Washington Nationals",
+  "colorway": "Azul marino · Tonal",
+  "colores": [
+   "azules"
+  ],
+  "fotos": [
+   "assets/img/nationals-navy.webp"
+  ]
+ },
+ {
+  "id": "mets-royal",
+  "nombre": "Mets Azul Rey",
+  "equipo": "New York Mets",
+  "colorway": "Azul rey · Naranja",
+  "colores": [
+   "azules"
+  ],
+  "fotos": [
+   "assets/img/mets-royal.webp"
+  ]
+ },
+ {
+  "id": "tigers-blanca",
+  "nombre": "Tigers Blanca",
+  "equipo": "Detroit Tigers",
+  "colorway": "Blanco · Negro",
+  "colores": [
+   "blancas"
+  ],
+  "fotos": [
+   "assets/img/tigers-blanca.webp"
+  ]
+ },
+ {
+  "id": "tigers-camel",
+  "nombre": "Tigers Camel Tonal",
+  "equipo": "Detroit Tigers",
+  "colorway": "Camel · Tonal",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/tigers-camel.webp"
+  ]
+ },
+ {
+  "id": "braves-piedra",
+  "nombre": "Braves Piedra",
+  "equipo": "Atlanta Braves",
+  "colorway": "Piedra · Azul rey",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/braves-piedra.webp"
+  ]
+ },
+ {
+  "id": "giants-mint",
+  "nombre": "Giants Gris Menta",
+  "equipo": "San Francisco Giants",
+  "colorway": "Gris menta · Naranja",
+  "colores": [
+   "beige",
+   "blancas"
+  ],
+  "fotos": [
+   "assets/img/giants-mint.webp"
+  ]
+ },
+ {
+  "id": "hornets-piedra",
+  "nombre": "Hornets Piedra",
+  "equipo": "Charlotte Hornets",
+  "colorway": "Piedra · Azul",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/hornets-piedra.webp"
+  ]
+ },
+ {
+  "id": "dodgers-blanca-roja",
+  "nombre": "Dodgers Blanca / Roja",
+  "equipo": "Los Angeles Dodgers",
+  "colorway": "Blanco · Rojo",
+  "colores": [
+   "blancas",
+   "rojas",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/dodgers-blanca-roja.webp"
+  ]
+ },
+ {
+  "id": "rangers-white",
+  "nombre": "Rangers Blanca",
+  "equipo": "Texas Rangers",
+  "colorway": "Blanco · Rojo",
+  "colores": [
+   "blancas"
+  ],
+  "fotos": [
+   "assets/img/rangers-white.webp"
+  ]
+ },
+ {
+  "id": "royal-b-nike",
+  "nombre": "Royal B",
+  "equipo": "Nike",
+  "colorway": "Azul rey · Blanco",
+  "colores": [
+   "azules"
+  ],
+  "fotos": [
+   "assets/img/royal-b-nike.webp"
+  ]
+ },
+ {
+  "id": "whitesox-crema-camel",
+  "nombre": "White Sox Crema / Camel",
+  "equipo": "Chicago White Sox",
+  "colorway": "Crema · Camel",
+  "colores": [
+   "beige",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/whitesox-crema-camel.webp",
+   "assets/img/whitesox-crema-camel-2.webp",
+   "assets/img/whitesox-crema-camel-3.webp",
+   "assets/img/whitesox-crema-camel-4.webp"
+  ]
+ },
+ {
+  "id": "whitesox-khaki-tonal",
+  "nombre": "White Sox Caqui",
+  "equipo": "Chicago White Sox",
+  "colorway": "Caqui · Crema",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/whitesox-khaki-tonal.webp",
+   "assets/img/whitesox-khaki-tonal-2.webp"
+  ]
+ },
+ {
+  "id": "whitesox-negra-tonal",
+  "nombre": "White Sox Negra Total",
+  "equipo": "Chicago White Sox",
+  "colorway": "Negro",
+  "colores": [
+   "negras"
+  ],
+  "fotos": [
+   "assets/img/whitesox-negra-tonal.webp",
+   "assets/img/whitesox-negra-tonal-2.webp"
+  ]
+ },
+ {
+  "id": "yankees-piedra-navy",
+  "nombre": "Yankees Piedra / Marino",
+  "equipo": "New York Yankees",
+  "colorway": "Piedra · Azul marino",
+  "colores": [
+   "beige",
+   "azules",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/yankees-piedra-navy.webp",
+   "assets/img/yankees-piedra-navy-2.webp",
+   "assets/img/yankees-piedra-navy-3.webp"
+  ]
+ },
+ {
+  "id": "yankees-roja-crema",
+  "nombre": "Yankees Escarlata / Crema",
+  "equipo": "New York Yankees",
+  "colorway": "Rojo · Crema",
+  "colores": [
+   "rojas",
+   "beige",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/yankees-roja-crema.webp",
+   "assets/img/yankees-roja-crema-2.webp"
+  ]
+ },
+ {
+  "id": "yankees-crema-azul",
+  "nombre": "Yankees Marfil / Marino",
+  "equipo": "New York Yankees",
+  "colorway": "Marfil · Azul marino",
+  "colores": [
+   "beige",
+   "azules",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/yankees-crema-azul.webp"
+  ]
+ },
+ {
+  "id": "yankees-negra-1996",
+  "nombre": "Yankees Negra Total",
+  "equipo": "New York Yankees",
+  "colorway": "Negro",
+  "colores": [
+   "negras"
+  ],
+  "fotos": [
+   "assets/img/yankees-negra-1996.webp",
+   "assets/img/yankees-negra-1996-2.webp"
+  ]
+ },
+ {
+  "id": "dodgers-camel-menta",
+  "nombre": "Dodgers Camel / Menta",
+  "equipo": "Los Angeles Dodgers",
+  "colorway": "Camel · Menta",
+  "colores": [
+   "beige",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/dodgers-camel-menta.webp"
+  ]
+ },
+ {
+  "id": "dodgers-malva",
+  "nombre": "Dodgers Malva / Lavanda",
+  "equipo": "Los Angeles Dodgers",
+  "colorway": "Taupe · Lavanda",
+  "colores": [
+   "beige",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/dodgers-malva.webp"
+  ]
+ },
+ {
+  "id": "dodgers-crema-tonal",
+  "nombre": "Dodgers Marfil Tonal",
+  "equipo": "Los Angeles Dodgers",
+  "colorway": "Marfil · Crema",
+  "colores": [
+   "beige",
+   "blancas"
+  ],
+  "fotos": [
+   "assets/img/dodgers-crema-tonal.webp",
+   "assets/img/dodgers-crema-tonal-2.webp"
+  ]
+ },
+ {
+  "id": "dodgers-camel-tonal",
+  "nombre": "Dodgers Caqui Tonal",
+  "equipo": "Los Angeles Dodgers",
+  "colorway": "Caqui · Crema",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/dodgers-camel-tonal.webp",
+   "assets/img/dodgers-camel-tonal-2.webp",
+   "assets/img/dodgers-camel-tonal-3.webp"
+  ]
+ },
+ {
+  "id": "dodgers-negra-tonal",
+  "nombre": "Dodgers Blackout",
+  "equipo": "Los Angeles Dodgers",
+  "colorway": "Negro total",
+  "colores": [
+   "negras"
+  ],
+  "fotos": [
+   "assets/img/dodgers-negra-tonal.webp",
+   "assets/img/dodgers-negra-tonal-2.webp"
+  ]
+ },
+ {
+  "id": "redsox-negra-roja",
+  "nombre": "Red Sox Negra / Roja",
+  "equipo": "Boston Red Sox",
+  "colorway": "Negro · Rojo",
+  "colores": [
+   "negras",
+   "rojas"
+  ],
+  "fotos": [
+   "assets/img/redsox-negra-roja.webp",
+   "assets/img/redsox-negra-roja-2.webp"
+  ]
+ },
+ {
+  "id": "redsox-negra-ws",
+  "nombre": "Red Sox World Series Negra",
+  "equipo": "Boston Red Sox",
+  "colorway": "Negro · Rojo",
+  "colores": [
+   "negras",
+   "rojas"
+  ],
+  "fotos": [
+   "assets/img/redsox-negra-ws.webp",
+   "assets/img/redsox-negra-ws-2.webp",
+   "assets/img/redsox-negra-ws-3.webp"
+  ]
+ },
+ {
+  "id": "angels-crema",
+  "nombre": "Angels Hueso / Halo Dorado",
+  "equipo": "Los Angeles Angels",
+  "colorway": "Hueso · Dorado",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/angels-crema.webp",
+   "assets/img/angels-crema-2.webp"
+  ]
+ },
+ {
+  "id": "angels-negra",
+  "nombre": "Angels Negra Halo",
+  "equipo": "Los Angeles Angels",
+  "colorway": "Negro · Dorado",
+  "colores": [
+   "negras"
+  ],
+  "fotos": [
+   "assets/img/angels-negra.webp"
+  ]
+ },
+ {
+  "id": "angels-navy-blanca",
+  "nombre": "Angels World Series",
+  "equipo": "Los Angeles Angels",
+  "colorway": "Navy · Blanco",
+  "colores": [
+   "azules",
+   "blancas",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/angels-navy-blanca.webp",
+   "assets/img/angels-navy-blanca-2.webp",
+   "assets/img/angels-navy-blanca-3.webp"
+  ]
+ },
+ {
+  "id": "tigers-navy-tonal",
+  "nombre": "Tigers Marino Total",
+  "equipo": "Detroit Tigers",
+  "colorway": "Azul marino",
+  "colores": [
+   "azules"
+  ],
+  "fotos": [
+   "assets/img/tigers-navy-tonal.webp",
+   "assets/img/tigers-navy-tonal-2.webp",
+   "assets/img/tigers-navy-tonal-3.webp"
+  ]
+ },
+ {
+  "id": "tigers-trigo",
+  "nombre": "Tigers Trigo / Crema",
+  "equipo": "Detroit Tigers",
+  "colorway": "Trigo · Crema",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/tigers-trigo.webp"
+  ]
+ },
+ {
+  "id": "braves-navy-hueso",
+  "nombre": "Braves Navy / Chrome",
+  "equipo": "Atlanta Braves",
+  "colorway": "Navy · Hueso",
+  "colores": [
+   "azules",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/braves-navy-hueso.webp",
+   "assets/img/braves-navy-hueso-2.webp",
+   "assets/img/braves-navy-hueso-3.webp"
+  ]
+ },
+ {
+  "id": "athletics-crema",
+  "nombre": "Athletics Crema / Cacao",
+  "equipo": "Oakland Athletics",
+  "colorway": "Crema · Cacao",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/athletics-crema.webp",
+   "assets/img/athletics-crema-2.webp"
+  ]
+ },
+ {
+  "id": "bluejays-crema-azul",
+  "nombre": "Blue Jays Hueso / Azul Rey",
+  "equipo": "Toronto Blue Jays",
+  "colorway": "Hueso · Azul rey",
+  "colores": [
+   "blancas",
+   "azules",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/bluejays-crema-azul.webp",
+   "assets/img/bluejays-crema-azul-2.webp"
+  ]
+ },
+ {
+  "id": "pirates-negra-dorada",
+  "nombre": "Pirates Negra / Amarilla",
+  "equipo": "Pittsburgh Pirates",
+  "colorway": "Negro · Amarillo",
+  "colores": [
+   "negras",
+   "bicolor"
+  ],
+  "fotos": [
+   "assets/img/pirates-negra-dorada.webp",
+   "assets/img/pirates-negra-dorada-2.webp"
+  ]
+ },
+ {
+  "id": "nike-cafe-tonal",
+  "nombre": "Nike Chocolate Tonal",
+  "equipo": "Nike",
+  "colorway": "Chocolate · Topo",
+  "colores": [
+   "beige"
+  ],
+  "fotos": [
+   "assets/img/nike-cafe-tonal.webp"
+  ]
+ }
+]

@@ -180,6 +180,26 @@ cierto('«Comprar» va directo a WhatsApp con la gorra',
 cierto('«Comprar» NO va dentro del botón de la ficha (un enlace dentro de un botón no funciona)',
   tarj.indexOf('card__comprar') > tarj.indexOf('</button>'));
 
+/* ── Gorras nuevas: etiqueta y filtro durante 30 días ────────────────────── */
+const hace = (dias) => new Date(Date.now() - dias * 864e5).toISOString();
+const reciente = Object.assign({}, gorra, { id: 'bass-pro-negra', name: 'Bass Pro Negra', creado: hace(2) });
+const vieja = Object.assign({}, gorra, { creado: hace(40) });
+const dosGorras = pintar([reciente, vieja]);
+const tarjetaDe = (html, id) => html.slice(html.indexOf('data-id="' + id + '"'), html.indexOf('</article>', html.indexOf('data-id="' + id + '"')));
+cierto('una gorra agregada hace 2 días sale con «Nueva»', tarjetaDe(dosGorras, 'bass-pro-negra').includes('card__nueva'));
+cierto('una de hace 40 días ya no', !tarjetaDe(dosGorras, 'yankees-navy-hueso').includes('card__nueva'));
+cierto('la nueva entra en el filtro «Nuevas»', /data-id="bass-pro-negra" data-colors="[^"]*nuevas/.test(dosGorras));
+cierto('y el filtro aparece primero mientras haya alguna',
+  /"categorias":\[\{"slug":"nuevas","nombre":"Nuevas"\}/.test(dosGorras));
+cierto('sin gorras nuevas no hay filtro «Nuevas»', !/"slug":"nuevas"/.test(pintar([vieja])));
+
+/* ── Franja de envío arriba ──────────────────────────────────────────────── */
+cierto('la franja de arriba dice lo del envío', /<p class="topbar" id="topbar">Envío gratis a partir de 2 gorras<\/p>/.test(conGorra));
+cierto('apagada desde el panel, no sale',
+  !pintar([gorra], { secciones: Object.assign({}, valoresPorDefecto().secciones, { aviso: false }) }).includes('class="topbar"'));
+cierto('con el texto vacío tampoco (sería una barra negra sin nada)',
+  !pintar([gorra], { aviso: { texto: '' } }).includes('class="topbar"'));
+
 /* ── Envío: gratis solo desde 2 gorras ───────────────────────────────────── */
 /* Se mira el texto visible (sin etiquetas), frase por frase: el título
    «Envío gratis» va seguido de su condición en el párrafo de al lado. */

@@ -1,0 +1,1647 @@
+{
+ "G02": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Detalle menor, no es un error: el parche no es un óvalo perfecto. Por la izquierda tiene un saliente donde la cola y la aleta del pez se salen del óvalo. Además lleva un ribete doble: un borde blanco grueso, una línea negra fina y un anillo blanco fino por dentro. «Parche ovalado con borde blanco» sigue siendo correcto, aunque se queda algo corto.",
+     "«Pez saltando» es una lectura del dibujo: el pez tiene el cuerpo arqueado y la boca abierta. Se puede defender, pero lo estrictamente visible es «pez con la boca abierta».",
+     "En porque_elegidas, la 7658 no muestra «la malla negra de atrás»; muestra la malla lateral, que sigue hacia atrás. En ninguna foto se ve la parte trasera de frente (cierre). Aun así, la 7660 deja ver que la malla rodea la parte de atrás de la cabeza, así que «laterales y parte de atrás en malla negra» se sostiene.",
+     "Comprobado en las fotos: las 3 elegidas (7658, 7659 y 7660) son la misma gorra, con el mismo parche, el mismo vino, la misma malla negra y el botón vino. El texto «Bass Pro Shops» se lee claro en las tres, así que la marca está bien nombrada. El zigzag de la visera se ve en los recortes de la 7658 y la 7659. Las costuras oscuras entre el frente y la malla se ven en la 7658 y la 7660. No se afirman materiales, tallas ni datos de autenticidad. Los colores [rojas, bicolor] son correctos: en catálogo, las vino van en «rojas» (yankees-script-vino, whitesox-vino), y el frente vino contra la malla negra justifica «bicolor». No hay ninguna gorra Bass Pro en catalogo-actual.json y el slug no choca con ningún id."
+    ],
+    "correccion": "Basta con retoques opcionales. En desc, cambiar «con el pez saltando» por «con el pez de boca abierta que se sale del óvalo». En la característica 1: «Parche al frente con un pez y el texto «Bass Pro Shops» en blanco sobre negro; ribete blanco doble y el pez saliéndose del óvalo por la izquierda». El resto de la ficha (slug bass-pro-vino-negra, nombre, equipo Bass Pro Shops, colorway Vino · Negro, colores [rojas, bicolor], elegidas 7658/7660/7659) puede quedar igual."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7658,
+    7660,
+    7659
+   ],
+   "porque_elegidas": "7658 muestra la gorra entera de frente y de lado, con el parche legible, la visera curva y la malla negra de atrás. En 7660 se ve puesta en una persona y queda clara la proporción entre el frente vino y la malla. 7659 es el detalle de cerca del parche: el pez y el texto Bass Pro Shops en blanco sobre negro. Las tres son nítidas y ninguna es por dentro.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "El grupo no trae parecidas, y en catalogo-actual.json no hay ninguna gorra de Bass Pro Shops ni ninguna tipo trucker de malla. Las rojas o vino que ya hay en la tienda son de equipos MLB (Yankees, Red Sox, White Sox, Nationals, Dodgers), con otros logos."
+   },
+   "ficha": {
+    "slug": "bass-pro-vino-negra",
+    "nombre": "Bass Pro Vino / Negra",
+    "equipo": "Bass Pro Shops",
+    "colorway": "Vino · Negro",
+    "colores": [
+     "rojas",
+     "bicolor"
+    ],
+    "desc": "Trucker de frente vino con la parte de atrás en malla negra. Al centro va el parche ovalado de Bass Pro Shops, con el pez saltando y las letras en blanco sobre fondo negro. La visera, del mismo vino que el frente, lleva pespuntes en zigzag del mismo tono que casi no se notan hasta que la miras de cerca.",
+    "caracteristicas": [
+     "Parche ovalado al frente: pez y texto «Bass Pro Shops» en blanco sobre negro, con borde blanco",
+     "Frente y visera en vino; laterales y parte de atrás en malla negra",
+     "Visera curva con pespuntes en zigzag del mismo tono",
+     "Botón superior forrado en vino y costuras oscuras entre el frente y la malla"
+    ]
+   }
+  }
+ },
+ "G03": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Las 4 fotos (7661, 7662, 7663 y 7664) son la misma gorra: tienen el mismo parche Bass Pro Shops con el pez saliéndose del óvalo, el mismo camuflado gris y negro con grano y brillo, la malla negra y el botón de arriba. Las elegidas están bien. 7661 sirve de principal, y está bien dejar fuera 7663 porque repite el detalle de 7662.",
+     "No está repetida. En catalogo-actual.json no hay ninguna gorra Bass Pro Shops ni camuflada, y el slug bass-pro-camuflado-gris no choca con ningún id.",
+     "La desc se contradice. Empieza con «Camuflado en grises y negro de punta a punta» y en la frase siguiente dice que los lados son de malla negra. El camuflado solo cubre el frente y la visera, así que «de punta a punta» es falso.",
+     "Dice «malla negra atrás» en la desc y en la característica 3, pero ninguna foto muestra la parte de atrás ni el cierre. Solo se ven los costados (el derecho en 7661 y el izquierdo en 7664). Eso es suponer, no algo que se vea.",
+     "«Es lo único blanco de toda la gorra» va más allá de lo que muestran las fotos: no se ve el interior ni la parte de abajo de la visera. Mejor decir «lo único blanco a la vista».",
+     "Todo lo demás se ve en las fotos y está bien: «Bass Pro Shops» se lee en el parche y la letra tiene serifa; el pez está bordado en línea oscura; el borde del parche es negro o gris muy oscuro; el camuflado tiene grano y un brillo leve; la visera es curva, con varias filas de pespuntes en zigzag. La ficha no nombra materiales ni marcas que no se lean.",
+     "Los colores [\"negras\"] están bien: camuflado gris oscuro con malla negra. No hace falta bicolor, porque la malla negra no se aleja tanto del camuflado gris y negro."
+    ],
+    "correccion": "Fotos y orden sin cambios: 7661, 7664, 7662. colores [\"negras\"]. slug, nombre, equipo y colorway sin cambios. desc: \"Camuflado en grises y negro en el frente y la visera, con una textura granulada y un brillo leve que aparece cuando le pega la luz. A los costados, malla negra. Al frente, el parche ovalado de Bass Pro Shops: es lo único blanco a la vista y por eso salta de lejos.\" caracteristicas: [\"Parche ovalado blanco al frente, con borde negro grueso, el pez dibujado en línea negra y «Bass Pro Shops» en letra con serifa\", \"Frente y visera en camuflado gris y negro con textura granulada\", \"Malla negra en los costados\", \"Visera curva con varias filas de pespuntes en zigzag a la vista\"]"
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7661,
+    7664,
+    7662
+   ],
+   "porque_elegidas": "7661 es la principal porque muestra la gorra entera de tres cuartos: el parche se lee bien, se ve la visera en camuflado y también la malla negra del costado. 7664 la muestra puesta en una persona. 7662 es el detalle cercano del parche, la textura granulada de la tela y los pespuntes en zigzag de la visera. Dejé fuera 7663 porque es casi idéntica a 7662 y aporta menos.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "El grupo no tenía «parecidas» y en catalogo-actual.json no hay ninguna gorra Bass Pro Shops ni ninguna camuflada. Las 61 de la tienda son de equipos MLB/NBA, Nike y La Oveja Negra."
+   },
+   "ficha": {
+    "slug": "bass-pro-camuflado-gris",
+    "nombre": "Bass Pro Camuflado Gris",
+    "equipo": "Bass Pro Shops",
+    "colorway": "Camuflado gris · Negro",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Camuflado en grises y negro de punta a punta, con una textura granulada y un brillo leve que aparece cuando le pega la luz. A los lados y atrás, malla negra. Al frente, el parche ovalado de Bass Pro Shops: es lo único blanco de toda la gorra y por eso salta a la vista de lejos.",
+    "caracteristicas": [
+     "Parche ovalado blanco al frente, con borde negro grueso, el pez dibujado en línea negra y «Bass Pro Shops» en letra con serifa",
+     "Frente y visera en camuflado gris y negro con textura granulada",
+     "Malla negra en los costados y atrás",
+     "Visera curva con varias filas de pespuntes en zigzag a la vista"
+    ]
+   }
+  }
+ },
+ "G07": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Característica 3, «malla negra en los costados y atrás»: ninguna de las 8 fotos del grupo (7685-7692) muestra la parte de atrás. Solo se ve la malla del costado (7692, 7685, 7687). Lo de «atrás» se supone por ser trucker, no se ve. Hay que quitarlo.",
+     "Detalle de precisión en la desc y en la característica 2: el pez es parte del parche y el borde gris lo rodea (se ve en los recortes de 7687 y 7685). No se sale del parche, rompe el óvalo amarillo por la izquierda. Decir «borde del parche» es incorrecto; lo exacto es «borde del óvalo».",
+     "«que solo se notan de cerca» exagera: las filas de pespunte en zigzag de la visera se ven claramente en las fotos enteras (7685, 7690, 7692). Mejor quitar la coletilla.",
+     "Todo lo demás se sostiene. Las 4 elegidas son la misma gorra, y las otras 4 del grupo también. Se lee «Bass Pro Shops» en rojo con ®. El pez es verde azulado y blanco, con la boca abierta y una agalla roja. El borde del parche es gris oscuro. La corona es negra y lisa, con costuras de hilo gris en la unión con la visera y en los paneles. El botón y la visera curva son negros. colores [\"negras\"] está bien: corona, malla y visera son negras, y el amarillo es solo del parche, así que no es bicolor. El slug bass-pro-negra no choca con el catálogo, y en las 61 gorras no hay ninguna Bass Pro, así que no está repetida."
+    ],
+    "correccion": "desc: \"Toda negra, frente liso, malla y visera, para que el óvalo amarillo de Bass Pro Shops se lleve toda la atención. El pez rompe el óvalo por la izquierda con la boca abierta, y la visera curva lleva unas filas de pespunte en zigzag gris.\" caracteristicas: [\"Parche ovalado amarillo al frente con «Bass Pro Shops» en letras rojas y ®, con borde gris oscuro\", \"Pez verde y blanco con la boca abierta que rompe el óvalo por la izquierda\", \"Frente negro liso con costuras en hilo gris; malla negra en los costados\", \"Visera curva negra con filas de pespunte en zigzag gris y botón negro arriba\"]. Se mantienen sin cambios slug, nombre, equipo, colorway, colores [\"negras\"] y las elegidas [7685, 7692, 7687, 7690]."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7685,
+    7692,
+    7687,
+    7690
+   ],
+   "porque_elegidas": "7685: la gorra de frente en la mano, bien iluminada, con el parche entero y legible y la visera completa. 7692: puesta, en tres cuartos, para que se vea la malla negra del costado y la forma en la cabeza. 7687: el parche de cerca, donde se leen las letras, el ® y el pez. 7690: puesta y de frente, la manera más clara de ver cómo queda. Las otras (7686, 7688, 7689, 7691) repiten estos mismos ángulos.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "En las 61 gorras de catalogo-actual.json no hay ninguna Bass Pro Shops ni ninguna trucker negra con parche amarillo. El grupo no trae «parecidas» para comparar y en la tienda no hay otra gorra de esta marca."
+   },
+   "ficha": {
+    "slug": "bass-pro-negra",
+    "nombre": "Bass Pro Shops Negra",
+    "equipo": "Bass Pro Shops",
+    "colorway": "Negro · Amarillo",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Toda negra, frente liso, malla y visera, para que el óvalo amarillo de Bass Pro Shops se lleve toda la atención. El pez se sale por el borde del parche con la boca abierta, y la visera curva lleva unas filas de pespunte en zigzag gris que solo se notan de cerca.",
+    "caracteristicas": [
+     "Parche ovalado amarillo al frente con «Bass Pro Shops» en letras rojas y ®, con borde gris oscuro",
+     "Pez verde y blanco que salta por el borde izquierdo del parche",
+     "Frente negro liso con costuras en hilo gris; malla negra en los costados y atrás",
+     "Visera curva negra con filas de pespunte en zigzag gris y botón negro arriba"
+    ]
+   }
+  }
+ },
+ "G10": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Las cuatro elegidas (7706, 7713, 7712, 7710) son la misma gorra: mismo parche del cocodrilo junto a la costura central y la misma calcomanía en 7706 y 7713, mismo tono camel. No sobra ninguna. Que no esté repetida también se sostiene: catalogo-actual.json no tiene ninguna Lacoste y el slug 'lacoste-camel' no choca con ningún id.",
+     "La descripción dice «Lo único que se sale del color es el cocodrilo verde del frente», y eso es falso según las propias fotos elegidas. En 7706 y 7713 se ve encima de la visera una calcomanía redonda verde y blanca con «LACOSTE» y el cocodrilo. En 7712 se ve una etiqueta blanca con «LACOSTE» en letras azules cosida junto a la correa. Además, el cocodrilo no es solo verde: tiene borde blanco y la boca roja (recorte de 7706).",
+     "«hasta la pieza de la correa van en el mismo tono» y «pieza camel… argolla del mismo tono»: de cerca (7712), la pieza y la argolla son de un caqui un poco más oscuro y verdoso que la tela, no exactamente el mismo camel. Hay que suavizarlo a «a tono» o «en un caqui parecido».",
+     "Menor: la característica 4 (sello ovalado bajo la visera) es cierta, porque en 7709 se ve un sello ovalado en relieve con «LACOSTE» y el cocodrilo. Pero 7709 no está entre las elegidas, así que la galería no muestra lo que afirma la ficha. Conviene meter 7709 o aceptar que ese dato no se vea en la tienda.",
+     "Lo demás se sostiene. El cocodrilo es un parche bordado, junto a la costura central. El «LACOSTE» de atrás está bordado tono sobre tono, encima de la abertura. Ojales y botón son camel. Por dentro hay cinta negra con «LACOSTE» en blanco y un panel con estampado geométrico verde y blanco. La ficha no menciona el «100% COTTON» de la etiqueta interior, y está bien que no lo haga. Colores [\"beige\"] es correcto: camel con visera del mismo color, así que no va bicolor. Colorway «Camel · Verde» está bien."
+    ],
+    "correccion": "Hay que cambiar la descripción y la característica 3. Lo demás se queda igual.\ndesc: \"Camel en corona, visera, ojales y botón; hasta la pieza de la correa va a tono. Al frente, pequeño y corrido hacia un lado junto a la costura, el cocodrilo verde con borde blanco y boca roja. Por dentro es otra historia: cinta negra con LACOSTE en blanco y un estampado verde y blanco.\"\ncaracteristicas: [\"Cocodrilo verde con borde blanco en parche bordado al frente, junto a la costura central\", \"«LACOSTE» bordado atrás en camel, tono sobre tono, encima de la abertura\", \"Correa trasera con pieza a tono que lleva el cocodrilo en relieve, y argolla del mismo color que la pieza\", \"Sello ovalado en relieve con «LACOSTE» y el cocodrilo debajo de la visera (añadir 7709 a las elegidas para que se vea)\"]"
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7706,
+    7713,
+    7712,
+    7710
+   ],
+   "porque_elegidas": "7706 muestra la gorra entera de frente-perfil, nítida, con el cocodrilo bien legible. 7713 es la gorra puesta. 7712 enseña la parte de atrás: LACOSTE bordado tono sobre tono y la correa con la pieza del cocodrilo en relieve. 7710 es el interior, que sí aporta porque es lo más llamativo de la gorra: cinta negra con LACOSTE en blanco y un estampado verde y blanco. Descarté 7707 y 7714 (primeros planos del frente que repiten lo que ya se ve en 7706 y 7713), 7711 (segunda foto del interior centrada en las etiquetas) y 7709 (sello bajo la visera, que queda descrito en las características).",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "El grupo no tiene parecidas y en catalogo-actual.json no hay ninguna gorra Lacoste. Las camel que ya están en la tienda (Tigers Camel Tonal, Dodgers Caqui Tonal, Dodgers Camel / Menta) son de equipos MLB, con otro logo."
+   },
+   "ficha": {
+    "slug": "lacoste-camel",
+    "nombre": "Lacoste Camel",
+    "equipo": "Lacoste",
+    "colorway": "Camel · Verde",
+    "colores": [
+     "beige"
+    ],
+    "desc": "Camel de punta a punta: corona, visera, ojales, botón y hasta la pieza de la correa van en el mismo tono. Lo único que se sale del color es el cocodrilo verde del frente, pequeño y corrido hacia un lado. Por dentro es otra historia: cinta negra con LACOSTE en blanco y un estampado verde y blanco.",
+    "caracteristicas": [
+     "Cocodrilo verde en parche bordado al frente, junto a la costura central",
+     "«LACOSTE» bordado atrás en camel, tono sobre tono, encima de la abertura",
+     "Correa trasera con pieza camel que lleva el cocodrilo en relieve y argolla del mismo tono",
+     "Sello ovalado en relieve con «LACOSTE» y el cocodrilo debajo de la visera"
+    ]
+   }
+  }
+ },
+ "G04": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": []
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7667,
+    7670,
+    7665,
+    7669
+   ],
+   "porque_elegidas": "7667 es la más frontal y nítida: el parche se lee completo y el gris jaspeado sale con su tono real (la 7668 también es frontal, pero su luz azulea la tela). 7670 la muestra puesta. 7665 enseña de tres cuartos la malla negra del costado y el canto negro de la visera. 7669 es por dentro, pero suma algo: la visera es negra por debajo y las cintas de las costuras llevan «Bass Pro Shops» en letras blancas. La 7666 repite el ángulo de la 7665 y queda por fuera.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "En la tienda no hay ninguna gorra Bass Pro Shops. Las 61 del catálogo son de equipos de MLB o NBA, más Oveja Negra y Nike, y el grupo no traía parecidas para comparar."
+   },
+   "ficha": {
+    "slug": "bass-pro-gris-negra",
+    "nombre": "Bass Pro Gris / Negra",
+    "equipo": "Bass Pro Shops",
+    "colorway": "Gris jaspeado · Negro",
+    "colores": [
+     "negras",
+     "bicolor"
+    ],
+    "desc": "El trucker de siempre: frente y visera en gris jaspeado, malla negra atrás. Todo el protagonismo es del parche ovalado blanco, con el pez saltando y el «Bass Pro Shops» bordados en negro y un borde grueso que lo recorta contra el gris. Por dentro también firma: el nombre va repetido en las cintas de las costuras.",
+    "caracteristicas": [
+     "Parche ovalado blanco al frente con «Bass Pro Shops» y un pez saltando bordados en negro, borde negro sobrehilado",
+     "Frente y visera curva en gris jaspeado, con hileras de pespuntes claros en la visera",
+     "Malla negra en los costados y atrás; botón superior gris",
+     "Visera negra por debajo y cintas interiores negras con «Bass Pro Shops» en letras blancas"
+    ]
+   }
+  }
+ },
+ "G05": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Ninguno grave. Las 4 elegidas (7671, 7676, 7674, 7672) son la misma gorra que la 7673 y la 7675: el mismo parche blanco ovalado con borde, pez y «Bass Pro Shops» bordados en caramelo, el mismo camuflado claro, la malla negra y la visera con zigzag crema. Los colores [beige, bicolor] están bien: es un camuflado claro con malla negra. El slug y el nombre no chocan con ninguna de las 61 gorras, y en el catálogo no hay nada de Bass Pro ni de camuflado.",
+     "Leve, de color: en el camuflado se ven arena, café claro, gris oliva y manchas casi negras (gris carbón; medí #2c2623 y #413d3a). Decir «arena, oliva y café» es aceptable, pero las manchas más oscuras son gris carbón, no café. Lo más preciso: «arena, café claro, gris oliva y carbón».",
+     "Leve, de técnica no verificable: en la característica 4, «cinta impresa». Las letras blancas de la cinta negra parecen impresas, pero en la foto no se puede asegurar si son impresas o tejidas. Es más seguro decir «cinta negra con «Bass Pro Shops» en letras blancas».",
+     "Leve, incompleto: la etiqueta de adentro (7672) es un óvalo amarillo con letras rojas y además un pez verde, sobre fondo negro. «En amarillo y rojo» no es falso, pero le falta el verde.",
+     "De estilo: «que de cerca hacen la diferencia» es una frase de vendedor y de relleno, y la guía de tono pide evitarlas. Conviene cambiarla por algo concreto que sí se ve, como la parte de abajo de la visera, que es negra (7672).",
+     "Interpretación menor: decir «pez saltando» es razonable, porque el pez está arqueado con la boca abierta y un señuelo colgando, pero es una lectura del dibujo. Se puede dejar así o poner «el pez con la boca abierta»."
+    ],
+    "correccion": "Las fotos se quedan igual (7671, 7676, 7674, 7672). Ficha ajustada:\ndesc: \"Camuflado en arena, café claro, gris oliva y carbón adelante, con la malla de atrás toda en negro. El óvalo blanco de Bass Pro Shops lleva el pez y las letras bordados en hilo caramelo. La visera repite el camuflado con varias hileras de zigzag crema arriba y va en negro por debajo.\"\ncaracteristicas: [\n \"Parche ovalado al frente, de fondo blanco, con borde, pez y letras «Bass Pro Shops» bordados en caramelo\",\n \"Corona en camuflado arena, café claro, gris oliva y carbón, con malla trasera negra\",\n \"Visera curva en el mismo camuflado, con varias hileras de pespunte en zigzag color crema y la parte de abajo negra\",\n \"Por dentro, cinta negra con «Bass Pro Shops» en letras blancas y etiqueta con el logo en amarillo, rojo y verde\"\n]\ncolorway: \"Camuflado arena · Negro\". El slug, el nombre, el equipo y los colores [beige, bicolor] se quedan igual."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7671,
+    7676,
+    7674,
+    7672
+   ],
+   "porque_elegidas": "7671 es la principal: la gorra entera de frente y de costado, con el parche que se lee bien, la malla negra y los zigzag de la visera. 7676 la muestra puesta y nítida. Es mejor que la 7675, que es casi igual pero tiene el parche más girado. 7674 es el detalle del parche de cerca: el pez y las letras bordadas en caramelo. 7672 es la de por dentro, pero vale la pena: se ven la cinta impresa «Bass Pro Shops» y la etiqueta amarilla y roja con el logo. Quedó fuera la 7673 (vista desde arriba con el logo al revés), que solo repite lo que ya muestran las otras.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "En catalogo-actual.json ninguna de las 61 gorras es de Bass Pro Shops y ninguna es de camuflado. El grupo no tiene «parecidas». Es una gorra nueva."
+   },
+   "ficha": {
+    "slug": "bass-pro-camo-arena",
+    "nombre": "Bass Pro Camo Arena",
+    "equipo": "Bass Pro Shops",
+    "colorway": "Camuflado arena · Negro",
+    "colores": [
+     "beige",
+     "bicolor"
+    ],
+    "desc": "Camuflado en arena, oliva y café adelante, con la malla de atrás toda en negro. El óvalo blanco de Bass Pro Shops lleva el pez saltando y las letras bordadas en hilo caramelo. La visera repite el camuflado y le suma pespuntes en zigzag color crema que de cerca hacen la diferencia.",
+    "caracteristicas": [
+     "Parche ovalado al frente, de fondo blanco, con borde, pez y letras «Bass Pro Shops» bordados en caramelo",
+     "Corona en camuflado arena, oliva y café, con malla trasera negra",
+     "Visera curva en el mismo camuflado, con varias hileras de pespunte en zigzag color crema",
+     "Por dentro, cinta impresa «Bass Pro Shops» y etiqueta con el logo en amarillo y rojo"
+    ]
+   }
+  }
+ },
+ "G11": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Lo que sí se sostiene: las 4 fotos elegidas (7715, 7716, 7717 y 7719) son la misma gorra. La 7717, el interior, no muestra el pin, pero el fondo es el mismo de la 7716 (silla roja y mesa blanca), va en la misma secuencia y los grupos vecinos son el G10 (Lacoste camel) y el G12 (Dodgers roja). Dejar fuera la 7718 está bien porque es casi igual a la 7719.",
+     "También se sostiene: la marca MEXICAPS se lee claramente en la cinta interior, así que equipo «Mexicaps» es válido. No nombra al santo, lo cual está bien porque ningún texto lo dice. No hay repetida en el catálogo, el slug no choca con ningún id y colores [\"negras\"] es correcto (corona y visera negras, no es bicolor). El colorway «Negro · Verde» sigue el criterio de «Bulls Negra» (Negro · Rojo).",
+     "«Insignia esmaltada» (en la desc y en las características) afirma una técnica o material. Se ve un pin con colores rellenos entre contornos oscuros, pero «esmaltada» no se puede comprobar en la foto. Mejor «pin de colores».",
+     "«Corona negra afelpada» se acerca a nombrar un material (felpa). Más seguro describir solo lo que se ve: corona negra mate.",
+     "«Bastón dorado» no corresponde: en el recorte de cerca de la 7716 y en la 7719 el bastón es naranja o cobrizo, no dorado.",
+     "«Pedrería negra repartida por todos los paneles de la corona» no se puede afirmar: ninguna foto muestra los paneles de atrás. Solo se ven el frente y los dos costados.",
+     "«Pasa desapercibida hasta que le pega la luz» lo contradicen las fotos: en 7715, 7718 y 7719 las piedras se ven claramente como puntos en toda la corona.",
+     "«Lo único con color es la insignia» choca con la última característica, que dice que el frente por dentro es lila. Son dos zonas con color, no una.",
+     "«Túnica verde y blanca» mezcla dos prendas: el pin muestra un manto verde (en dos tonos) sobre una túnica blanca. Detalle menor, pero se describe mejor por separado."
+    ],
+    "correccion": "Fotos: [7715, 7719, 7716, 7717]. Se mantienen slug \"mexicaps-santo-negra\", nombre \"Mexicaps Santo Negra\", equipo \"Mexicaps\", colorway \"Negro · Verde\" y colores [\"negras\"].\ndesc: \"Corona negra mate salpicada de pedrería negra que brilla en puntos cuando le pega la luz. La visera es negra y lisa, con varias costuras paralelas. Lo que tiene color es el pin del frente, un santo de manto verde con bastón y aureola celeste, y por dentro el frente es lila.\"\ncaracteristicas: [\"Pin de colores al frente, a un lado: santo con manto verde, túnica blanca, bastón naranja y aureola celeste\", \"Pedrería negra repartida por el frente y los costados de la corona\", \"Visera negra lisa con varias líneas de costura paralelas\", \"Por dentro, cinta negra con «MEXICAPS» en las costuras y el frente en lila\"]"
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7715,
+    7719,
+    7716,
+    7717
+   ],
+   "porque_elegidas": "7715: la gorra entera de perfil, en la mano, con la insignia del santo legible, la pedrería y la visera bien vistas. 7719: puesta, nítida, con la insignia de frente (más clara que en 7718, que es casi igual). 7716: detalle cercano de la insignia esmaltada, la pedrería y las costuras de la visera. 7717: el interior, que se incluye porque es el único lugar donde se lee la marca (cinta con MEXICAPS) y además muestra el frente forrado en lila.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "El grupo no tiene «parecidas». En catalogo-actual.json no hay ninguna gorra Mexicaps, con pedrería o con la insignia de un santo. Las negras que hay (White Sox, Yankees, Dodgers, Angels, Red Sox, La Oveja Negra, Pirates) llevan logos bordados de equipo o de marca, así que es una gorra distinta."
+   },
+   "ficha": {
+    "slug": "mexicaps-santo-negra",
+    "nombre": "Mexicaps Santo Negra",
+    "equipo": "Mexicaps",
+    "colorway": "Negro · Verde",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Corona negra afelpada, salpicada de pedrería negra que pasa desapercibida hasta que le pega la luz. La visera es lisa y brillante, con varias costuras paralelas. Lo único con color es la insignia esmaltada del frente: un santo de túnica verde con bastón y aureola celeste.",
+    "caracteristicas": [
+     "Insignia esmaltada al frente, a un lado: santo con túnica verde y blanca, bastón dorado y aureola celeste",
+     "Pedrería negra repartida por todos los paneles de la corona",
+     "Visera negra lisa y brillante con varias líneas de costura paralelas",
+     "Por dentro, cinta negra con «MEXICAPS» en las costuras y el frente forrado en lila"
+    ]
+   }
+  }
+ },
+ "G08": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Las fotos sí son de una sola gorra: 7694, 7695 y 7696 muestran el mismo frente A-frame, la misma W en relieve tono sobre tono, la misma bandera New Era negra en el costado izquierdo del que la lleva puesta y el mismo sticker 59FIFTY. Elegir 7694 y 7695 está bien, y descartar 7696 por ser casi la misma toma que 7695 también.",
+     "Sobre lo de que no está repetida, la explicación del fichador no aguanta. (1) El sticker no sirve para diferenciarlas. En 7695 se lee «59FIFTY / New Era Fits / NEW ERA» y la mitad izquierda sale blanca o plateada y la derecha dorada; en 7694 sale casi todo dorado. El brillo cambia según la luz, y el sticker de nationals-navy está quemado en blanco por el reflejo, con la misma forma y en el mismo lugar de la visera. (2) El color tampoco las separa. En la foto de la tienda, la camiseta oscura del modelo tiene el mismo tono azulado que la gorra (camiseta 57,56,72 y 41,41,52; gorra 45,43,57 y 68,65,83; fondo neutro 162,161,159). Lo más probable es que sea la edición de la foto o la luz del cielo, y no tela azul marino. El fichador comparó la gorra con zonas claras de la camiseta (99,96,103). Las luces de la gorra nueva también tiran a azul: 77,75,86 y 101,102,120 en 7695, y 113,114,137 en 7694. Fuera de eso, el modelo es idéntico: corona A-frame, costuras que bajan del botón, W del mismo tamaño y en el mismo sitio, bandera tonal en el costado y sticker a la derecha del que la lleva. No está demostrado que sea otra gorra distinta de nationals-navy, y puede ser la misma con el color mal puesto en la tienda. Hay que confirmarlo antes de publicarla como producto nuevo, porque si no saldría duplicada.",
+     "En la descripción, «Negra de punta a punta» y «El único toque de color es el sticker dorado» afirman cosas que no se ven: en ninguna de las 3 fotos se ve la parte de abajo de la visera ni el interior. Solo se puede hablar de la tela por fuera, la parte de arriba de la visera, los bordados y las costuras.",
+     "«Sticker dorado» se queda corto: en 7695 se ve claramente mitad plateado o blanco y mitad dorado. Es más exacto decir «sticker 59FIFTY de New Era» sin dar un solo color, o «dorado y plateado».",
+     "Detalle menor: el slug dice «tonal» (nationals-negra-tonal) y el nombre dice «Negra Total». Conviene que coincidan."
+    ],
+    "correccion": "Antes de nada, aclarar con el dueño si es la misma gorra que nationals-navy («Nationals Navy Tonal»). Si lo es, no hay que crear un producto nuevo: se suman 7694 y 7695 a nationals-navy y se revisa su color, porque en las fotos nuevas se ve negra. Si se confirma que es otra gorra, la ficha queda así: slug \"nationals-negra-tonal\", nombre \"Nationals Negra Tonal\", equipo \"Washington Nationals\", colorway \"Negro\", colores [\"negras\"]. desc: \"Tela, visera, bordados y costuras en negro. La W cursiva de Washington va en relieve negro sobre negro, así que aparece y se esconde según le pegue la luz. El brillo lo pone el sticker 59FIFTY de la visera.\" caracteristicas: [\"W cursiva de los Nationals bordada en relieve al frente, negro sobre negro\", \"Bandera de New Era bordada en el costado izquierdo, también en negro\", \"Sticker 59FIFTY de New Era en la visera, dorado y plateado\", \"Visera con pespuntes en líneas paralelas y botón superior en el mismo negro\"]. Fotos elegidas: 7694 y 7695."
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "El argumento del color no vale. El fichador comparó la sombra de la gorra (31,28,39) con la parte iluminada de la camiseta (99,96,103). Si se comparan zonas igual de oscuras en la misma foto de nationals-navy, la tela del costado mide 36,32,45 (B-R 9) y la camiseta 42,40,53 (B-R 11): la gorra no es más azul que la camiseta. Para comparar, la Angels navy de esa misma sesión (mismo modelo y misma camiseta) mide 73,76,118 frente a 43,40,61, y ahí la gorra sí es claramente más azul. Por eso la 'Nationals Navy Tonal' de la tienda no se puede distinguir de una negra; es probable que sea negra con un nombre equivocado.",
+     "Decir que 'la nueva es negra neutra' sale de medir solo la sombra. En 7694 la tela iluminada mide 143,148,174 (B-R 30) y la sombra 30,25,36, con el mismo brillo azulado que tiene la de la tienda. Solo en la sombra de 7695 mide 18,17,20. El color no separa las dos gorras en ninguna dirección.",
+     "Lo que sí se sostiene es el sticker. El de la tienda es redondo, blanco o plateado, y no tiene anillo negro: en 1.788 píxeles claros el R-B medio es 1,4 (máximo 11) y, aun subiendo el contraste, no aparece ningún anillo oscuro. El de la nueva es el dorado '59FIFTY New Era Fits', con un anillo negro grueso y texto, y ese anillo se sigue viendo aunque el reflejo de 7694 lave la mitad del dorado. Es otra pieza o línea, así que no es la misma publicación.",
+     "Todo lo demás es idéntico: frente A-frame, W cursiva bordada en relieve tono sobre tono, costura curva que baja desde el botón y termina sobre la W, bandera New Era tonal en el panel izquierdo, pespuntes de la visera y el mismo modelo. Si se publica, la tienda tendrá dos gorras que se ven iguales salvo por el sticker, una como 'Navy Tonal' (azules) y otra como 'Negra Total' (negras). Hay que avisar al dueño para que confirme el color real de nationals-navy, sin inventarlo."
+    ],
+    "correccion": "Mantener repetida.es = false, pero reescribir el porqué así: \"La más parecida es nationals-navy: el mismo modelo A-frame, con la misma W cursiva y la misma bandera New Era bordadas tono sobre tono en el mismo sitio, y la misma costura curva desde el botón. El color no sirve para separarlas: comparando zonas igual de oscuras, la tela de la tienda (36,32,45) no es más azul que la camiseta negra del modelo (42,40,53), así que puede ser negra aunque se llame Navy. Lo que sí las separa es el sticker de la visera: en la tienda es redondo, blanco o plateado, sin anillo negro; en la nueva es el dorado 59FIFTY con anillo negro. Es otra pieza, pero conviene que el dueño confirme el color real de nationals-navy para que no queden dos fichas casi iguales con colores distintos.\" La ficha nueva puede quedar como está; el sticker dorado es lo único visible que la diferencia."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7694,
+    7695
+   ],
+   "porque_elegidas": "7694 es el primer plano en la mano: se lee bien la W bordada en relieve y se ve el sticker dorado 59FIFTY de la visera. 7695 la muestra puesta, de frente, y además deja ver la bandera New Era bordada en negro en el costado. 7696 es casi la misma toma que 7695 (misma persona y misma pose), así que no suma nada.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "La más parecida es nationals-navy (Nationals Navy Tonal), que también tiene la W y la bandera New Era tono sobre tono. Sin embargo, hay dos diferencias claras. La tela de la tienda es azul marino: en su foto tira a azul frente a la camiseta gris (31,28,39 frente a 99,96,103). La nueva es negra neutra en exterior (14,14,16 y 21,20,23). Además, la navy lleva en la visera un sticker redondo plateado/blanco y la nueva uno dorado 59FIFTY de New Era. nationals-white (blanca con W azul y parche World Series) y nationals-red (roja con visera blanca) no se parecen."
+   },
+   "ficha": {
+    "slug": "nationals-negra-tonal",
+    "nombre": "Nationals Negra Total",
+    "equipo": "Washington Nationals",
+    "colorway": "Negro",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Negra de punta a punta, incluida la W cursiva de Washington. El bordado en relieve es lo único que la separa de la tela, así que el logo aparece y se esconde según le pegue la luz. El único toque de color es el sticker dorado de la visera.",
+    "caracteristicas": [
+     "W cursiva de los Nationals bordada en relieve al frente, negro sobre negro",
+     "Bandera de New Era bordada en el costado izquierdo, también en negro",
+     "Sticker dorado 59FIFTY de New Era en la visera",
+     "Visera con pespuntes en líneas paralelas y botón superior en el mismo negro"
+    ]
+   }
+  }
+ },
+ "G09": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No logré demostrar que fuera repetida. Royal B (royal-b-nike.webp) es estructurada, de frente alto, azul rey, con una B blanca grande al frente y el swoosh blanco en el costado. No tiene ribete, la visera es azul y no se ven pespuntes de contraste.",
+     "Nike Chocolate Tonal (nike-cafe-tonal.webp) es gris topo/chocolate, con una cabeza de felino bordada tono sobre tono al frente, un botón a presión en el costado y la visera del mismo tono, sin ribete. La G09 es verde oliva, de paneles blandos, con solo el swoosh oscuro, ribete negro en el canto de la visera y pespuntes caramelo. Ningún detalle coincide.",
+     "Revisé todo catalogo-actual.json y assets/img. Las únicas Nike son esas dos y no hay ninguna gorra oliva (el único 'Verde' es el 'Verde azulado' de Top Hat Roja / Verde, de Yankees). La decisión 'es: false' se sostiene.",
+     "Fuera de la decisión de repetida: colores ['negras'] para una gorra verde oliva es discutible. La regla manda a 'negras' el gris oscuro y el camuflado oscuro, no el oliva. La corona oliva con el ribete negro podría ir como ['negras','bicolor'] o revisarse.",
+     "Fuera de la decisión de repetida: 7705 sí es esta gorra. En el recorte se ve el canto oliva con pespunte caramelo. Lo blanco del lado derecho es la etiqueta de lavado, no un bordado de otra gorra. La desc dice 'Verde oliva de punta a punta' pero luego habla de ribete y visera inferior negros. Es una leve contradicción."
+    ]
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Fotos: las 4 elegidas son la misma gorra. 7701, 7697 y 7700 muestran la misma corona oliva, el mismo swoosh oscuro, el mismo ribete en la visera y el mismo sticker CLASSICS99 en la visera. La dudosa 7705 también lo es: deja ver el canto oliva con pespunte caramelo, la parte de abajo de la visera en negro y la cinta Nike. Las fotos vecinas (7706 en adelante) son la Lacoste camel, que no lleva esa cinta.",
+     "Categoría de color equivocada: ['negras'] no corresponde. La gorra es un oliva/caqui de tono medio y apagado, no un gris oscuro ni un negro. El negro solo está en el ribete, la parte de abajo de la visera y el interior. La tienda ya puso en 'beige' a Nike Chocolate Tonal (topo), que es igual de oscura. Quien filtre 'negras' recibiría una gorra verde. Corresponde ['beige'] (caqui). No va 'bicolor', porque la visera por encima también es oliva.",
+     "La desc se contradice: dice «Verde oliva de punta a punta», pero la propia ficha cuenta que la visera es negra por debajo y que el interior es negro, y además el ribete es negro. Debe limitarse a la corona y la parte de arriba de la visera.",
+     "Detalle menor de bookkeeping: en porque_elegidas se dice que 7700 «no aporta más que las elegidas», pero 7700 está entre las elegidas. La que sobra es 7699 o 7703 (y 7698, casi igual a 7697).",
+     "Todo lo demás se sostiene en las fotos. El swoosh está bordado en relieve y es azul noche casi negro (de cerca tira a marino). Hay pespuntes caramelo en los paneles y unas 6 filas en la visera. El ribete negro recorre el borde de la visera. Por dentro, la cinta negra lleva «NIKE» y swooshes en blanco. No se menciona ningún material, talla ni dato inventado. NIKE se lee en el sticker y en la cinta."
+    ],
+    "correccion": "colores: [\"beige\"]. desc: \"Verde oliva en la corona y en la visera, con el swoosh bordado en azul noche casi negro y un ribete negro que recorre todo el borde de la visera. Los pespuntes van en hilo caramelo, por los paneles y en varias filas sobre la visera, y le dan un contraste discreto que se nota de cerca. Por dentro todo es negro, con una cinta que lleva NIKE y swooshes en blanco.\" El resto (slug, nombre, equipo, colorway, características y fotos elegidas 7701, 7697, 7700, 7705) puede quedar igual."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7701,
+    7697,
+    7700,
+    7705
+   ],
+   "porque_elegidas": "7701: la gorra entera de tres cuartos, nítida, con el swoosh, el ribete y los pespuntes bien visibles, así que va de principal. 7697: puesta, se ve de perfil y nítida (7698 es casi igual). 7700: detalle de cerca del swoosh bordado en relieve, el ribete negro y las filas de pespunte de la visera. 7705: la dudosa sí es esta gorra. Se ve el borde oliva en el canto, la visera negra por debajo, que encaja con el ribete, y la cinta interior con NIKE y swooshes. Va como cuarta porque respalda una característica. 7699, 7700 y 7703 son la misma gorra en la mano, pero no aportan más que las elegidas.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Ninguna de las parecidas es esta gorra. Royal B es una gorra estructurada azul rey con una B blanca grande y el swoosh blanco en el costado. Nike Chocolate Tonal es gris topo/chocolate, con un logo de cabeza de animal bordado tono sobre tono al frente y un botón visible. La nueva es verde oliva, sin logo de equipo, con solo el swoosh oscuro al frente, ribete negro en el borde de la visera y pespuntes caramelo. En el catálogo no hay otra Nike ni otra gorra oliva."
+   },
+   "ficha": {
+    "slug": "nike-oliva-ribete-negro",
+    "nombre": "Nike Oliva Ribete Negro",
+    "equipo": "Nike",
+    "colorway": "Verde oliva · Negro",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Verde oliva de punta a punta, con el swoosh bordado en azul noche casi negro y un ribete negro que recorre todo el borde de la visera. Los pespuntes van en hilo caramelo, por los paneles y en varias filas sobre la visera, y le dan un contraste discreto que se nota de cerca. Por dentro sigue la firma: cinta negra con NIKE y swooshes en blanco.",
+    "caracteristicas": [
+     "Swoosh de Nike bordado en relieve al frente, en azul noche casi negro",
+     "Ribete negro en todo el borde de la visera, que por debajo también es negra",
+     "Pespuntes en hilo caramelo sobre los paneles y en varias filas de la visera",
+     "Por dentro, forro negro y cinta con «NIKE» y swooshes en blanco"
+    ]
+   }
+  }
+ },
+ "G12": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Los lados del swoosh están invertidos. En la 7723 la visera apunta a la izquierda de la foto, así que el costado que se ve es el izquierdo de quien la lleva puesta, y ahí está el swoosh. En la 7721 el modelo mira hacia la derecha de la foto, así que se ve su costado derecho, que es el que va limpio. La ficha dice «swoosh en el costado derecho; el costado izquierdo va limpio» (y la desc repite «costado derecho»): está al revés. El porque_elegidas también dice que la 7721 muestra el «costado izquierdo», cuando es el derecho.",
+     "«Forro lila» no es exacto. En la 7724, de cerca, se ve lila solo en parte del interior: el sector que da a la visera (el frente) es gris claro, con otra textura. Se ven las dos telas, lila y gris, y la ficha y la desc solo nombran el lila.",
+     "Detalle menor de la desc: «afuera no hay más ruido que un swoosh» deja fuera el sticker Nike Classics de la visera, que también está por fuera. No es un dato inventado, pero conviene suavizarlo.",
+     "Lo demás se sostiene: las 3 fotos son la misma gorra. Es la única gorra roja del lote con cintas Nike; la 7724 coincide en el rojo de la visera y de la corona. El LA es negro con contorno blanco y se ve en relieve. El swoosh está bordado en negro. El sticker se lee «NIKE», «CLASSICS» y «1 SIZE / UNISEX». Las cintas son negras con NIKE y el swoosh en blanco. La categoría [\"rojas\"] está bien: visera y corona del mismo rojo, así que no es bicolor. No está repetida: dodgers-blanca-roja es blanca con visera roja y parche lateral. El slug dodgers-roja está libre."
+    ],
+    "correccion": "Mismas fotos y orden (7723, 7721, 7724), mismo slug, nombre, equipo, colorway y colores [\"rojas\"]. Cambiar:\ndesc: \"Roja de punta a punta, corona y visera del mismo tono, con el LA en negro perfilado en blanco y bordado en relieve para que salte de lejos. Por fuera solo la acompañan un swoosh negro en el costado izquierdo y el sticker Nike Classics de la visera; la sorpresa está adentro, con paneles lila y gris y cintas negras que repiten NIKE en cada costura.\"\ncaracteristicas: [\n \"Logo LA bordado en relieve al frente, negro con contorno blanco\",\n \"Swoosh de Nike bordado en negro en el costado izquierdo; el costado derecho va limpio\",\n \"Sticker Nike «Classics» en la visera, que es roja como la corona\",\n \"Por dentro, paneles lila y gris con cintas negras que llevan NIKE y el swoosh en blanco\"\n]\nSi se prefiere no depender del lado, también vale «Swoosh de Nike bordado en negro en un costado; el otro va limpio»."
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No pude demostrar que sea repetida. Revisé las 7 «parecidas» (12 fotos) y las 61 gorras del catálogo, y ninguna Dodgers es roja entera. dodgers-blanca-roja tiene corona blanca, visera roja, LA rojo y parche lateral de World Series. dodgers-negra-1999 es negra con LA blanco, bandera New Era al costado, parche 1999 y visera verde por debajo. camel-menta lleva parche 75th World Series y visera menta. malva es taupe con visera lavanda y bandera New Era. crema-tonal, camel-tonal y negra-tonal son tonales, con parche «Los Angeles» al costado y sticker New Era 9FIFTY. Las demás gorras rojas del catálogo son Yankees, White Sox, Nationals y Red Sox, ninguna Dodgers. Además, ninguna lleva swoosh ni sticker Nike.",
+     "Detalles comprobados de cerca. Por dentro (7724) se ven cintas negras con NIKE y el swoosh en blanco. El LA va bordado en negro con contorno blanco y abultado. El sticker de la visera dice «CLASSICS» y «1 SIZE» junto al swoosh. Las fotos 7720 y 7722 no existen, así que al grupo no le falta ninguna foto.",
+     "Error en la ficha, no en la decisión: los costados están invertidos. En la 7723 la visera apunta a la izquierda de la imagen y el swoosh queda en el lado que mira a la cámara. Ese es el costado IZQUIERDO de quien la usa, el mismo donde dodgers-negra-1999 lleva la bandera New Era en una toma igual. En la 7721 el hombre mira a la derecha de la imagen, así que se ve su costado DERECHO, y ese costado va limpio. La característica «swoosh … en el costado derecho; el costado izquierdo va limpio» y la frase de la desc «un swoosh negro en el costado derecho» dicen lo contrario de lo que muestran las fotos.",
+     "El slug dodgers-roja no coincide con ningún id del catálogo. Ningún otro grupo de los 31 es una Dodgers roja: G24 es marino y G25 negra o marino con LA vino."
+    ],
+    "correccion": "Mantener repetida.es = false y el slug dodgers-roja. Solo hay que corregir el lado del swoosh. En la desc: «…no hay más ruido que un swoosh negro en el costado izquierdo…». En la característica: «Swoosh de Nike bordado en negro en el costado izquierdo; el costado derecho va limpio». Otra opción es decir solo «en un costado» y no nombrar el lado."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7723,
+    7721,
+    7724
+   ],
+   "porque_elegidas": "7723 va primero: es la toma más nítida. Se lee bien el LA negro con contorno blanco, se ve el swoosh negro del costado derecho y el sticker Nike «Classics» de la visera. La 7721 la muestra puesta y deja ver el costado izquierdo sin parche. Incluyo la 7724 aunque sea por dentro porque aporta el detalle que más la distingue: forro lila y cintas negras con NIKE y el swoosh en blanco. Las tres son la misma gorra: roja entera, mismo LA en relieve, mismo sticker.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Ninguna Dodgers de la tienda es roja entera. dodgers-blanca-roja tiene la corona blanca, la visera roja, el LA rojo y un parche lateral. dodgers-negra-1999 es negra con LA blanco y logo New Era al costado. Las demás son camel/menta, malva/lavanda, marfil tonal, caqui tonal y negra tonal, todas con otro color y sticker New Era. Esta lleva LA negro perfilado en blanco, swoosh de Nike al costado y sticker Nike Classics."
+   },
+   "ficha": {
+    "slug": "dodgers-roja",
+    "nombre": "Dodgers Roja",
+    "equipo": "Los Angeles Dodgers",
+    "colorway": "Rojo · Negro",
+    "colores": [
+     "rojas"
+    ],
+    "desc": "Roja de punta a punta, corona y visera del mismo tono, con el LA en negro perfilado en blanco y bordado en relieve para que salte de lejos. Afuera no hay más ruido que un swoosh negro en el costado derecho; la sorpresa está adentro, con forro lila y cintas negras que repiten NIKE en cada costura.",
+    "caracteristicas": [
+     "Logo LA bordado en relieve al frente, negro con contorno blanco",
+     "Swoosh de Nike bordado en negro en el costado derecho; el costado izquierdo va limpio",
+     "Sticker Nike «Classics» en la visera, que es roja como la corona",
+     "Por dentro, forro lila y cintas negras con NIKE y el swoosh en blanco"
+    ]
+   }
+  }
+ },
+ "G14": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [],
+    "correccion": "La decisión se sostiene: G14 no está repetida. Abrí las 5 fotos del grupo (7732, 7733, 7734, 7735 y 7738) y las 13 fotos de las 8 gorras parecidas. Hice recortes de la malla de 7732 y de la visera de 7735. La única candidata real es whitesox-negra-tonal, y es otra gorra por cuatro detalles que se ven en las fotos. 1) En la tienda, el panel lateral es de tela cerrada y lleva el script «White Sox» bordado (whitesox-negra-tonal.webp). En G14 los costados y la parte de atrás son de malla negra (7735, 7738, 7733), sin script. 2) La visera de la tienda lleva el sticker dorado redondo «59FIFTY / New Era» (whitesox-negra-tonal-2.webp). La de G14 lleva un sticker rectangular blanco con el swoosh, «1 SIZE» y «CLASSIC99» (recorte de 7735). 3) G14 tiene un swoosh negro bordado sobre la malla de atrás (recorte de 7732), y la de la tienda no tiene nada parecido. 4) En G14 los pespuntes de la visera y de las costuras de la corona son grises y se notan. En la tienda todo es negro. Además, en la tienda el SOX va tono sobre tono en negro y en G14 es gris oscuro. Las otras siete parecidas (roja, vino, taupe, marfil, arena, crema/camel y caqui) son de otro color, no tienen malla y casi todas llevan parche lateral de World Series o script, así que se descartan a simple vista. En catalogo-actual.json no hay ninguna gorra trucker ni de malla, y el slug whitesox-trucker-negra no choca con ningún id. La foto 7732, marcada como dudosa, sí es la misma gorra: tiene el mismo SOX gris oscuro, la misma malla, los mismos pespuntes grises y el mismo swoosh."
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "La última frase de la desc no es exacta. Dice que los pespuntes grises de la visera y el swoosh son «los únicos detalles que asoman», pero en 7738 (de cerca) y en 7733/7735 el mismo pespunte gris también recorre las costuras del frente (la del centro y los bordes junto a la malla) y la base de la corona. Además está el sticker blanco de la visera. No es un dato inventado, pero la frase es falsa tal como está.",
+     "Todo lo demás se sostiene. 7735, 7738 y 7732 son la misma gorra: frente negro liso, SOX en relieve gris oscuro, malla negra en los costados y atrás, swoosh negro bordado sobre la malla lateral (comprobado de cerca en 7732 y 7733) y visera con pespuntes grises. El sticker muestra el swoosh y «CLASSIC99», y en 7738 se lee NIKE en la letra pequeña; la cinta interior de 7734 también dice NIKE. Por eso nombrar Nike está bien.",
+     "No está repetida: whitesox-negra-tonal tiene la parte de atrás cerrada, el script White Sox en el costado y el sticker New Era 59FIFTY. Las categorías ['negras'] son correctas (todo negro, no hace falta bicolor), el colorway «Negro · Gris oscuro» es correcto y el slug whitesox-trucker-negra no existe en el catálogo."
+    ],
+    "correccion": "Solo cambia la desc; todo lo demás de la ficha y las elegidas (7735, 7738, 7732) se quedan igual. desc: \"Trucker negra con el frente liso y malla en los costados y atrás. El SOX cruzado va bordado en relieve en un gris tan oscuro que casi se pierde en el negro y se nota más por la sombra que por el color. Unos pespuntes grises marcan las costuras del frente y la visera, y en la malla del costado va un swoosh negro bordado.\" Opcional para la característica 4: \"Pespuntes grises en las costuras del frente y en la visera, que lleva el sticker Nike\"."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7735,
+    7738,
+    7732
+   ],
+   "porque_elegidas": "7735 es la gorra de frente y nítida: se lee bien el SOX en relieve, se ven la malla y el sticker Nike en la visera. 7738 la muestra puesta en una persona, de perfil, con la malla y el logo. 7732 muestra el costado, con el swoosh negro bordado sobre la malla. Descarté la 7733 porque repite casi el mismo ángulo de la 7735, y la 7734 porque es la vista de adentro (cinta con NIKE y swooshes) y no hace falta.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "La más parecida de la tienda es whitesox-negra-tonal, pero es otra gorra: tiene la parte de atrás cerrada (sin malla), lleva el script «White Sox» bordado en el costado y el sticker dorado New Era 59FIFTY. La nueva es tipo trucker: frente negro liso, malla negra en los costados y atrás, un swoosh negro bordado en la malla lateral, pespuntes grises en la visera, sticker Nike y logo SOX en gris oscuro. Las otras White Sox parecidas son de otro color (roja, vino, taupe, marfil, arena, crema/camel y caqui), así que no son esta."
+   },
+   "ficha": {
+    "slug": "whitesox-trucker-negra",
+    "nombre": "White Sox Trucker Negra",
+    "equipo": "Chicago White Sox",
+    "colorway": "Negro · Gris oscuro",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Trucker negra con el frente liso y malla en los costados y atrás. El SOX cruzado va bordado en relieve en un gris tan oscuro que casi se pierde en el negro y se nota más por la sombra que por el color. Los pespuntes grises de la visera y un swoosh negro en la malla del costado son los únicos detalles que asoman.",
+    "caracteristicas": [
+     "Logo SOX cruzado bordado en relieve al frente, en gris oscuro sobre negro",
+     "Frente negro liso con malla negra en los costados y atrás",
+     "Swoosh de Nike bordado en negro sobre la malla lateral",
+     "Visera negra con pespuntes grises y sticker Nike"
+    ]
+   }
+  }
+ },
+ "G16": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Las 8 fotos son la misma gorra y las 4 elegidas (7748, 7751, 7746, 7749) están bien escogidas. No es repetida: no hay ninguna Godspeed en catalogo-actual.json y el slug no choca con ningún id. Colores [\"negras\"] es correcto: la corona y la visera son del mismo negro, así que no lleva bicolor. «Godspeed» se lee en el bordado y en la cinta interior, así que vale como equipo.",
+     "DATO FALSO: dice que las piedras están «por la corona» y «repartidas por toda la corona». De cerca solo aparecen en los dos paneles del frente. El panel lateral del sol (recorte de 7750) y el panel del otro costado (recorte de 7752) están limpios, y la parte de atrás no sale en ninguna foto.",
+     "INVENTADO: «piedras negras que solo se notan cuando les pega la luz». Las fotos no lo muestran. En 7752, en sombra, se ven perfectamente como piedras negras facetadas. Es una frase de relleno que no se puede comprobar.",
+     "COLOR IMPRECISO: llama «rojo» al «4ever». Visto de cerca (recorte de 7748) son letras negras con un contorno rojo grueso, más planas que «Godspeed». De lejos domina el rojo, pero no es un bordado rojo liso.",
+     "Detalle menor: la descripción abre con «Toda negra», pero por dentro los paneles del frente son blancos (se ve en 7749). Conviene decir «Negra por fuera» para no prometer un interior negro."
+    ],
+    "correccion": "Las fotos elegidas y los campos slug, nombre, equipo, colorway y colores se quedan igual. Solo cambian desc y caracteristicas:\ndesc: \"Negra por fuera, con «Godspeed» bordado en relieve en letra gótica negra con contorno rojo y, debajo, un «4ever» más plano donde manda el rojo. En un costado lleva un sol rojo con un ojo en el centro, y el frente va salpicado de pequeñas piedras negras facetadas. Por dentro, la cinta de las costuras vuelve a decir «Godspeed».\"\ncaracteristicas: [\n \"«Godspeed» bordado en relieve al frente en letra gótica negra con contorno rojo, y «4ever» debajo en negro con contorno rojo grueso\",\n \"Sol rojo bordado en un costado, con un ojo en el centro\",\n \"Pequeñas piedras negras facetadas repartidas por los dos paneles del frente\",\n \"Cinta interior negra con «Godspeed» en letra gótica blanca\"\n]"
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7748,
+    7751,
+    7746,
+    7749
+   ],
+   "porque_elegidas": "7748: la mejor vista del frente. «Godspeed 4ever» se lee completo y nítido, junto con las piedras y el sticker de la visera. 7751: puesta de frente, con el bordado y el sol del costado en la misma toma. 7746: el sol rojo con el ojo visto de cerca. 7749: el interior, que se gana su lugar porque la cinta repite «Godspeed» en letra gótica. Las 8 fotos son la misma gorra: las 7745 y 7747 repiten el frente con menos detalle, y las 7750 y 7752 son tomas puesta de perfil.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "En catalogo-actual.json no hay ninguna Godspeed ni ninguna gorra con letras góticas y un sol con ojo al costado. El grupo tampoco tenía «parecidas». Es una gorra nueva."
+   },
+   "ficha": {
+    "slug": "godspeed-negra-roja",
+    "nombre": "Godspeed Negra / Roja",
+    "equipo": "Godspeed",
+    "colorway": "Negro · Rojo",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Toda negra, con «Godspeed» bordado en relieve en letra gótica negra con contorno rojo y un «4ever» rojo debajo. En el costado lleva un sol rojo con un ojo en el centro, y por la corona hay pequeñas piedras negras que solo se notan cuando les pega la luz. Por dentro, la cinta de las costuras vuelve a decir «Godspeed».",
+    "caracteristicas": [
+     "«Godspeed» bordado en relieve al frente en letra gótica negra con contorno rojo, y «4ever» en rojo debajo",
+     "Sol rojo bordado en un costado, con un ojo en el centro",
+     "Pequeñas piedras negras repartidas por toda la corona",
+     "Cinta interior negra con «Godspeed» en letra gótica blanca"
+    ]
+   }
+  }
+ },
+ "G06": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Leve: 'El parche clásico de Bass Pro Shops' — 'clásico' es una valoración que no sale de la foto: supone saber cuál es el logo de siempre de la marca. Basta con 'El parche ovalado amarillo de Bass Pro Shops'.",
+     "Leve: colorway 'Camuflado negro · Gris' da a entender que hay una pieza gris aparte, como la malla. La malla es negra y la visera lleva el mismo camuflado. El gris solo aparece dentro del camuflado. Queda más claro 'Camuflado negro y gris · Negro'.",
+     "Matiz opcional: en la desc, 'con luz pareja le salen los grises' se apoya en 7683/7684, que están tomadas en un sitio oscuro y con los negros levantados en la edición (la malla y el ribete también se ven grises). La gorra tiene brillo y eso sí se ve. Para no prometer un gris que el cliente quizá no vea, es mejor algo como 'según la luz pasa de casi negro a gris'.",
+     "Verificado y correcto: las 4 elegidas (7677, 7681, 7684, 7680) son la misma gorra. Coinciden el parche, el camuflado granulado y con brillo, el zigzag de la visera, la malla negra y la ropa y gafas del modelo. 7680 se tomó sobre el mismo adoquín que 7677. El parche amarillo tiene el pez saliendo del óvalo, «Bass Pro Shops» en rojo con ® y ribete negro. La visera es curva y lleva pespuntes en zigzag. Por dentro hay cinta negra con «Bass Pro Shops» repetido en blanco y etiqueta con el logo. La categoría ['negras'] es correcta (camuflado oscuro, sin bicolor). El slug no choca con ningún id del catálogo y el nombre no choca con el resto de gorras Bass Pro de este lote (G01-G07)."
+    ],
+    "correccion": "Elegidas sin cambios: 7677, 7681, 7684, 7680. Colorway: \"Camuflado negro y gris · Negro\". Desc: \"El parche ovalado amarillo de Bass Pro Shops, con el pez saltando fuera del óvalo, va sobre un camuflado negro y gris de textura granulada. A los lados y atrás lleva malla negra. El camuflado tiene algo de brillo y, según le pegue la luz, pasa de casi negro a gris.\" Lo demás (slug, nombre, equipo, colores ['negras'] y las 4 características) se queda como está."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7677,
+    7681,
+    7684,
+    7680
+   ],
+   "porque_elegidas": "7677: gorra en la mano de tres cuartos, nítida, con el parche entero y legible. Es la principal. 7681: puesta, de tres cuartos. Se ven la malla negra del costado y el zigzag de la visera. 7684: puesta y de frente, con una luz más pareja que saca los grises del camuflado. Sirve para mostrar cómo cambia según la luz. 7680: por dentro. Aporta porque se ven la cinta con «Bass Pro Shops» repetido y la etiqueta con el logo. Las dudosas 7683 y 7684 sí son esta misma gorra. Tienen el mismo parche en la misma posición, con la aleta del pez saliendo por abajo, el mismo camuflado granulado, el zigzag en la visera y la malla negra. Además, el modelo lleva la misma ropa y las mismas gafas. Se ven más grises solo por la luz: el camuflado tiene brillo y refleja la luz difusa. En 7681 ya aparecen esos mismos grises claros en la visera. Descarto 7678 y 7679 porque repiten la toma de la mano de 7677. Descarto 7682 y 7683 porque repiten 7681 y 7684.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "En catalogo-actual.json no hay ninguna gorra Bass Pro Shops ni ninguna camuflada. Las 61 gorras de la tienda son de equipos MLB, NBA o Nike, y el grupo no traía parecidas."
+   },
+   "ficha": {
+    "slug": "basspro-camuflado-negra",
+    "nombre": "Bass Pro Camuflado Negro",
+    "equipo": "Bass Pro Shops",
+    "colorway": "Camuflado negro · Gris",
+    "colores": [
+     "negras"
+    ],
+    "desc": "El parche clásico de Bass Pro Shops, amarillo y con el pez saltando fuera del óvalo, va sobre un camuflado negro y gris de textura granulada. A los lados y atrás lleva malla negra. El camuflado tiene algo de brillo: a la sombra se ve casi negro y con luz pareja le salen los grises.",
+    "caracteristicas": [
+     "Parche ovalado amarillo al frente con el pez saltando y «Bass Pro Shops» en letras rojas, con ribete negro",
+     "Frente y visera en camuflado negro y gris, con textura granulada y algo de brillo",
+     "Malla negra en los costados y atrás",
+     "Visera curva con pespuntes en zigzag; por dentro, cinta con «Bass Pro Shops» repetido y etiqueta con el logo"
+    ]
+   }
+  }
+ },
+ "G13": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [],
+    "correccion": "No hace falta corrección: G13 no está en la tienda. Abrí las 6 fotos del grupo (7725, 7726, 7727, 7728, 7729 y 7731) y las 6 fotos de las 4 parecidas. En la tienda hay solo 4 Tigers (catalogo-actual.json, buscando tigers o detroit) y ninguna es negra.\n- Tigers Blanca: corona y visera blancas, D negra, sin malla.\n- Tigers Camel Tonal: camel tono sobre tono, panel lateral de tela y sticker 59FIFTY.\n- Tigers Marino Total: azul marino, toda de tela, parche lateral «Baseball Club Detroit» y sticker 59FIFTY.\n- Tigers Trigo / Crema: trigo, el mismo parche lateral Detroit y sticker 59FIFTY.\n\nLa nueva es negra tipo trucker:\n- Malla negra en los costados y atrás.\n- Swoosh negro bordado en la malla del costado izquierdo (lo vi de cerca en 7725). En 7728 el costado derecho no tiene nada.\n- Sin parche lateral.\n- Sticker de Nike en la visera, donde se lee «CLASSICS99» (lo amplié en 7727).\n\nNinguna gorra de la tienda coincide en color, malla, swoosh ni sticker. Tampoco hay otra trucker negra con D de Detroit en el catálogo. La dudosa 7725 sí es de esta gorra: tiene el mismo sticker, la misma malla, el mismo swoosh y la misma D."
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Menor, no bloquea: en la desc, «tan oscuro que hay que buscarlo» exagera un poco. En 7726 y 7729 el swoosh negro bordado se distingue bien contra la malla, que se ve gris por la luz que pasa. Basta con algo como «un swoosh de Nike bordado en negro, discreto sobre la malla».",
+     "Menor, no afecta a la ficha: en porque_elegidas dice que 7731 repite a 7729, pero 7731 muestra el costado derecho de la gorra puesta (sin swoosh) y 7729 el izquierdo. Descartarla está bien, pero no es la misma toma.",
+     "Comprobado y correcto: las 4 elegidas (7726, 7729, 7725, 7727) son la misma gorra. Coinciden la misma D gótica en relieve gris oscuro, la malla negra, el swoosh negro bordado en la malla del costado izquierdo del que la lleva (se ve en 7726, 7729 y 7725) y el mismo sticker. El sticker de 7727 se lee de cerca: NIKE, swoosh, «CLASSICS99», «1 SIZE», «UNISEX». Se ven las costuras grises de la visera y del panel. Por el costado derecho (7728 y 7731) solo hay malla, sin parche. La ficha no menciona materiales, tallas ni nada que no se vea. Colores [\"negras\"] es correcto: no es bicolor, porque la corona y la malla son negras. El slug y el nombre no existen en catalogo-actual.json. No está repetida: Marino Total (azul marino, sin malla, parche Baseball Club Detroit), Camel Tonal (sticker 59FIFTY), Trigo (parche lateral) y Blanca son otras gorras."
+    ]
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7726,
+    7729,
+    7725,
+    7727
+   ],
+   "porque_elegidas": "7726: la gorra entera de tres cuartos, con la D legible, la malla y el swoosh a la vista, sobre un fondo limpio. 7729: puesta, de frente y bien enfocada. 7725: el perfil izquierdo completo, con la malla y el swoosh. 7727: detalle de cerca del bordado en relieve de la D y del sticker de la visera. Descarto 7731 porque repite la foto puesta de 7729, y 7728 porque es el costado sin detalles. La dudosa 7725 sí es de esta gorra: tiene el mismo sticker Nike Classics99 en la visera, la misma malla negra, el swoosh negro en la malla izquierda (igual que en 7726 y 7729) y la misma D.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Ninguna de las Tigers de la tienda es esta. Tigers Marino Total es azul marino, de tela entera sin malla, con el parche lateral Baseball Club Detroit y sticker 59FIFTY. Tigers Camel Tonal es camel, sin malla y con sticker 59FIFTY. Tigers Trigo / Crema es trigo, con parche lateral Detroit y sticker 59FIFTY. Tigers Blanca es blanca, con la D en negro. La nueva es negra tipo trucker, con malla negra, swoosh de Nike bordado en la malla del costado, sin parche lateral, y con sticker Nike Classics99 en la visera."
+   },
+   "ficha": {
+    "slug": "tigers-negra-trucker",
+    "nombre": "Tigers Negra Trucker",
+    "equipo": "Detroit Tigers",
+    "colorway": "Negro · Tonal",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Toda negra: el frente es liso, los costados y la parte de atrás son de malla, y la D gótica de Detroit va bordada en un gris casi negro. El logo no destaca por el color sino por el relieve. En el costado, sobre la malla, hay un swoosh de Nike tan oscuro que hay que buscarlo.",
+    "caracteristicas": [
+     "D gótica de Detroit bordada en relieve al frente, gris oscuro sobre negro",
+     "Malla negra en los costados y la parte de atrás",
+     "Swoosh de Nike bordado en negro sobre la malla del costado izquierdo",
+     "Costuras grises a la vista en la visera, con sticker Nike «Classics99»"
+    ]
+   }
+  }
+ },
+ "G01": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "La desc afirma algo que no se ve: «La tela mate cambia con la luz: a la sombra es negro profundo y con luz directa se va a gris carbón». Las fotos muestran solo que en 7656 (puesta, en interior) la gorra sale gris carbón y en 7654/7655 (exterior) sale negra. Que una esté «a la sombra» y la otra con «luz directa», y que la tela «cambie con la luz», es una deducción presentada como propiedad del producto. Por la regla de oro no puede ir en la ficha.",
+     "Menor, en porque_elegidas: el argumento del EXIF pesa poco. Las fotos puestas de todas las gorras (7656, 7660, 7664, 7670, 7675…) están en otro sitio, un interior oscuro, y aun así el EXIF las pone a 10-20 s de las de exterior. Además «luz cálida directa» no se nota sobre la gorra, que sale gris neutro. Lo que sí sostiene que 7656 es esta gorra es lo que se ve: el mismo parche (fondo negro, pez y letras blancas, borde blanco grueso), la misma visera con filas de pespunte en zigzag, el mismo botón forrado, la misma textura de gamuza y la malla oscura. No es G04 (gris jaspeado, parche gris) ni G03 (camuflado, parche de fondo blanco). Conclusión correcta, aunque el motivo dado sea débil.",
+     "Aviso, no es error: 7656 deja ver la gorra claramente gris carbón. Conviene que no sea la portada; 7655 debe ir primera, como está.",
+     "Verificado y correcto: 7657 es G01. Tiene la etiqueta a color (óvalo amarillo, letras rojas, pez verde), la cinta con «Bass Pro Shops» en blanco y la malla negra. En ninguna parte asoma rojo, así que no es la G02 vino, que también tiene la visera oscura por debajo. El fondo es del mismo jardín que 7654/7655. Colores ['negras'] correctos, sin bicolor, porque corona, visera y malla son negras. El slug no choca con el catálogo, que no tiene ninguna Bass Pro. Las 4 características se ven en las fotos: parche bordado con borde grueso; visera curva con varias filas de pespunte; malla en laterales y atrás (por dentro se ve la de atrás); botón de la misma tela; cinta y etiqueta interior."
+    ],
+    "correccion": "Fotos elegidas, colores, nombre, equipo, colorway, slug y características pueden quedar igual. Solo hay que cambiar la desc y quitar la frase sobre la luz:\n\"Trucker negra de frente afelpado y malla atrás, con el óvalo de Bass Pro Shops bordado en blanco: el pez con la boca abierta, las letras y un borde grueso que lo enmarca. Por dentro sigue la marca, en la cinta de las costuras y en la etiqueta del logo a color.\"\nMantener 7655 como primera foto, porque en 7656 la gorra se ve gris carbón."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7655,
+    7656,
+    7657
+   ],
+   "porque_elegidas": "7655: la mejor de frente; el parche se ve grande y se lee entero. 7656: la gorra puesta en una persona, de tres cuartos, y deja ver la malla del costado. 7657: por dentro, pero esta sí aporta porque se ven la cinta con «Bass Pro Shops» y la etiqueta del logo a color. Dejé fuera 7654 porque repite casi el mismo encuadre que 7655, con la gorra más pequeña. La dudosa 7656 sí es esta gorra: el EXIF dice que se tomó 19 s después de 7655 (11:50:19 → 11:50:38, el 25-09) y tiene el mismo parche, el mismo botón, la misma visera pespunteada y la misma tela afelpada. Se ve gris carbón porque le da luz cálida directa, no porque sea otro color. Tampoco es la G04, que es gris jaspeado claro.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "La tienda no vende ninguna Bass Pro Shops: las 61 del catálogo son de equipos MLB/NBA, más Nike y La Oveja Negra. El grupo no tenía parecidas."
+   },
+   "ficha": {
+    "slug": "basspro-negra-parche-blanco",
+    "nombre": "Bass Pro Negra / Blanca",
+    "equipo": "Bass Pro Shops",
+    "colorway": "Negro · Blanco",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Trucker negra de frente afelpado y malla atrás, con el óvalo de Bass Pro Shops bordado en blanco: el pez con la boca abierta, las letras y un borde grueso que lo enmarca. La tela mate cambia con la luz: a la sombra es negro profundo y con luz directa se va a gris carbón. Por dentro sigue la marca, en la cinta de las costuras y en la etiqueta del logo a color.",
+    "caracteristicas": [
+     "Parche ovalado bordado al frente: pez y letras «Bass Pro Shops» en blanco sobre fondo negro, con borde blanco grueso",
+     "Frente y visera negros de tela mate y afelpada; visera curva con varias filas de pespunte",
+     "Malla negra en los paneles laterales y traseros, con el botón superior en la misma tela del frente",
+     "Por dentro, cinta con «Bass Pro Shops» en letras blancas y etiqueta con el logo a color"
+    ]
+   }
+  }
+ },
+ "G15": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No pude demostrar que se equivocó: G15 no es ninguna gorra de la tienda. Abrí 7741, 7743 y 7744, las 17 fotos de las 11 parecidas y un recorte del sticker de 7741.",
+     "yankees-negra-1996 es la única negra y es otra gorra. En sus dos fotos el costado es de tela cerrada, con el «1996 World Series» y el logo MLB bordados en negro. G15 tiene malla en ese mismo costado: en 7741 la gorra mira hacia el mismo lado que en yankees-negra-1996.webp. Además, la visera de la 1996 lleva el sticker redondo verde/dorado 59FIFTY de New Era, y la de G15 un sticker blanco rectangular con el swoosh, «CLASSICS99», «1 SIZE» y «UNISEX».",
+     "Las otras 10 parecidas tampoco sirven. Por el color: navy/hueso, roja/navy, blanca, crema, hueso tonal, vino, roja/verde, piedra/navy, roja/crema y crema/azul. Y ninguna tiene malla: todas tienen los paneles cerrados y casi todas llevan parche lateral.",
+     "Busqué en catalogo-actual.json (61 gorras) las palabras malla, trucker, mesh y rejilla y no salió ninguna. No hay ninguna gorra tipo trucker en la tienda, de los Yankees ni de otro equipo.",
+     "Detalle menor sin efecto en la decisión: en la 1996 el «1996 World Series» está bordado directo sobre la tela, no es un parche aparte como dice el fichador."
+    ]
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Lo principal se sostiene. 7741, 7743 y 7744 son la misma gorra: mismo NY, la misma malla, los mismos pespuntes grises y el mismo sticker. El sticker se lee en 7741 y 7744: swoosh, «CLASSICS99», «1 SIZE» y «UNISEX»; en 7743 además se lee NIKE en la línea pequeña. No está repetida: yankees-negra-1996 es toda de tela, con parche «1996 World Series» y sticker 59FIFTY. El slug yankees-negra-malla y el nombre «Yankees Negra Malla» no existen en el catálogo. Colores ['negras'] y colorway 'Negro' están bien.",
+     "DATO NO VISIBLE: 'Panel lateral en malla negra, sin parche bordado'. En las tres fotos solo se ve el costado derecho de la gorra (7741 y 7743). 7744 es de frente y por la derecha solo asoma el borde del panel frontal. El costado izquierdo y la parte de atrás no salen en ninguna foto, así que afirmar que no hay parche es adivinar. Lo mismo pasa con 'sin parche lateral' en la comparación de repetida; ahí no importa porque el parche 1996 está en el costado derecho y aquí ese costado es malla.",
+     "INEXACTO: 'Lo único que corta tanto negro son los pespuntes grises de la visera y el sticker blanco'. En 7743 y 7744 los pespuntes grises también recorren los bordes del panel frontal y la costura de la corona sobre la visera; no son solo de la visera.",
+     "DEMASIADO ABSOLUTO: 'El NY bordado no cambia de color' / 'negro sobre negro'. En 7741 (luz suave) sí es tono sobre tono (medido: logo ~25 contra panel ~16). En 7743 y 7744 el NY se ve claramente gris oscuro sobre el negro del panel (~87 contra ~45), por el brillo del hilo o porque es gris carbón. Mejor decir 'tono sobre tono' sin jurar que no cambia de color."
+    ],
+    "correccion": "Fotos: OK como están (7741, 7744, 7743). Ficha corregida:\nnombre \"Yankees Negra Malla\", equipo \"New York Yankees\", colorway \"Negro\", colores [\"negras\"], slug \"yankees-negra-malla\".\ndesc: \"Negra de punta a punta, con el frente liso y el costado en malla. El NY va bordado tono sobre tono y se nota más por el relieve que por el color; con luz directa el hilo brilla en gris oscuro. Lo que corta tanto negro son los pespuntes grises de la visera y del panel frontal, y el sticker blanco.\"\ncaracteristicas: [\n\"Logo NY bordado en relieve al frente, tono sobre tono\",\n\"Costado en malla negra\",\n\"Visera curva con pespuntes en gris, que también marcan las costuras del panel frontal\",\n\"Sticker blanco en la visera con el swoosh de Nike y la leyenda «CLASSICS99»\"\n]"
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7741,
+    7744,
+    7743
+   ],
+   "porque_elegidas": "7741: la gorra en la mano, de frente, con el NY bordado nítido y el sticker de la visera legible (swoosh de Nike y CLASSICS99). 7744: puesta y de cerca, se ven la malla del costado, los pespuntes grises de la visera y el relieve del logo. 7743: puesta en plano más abierto, muestra el perfil completo y cómo queda en la cabeza. No hay más fotos en el grupo y ninguna está borrosa.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "La más parecida es yankees-negra-1996 (Yankees Negra Total), pero es otra gorra: tiene todos los paneles cerrados en tela, sin malla, un parche «1996 World Series» bordado en negro en el costado y el sticker verde 59FIFTY de New Era. La de G15 es tipo trucker, con malla negra en el costado, sin parche lateral, pespuntes grises en la visera y un sticker blanco con el swoosh de Nike y «CLASSICS99». Las otras gorras Yankees parecidas (navy/hueso, roja/navy, blanca, crema, hueso tonal, script vino, top hat roja/verde, piedra/marino, escarlata/crema y marfil/marino) no son negras y ninguna tiene malla."
+   },
+   "ficha": {
+    "slug": "yankees-negra-malla",
+    "nombre": "Yankees Negra Malla",
+    "equipo": "New York Yankees",
+    "colorway": "Negro",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Negra de punta a punta, con el frente liso y malla en los costados. El NY bordado no cambia de color, se nota por el relieve. Lo único que corta tanto negro son los pespuntes grises de la visera y el sticker blanco.",
+    "caracteristicas": [
+     "Logo NY bordado en relieve al frente, negro sobre negro",
+     "Panel lateral en malla negra, sin parche bordado",
+     "Visera curva con pespuntes en gris",
+     "Sticker blanco en la visera con el swoosh de Nike y la leyenda «CLASSICS99»"
+    ]
+   }
+  }
+ },
+ "G20": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": []
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Leve, no es un dato inventado: dos afirmaciones de las características solo se ven en 7779, que el fichador dejó fuera de las elegidas. Son «caqui por debajo» (la parte inferior de la visera) y la característica 4 («forro blanco con cinta negra marcada Nike»). Ninguna de las cuatro fotos elegidas (7776, 7780, 7777, 7778) muestra la visera por debajo ni el interior, así que el cliente leería algo que no puede comprobar en la galería.",
+     "Leve: el interior no es blanco del todo. En 7779 los paneles delanteros se ven grises por dentro, aunque los demás son blancos. Decir «forro blanco» simplifica un poco; «interior claro» sería más exacto.",
+     "Todo lo demás se sostiene tras mirarlo de cerca. Las 5 fotos son la misma gorra. El sticker dice CLASSICS con el swoosh y en la cinta interior se lee NIKE, así que la marca se puede nombrar. El parche lateral es una pelota con costuras, «SAN DIEGO», el script «Padres», «1969» y un SD, todo en blanco. El SD del frente está bordado en relieve. El botón y los ojales son blancos. Los colores [beige, bicolor] son correctos (corona caqui, visera blanca). El slug padres-caqui-blanca no está en el catálogo. Comparada con la Piedra / Navy y la Blanca / Navy (SD azul marino y parche World Series), no es repetida."
+    ],
+    "correccion": "Opción A (recomendada): añadir 7779 como quinta foto elegida (7776, 7780, 7777, 7778, 7779), porque respalda lo de la visera por debajo y lo del interior. En la característica 4 cambiar «forro blanco» por «interior claro»: «Botón y ojales blancos; por dentro, interior claro con cinta negra marcada «Nike»». Opción B, si se quedan solo las 4 elegidas: característica 3 = «Visera blanca con sticker Nike «Classics»» y característica 4 = «Botón superior y ojales bordados en blanco». El resto de la ficha se queda igual."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7776,
+    7780,
+    7777,
+    7778
+   ],
+   "porque_elegidas": "7776 es la gorra entera de tres cuartos, con el SD del frente, el parche lateral y la visera bien a la vista. 7780 la muestra puesta. 7777 es el detalle del parche lateral, donde se lee San Diego, Padres y 1969. 7778 es el SD de cerca con el sticker Nike Classics sobre la visera blanca. Dejé fuera 7779, que es solo el interior.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Ninguna de las cuatro Padres de la tienda es esta. La Piedra / Navy tiene la corona y la visera en piedra, el SD en azul marino y un parche de World Series al costado. Esta tiene la corona caqui, la visera blanca por encima y caqui por debajo, todo el bordado en blanco y otro parche lateral: una pelota con San Diego, Padres, 1969 y un SD. La Blanca / Navy, la Negra / Dorada y la Rosa / Azul no coinciden en colores ni en parche."
+   },
+   "ficha": {
+    "slug": "padres-caqui-blanca",
+    "nombre": "Padres Caqui / Blanca",
+    "equipo": "San Diego Padres",
+    "colorway": "Caqui · Blanco",
+    "colores": [
+     "beige",
+     "bicolor"
+    ],
+    "desc": "Corona caqui, visera blanca y todo el bordado en blanco: dos tonos y ni un color de más. Al frente va el SD entrelazado en relieve. Al costado, una pelota de béisbol bordada que reúne San Diego, el script Padres y el año 1969.",
+    "caracteristicas": [
+     "Logo SD entrelazado bordado en blanco con relieve al frente",
+     "Parche lateral bordado en blanco: pelota con costuras, «San Diego», script «Padres», «1969» y un SD pequeño",
+     "Visera blanca por encima y caqui por debajo, con sticker Nike «Classics»",
+     "Botón y ojales blancos; por dentro, forro blanco con cinta negra marcada «Nike»"
+    ]
+   }
+  }
+ },
+ "G19": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Detalle menor de terminología: el «World Series» del costado no es un parche cosido, está bordado directo sobre la corona. En el recorte de 7771 se ve la sarga negra entre las letras, y en 7772 se ve por dentro el revés del bordado con hilo dorado atravesando el forro blanco. No es un dato inventado, pero es más exacto decir «bordado» que «parche».",
+     "Detalle menor, no afecta a la ficha: la razón para descartar 7773 («logo un poco cortado») no es exacta. El KC sale entero; solo está más de lado que en 7774. De todos modos, descartarla está bien porque repite la toma puesta.",
+     "Verificado y correcto: las 4 elegidas (7769, 7774, 7771, 7772) son la misma gorra, y también 7770 y 7773. Coinciden el KC negro con contorno dorado, el World Series dorado con la bola encima y el triángulo dorado abajo, el sticker Nike y la visera amarilla por debajo (en 7769 y 7770 asoma el borde amarillo).",
+     "Verificado: el sticker dice «CLASSICS» con el swoosh y «NIKE»; la cinta interior es negra con «NIKE» y el swoosh repetidos; el KC está bordado en relieve; la visera es amarilla por debajo con filas de pespuntes negros. La ficha no nombra materiales, tallas ni ajustes.",
+     "Colores ['negras'] correcto: la corona y la parte de arriba de la visera son negras, y el amarillo solo va por debajo, así que no corresponde bicolor. El slug royals-negra-dorada no choca con el catálogo, y no hay ninguna gorra KC/Royals en la tienda."
+    ],
+    "correccion": "Opcional: cambiar «parche» por «bordado». Característica 2: «Bordado «World Series» en el costado, con el script dorado y una bola de béisbol encima». En la desc: «…y el World Series bordado en el costado lleva el mismo tono.» Lo demás de la ficha y las fotos elegidas (7769, 7774, 7771, 7772) se puede dejar como está."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7769,
+    7774,
+    7771,
+    7772
+   ],
+   "porque_elegidas": "7769: es la gorra entera en tres cuartos, con el KC y el parche World Series nítidos. Es la mejor portada. 7774: puesta y de frente, con el logo y el parche legibles. 7771: perfil del costado con el parche completo. 7772: es la única foto que muestra el envés amarillo de la visera y la cinta interior Nike, un detalle que no se ve en las demás. Descartadas: 7770, porque es casi igual a 7769 y más cerrada, y 7773, porque repite a 7774 con el logo un poco cortado por el ángulo.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "En catalogo-actual.json no hay ninguna gorra de Kansas City Royals ni ninguna con el logo KC. Las negras con dorado que ya están en la tienda son de otros equipos (Padres, Angels, Pirates)."
+   },
+   "ficha": {
+    "slug": "royals-negra-dorada",
+    "nombre": "Royals Negra / Dorada",
+    "equipo": "Kansas City Royals",
+    "colorway": "Negro · Dorado",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Por fuera es negra entera y el color va solo en el hilo. El KC del frente es negro sobre negro y lo marca un contorno dorado, y el parche World Series del costado lleva el mismo tono. Al levantar la visera se ve el detalle que no esperas: por debajo es amarilla, con filas de pespuntes negros.",
+    "caracteristicas": [
+     "Logo KC bordado en relieve al frente: letras negras con contorno dorado",
+     "Parche «World Series» en el costado, con el script dorado y una bola de béisbol encima",
+     "Visera negra por encima y amarilla por debajo, con pespuntes negros",
+     "Sticker Nike Classics en la visera y cinta interior con el logo Nike"
+    ]
+   }
+  }
+ },
+ "G22": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [],
+    "correccion": "No hay que corregir nada: G22 no está repetida. Revisé las fotos elegidas 7792, 7798, 7793 y 7794, con recortes del sticker y del swoosh, y las 6 fotos de las tres gorras parecidas. La gorra nueva es negra entera, incluidos la visera y el botón. Lleva la A sola, sin hacha, en blanco con contorno celeste. En el costado tiene un swoosh de Nike celeste, que el recorte de 7794 confirma, y en la visera un sticker blanco que se lee «1 SIZE» y «CLASSICS» junto al swoosh de Nike. En ninguna foto se ve un sticker 59FIFTY ni el logo de New Era. Ninguna de las tres Braves de la tienda coincide. braves-khaki-lila tiene corona khaki, visera lila, A con hacha, sticker 59FIFTY y el logo de New Era en el costado. braves-piedra tiene corona piedra, A azul rey, parche lateral en el panel izquierdo y sticker 59FIFTY. braves-navy-hueso tiene corona navy, visera hueso, A hueso, parche lateral de World Series y logo de New Era. Revisé también todo catalogo-actual.json (61 gorras): no hay otra Braves ni ninguna Braves negra, y las dos fichas de Nike que hay (royal-b-nike, azul rey, y nike-cafe-tonal, chocolate) son de otros colores y no son de los Braves. El slug braves-negra-nike no coincide con ningún id existente."
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Color equivocado en el relleno de la A. Las fichas dicen 'blanca por encima' y 'blanca con contorno celeste', pero de cerca (en 7792, 7793 y 7798) el relleno es lila muy claro, casi lavanda. En la misma toma de 7793 el sticker blanco mide RGB ~215,219,220 (neutro) y el relleno de la A ~175,173,193 (tira a violeta). En 7798 se nota a simple vista al lado del sticker. El contorno sí es celeste y el swoosh lateral repite ese celeste.",
+     "Detalle menor, no es un error: 'Nike' no se lee escrito en ninguna parte (la letra chica del sticker no se distingue), pero el swoosh se ve claro en el sticker y bordado en el costado, y en el sticker se lee 'CLASSICS'. Se puede nombrar.",
+     "Todo lo demás se sostiene. Las cuatro elegidas (7792, 7798, 7793, 7794) son la misma gorra, y también 7795-7797. La A está bordada en relieve y el contorno desplazado hace de sombra. La corona y la visera son negras, y el botón y las costuras también. La visera tiene una curva leve. colores ['negras'] es correcto (no es bicolor). El slug braves-negra-nike no choca con nada del catálogo. No es repetida: las tres Braves de la tienda son khaki/lila, piedra y navy/hueso."
+    ],
+    "correccion": "Cambiar solo el color del relleno de la A; el resto queda igual.\ndesc: \"Negra de la corona a la visera, para que todo el peso lo lleve la A de los Braves: bordada en relieve, en un lila muy claro y con un contorno celeste que le hace sombra. El swoosh del costado repite ese celeste y el sticker Nike Classics sigue en la visera.\"\ncaracteristicas[0]: \"A de los Braves bordada en relieve al frente, lila muy claro con contorno celeste\"\nSe mantienen: nombre \"Braves Negra / Celeste\", colorway \"Negro · Celeste\", colores [\"negras\"], slug \"braves-negra-nike\", elegidas [7792, 7798, 7793, 7794] y las otras tres características."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7792,
+    7798,
+    7793,
+    7794
+   ],
+   "porque_elegidas": "7792: la gorra de frente, nítida, con la A legible, el sticker Nike Classics y el swoosh asomando. 7798: puesta, de tres cuartos; se ven la A y el swoosh celeste a la vez. 7793: detalle del bordado en relieve y del contorno celeste. 7794: el costado con el swoosh celeste. Se descartan 7795 (casi igual a 7792), y 7796 y 7797 (puesta, pero con las manos tapando parte de la visera).",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Las tres Braves de la tienda son otras gorras: braves-khaki-lila tiene corona khaki, visera lila, la A con hacha y sticker 59FIFTY de New Era; braves-piedra tiene corona piedra, la A en azul rey, parche lateral y sticker New Era; braves-navy-hueso tiene corona navy, visera hueso y la A en hueso con el logo de New Era en el costado. Esta es negra entera, con la A blanca de contorno celeste, el swoosh celeste de Nike en el costado y el sticker Nike Classics."
+   },
+   "ficha": {
+    "slug": "braves-negra-nike",
+    "nombre": "Braves Negra / Celeste",
+    "equipo": "Atlanta Braves",
+    "colorway": "Negro · Celeste",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Negra de la corona a la visera, para que todo el peso lo lleve la A de los Braves: bordada en relieve, blanca por encima y con un contorno celeste que le hace sombra. El swoosh del costado repite ese celeste y el sticker Nike Classics sigue en la visera.",
+    "caracteristicas": [
+     "A de los Braves bordada en relieve al frente, blanca con contorno celeste",
+     "Swoosh de Nike bordado en celeste en el panel lateral",
+     "Visera curva negra con el sticker Nike «Classics» puesto",
+     "Botón superior y costuras de los paneles en negro"
+    ]
+   }
+  }
+ },
+ "G21": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Menor: la característica 4 menciona la «cinta interior negra con NIKE estampado», pero eso solo se ve en la 7791, que el fichador descartó. En las 4 fotos elegidas el cliente no lo ve. Además, «estampado» da por hecha la técnica (podría ser tejido), y la cinta lleva también el swoosh repetido, no solo NIKE.",
+     "Menor: «entre dos costuras de béisbol» se puede leer como costuras reales de la gorra. En la 7787 son puntadas de béisbol bordadas, parte del mismo diseño de World Series, en negro.",
+     "Verificado: las 4 elegidas (7790, 7784, 7787, 7789) son la misma gorra, y también 7785, 7786, 7788 y 7791. No hay fotos ajenas.",
+     "Verificado de cerca: BOSTON con letras negras en relieve y contorno camel (7790 recortada), frente de una sola pieza sin costura al centro (7790 y 7789), World Series en negro (7787), swoosh negro bordado en el otro costado (7789) y sticker con swoosh + CLASSICS + NIKE (7790 recortada). Corona, visera y botón son crema, así que colores [\"blancas\"] es correcto y no corresponde «bicolor». El equipo «Boston Red Sox» coincide con boston-carmesi, que ya está en la tienda. El slug boston-crema-ws no existe en el catálogo. No es repetida: ninguna Boston de la tienda es crema."
+    ],
+    "correccion": "Opción A (preferida): agregar la 7791 a las elegidas, como última foto, y dejar la característica 4 así: \"Sticker Nike Classics en la visera y cinta interior negra con NIKE y el swoosh repetidos\". Opción B: no agregar la 7791 y dejar la característica 4 solo como \"Sticker Nike Classics en la visera\". En los dos casos, la característica 2 quedaría así: \"«World Series» bordado en negro en un costado, entre dos hileras de puntadas de béisbol también bordadas\". El resto de la ficha (nombre, equipo, colorway, colores [\"blancas\"], slug y desc) se sostiene tal cual."
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No encontré nada que tumbe el 'no repetida'. Comparé 7790, 7784, 7787 y 7789, y también las recortadas del BOSTON y del swoosh, con las 11 fotos de las 6 parecidas. Revisé además catalogo-actual.json, js/products.js y la tabla productos de _datos/crowcaps.db (61 gorras, 6 de Boston). No aparece ninguna Boston crema o blanca.",
+     "Red Sox Khaki / Roja: corona caqui, visera roja, B roja con filo blanco, parche World Series ovalado rojo y sticker New Era 59FIFTY. Es otra gorra.",
+     "Red Sox Navy / Naranja: corona azul marino, B naranja y parche rojo con escudo al costado. Es otra gorra.",
+     "Red Sox Navy / Blanca: corona azul marino, visera gris clara, B blanca, parche All-Star Game y bandera New Era. Es otra gorra.",
+     "Red Sox Negra / Roja: B roja con filo blanco y visera roja. Red Sox World Series Negra: toda negra, con B roja y el globo 'WORLD 05 SERIES' en rojo. Ninguna de las dos es esta.",
+     "Boston Carmesí es la única que se parece de verdad, y el fichador no lo dice: es el mismo modelo, con BOSTON a lo ancho del frente, panel frontal sin costura, parche World Series al costado y sticker Nike en la visera. Lo que las separa no admite duda: corona carmesí con BOSTON carmesí, y su parche es un escudo con 'World Series' en letra cursiva. En G21 la corona es crema, el BOSTON es negro con contorno camel y el 'WORLD SERIES' va en bloque negro entre dos costuras de pelota. Es otro colorway, no la misma gorra.",
+     "Detalle menor de grupos.json, no de la ficha: la descripción provisional dice 'letras café'. En el recorte se ve que las letras son negras con contorno camel, como dice el fichador.",
+     "Tampoco hay otra Boston crema entre los 31 grupos de este lote. G23 es crema con B verde oliva y es otra gorra."
+    ]
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7790,
+    7784,
+    7787,
+    7789
+   ],
+   "porque_elegidas": "7790: la gorra en mano, de frente y en tres cuartos. Se leen bien el BOSTON y el bordado World Series del costado. 7784: puesta, de perfil, con buena luz. 7787: primer plano del bordado World Series entre costuras de béisbol. 7789: el otro costado, con el swoosh de Nike y el sticker de la visera. Descarto 7785 y 7786 porque repiten casi la misma toma de 7784, 7788 porque es la misma puesta pero con fondo oscuro, y 7791 porque es el interior (cinta Nike).",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "No hay ninguna Boston crema en la tienda. Las parecidas son otras gorras: Red Sox Khaki/Roja (corona caqui, visera roja, B roja), Navy/Naranja y Navy/Blanca (azul marino con B), Boston Carmesí (roja con BOSTON rojo) y las dos negras (B roja; la World Series negra lleva un bordado rojo con globo). Esta es crema entera, con BOSTON negro de contorno camel, World Series en negro y swoosh de Nike."
+   },
+   "ficha": {
+    "slug": "boston-crema-ws",
+    "nombre": "Boston World Series Crema",
+    "equipo": "Boston Red Sox",
+    "colorway": "Crema · Negro",
+    "colores": [
+     "blancas"
+    ],
+    "desc": "Crema de punta a punta, con el BOSTON del frente bordado en negro y rodeado de un contorno camel que lo despega de la tela. El frente es de una sola pieza, sin costura al centro, así que las letras corren limpias de lado a lado. A un costado va World Series en negro y al otro, el swoosh de Nike.",
+    "caracteristicas": [
+     "BOSTON bordado en relieve al frente: letras negras con contorno camel",
+     "«World Series» bordado en negro en un costado, entre dos costuras de béisbol",
+     "Swoosh de Nike bordado en negro en el otro costado",
+     "Sticker Nike Classics en la visera y cinta interior negra con NIKE estampado"
+    ]
+   }
+  }
+ },
+ "G18": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No pude demostrar que fuera repetida. Abrí giants-mint.webp, la única 'parecida', y las 6 fotos del grupo (7761, 7762, 7763, 7765, 7766 y 7767), con recortes del parche lateral, del costado y del sticker. La giants-mint tiene la corona y la visera gris claro/menta, con el SF y el parche bordados en naranja. La G18 es negra entera (a la sombra tira a grafito), con el SF, el parche y el swoosh en el mismo negro. Ningún cambio de luz explica esa diferencia: es otra gorra.",
+     "Comparten el molde y el diseño del parche lateral; el fichador también lo dice. En el recorte de 7762 se alcanza a leer un script tipo 'World Series' que no está completo. Decir 'letras script' sigue siendo la opción prudente.",
+     "No hay otra gorra de los Giants en catalogo-actual.json (61 ids), ni en js/products.js, ni en assets/img (solo están giants-mint.webp y giants-mint-sm.webp).",
+     "Aparte (no cambia el veredicto): la tienda en vivo no coincide con catalogo-actual.json. GET https://crowcaps.co/api/estado responde productos:32, la portada solo trae 32 data-id y /g/giants-mint redirige a '/'. O sea que giants-mint ni siquiera se ve hoy en crowcaps.co. catalogo-actual.json sale del repo (61) y no de la base de Turso. Conviene que el orquestador lo sepa para las demás revisiones de repetidas.",
+     "Sobre la ficha (no es de la decisión de repetida): el sticker de la visera se lee bien en el recorte de 7767, con el swoosh, 'CLASSICS' y 'UNISEX'. La cinta interior de 7765 dice NIKE. El swoosh lateral tono sobre tono se confirma en el recorte de 7767. No encontré nada inventado."
+    ]
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "La desc dice «A la sombra tira a grafito y al sol se ve negra cerrada», y eso no sale de las fotos. Ninguna muestra sol directo: hay gotas de lluvia en 7761 y en 7766, y la visera de 7766 tiene gotas de agua. Además, 7766 está a la sombra y la gorra se ve negra pura (mide unos 31,31,32 RGB). El cambio de grafito a negro depende de la exposición de cada foto (en mano mide unos 77,77,94, con un reflejo frío), no de sol o sombra. La explicación del sol es inventada. En porque_elegidas pasa lo mismo: dice que 7767 está «a la luz del sol».",
+     "«Lo único que rompe el bloque es el sticker de la visera» es una afirmación absoluta que no se puede comprobar: ninguna foto muestra la parte de atrás entera. En 7766 se ve una pieza clara/blanca en el cierre trasero, y la cinta interior lleva NIKE en blanco. Hay que suavizarla.",
+     "Lo demás se sostiene. Las 4 elegidas (7763, 7767, 7762, 7765) y las descartadas 7761 y 7766 son la misma gorra: el mismo SF tono sobre tono, el mismo parche en el costado derecho del que la lleva, el swoosh en el izquierdo y el mismo sticker. 7764 y 7768 no existen. No está repetida con giants-mint. El colorway «Negro» y la categoría [\"negras\"] son correctos (puesta se ve negra; en mano es gris muy oscuro, que también cuenta como negras). Nike se lee en la cinta interior y en el sticker (swoosh + CLASSICS + UNISEX). El parche lateral se describe con prudencia: pelota, letras script, banderín. No adivina el texto (parece «World Series», pero no se lee con seguridad) y está bien así."
+    ],
+    "correccion": "desc: \"Negra de punta a punta: el SF entrelazado del frente, el parche del costado y hasta el swoosh lateral van bordados en el mismo tono, así que se leen por el relieve y no por el color. Según cómo le pegue la luz va del negro cerrado a un grafito con reflejo frío. Por fuera, lo que más contrasta es el sticker Nike Classics de la visera.\" El resto queda igual: slug giants-negra-tonal, nombre \"Giants Negra Total\", equipo \"San Francisco Giants\", colorway \"Negro\", colores [\"negras\"], las 4 características y las elegidas [7763, 7767, 7762, 7765]. En porque_elegidas, para 7767, cambiar \"a la luz del sol\" por \"puesta y de frente\"."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7763,
+    7767,
+    7762,
+    7765
+   ],
+   "porque_elegidas": "7763: el primer plano más nítido del frente; el SF en relieve se lee bien. 7767: puesta y de frente a la luz del sol; se ven el logo, el swoosh tono sobre tono del costado y el sticker Nike Classics de la visera. 7762: de lado entera, con el parche del costado completo. 7765: la cinta interior con NIKE y swooshes, que respalda la marca. Quedan fuera 7761, que es casi igual a 7762, y 7766, de perfil con la cabeza agachada y donde el logo no se ve.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "La parecida, giants-mint, es otra gorra: corona y visera gris claro/menta, SF y parche lateral bordados en naranja. Esta es negra entera, con el SF, el parche y el swoosh bordados en el mismo negro. Comparten la forma y el diseño del parche lateral, pero cambia todo el color. No hay otra gorra de los Giants en la tienda."
+   },
+   "ficha": {
+    "slug": "giants-negra-tonal",
+    "nombre": "Giants Negra Total",
+    "equipo": "San Francisco Giants",
+    "colorway": "Negro",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Negra de punta a punta: el SF entrelazado del frente, el parche del costado y hasta el swoosh lateral van bordados en el mismo tono, así que se leen por el relieve y no por el color. A la sombra tira a grafito y al sol se ve negra cerrada. Lo único que rompe el bloque es el sticker de la visera.",
+    "caracteristicas": [
+     "Logo SF entrelazado bordado en relieve al frente, negro sobre negro",
+     "Parche bordado en un costado con una pelota y letras script, tono sobre tono",
+     "Swoosh de Nike bordado en el otro costado, también en negro",
+     "Cinta interior estampada con «NIKE» y swooshes; sticker Nike Classics en la visera"
+    ]
+   }
+  }
+ },
+ "G17": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Solo de estilo, no hay datos inventados: el cierre de la desc («así que la gorra combina bien sin dejar de ser blanca y negra») es relleno de vendedor y no describe nada que se vea. Además, el parche también lleva negro, así que el «sin dejar de ser blanca y negra» no aporta.",
+     "Revisado y correcto: las 4 elegidas (7755, 7759, 7753, 7756) son la misma gorra. Todas tienen la corona blanca de frente entero tipo A-frame, el botón negro, la visera negra con hileras de pespunte, la KC negra con filo rojo en relieve y el parche en el costado derecho del que la lleva puesta.",
+     "Medí la visera: en la 7759 y la 7760 se ve gris por el brillo, pero en la 7756 y la 7760 el color medido es neutro y oscuro, no azul marino. «Visera negra» está bien.",
+     "El parche se lee «World Series» en letras cursivas rojas. Tiene una pelota roja con contorno negro arriba y abajo una silueta negra de bateador con un triángulo rojo. La característica no nombra MLB, que no se lee, y eso está bien.",
+     "Colores [blancas, bicolor]: correctos. Las blancas que ya están en la tienda (Yankees y Tigers) no llevan bicolor porque su visera también es blanca; aquí la visera es negra.",
+     "Las fotos 7757 y 7758 son otra gorra, como dice el fichador. Tienen un swoosh de Nike en el costado izquierdo y la visera con textura perforada, no pespunteada.",
+     "Repetida: confirmado que en catalogo-actual.json no hay ninguna gorra de Kansas City. El slug royals-blanca-negra-ws y el nombre no coinciden con nada de la tienda."
+    ],
+    "correccion": "Cambiar solo la desc. Propuesta: \"Corona blanca, visera negra y al frente la KC bordada en relieve, negra con filo rojo. Ese rojo vuelve a salir en el parche «World Series» del costado, con la pelota arriba y la silueta de un bateador al pie.\" El resto de la ficha (nombre, equipo, colorway, colores, características) y las 4 fotos elegidas pueden quedar igual."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [
+    {
+     "foto": 7757,
+     "que_es": "Otra gorra de KC puesta (vista de perfil por el lado izquierdo): también blanca con visera negra y KC negro con contorno rojo, pero lleva un swoosh de Nike negro bordado en el costado, la visera tiene una textura perforada en rejilla en vez de las hileras de pespunte y la corona es más redondeada. No es la del grupo."
+    },
+    {
+     "foto": 7758,
+     "que_es": "La misma gorra de la 7757 (KC con swoosh de Nike en el costado y visera de textura perforada), otra toma del mismo perfil. No es la del grupo."
+    }
+   ],
+   "elegidas": [
+    7755,
+    7759,
+    7753,
+    7756
+   ],
+   "porque_elegidas": "7755: la gorra de frente en la mano, con la KC entera y el parche asomando, nítida. 7759: puesta, con la KC y el parche a la vista. 7753: el costado con el parche «World Series» muy nítido. 7756: detalle de la KC bordada en relieve y de la visera. Se dejan fuera la 7754 (casi igual a la 7753) y la 7760 (puesta, parecida a la 7759). Las dudosas 7757 y 7758 son otra gorra: visera perforada en vez de pespunteada y un swoosh de Nike en el costado.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "En catalogo-actual.json no hay ninguna gorra de Kansas City (las únicas con «royal» son Mets Azul Rey y Royal B de Nike, que no tienen nada que ver). El grupo no traía «parecidas»."
+   },
+   "ficha": {
+    "slug": "royals-blanca-negra-ws",
+    "nombre": "Royals World Series Blanca",
+    "equipo": "Kansas City Royals",
+    "colorway": "Blanco · Negro",
+    "colores": [
+     "blancas",
+     "bicolor"
+    ],
+    "desc": "Corona blanca, visera negra y al frente la KC bordada en relieve, negra con filo rojo. Ese rojo vuelve a salir en el parche del costado, el de la Serie Mundial, así que la gorra combina bien sin dejar de ser blanca y negra.",
+    "caracteristicas": [
+     "Logo KC bordado en relieve al frente, en negro con contorno rojo",
+     "Parche «World Series» bordado en el costado derecho: letras cursivas rojas, pelota roja y silueta del bateador al pie",
+     "Frente de una sola pieza, sin costura al centro, y botón negro arriba",
+     "Visera negra con hileras de pespunte"
+    ]
+   }
+  }
+ },
+ "G25": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Detalle menor, sin datos inventados: el slug dice «espinas» y la desc y las características dicen «púas». Conviene usar la misma palabra en los dos, por ejemplo dodgers-negra-roja-puas, que tampoco choca con ningún id del catálogo."
+    ],
+    "correccion": "La ficha se puede quedar como está. Revisé las 4 elegidas (7813, 7815, 7812, 7810), y también 7811 y 7814: todas son la misma gorra y no hay ninguna foto ajena. De cerca se comprueba cada dato. El LA está bordado en relieve en negro, con contorno rojo y púas negras que salen de las letras. En el costado, el bordado lleva el script «World Series» en rojo, que se lee, y una pelota roja con costuras negras. El sticker dice «CLASSICS» junto al swoosh y abajo «NIKE», así que nombrar Nike Classics es legítimo. Corona, visera y botón son negros. En 7811 y 7813 la tela se ve azulada por la sombra, pero el hilo negro del LA tiene el mismo tinte, y en 7814 y 7815, con luz cálida, se ve negra neutra. Por eso «negras» sin «bicolor» es correcto: corona y visera son del mismo color y el rojo solo está en los bordados. No es repetida: Dodgers Negra 1999 lleva el LA blanco y la bandera NE, y Dodgers Blackout es tono sobre tono con sticker New Era. El nombre «Dodgers Negra / Roja» no coincide con ningún otro del catálogo. La ficha no nombra materiales, tallas ni marcas que no se lean; el «1 SIZE / UNISEX» del sticker no se menciona y está bien así. El único ajuste opcional es usar la misma palabra en el slug: dodgers-negra-roja-puas."
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No logré demostrar que se equivocó. Abrí 7810, 7811, 7812, 7813, 7814 y 7815, y también las 12 fotos de las 7 «parecidas». De paso revisé las otras gorras negras con rojo de la tienda (Red Sox Negra / Roja, Red Sox World Series Negra y Bulls Negra). Ninguna lleva el LA negro con contorno rojo y púas ni el sticker Nike Classics. Tampoco aparece una Dodgers así en los 61 productos de js/products.js ni en las decisiones del lote anterior (_work/nuevas).",
+     "La parecida más cercana es Dodgers Blanca / Roja. Lleva el mismo parche World Series, con la misma silueta, el script y la pelota arriba, así que puede ser el mismo modelo. Pero la corona es blanca, la visera roja y el LA va rojo sólido. Es otra combinación de colores, no la misma gorra. El fichador no mencionó que el parche coincide. No cambia el veredicto.",
+     "Detalle impreciso en la justificación: dice que Dodgers Blackout trae sticker New Era. En la foto de la tienda (dodgers-negra-tonal.webp) se ve un sticker redondo dorado sobre verde, pero el texto no se puede leer. Eso no se puede afirmar. No cambia el veredicto.",
+     "Le faltó un dato de Dodgers Negra 1999: en el otro costado lleva un parche 1999 World Series en blanco y la parte de abajo de la visera es verde. Lo que dijo (LA blanco y logo NE al costado) es correcto, y las diferencias siguen claras.",
+     "Lo de negra o azul marino (grupos.json dice «negra o marino») queda resuelto: es negra. En 7813, a la sombra, la tela tira a azul (RGB aprox. 103,112,145), pero el hilo negro del LA tiene el mismo tono frío (64,63,79). Es la luz, no la tela. En 7815, al sol, la corona da casi neutro (31,31,35). La ficha puede decir «Negra» y colores [\"negras\"]."
+    ]
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7813,
+    7815,
+    7812,
+    7810
+   ],
+   "porque_elegidas": "7813: de frente, el LA con púas y contorno rojo se lee nítido, con el parche y el sticker Nike Classics a la vista. 7815: puesta, se ve la gorra entera con el logo y el parche. 7812: primer plano del parche World Series. 7810: costado a tres cuartos en la mano, el parche y el frente juntos. 7811 se parece mucho a 7810 y 7814 a 7815, por eso quedan fuera.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Ninguna de las Dodgers de la tienda es esta. Dodgers Negra 1999 lleva el LA en blanco y la bandera NE al costado. Dodgers Blackout es negra entera, con el LA tono sobre tono, un parche Los Angeles en negro y sticker New Era. Dodgers Blanca / Roja tiene corona blanca y visera roja. Camel/Menta, Malva, Marfil y Caqui son de colores claros. Esta es negra, el LA va en negro con contorno rojo y púas, el parche World Series es rojo sobre negro y el sticker es Nike Classics."
+   },
+   "ficha": {
+    "slug": "dodgers-negra-roja-espinas",
+    "nombre": "Dodgers Negra / Roja",
+    "equipo": "Los Angeles Dodgers",
+    "colorway": "Negro · Rojo",
+    "colores": [
+     "negras"
+    ],
+    "desc": "Negra de la corona a la visera. El LA del frente va bordado en negro con un contorno rojo que lo despega de la tela. A las letras les salen púas por los bordes, así que el logo se ve más filoso que el LA de siempre, y en el costado un parche World Series en rojo sobre negro repite la combinación.",
+    "caracteristicas": [
+     "Logo LA bordado en relieve al frente en negro, con contorno rojo y púas en las letras",
+     "Parche lateral con el script «World Series» y una pelota bordados en rojo sobre fondo negro",
+     "Corona, visera y botón superior en negro",
+     "Sticker Nike Classics en la visera"
+    ]
+   }
+  }
+ },
+ "G23": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No pude demostrar que se equivocó. Abrí las 7 fotos de G23 (7799 a 7805), las 23 fotos de las 13 parecidas y además las 188 WebP de assets/img en hojas de contacto, por si alguna foto de la tienda estaba mal nombrada. Ninguna gorra de la tienda tiene corona crema con visera, botón y bordados en verde oliva. Tampoco hay color oliva o verde en ningún colorway de catalogo-actual.json.",
+     "La comparación del fichador con las parecidas se sostiene punto por punto. Red Sox Khaki / Roja: corona caqui, visera roja, B roja con contorno blanco, parche redondo de World Series y sticker New Era. Red Sox World Series Negra: negra entera, con la B y el globo 'World Series' en rojo. Navy / Naranja, Navy / Blanca y Boston Carmesí tienen otros colores, y las seis Dodgers llevan el LA.",
+     "Le faltó revisar royal-b-nike ('Royal B'), que no estaba en las parecidas y es la más cercana por formato: B gótica al frente, swoosh bordado en el costado y Nike. Es azul rey con bordados blancos y no tiene parche de World Series, así que no la repite. Hay que mencionarla para cerrar la duda.",
+     "Red Sox Navy / Naranja lleva en el costado un emblema de World Series triangular muy parecido al de G23. Es el mismo modelo en otro colorway (azul marino y naranja), no la misma gorra.",
+     "Entre los otros 30 grupos nuevos no hay otra gorra crema con B oliva. Las 7 fotos de G23 son de la misma gorra: en todas se ven la misma B oliva, el swoosh oliva, el sticker Nike Classics y el botón oliva.",
+     "Nota sobre la ficha, aparte de la decisión de repetida: en la tienda, la gorra con B y marca Nike se fichó como 'Royal B', con equipo 'Nike', porque solo se lee Nike. En G23 tampoco se lee 'Boston' ni 'Red Sox': solo la B, el script 'World Series' y Nike Classics. Para ser coherentes con la regla de no inventar y con ese precedente, conviene revisar si equipo y nombre deben llevar Nike en vez de 'Boston Red Sox', y quitar 'B de Boston' de la descripción y las características."
+    ],
+    "correccion": "La decisión se queda en 'NO repetida'. En el 'porque' habría que añadir que royal-b-nike (Royal B, azul rey y blanco, sin parche) también se descarta, y que Red Sox Navy / Naranja comparte un emblema parecido pero es otro colorway."
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Lo principal se sostiene. Las 4 elegidas (7799, 7805, 7800, 7803) son la misma gorra: corona crema, visera y botón oliva, B en relieve, emblema del World Series en el costado derecho de quien la lleva y swoosh en el izquierdo. No está repetida: la B es la misma de Red Sox Khaki / Roja, pero los colores son otros. Las categorías ['blancas','bicolor'] son correctas, el slug 'redsox-crema-oliva' no existe en el catálogo y no se nombra ningún material.",
+     "La desc dice que 'toda la gorra se arma con solo dos colores', y es falso. El cierre trasero es de plástico blanco con una placa negra con el swoosh (7804), el sticker es negro, rojo y blanco, y por dentro hay un estampado negro. La propia característica 4 contradice esa frase.",
+     "'Ese mismo verde repetido en cada bordado' no es exacto. La B y el swoosh están bordados en un oliva bastante más oscuro que la visera, que es un oliva grisáceo y más claro: el hilo de la B mide cerca de rgb(33,31,22) y la visera cerca de rgb(98,95,76) en 7802. Son de la misma familia, pero no son el mismo verde.",
+     "La característica 4 describe el cierre de broches blanco con placa del swoosh, pero eso solo se ve en 7804, que el fichador dejó fuera. Quien vea la ficha no puede comprobarlo: hay que sumar 7804 a las elegidas o quitar el cierre de la ficha.",
+     "Detalle menor: el emblema del World Series no está bordado solo 'a contorno'. La pelota de arriba y los triángulos están rellenos. El script sí se alcanza a leer como «World Series» en 7803."
+    ],
+    "correccion": "desc: \"Corona crema y visera verde oliva, con todos los bordados en un oliva más oscuro: la B de Boston en relieve al frente, el swoosh en un costado y el emblema del World Series en el otro. El frente va liso, sin costura al centro, y hasta el botón de arriba es oliva: quitando el sticker, corona y visera no salen del crema y el verde.\"\ncaracteristicas: [\"B de Boston bordada en oliva oscuro y en relieve, sobre un frente liso sin costura al centro\", \"Emblema del World Series bordado en oliva sobre el panel lateral, casi todo a contorno, con la pelota arriba y el script «World Series»\", \"Swoosh bordado en oliva en el otro costado y sticker Nike Classics en la visera\", \"Visera y botón superior en verde oliva, con pespuntes a tono\"]. Si se quiere mantener el cierre ('cierre trasero de broches blanco con placa del swoosh'), hay que añadir 7804 a las elegidas, porque es la única foto donde se ve. El resto queda igual: slug, nombre 'Red Sox Crema / Oliva', equipo 'Boston Red Sox', colorway 'Crema · Oliva' y colores ['blancas','bicolor']."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7799,
+    7805,
+    7800,
+    7803
+   ],
+   "porque_elegidas": "7799 es la principal: en una sola toma se ven la B, el emblema del World Series del costado, la visera oliva y el sticker. 7805 la muestra puesta en una persona, de perfil, con el emblema a la vista. 7800 enseña el otro costado con el swoosh bordado y la corona entera, y 7803 es el acercamiento al emblema del World Series, donde se lee el script. Quedan fuera 7801, que repite casi igual a 7800, 7802, que corta la gorra y deja el sticker en primer plano, y 7804, que es la parte de atrás con el cierre y deja ver el interior.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Ninguna parecida tiene esta combinación de colores. Red Sox Khaki / Roja tiene la corona caqui, la visera roja, una B roja con contorno blanco, otro parche lateral y sticker New Era. Red Sox World Series Negra es negra entera con la B y el globo del World Series en rojo. Las demás (Navy / Naranja, Navy / Blanca, Boston Carmesí) son de colores muy distintos, y las Dodgers llevan el logo LA. Esta nueva tiene la corona crema, la visera, el botón y todos los bordados en verde oliva, swoosh de Nike en un costado, emblema del World Series en el otro, sticker Nike Classics y cierre trasero de broches blanco con placa de Nike. Es otra gorra."
+   },
+   "ficha": {
+    "slug": "redsox-crema-oliva",
+    "nombre": "Red Sox Crema / Oliva",
+    "equipo": "Boston Red Sox",
+    "colorway": "Crema · Oliva",
+    "colores": [
+     "blancas",
+     "bicolor"
+    ],
+    "desc": "Corona crema y visera verde oliva, y ese mismo verde repetido en cada bordado: la B de Boston en relieve al frente, el swoosh en un costado y el emblema del World Series en el otro. El frente va liso, sin costura al centro, y el botón de arriba también es oliva, así que toda la gorra se arma con solo dos colores.",
+    "caracteristicas": [
+     "B de Boston bordada en verde oliva y en relieve, sobre un frente liso sin costura al centro",
+     "Emblema del World Series bordado a contorno en oliva sobre el panel lateral, con la pelota arriba y el script legible",
+     "Swoosh bordado en oliva en el otro costado y sticker Nike Classics en la visera",
+     "Visera y botón superior en verde oliva, con pespuntes a tono; cierre trasero de broches blanco con placa del swoosh"
+    ]
+   }
+  }
+ },
+ "G27": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "La identificación sí se sostiene. 8111 es una sola gorra y es la misma que ya se vende como whitesox-taupe. La comparé de cerca: el SOX va en azul rey con contorno blanco hueso. El parche World Series está en el mismo costado (el derecho de quien la lleva), con la pelota azul de costuras blancas, letras script azules, contorno blanco y punta azul abajo. También coinciden el sticker redondo de la visera, el botón y la forma de frente alto. Que en la tienda se vea más gris y aquí más cálida es por la luz y el balance de blancos.",
+     "Contradicción de fondo: el fichador marca repetida=true (de whitesox-taupe), pero entrega una ficha de producto NUEVO con otro slug (whitesox-caqui-azul-rey) y otro nombre (\"White Sox Caqui / Azul Rey\"). Si se publica, la misma gorra queda dos veces en la tienda, una como \"Taupe\" y otra como \"Caqui\".",
+     "Marca que no se lee: en la característica 2 pone \"logo MLB\". En el parche no se lee el texto MLB, solo se ve la silueta del bateador bordada en blanco. Por la regla de la tienda, las marcas solo se nombran si se leen.",
+     "Menor, de tono: \"así que la gorra se ve completa sin agregarle nada más\" es relleno de vendedor y no describe nada.",
+     "Menor, sobre la foto y no sobre la ficha: es la única foto, y en ella asoman detrás al menos dos gorras más apiladas. Una lleva un parche de dibujo en línea negra que no es de este producto. Conviene tenerlo en cuenta si va como foto principal o destacada en el inicio.",
+     "Lo demás está bien y se ve en la foto. Se leen el sticker 59FIFTY / NEW ERA / New Era Fits y el script World Series, aunque cuesta un poco. La visera tiene unas 7 hileras de pespuntes en tono caqui. La categoría de color [\"beige\"] es correcta: corona y visera son del mismo tono, la visera solo se ve más clara por la luz de arriba, y la ficha actual dice \"Visera curva a tono\". No lleva bicolor."
+    ],
+    "correccion": "No crear producto nuevo. Añadir la foto 8111 al producto existente whitesox-taupe (\\\"White Sox Taupe\\\", Taupe · Azul rey, colores [\\\"beige\\\"]) y ponerla como foto principal: la actual mide solo 535x667 y esta es mucho mejor. Así también puede ir destacada en el inicio, que es lo que pidió el cliente. Si de paso se actualiza el texto de whitesox-taupe, conservar su nombre, slug y colorway, y usar estas características: [\\\"Logo SOX bordado al frente en azul rey con contorno blanco\\\", \\\"Parche «World Series» bordado en el costado: letras script y pelota en azul, silueta del bateador y contorno en blanco, punta azul abajo\\\", \\\"Sticker redondo 59FIFTY de New Era en la visera\\\", \\\"Visera con varias hileras de pespuntes en el mismo tono\\\"]. Desc sugerida: \\\"Taupe de punta a punta, con un solo color de acento: el azul rey del SOX, delineado en blanco para que despegue de la tela. El parche de la Serie Mundial del costado repite ese mismo azul.\\\" (quitar la frase final de relleno y no decir \\\"logo MLB\\\")."
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No pude demostrar que se equivocó. Comparé de cerca la foto 8111 con whitesox-taupe.webp: el SOX es azul rey con contorno blanco y en los dos casos los huecos internos (entre los trazos de la S y dentro de la O) llevan relleno bordado gris claro o plateado. El parche World Series tiene el mismo diseño: pelota azul con borde blanco arriba, script azul, logo MLB blanco, punta triangular azul y el interior sin relleno, que deja ver la tela. Las dos son de frente alto tipo A-frame, con botón del mismo color y sticker redondo en la visera. El parche va en el mismo lado de la gorra, el derecho de quien la usa, y en las dos fotos aparece a la izquierda de la imagen.",
+     "La diferencia de color es de balance de blancos, y lo medí. En la foto de la tienda el hilo blanco sale azulado (196,207,225) y en la nueva sale neutro (232,235,239). Al tomar ese hilo como referencia, la corona da la misma proporción R/B en las dos fotos (1,21) y casi el mismo valor: 213,190,176 en la nueva contra 204,187,168 en la tienda. Es la misma tela.",
+     "En la 8111 la visera y la parte de arriba de la corona se ven más claras y grises que el frente. No es una visera de otro color (no es bicolor): son las caras que miran hacia arriba y toman la luz neutra del cielo. La parte de arriba de la corona mide igual que la visera (R/B 1,06-1,08).",
+     "Ojo: el mismo parche World Series también aparece en whitesox-marfil (en azul cielo) y en otras de la familia. Por eso la coincidencia no se puede apoyar solo en el parche; la que decide es la combinación de corona caqui/taupe con azul rey, y esa solo la tiene whitesox-taupe. Las otras parecidas (roja, vino tonal, marfil/azul cielo, arena tonal con script lateral, crema/camel con visera de otro tono, caqui tonal con «Chicago White Sox» lateral y negra total) son claramente otras gorras.",
+     "Consecuencia práctica: no se crea la ficha whitesox-caqui-azul-rey. La 8111 se agrega como foto adicional de whitesox-taupe. Si se usa, conviene recortarla para que no se vean las gorras apiladas atrás (una de ellas lleva un parche negro con dibujo), porque son otro producto. El sticker sí se lee: «NEW ERA», «59FIFTY» y «New Era Fits»."
+    ]
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    8111
+   ],
+   "porque_elegidas": "El grupo solo tiene una foto: la 8111, nítida y en la mano de una modelo. Se leen bien el SOX del frente, el parche World Series del costado y el sticker 59FIFTY de New Era de la visera. Ojo: detrás de esta gorra se asoman otras apiladas (una con un parche negro de dibujo). No son parte de este producto, pero aparecen en la misma toma, así que no hay ninguna foto que separar.",
+   "repetida": {
+    "es": true,
+    "de": "whitesox-taupe",
+    "porque": "Es la misma gorra que ya se vende como «White Sox Taupe» (Taupe · Azul rey). Coinciden la corona caqui/taupe, el SOX en azul rey con contorno blanco, el parche World Series en el mismo costado (letras y pelota en azul, contorno blanco, logo MLB en blanco y punta azul abajo), el sticker redondo en la visera, el botón del mismo tono y la forma de frente alto. Lo único distinto es el tono: en la foto de la tienda se ve más gris y en la nueva más cálido, por la luz y el balance de blancos, no porque sea otra tela. Las demás White Sox parecidas sí son otras: marfil con azul cielo, caqui tonal con script lateral, arena tonal, crema/camel, roja, vino y negra."
+   },
+   "ficha": {
+    "slug": "whitesox-caqui-azul-rey",
+    "nombre": "White Sox Caqui / Azul Rey",
+    "equipo": "Chicago White Sox",
+    "colorway": "Caqui · Azul rey",
+    "colores": [
+     "beige"
+    ],
+    "desc": "Caqui de punta a punta, con un solo color de acento: el azul rey del SOX, delineado en blanco para que despegue de la tela. El parche de la Serie Mundial del costado repite ese mismo azul, así que la gorra se ve completa sin agregarle nada más.",
+    "caracteristicas": [
+     "Logo SOX bordado al frente en azul rey con contorno blanco",
+     "Parche «World Series» bordado en el costado: letras y pelota azules, contorno blanco y logo MLB",
+     "Sticker redondo 59FIFTY de New Era en la visera",
+     "Visera con varias hileras de pespuntes en el mismo tono caqui"
+    ]
+   }
+  }
+ },
+ "G26": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "Ninguno en la decisión de repetida. Intenté demostrar que G26 ya estaba en la tienda y no se pudo. braves-piedra es la única candidata seria (corona y visera caqui, A al frente, parche lateral), pero no es la misma gorra por tres cosas. Primero, su A es azul rey, no morada. Segundo, su parche lateral está relleno de azul con borde blanco, mientras que el de G26 es solo un contorno morado sobre la tela, con el script «World Series». Tercero, su sticker 59FIFTY es redondo azul y blanco, y el de G26 es negro y dorado. Que el sticker también sea distinto descarta que sea la misma gorra con otra luz.",
+     "braves-khaki-lila no es: la visera es lila y rosada degradada por encima, la A lleva tomahawk en gris con contorno blanco y tiene la bandera de New Era bordada en el costado. G26 tiene la visera caqui por encima y morada por debajo (7820), la A va sin tomahawk y en el costado lleva un 47 morado (7818).",
+     "braves-navy-hueso no es: la corona es azul marino, la visera hueso y la A y el parche World Series van en blanco.",
+     "En catalogo-actual.json (61 gorras) ninguna otra es morada o lila sobre caqui. Las únicas Braves son las tres que ya revisé.",
+     "Detalle menor de la ficha, no de la repetida: de cerca (recorte de 7816), el «World Series» parece bordado directo sobre la tela, solo en contorno y sin base. Más que un «parche» es un bordado lateral. Se puede dejar así o cambiarlo por «bordado World Series en contorno morado»."
+    ]
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "(Menor, no bloquea) En 7818 la gorra está girada y el 47 sale de lado. 7824 (o 7822) lo muestra derecho, con la gorra entera y el sticker legible ('NEW ERA', '59 FIFTY', 'New Era Fits'). Sería una alternativa si se quiere que el 47 se lea a la primera. La ficha no tiene ningún dato inventado: las cuatro elegidas son la misma gorra. Es caqui, con la A morada en relieve, el parche World Series a la derecha de quien la lleva (en 7821 se lee el script 'World Series'), un '47' morado al otro lado (en 7822-7824 se lee derecho) y la parte de abajo de la visera morada (7820). Las costuras y el botón son caqui. La visera es caqui por encima, así que colores ['beige'] sin 'bicolor' es correcto según la regla de corona contra visera. El slug braves-khaki-morado no choca con ningún id. No es repetida: braves-khaki-lila tiene la visera lila degradada por encima, la A con tomahawk gris y blanco, y la bandera New Era en el costado."
+    ]
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7816,
+    7821,
+    7818,
+    7820
+   ],
+   "porque_elegidas": "7816 es la principal: la gorra entera de frente, con la A morada nítida, el parche World Series y el sticker. 7821 la muestra puesta y con el parche lateral bien visible. 7818 enseña de cerca el 47 morado del otro costado. 7820 es de por dentro, pero vale la pena porque deja ver la parte de abajo de la visera, morada entera, que no se ve en ninguna otra foto. Sobre la dudosa 8110: sí pertenece al grupo. La gorra de adelante es igual (caqui, A morada, parche World Series morado y sticker 59FIFTY), pero detrás asoman otras gorras con parches azul y negro, así que no conviene como foto principal. Las demás (7817, 7819, 7822-7824) repiten tomas.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "No coincide con ninguna Braves que ya está en la tienda. braves-khaki-lila tiene la visera lila degradada por encima y la A con tomahawk en gris y blanco con contorno, además de la bandera de New Era en el costado. braves-piedra lleva la A y el parche en azul rey. braves-navy-hueso es azul marino. Esta es caqui entera por fuera, con la A, el parche World Series y el 47 en morado, y la visera morada por debajo."
+   },
+   "ficha": {
+    "slug": "braves-khaki-morado",
+    "nombre": "Braves Khaki / Morado",
+    "equipo": "Atlanta Braves",
+    "colorway": "Khaki · Morado",
+    "colores": [
+     "beige"
+    ],
+    "desc": "Toda caqui por fuera, desde la corona y la visera hasta las costuras y el botón, y el morado solo donde suma. Lleva la A en relieve al frente, el parche World Series en un costado y un 47 chiquito en el otro. Al voltear la visera aparece el último toque de color: por debajo es morada entera.",
+    "caracteristicas": [
+     "A de los Braves bordada en relieve al frente, en morado",
+     "Parche «World Series» bordado en morado en un costado",
+     "47 pequeño bordado en morado en el costado opuesto",
+     "Visera caqui con la parte de abajo morada y sticker 59FIFTY de New Era"
+    ]
+   }
+  }
+ },
+ "G24": {
+  "v": [
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No es repetida, y miré las 4 fotos (7806-7809) y las 12 fotos de las 7 Dodgers «parecidas». Ninguna tiene la corona y la visera azul pizarra con el LA blanco. Ninguna Dodgers de la tienda trae el swoosh de Nike bordado en el costado ni el sticker rectangular «Nike Classics» en la visera (leído de cerca en la 7807).",
+     "Dodgers Negra 1999 no es la misma vista con otra luz. Tiene la bandera de New Era en el costado, el parche «1999 World Series», la visera verde por debajo y un sticker redondo. La G24 tiene la visera clara por debajo, el swoosh y otro parche.",
+     "Hay una imprecisión en el argumento que no cambia el veredicto. Dodgers Blanca / Roja lleva el MISMO diseño de parche World Series que la G24: escudo, pelota arriba, script y el MLB abajo, ahí bordado en rojo. El fichador solo dice «es blanca». La diferencia está en los colores (corona blanca, LA y visera rojos), no en el parche.",
+     "Otra imprecisión sin efecto en el veredicto: dice que Camel/Menta es New Era. En su foto de la tienda no se ve ningún logo ni etiqueta New Era, solo el parche «75th World Series». En Marfil y Caqui solo se ve un sticker redondo verde y amarillo.",
+     "No menciona la gorra del catálogo que más se le parece: Royal B (Nike). Es la misma silueta, con el logo blanco al frente y el swoosh blanco en el costado. Igual es otra gorra: azul rey vivo, logo «B» en vez de LA y sin parche lateral visible.",
+     "Comprobación extra: en crowcaps.co hoy hay 32 gorras publicadas y las únicas Dodgers son Blanca / Roja y Caqui Tonal. Tampoco es la G25 del mismo lote, que es negra o marino con el LA negro perfilado en rojo y el parche en rojo."
+    ]
+   },
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Detalle menor de la desc: «al aire libre se ve azul y en lo oscuro tira a pizarra» no describe bien las fotos. Las cuatro son en exteriores, en el mismo sitio y en 31 segundos según el EXIF (12:37:25 a 12:37:56). En la 7808 y la 7809 lo oscuro es el fondo (una puerta en penumbra); la gorra no está a oscuras, está a la sombra. El contraste es luz contra sombra, no exterior contra oscuridad.",
+     "Lo demás se confirma de cerca. Las tres elegidas son la misma gorra: mismo LA en relieve, mismo sticker (NIKE, CLASSICS, 1 SIZE, UNISEX, nike.com), mismas filas de pespunte en la visera y visera clara por debajo. Medida con el blanco del LA como referencia, la visera da casi el mismo azul grisáceo en la 7806 y en la 7808 (saturación 16 % frente a 14 %). La corona se ve más gris en la 7808 solo porque está en sombra. Además, G23 y G25 siguen el mismo patrón de fotos en la mano y luego puesta.",
+     "El swoosh es bordado (se ve el hilo) y en blanco. El parche lateral es un bordado en hilo lila/gris claro, y lo de «hilo claro» es correcto. En él se lee «World Series» en cursiva, con la pelota arriba (y el bateador de MLB abajo, que la ficha no menciona; no hace falta). La tienda ya llama «parche lateral» a este tipo de bordado. «azules» sin «bicolor» es correcto porque la visera es del mismo color que la corona. El slug no choca con el catálogo y el equipo sigue el criterio de las otras Dodgers."
+    ],
+    "correccion": "Solo cambiar la primera frase de la desc: «Un azul con algo de gris que cambia con la luz: con claridad se ve azul y a la sombra tira a gris pizarra. Al frente manda el LA blanco en relieve, y cada costado tiene su propio detalle: en uno el parche de la Serie Mundial y en el otro el swoosh.» Las elegidas (7806, 7808, 7807), el nombre, el colorway, los colores [\"azules\"] y las características pueden quedar como están."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    7806,
+    7808,
+    7807
+   ],
+   "porque_elegidas": "7806 es la gorra entera en la mano, con el LA legible y el swoosh del costado. 7808 la muestra puesta, de frente al LA y con el parche de la Serie Mundial nítido en el otro costado. 7807 es el detalle de cerca del bordado LA en relieve y del sticker Nike Classics de la visera. Dejé fuera 7809 porque es casi igual a 7808 (mismo modelo, misma pose). Las cuatro fotos son la misma gorra: el mismo LA blanco, el mismo sticker Nike Classics en la misma zona de la visera, los mismos pespuntes y la visera clara por debajo. El tono cambia de azul (7806/7807, a la sombra con follaje) a gris azulado (7808/7809, fondo oscuro), pero con el blanco del LA como referencia las dos tandas dan el mismo azul grisáceo. En la 7806 se ve el costado izquierdo de la gorra (swoosh) y en la 7808/7809 el derecho (parche), así que no se contradicen.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Ninguna Dodgers de la tienda es esta. Dodgers Negra 1999 es negra, con logo New Era en el costado, parche 1999 y visera verde por debajo. Dodgers Blackout es negra tono sobre tono con etiqueta New Era. Malva, Camel/Menta, Marfil Tonal y Caqui Tonal son beige o claras y New Era, y Blanca/Roja es blanca. Esta tiene la corona y la visera azul pizarra (azul grisáceo), el LA blanco, el swoosh de Nike bordado en un costado, el parche World Series en hilo claro en el otro y el sticker Nike Classics. Tampoco coincide con ninguna gorra azul de otro equipo del catálogo."
+   },
+   "ficha": {
+    "slug": "dodgers-azul-pizarra",
+    "nombre": "Dodgers Azul Pizarra",
+    "equipo": "Los Angeles Dodgers",
+    "colorway": "Azul pizarra · Blanco",
+    "colores": [
+     "azules"
+    ],
+    "desc": "Un azul con algo de gris que cambia con la luz: al aire libre se ve azul y en lo oscuro tira a pizarra. Al frente manda el LA blanco en relieve, y cada costado tiene su propio detalle: en uno el parche de la Serie Mundial y en el otro el swoosh.",
+    "caracteristicas": [
+     "Logo LA bordado en blanco al frente, en relieve grueso",
+     "Parche bordado de la Serie Mundial en un costado, con la pelota arriba y «World Series» en cursiva, en hilo claro",
+     "Swoosh de Nike bordado en blanco en el otro costado",
+     "Visera del mismo azul de la corona, con pespuntes paralelos y sticker Nike Classics"
+    ]
+   }
+  }
+ },
+ "G28": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Detalle menor, no es un dato inventado: la descripción y la tercera característica reducen el parche a 'contorno en negro', pero en el recorte el parche también lleva en negro el script 'World Series' y los dibujos interiores. Es incompleto, pero no falso. Si se quiere más exacto: 'Parche World Series en un costado, bordado en negro sobre caqui'.",
+     "Lo comprobé y se sostiene: hay una sola foto (8112) y en ella se ve una sola gorra visible completa (las otras apiladas asoman como un segundo parche desplazado y varios bordes de visera). El NY está bordado en relieve y en negro neutro (hilo medido ≈ 9,10,12; en yankees-crema mide ≈ 65,80,107, o sea azul marino). En el sticker se lee 'NIKE', se ve el swoosh y se lee 'CLASSICS'. En el parche se lee 'World Series' y no se adivina ningún año. La visera tiene varias filas de pespunte del mismo tono. Corona y visera son del mismo caqui, así que 'beige' sin 'bicolor' está bien y coincide con el criterio de yankees-crema y padres-piedra-navy. El slug yankees-caqui-negra no choca con ningún id del catálogo. Tampoco es repetida: yankees-crema (crema con NY azul marino), yankees-piedra-navy (visera azul marino), yankees-crema-azul (visera azul marino) y yankees-hueso (tonal con sticker 59FIFTY) son otras gorras."
+    ],
+    "correccion": "Se puede dejar como está. Un retoque opcional en la tercera característica para que el parche no parezca solo un contorno: \"Parche World Series bordado en negro sobre caqui en un costado\". En la desc, la segunda frase quedaría así: \"El parche World Series del costado sigue la misma regla: todo su bordado va en negro sobre el mismo caqui.\""
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "Intenté demostrar que la 8112 ya estaba en la tienda y no lo conseguí. Abrí la 8112 y las 11 «parecidas» (17 fotos). La única que podría confundirse es yankees-crema: tiene el mismo modelo, el mismo parche World Series en el costado, el sticker Nike Classics y las mismas filas de pespunte en la visera. Pero es otra gorra por el color del NY. Medí los tonos medios del hilo del NY: en yankees-crema dan b-r ≈ +19 a +29, que es azul marino, en la misma escala que la corona de yankees-navy-hueso (+22 a +32). En la 8112 dan b-r ≈ +2 a +6, y el sticker blanco de esa misma foto ya sale azulado (b-r +12), así que con el balance corregido el NY es negro neutro. Si se les sube la saturación a los dos recortes, el NY de yankees-crema se vuelve azul intenso y el de la 8112 sigue siendo gris oscuro.",
+     "La corona también es distinta. Medí cada una contra el sticker blanco de su propia foto: la 8112 es caqui, más cálida y más oscura (visera ≈ 0,80/0,74/0,70 del blanco, r/b ≈ 1,15 a 1,20). La de yankees-crema es crema clara (≈ 0,99/0,96/0,90, r/b ≈ 1,10).",
+     "Corrección menor a la justificación (no cambia el veredicto): el fichador dice que en yankees-crema el contorno del parche va en azul marino, y no es así. Medido, el hilo del parche de esa foto es negro neutro (b-r ≈ −2, frente a +19 del NY en la misma foto). En yankees-crema solo el NY es azul. Por eso la diferencia de verdad entre las dos gorras es el NY (marino o negro) y el tono de la corona, no el parche.",
+     "Las demás parecidas quedan descartadas a simple vista. yankees-white es blanca. yankees-hueso es tonal y lleva sticker 59FIFTY. yankees-piedra-navy tiene la visera azul marino y el NY con contorno blanco y gris. yankees-crema-azul es marfil con visera marina y logo New Era. Las demás tienen otra corona: navy-hueso (marino), roja-navy, roja-crema y tophat-red (rojo), script-vino (vino) y negra-1996 (negra). En catalogo-actual.json no hay otra gorra de New York caqui, y el slug yankees-caqui-negra no está en uso.",
+     "Detalle de la foto, no de la repetida: en el panel derecho de la 8112, junto al borde, asoma un trazo oscuro que podría ser otro bordado en ese costado. No se ve lo suficiente para nombrarlo, así que la ficha hace bien en no mencionarlo. Tampoco hay que añadirlo."
+    ]
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    8112
+   ],
+   "porque_elegidas": "Es la única foto del grupo y sirve como principal: la gorra se ve de frente y de lado, con el NY nítido, el parche World Series legible en el costado y el sticker Nike Classics en la visera. Ojo: en la foto hay 2 o 3 gorras iguales apiladas (por la izquierda se ven dos parches superpuestos y varias viseras), pero la de arriba se ve completa. No hay foto puesta en una persona ni del otro costado, así que convendría tomar más.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Ninguna de las Yankees de la tienda es caqui con el NY negro. La más parecida es yankees-crema, que es el mismo modelo: sticker Nike Classics, parche World Series en el costado y las mismas costuras en la visera. Pero esa tiene la corona crema clara, y tanto el NY como el contorno del parche van en azul marino (medido en el hilo del logo: azul claramente por encima del rojo, b-r ≈ 24). En la 8112 la corona es caqui y el NY y el parche van en negro neutro (b-r ≈ 2). yankees-white es blanca, yankees-hueso es tonal con sticker 59FIFTY y yankees-piedra-navy tiene la visera azul marino. Es una gorra distinta."
+   },
+   "ficha": {
+    "slug": "yankees-caqui-negra",
+    "nombre": "Yankees Caqui / Negra",
+    "equipo": "New York Yankees",
+    "colorway": "Caqui · Negro",
+    "colores": [
+     "beige"
+    ],
+    "desc": "Caqui de la corona a la visera y un NY negro bordado en relieve al frente: dos colores y ninguno de sobra. El parche World Series del costado sigue la misma regla, con el contorno en negro sobre el mismo caqui.",
+    "caracteristicas": [
+     "Logo NY bordado en negro y en relieve al frente",
+     "Parche World Series en un costado, con el contorno en negro sobre caqui",
+     "Visera del mismo caqui, con varias filas de pespunte en hilo del mismo tono",
+     "Sticker Nike Classics en la visera"
+    ]
+   }
+  }
+ },
+ "G30": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Lo que está bien: es una sola foto (8114), así que todo es la misma gorra, y sirve como principal. El color de la corona es correcto (khaki camel, de tono cálido), colores [\"beige\"] es correcto porque corona y visera son del mismo color, el slug y el nombre no chocan con nada del catálogo, y el sticker «59FIFTY / NEW ERA / New Era Fits» se lee claro. Comparada con hornets-piedra (corona gris piedra), esta corona es khaki, así que estoy de acuerdo en que es otra gorra y no una repetida.",
+     "Los costados están al revés. La foto no está espejada: el sticker se lee bien. Con la gorra mirando a la cámara, el bordado «Finals» queda en el costado derecho de quien la usa y la bandera New Era en el izquierdo, que es donde New Era siempre pone la bandera. En hornets-piedra, vista de lado, también se ve el lettering de Finals en el costado derecho. La ficha dice «panel lateral izquierdo» para Finals y «costado derecho» para la bandera, o sea, desde el punto de vista del que mira la foto. Mejor no decir izquierdo ni derecho y usar «en un costado» y «en el costado opuesto», como ya hace el catálogo.",
+     "«Turquesa» es un color equivocado. Medí el hilo de las letras del frente: el tono está en unos 200° (en promedio unos 66/137/184 RGB) y no tiene nada de verde. Es celeste o azul cielo, no turquesa (el turquesa está en unos 175°). La gorra que ya está en la tienda con el mismo diseño (hornets-piedra) lo llama «Azul». Hay que cambiarlo en el colorway, en la desc y en las características (letras, cuerpo del avispón y lettering del costado).",
+     "«Khaki de punta a punta» afirma algo que no se ve. La parte de abajo de la visera no aparece en la 8114, cosa que el propio fichador reconoce, y en la gorra hermana hornets-piedra por debajo asoma un filo lavanda. No se puede asegurar que toda la gorra sea khaki. Hay que decir solo «corona, botón y visera».",
+     "Menor: en el costado solo se lee «…RNETS». El comienzo de la palabra queda en la costura y no se ve. Poner «HORNETS» completo es deducirlo, así que hay que describir lo que se lee.",
+     "Menor: las filas de pespunte de la visera salen en un tostado apenas más oscuro que la tela. «A tono» lo describe mejor que «en el mismo khaki»."
+    ],
+    "correccion": "Elegidas: [8114] (se queda igual). repetida.es: false (se queda igual). Ficha corregida: slug \"hornets-khaki\", nombre \"Hornets Khaki\", equipo \"Charlotte Hornets\", colorway \"Khaki · Celeste\", colores [\"beige\"]. desc: \"Corona, botón y visera en khaki, con los pespuntes de la visera a tono. Sobre esa base resaltan el celeste y el morado del avispón de Charlotte, que va al frente con el balón naranja, y en un costado aparece un bordado de las Finals con trofeo incluido.\" caracteristicas: [\"Al frente, «CHARLOTTE» en arco y «HORNETS» debajo, en letras celestes, con el avispón bordado: alas blancas, cuerpo a rayas celeste y morado, balón naranja\", \"En un costado, un lettering celeste del que se lee «…RNETS», «Finals» en cursiva morada y un trofeo con balón\", \"Bandera de New Era bordada en morado en el costado opuesto\", \"Sticker 59FIFTY de New Era sobre la visera, que lleva varias filas de pespunte a tono\"]"
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "La conclusión se sostiene, pero al argumento le faltaba una comprobación. Midió el balance de blancos de la 8114 y no el de la foto de la tienda. En hornets-piedra.webp el techo de abajo sale azulado (90/96/113 y 75/78/90), y eso podía hacer que un khaki se viera piedra. Lo comprobé: los grises del fondo de arriba sí miden neutros (81/82/82, 92/92/92, 134/132/130). La tela junto al parche lateral, en sombra, mide 131/127/128, también neutra. La piel de la mano sale saturada (118/63/53), así que nadie le quitó saturación a los naranjas al editarla. Medida contra el blanco de las alas del logo, la corona de la tienda queda en 1/0,93-0,96/0,88-0,93 y la de la 8114 en 1/0,78-0,85/0,58-0,71. Con las referencias neutras de cada foto, la diferencia piedra/khaki es real y no viene de la luz.",
+     "El diseño es idéntico en las dos fotos: logo CHARLOTTE/HORNETS con el avispón y el balón naranja, y al costado HORNETS + «the Finals» en script morado con trofeo y balón. El «the» pequeño delante de Finals se ve en las dos. No hay ningún detalle de bordado que las distinga; solo cambia el color de la tela.",
+     "No es del todo cierto que la parte de abajo de la visera no se vea en la 8114. En el borde inferior de la visera (x≈35-41 %, y≈72-73 % del original) asoma una línea fina magenta-rosada, de unos 179/126/140. Puede ser un filo de la parte de abajo de la visera o un halo de color de la lente (es una zona desenfocada por delante del foco). Además es rosada (R>B>G), mientras que el filo de hornets-piedra es lavanda (187/168/197, B>R). No sirve para decir que es la misma gorra, pero tampoco que no se vea nada.",
+     "Aparte de lo de repetida, en la ficha: «panel lateral izquierdo» y «costado derecho» están dichos desde quien mira la foto. Para quien lleva la gorra es al revés: el parche Finals va al lado derecho y la bandera al izquierdo. Conviene decir «a un costado» / «al otro costado» o aclarar el punto de vista."
+    ],
+    "correccion": "La decisión se queda igual: repetida.es = false, porque es la versión khaki del mismo diseño de hornets-piedra. En el «porque» habría que añadir que la foto de la tienda también tiene referencias neutras (fondo gris de arriba 81/82/82 y 134/132/130, tela del lateral 131/127/128), así que su piedra no es un khaki enfriado por la luz. Y en vez de decir que la parte de abajo de la visera no se ve en la 8114, decir que solo asoma una línea rosada de 1-2 px en el borde, que no se puede confirmar."
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    8114
+   ],
+   "porque_elegidas": "El grupo tiene una sola foto, la 8114, y sirve como principal. La gorra está de frente, en una mano, con el logo de Charlotte Hornets nítido y legible. Además se ven el bordado lateral «Finals», la bandera morada del costado derecho y el sticker de la visera.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Tiene el mismo diseño que hornets-piedra (el logo CHARLOTTE / HORNETS con el avispón y el bordado lateral HORNETS + «Finals» con trofeo), pero en otro color. En hornets-piedra la corona y la visera son piedra, un gris claro casi neutro (la corona mide alrededor de 174/170/169 RGB), y por debajo del borde de la visera asoma un filo lavanda. En la 8114 la tela es khaki/camel cálida (unos 192/162/140 RGB en el frente). El pavimento de esa misma foto mide 179/179/179, o sea que el balance de blancos es neutro y el color no viene de la luz. El cambio de color de la corona basta para que sea otra gorra. La parte de abajo de la visera no se ve en la 8114, así que no se puede comparar."
+   },
+   "ficha": {
+    "slug": "hornets-khaki",
+    "nombre": "Hornets Khaki",
+    "equipo": "Charlotte Hornets",
+    "colorway": "Khaki · Turquesa",
+    "colores": [
+     "beige"
+    ],
+    "desc": "Khaki de punta a punta: corona, botón y visera en el mismo tono camel, con las costuras de la visera también tono sobre tono. Sobre esa base neutra resaltan el turquesa y el morado del avispón de Charlotte, que va al frente con el balón naranja, y al costado un bordado de las Finals con trofeo incluido.",
+    "caracteristicas": [
+     "Al frente, «CHARLOTTE» en arco y «HORNETS» debajo, en letras turquesa, con el avispón bordado: alas blancas, cuerpo a rayas turquesa y morado, balón naranja",
+     "En el panel lateral izquierdo, «HORNETS» en turquesa, «Finals» en cursiva morada y un trofeo con balón",
+     "Bandera de New Era bordada en morado en el costado derecho",
+     "Sticker 59FIFTY de New Era sobre la visera, que lleva varias filas de pespunte en el mismo khaki"
+    ]
+   }
+  }
+ },
+ "G31": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": false,
+    "problemas": [
+     "Lo que dice la ficha se ve en la foto. Solo hay una foto (la 8115) y es una sola gorra. Revisé de cerca la A: está bordada en relieve, en azul rey, con filo blanco. El parche es azul con contorno blanco. En el sticker se lee «NEW ERA», «59 FIFTY» y «New Era Fits», así que nombrar a New Era está permitido. Medí los colores: la visera es más clara y menos saturada que la corona (corona ≈ RGB 175,147,130 y visera ≈ 188,176,172). Los pespuntes son caqui o caramelo. colores [\"beige\"] es correcto: corona y visera son de la misma familia y no hace falta añadir bicolor. No hay materiales, tallas ni textos inventados.",
+     "No se sostiene el «repetida: es false» frente a braves-piedra. Comparé de cerca la 8115 con braves-piedra.webp. Coinciden todos los elementos del diseño: la misma A azul rey en relieve con filo blanco, el mismo parche del costado (óvalo arriba, figura azul y triángulo azul abajo, con contorno blanco), la visera más clara que la corona y la misma horma A-frame con botón.",
+     "La única diferencia segura es el sticker adhesivo 59FIFTY: en braves-piedra es azul y blanco, y en la 8115 es negro y dorado holográfico. El sticker es una etiqueta que se despega y cambia según la tanda; no es parte del diseño de la gorra. La otra diferencia, la corona más gris en braves-piedra, cuadra con el tono frío de esa foto: el fondo es verde azulado y la visera sale casi neutra. Por eso no prueba que sea otra gorra.",
+     "Si se publica como producto nuevo, la tienda tendría dos Braves casi idénticas: «Braves Piedra» (Piedra · Azul rey) y «Braves Caqui / Azul Rey» (Caqui · Azul rey). El cliente las vería como un duplicado, y en el inicio se destacaría como nueva una gorra que ya está en la tienda.",
+     "Detalle menor: la tienda ya usa «Khaki» en «Braves Khaki / Lila». Si esta ficha se publica, conviene usar el mismo término para no mezclar «Caqui» y «Khaki».",
+     "Detalle menor: del «bordado azul pequeño en el costado opuesto» solo asoma un trozo borroso en el borde de la foto. Mencionarlo está bien, pero no se le puede añadir forma ni texto."
+    ],
+    "correccion": "Marcar G31 como repetida probable de braves-piedra: repetida = { es: true, de: \"braves-piedra\", porque: \"Mismo diseño completo: A azul rey en relieve con filo blanco, el mismo parche del costado con triángulo azul y la visera más clara. Solo cambia el sticker adhesivo 59FIFTY, que depende de la tanda, y el tono de la foto.\" }. En vez de crear un producto nuevo, añadir la 8115 como foto de braves-piedra: tiene más resolución que la foto actual, de 532x680. Así se puede destacar en el inicio sin duplicar la gorra. Solo si el dueño confirma que es otra referencia en inventario se publicaría aparte. En ese caso la ficha vale casi tal como está: slug braves-caqui-azul-rey, colores [\"beige\"] y las 4 características. Se cambiaría «Caqui» por «Khaki» en el nombre y el colorway («Braves Khaki / Azul Rey», «Khaki · Azul rey») por coherencia con la tienda."
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "Intenté demostrar que la 8115 es braves-piedra y no se pudo. Lo que sí coincide: la misma A azul rey con filo blanco, el mismo parche en el mismo costado (bola arriba, figura azul y triángulo azul abajo, todo con contorno blanco; los comparé lado a lado), la misma forma de frente alto y la visera más clara que la corona. Eso solo prueba que es la misma línea de diseño, no que sea la misma gorra.",
+     "Sticker: lo confirmé con un recorte ampliado. En la 8115 es dorado con aro negro y franja oscura, y se lee «59 FIFTY / New Era Fits / NEWERACAP.COM ORIGINATORS OF THE TRUE FITTED». En braves-piedra es azul rey y plateado. Son stickers distintos, no es un efecto de la luz.",
+     "Color de la corona: el fichador dijo que la diferencia «puede ser por la edición de la foto». Lo medí y no se explica así. El blanco de los bordados sale neutro en las dos fotos (contorno de la A en la 8115 r/b 0,97; contorno del parche en braves-piedra r/b 0,97), así que el balance de blancos es parecido. Aun así, la parte iluminada de la corona da r/b ≈1,30 en la 8115 (caqui/camel cálido) y ≈0,98 en braves-piedra (piedra grisácea). La sombra da lo mismo: 1,60 frente a 1,25. La corona es de otro tono de verdad. Esto refuerza que NO es repetida y se puede quitar la duda de la edición.",
+     "Las costuras de la visera de la 8115 se ven color camel y contrastan. En braves-piedra se ven tono sobre tono y muy tenues. La foto de la tienda es pequeña (532x680), así que esto es un indicio y no una prueba.",
+     "braves-khaki-lila (logo A con hacha, visera lila) y braves-navy-hueso (corona azul marino, A hueso) quedan descartadas, como dijo el fichador.",
+     "Detalle menor de la ficha: el nombre «Braves Caqui / Azul Rey» queda muy cerca de «Braves Piedra» (colorway «Piedra · Azul rey»). Conviene que la desc o las características marquen lo que las diferencia (el sticker dorado y el tono caqui más cálido) para que el cliente no las tome por la misma."
+    ]
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    8115
+   ],
+   "porque_elegidas": "El grupo tiene una sola foto, la 8115, y sirve como principal. La gorra está en la mano, nítida y de tres cuartos: se leen la A, el parche del costado y el sticker de la visera. No hay más fotos para mostrarla puesta ni de detalle.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "La más parecida es braves-piedra: misma A en azul rey con contorno blanco, parche azul y blanco en el mismo costado, y visera más clara que la corona. Puse las dos fotos lado a lado y cambia un detalle: el sticker de la visera. En braves-piedra el aro y la franja son azul rey y el centro es blanco. En la 8115 el aro es negro, la franja azul oscuro y el centro dorado. Una tinta negra no se ve azul rey por la luz, así que son stickers distintos. Además, la corona de braves-piedra se ve gris piedra y la de la 8115 caqui cálido, aunque esto puede ser por la edición de la foto. Las costuras de la visera también se notan más oscuras en la 8115. braves-khaki-lila no es: lleva el hacha y la visera lila. braves-navy-hueso es azul marino. Como el diseño es casi igual, conviene que alguien confirme con la gorra física si es otra tanda o la misma."
+   },
+   "ficha": {
+    "slug": "braves-caqui-azul-rey",
+    "nombre": "Braves Caqui / Azul Rey",
+    "equipo": "Atlanta Braves",
+    "colorway": "Caqui · Azul rey",
+    "colores": [
+     "beige"
+    ],
+    "desc": "Corona caqui y visera un tono más clara, con la A de los Braves bordada en azul rey y filo blanco. El mismo azul vuelve en el parche del costado y en un bordado pequeño del otro lado: el color fuerte se queda en tres puntos y todo lo demás es tierra.",
+    "caracteristicas": [
+     "Logo «A» bordado en relieve en azul rey con contorno blanco",
+     "Parche bordado en un costado, en azul con contorno blanco",
+     "Bordado azul pequeño en el costado opuesto",
+     "Visera un tono más clara que la corona, con pespuntes caqui y sticker 59FIFTY de New Era en dorado y negro"
+    ]
+   }
+  }
+ },
+ "G29": {
+  "v": [
+   {
+    "tipo": "ficha",
+    "deAcuerdo": true,
+    "problemas": [
+     "Problema menor de redacción en la desc: dice «ningún detalle se sale de la paleta», pero el sticker de la visera es plateado/holográfico con letras rojas y se sale del khaki/negro. Y la ficha misma lo pone como característica. Mejor «ningún bordado se sale de la paleta».",
+     "Omisión, no invención: en el costado derecho (visto de frente) hay una marca bordada en negro que se ve solo a medias. Parece un swoosh, pero como no se ve entera no conviene nombrarla. Puede quedar fuera de la ficha.",
+     "Nota de color, no bloquea: medí el tono de la corona contra el fondo, que sale neutro (la pared da 209,208,205), así que el balance de blancos es neutro. Sale un beige claro con un toque rosado (matiz ~18°), no un caqui amarillento clásico. «Khaki» encaja en el vocabulario de la tienda y la categoría beige es correcta.",
+     "Verificado y correcto: es una sola foto (8113), así que no hay fotos de otra gorra. El SD es negro neutro: lo medí en 25,24,26, igual que el parche (28,26,25). En padres-piedra-navy, en cambio, el SD sale azulado (27,35,41) frente a un parche neutro (31,26,23). No está repetida. El parche dice «World Series», el sticker se lee «NIKE / CLASSICS», el botón y la visera son del color de la corona, los pespuntes paralelos se ven y el relieve del SD también. La parte de abajo de la visera es negra, así que la pareja khaki/negro se sostiene. Lo de «costado izquierdo» sigue la convención de la tienda: lado izquierdo visto de frente, igual que en braves-navy-hueso. El slug padres-khaki-negra no choca con el catálogo. colores [\"beige\"] está bien: corona y visera son del mismo color, así que no lleva bicolor."
+    ],
+    "correccion": "Solo hace falta ajustar la desc: «Dos colores y nada más: khaki en la corona, la visera y el botón, y negro en el SD entrelazado del frente, bordado con bastante relieve. El parche de la World Series del costado izquierdo repite la misma pareja, negro sobre claro, así que ningún bordado se sale de la paleta.» Lo demás (fotos elegidas [8113], repetida=false, slug, nombre, colorway, colores [\"beige\"] y las 4 características) puede quedar como está."
+   },
+   {
+    "tipo": "repetida",
+    "deAcuerdo": true,
+    "problemas": [
+     "No pude demostrar que se equivocara: la 8113 NO es padres-piedra-navy. Es el mismo modelo (A-frame, mismo SD, mismo parche de la World Series en el mismo sitio del costado izquierdo, visera con pespuntes paralelos, al parecer debajo de la visera hay algo oscuro en las dos), pero el SD es de otro color. Lo medí yo mismo, por bandas de brillo, solo en los píxeles oscuros del bordado. En la foto de la tienda el hilo del SD tira claramente a azul: 28/36/43 y 36/46/55 (B-R entre +15 y +20). El negro del parche, en esa misma foto, es cálido: 35/29/27 (B-R -8). Eso descarta que sea un retoque que azulea todas las sombras, porque el parche no se azulea. En la 8113, con un brillo parecido, el SD da 35/33/36 (B-R +1), neutro como el parche (38/35/33). Aunque esta foto es más cálida (corona con B/R 0,85 contra 0,93), un azul marino como el de la tienda seguiría viéndose azul. Visto de cerca, el SD de la tienda se ve azul pizarra y el de la 8113 negro carbón. Con negra/dorada, blanca/navy y rosa/azul no se parece en nada.",
+     "Hay una inexactitud en su razonamiento: dice «mismo sticker Nike Classics», pero en la foto de la tienda (532 px) el sticker no se lee. Es una mancha holográfica con reflejos verdes de las plantas del fondo. Puede que sea el mismo, pero no se ve. Esto no cambia la decisión.",
+     "El argumento de «khaki más cálido contra piedra más grisáceo» es débil: las dos fotos tienen un balance de blancos distinto (en la 8113 también la visera sale cálida, 160/141/132). La prueba de verdad es comparar el SD con el negro del parche dentro de cada foto, no el color de la corona.",
+     "Aparte de lo de repetida, para la ficha: en el panel lateral derecho de la 8113 asoma una marca negra en forma de swoosh, cortada por el borde. No se ve entera, así que no conviene describirla, pero confirma que todos los detalles van en negro. En el borde inferior izquierdo también se ve negro (parece el interior o la parte de abajo de la visera). Por eso «khaki en la visera» solo vale para la cara de arriba."
+    ]
+   }
+  ],
+  "f": {
+   "mismaGorra": true,
+   "fotosAjenas": [],
+   "elegidas": [
+    8113
+   ],
+   "porque_elegidas": "El grupo tiene una sola foto (8113) y sirve como principal: la gorra sale de frente, nítida y en mano, con el SD legible, el parche de la World Series del costado izquierdo y el sticker Nike Classics de la visera. No hay fotos de la gorra puesta ni de detalles para añadir.",
+   "repetida": {
+    "es": false,
+    "de": "",
+    "porque": "Se parece mucho a padres-piedra-navy: mismo SD, mismo parche de la World Series a la izquierda y mismo sticker Nike Classics. Pero no es la misma gorra. Medí el color del hilo dentro de cada foto, comparándolo con el negro del parche de esa misma foto. En la foto de la tienda el parche es negro neutro (~27,21,18) y el SD es claramente más azul (~33,41,49): es azul marino, como dice su ficha. En la 8113 el SD (~17,16,18) y el parche (~15,15,14) son el mismo negro neutro, así que aquí el SD es negro. La corona también cambia: en la nueva es un khaki más cálido y en la de la tienda un piedra más grisáceo. Con las otras Padres (negra/dorada, blanca/navy, rosa/azul) no hay parecido."
+   },
+   "ficha": {
+    "slug": "padres-khaki-negra",
+    "nombre": "Padres Khaki / Negra",
+    "equipo": "San Diego Padres",
+    "colorway": "Khaki · Negro",
+    "colores": [
+     "beige"
+    ],
+    "desc": "Dos colores y nada más: khaki en la corona, la visera y el botón, y negro en el SD entrelazado del frente, bordado con bastante relieve. El parche de la World Series del costado izquierdo repite la misma pareja, negro sobre claro, así que ningún detalle se sale de la paleta.",
+    "caracteristicas": [
+     "SD entrelazado bordado en negro al frente, con relieve marcado",
+     "Parche «World Series» en el costado izquierdo, bordado en negro sobre fondo claro",
+     "Visera del mismo khaki que la corona, con pespuntes paralelos",
+     "Sticker Nike «Classics» en la visera"
+    ]
+   }
+  }
+ }
+}

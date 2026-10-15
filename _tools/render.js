@@ -60,6 +60,17 @@ function enlaceCompra(p, c) {
     mensajeProducto(sacar(c, 'contacto.mensaje_producto'), p, enlaceFicha(p, c)));
 }
 
+/* ── Gorras nuevas ───────────────────────────────────────────────────────────
+   Una gorra es «Nueva» durante 30 días desde que se agrega a la tienda. Sale
+   con su etiqueta y entra en el filtro «Nuevas»; pasado el mes deja de serlo
+   sola, sin que nadie tenga que acordarse de quitarla. */
+const DIAS_NUEVA = 30;
+function esNueva(p, ahora) {
+  const t = Date.parse(p.creado || '');
+  return Number.isFinite(t) && (ahora || Date.now()) - t < DIAS_NUEVA * 864e5;
+}
+const coloresDe = (p) => (p.colors || []).concat(esNueva(p) ? ['nuevas'] : []);
+
 /* ── Tarjeta de producto ─────────────────────────────────────────────────── */
 function tarjeta(p, i, c) {
   const grande = BIG.indexOf(i) > -1;
@@ -82,10 +93,10 @@ function tarjeta(p, i, c) {
      enlace. Queda un botón que abre la ficha y, al lado, «Comprar», que va
      directo a WhatsApp con la foto de esta gorra. */
   const compra = c ? enlaceCompra(p, c) : '#';
-  return `    <article class="card${grande ? ' card--big' : ''} reveal" data-id="${esc(p.id)}" data-colors="${esc((p.colors || []).join(' '))}" data-search="${buscar}">
+  return `    <article class="card${grande ? ' card--big' : ''} reveal" data-id="${esc(p.id)}" data-colors="${esc(coloresDe(p).join(' '))}" data-search="${buscar}">
     <button class="card__ver" type="button" aria-label="Ver ficha de la gorra ${esc(p.name)}">
     <span class="card__media">
-      <span class="card__n">Nº ${n}</span>
+      <span class="card__n">Nº ${n}</span>${esNueva(p) ? '<span class="card__nueva">Nueva</span>' : ''}
       ${img(p.imagenes[0])}${segunda}
       <span class="card__go">${esc(p.textos && p.textos.ver || 'Ver ficha')}</span>
     </span>
@@ -104,7 +115,7 @@ function tarjeta(p, i, c) {
 function bloqueDatos(productos, c) {
   const limpio = productos.map((p) => ({
     id: p.id, team: p.team, name: p.name, colorway: p.colorway,
-    colors: p.colors || [], price: p.price,
+    colors: coloresDe(p), price: p.price,
     desc: p.desc, features: p.features || [],
     imgs: p.imagenes.map((im) => im.src),
     thumbs: p.imagenes.map((im) => im.sm || im.src),
@@ -114,9 +125,10 @@ function bloqueDatos(productos, c) {
     destacadas: sacar(c, 'hero.destacadas') || [],
     /* Los botones de filtro de la tienda. Sin esto js/app.js caía en su lista
        de reserva y la pantalla «Categorías» del panel no cambiaba nada. */
-    categorias: (c.categorias || [])
+    /* «Nuevas» va primero mientras haya alguna */
+    categorias: (productos.some((p) => esNueva(p)) ? [{ slug: 'nuevas', nombre: 'Nuevas' }] : []).concat((c.categorias || [])
       .filter((x) => x && x.slug && x.visible !== false)
-      .map((x) => ({ slug: x.slug, nombre: x.nombre || x.slug })),
+      .map((x) => ({ slug: x.slug, nombre: x.nombre || x.slug }))),
     ficha: {
       incluye: sacar(c, 'ficha.incluye'),
       envio: sacar(c, 'ficha.envio'),
@@ -255,9 +267,12 @@ function quitarTramo(html, abre, cierra, visible) {
 }
 
 function aplicarSecciones(html, c) {
-  const nombres = ['hero', 'coleccion', 'perks', 'editorial', 'about', 'feed', 'final'];
+  const nombres = ['aviso', 'hero', 'coleccion', 'perks', 'editorial', 'about', 'feed', 'final'];
   for (const n of nombres) {
-    html = quitarTramo(html, `<!--sec:${n}-->`, `<!--/sec:${n}-->`, sacar(c, 'secciones.' + n) !== false);
+    let ver = sacar(c, 'secciones.' + n) !== false;
+    /* La franja vacía tampoco se pinta: quedaría una barra negra sin texto */
+    if (n === 'aviso' && !String(sacar(c, 'aviso.texto') || '').trim()) ver = false;
+    html = quitarTramo(html, `<!--sec:${n}-->`, `<!--/sec:${n}-->`, ver);
   }
   /* Los interruptores «Mostrar Instagram/TikTok/Facebook» apagaban la red en
      los datos estructurados pero el enlace seguía en el pie: si CrowCaps no

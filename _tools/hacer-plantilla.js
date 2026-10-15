@@ -133,10 +133,13 @@ const heroImg = /<img id="heroImg" src="[^"]*" width="\d+" height="\d+"\n\s+alt=
 if (!heroImg.test(html)) problemas.push('no encuentro la imagen del hero');
 html = html.replace(heroImg,
   '<img id="heroImg" src="{{hero.img_src}}" width="{{hero.img_w}}" height="{{hero.img_h}}"\n               alt="{{hero.img_alt}}"');
-html = html.replace('<span class="hero__tag" id="heroTag">Yankees Navy / Hueso</span>',
-  '<span class="hero__tag" id="heroTag">{{hero.img_titulo}}</span>');
-html = html.replace('<link rel="preload" as="image" href="assets/img/yankees-navy-hueso.webp" fetchpriority="high">',
-  '<link rel="preload" as="image" href="{{hero.img_src}}" fetchpriority="high">');
+/* Cualquier gorra puede ser la del hero: se reconoce por la etiqueta, no por el nombre */
+const heroTag = /<span class="hero__tag" id="heroTag">[^<]*<\/span>/;
+const heroPre = /<link rel="preload" as="image" href="[^"]*" fetchpriority="high">/;
+if (!heroTag.test(html)) problemas.push('no encuentro el nombre de la gorra del hero');
+if (!heroPre.test(html)) problemas.push('no encuentro la precarga de la foto del hero');
+html = html.replace(heroTag, '<span class="hero__tag" id="heroTag">{{hero.img_titulo}}</span>');
+html = html.replace(heroPre, '<link rel="preload" as="image" href="{{hero.img_src}}" fetchpriority="high">');
 
 /* La imagen del editorial y el mosaico del feed salen del CMS */
 html = html.replace(/<img src="assets\/img\/nationals-navy\.webp" width="\d+" height="\d+" loading="lazy" decoding="async"\n\s+alt="\{\{editorial\.img_alt\}\}">/,
@@ -164,6 +167,7 @@ for (const [red, aguja] of [
 }
 
 const SECCIONES = [
+  ['aviso', '<p class="topbar" id="topbar">', '</p>'],
   ['hero', '<section class="hero" id="hero">', '</section>'],
   ['perks', '<section class="perks">', '</section>'],
   ['editorial', '<section class="edito">', '</section>'],

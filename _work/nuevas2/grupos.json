@@ -1,0 +1,1355 @@
+[
+ {
+  "id": "G01",
+  "desc": "Bass Pro Shops negra, parche ovalado blanco y negro",
+  "fotos": [
+   7654,
+   7655,
+   7656,
+   7657
+  ],
+  "dudosas": [
+   7656
+  ],
+  "parecidas": []
+ },
+ {
+  "id": "G02",
+  "desc": "Bass Pro Shops roja/vino con malla negra",
+  "fotos": [
+   7658,
+   7659,
+   7660
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G03",
+  "desc": "Bass Pro Shops camuflado gris, parche blanco",
+  "fotos": [
+   7661,
+   7662,
+   7663,
+   7664
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G04",
+  "desc": "Bass Pro Shops gris jaspeado con malla negra",
+  "fotos": [
+   7665,
+   7666,
+   7667,
+   7668,
+   7669,
+   7670
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G05",
+  "desc": "Bass Pro Shops camuflado arena con malla negra",
+  "fotos": [
+   7671,
+   7672,
+   7673,
+   7674,
+   7675,
+   7676
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G06",
+  "desc": "Bass Pro Shops camuflado oscuro, parche amarillo clásico",
+  "fotos": [
+   7677,
+   7678,
+   7679,
+   7680,
+   7681,
+   7682,
+   7683,
+   7684
+  ],
+  "dudosas": [
+   7683,
+   7684
+  ],
+  "parecidas": []
+ },
+ {
+  "id": "G07",
+  "desc": "Bass Pro Shops negra lisa, parche amarillo clásico",
+  "fotos": [
+   7685,
+   7686,
+   7687,
+   7688,
+   7689,
+   7690,
+   7691,
+   7692
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G08",
+  "desc": "Washington Nationals negra tonal",
+  "fotos": [
+   7694,
+   7695,
+   7696
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "nationals-white",
+    "nombre": "Nationals Blanca",
+    "colorway": "Blanco · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/nationals-white.webp"
+    ]
+   },
+   {
+    "id": "nationals-red",
+    "nombre": "Nationals Roja / Blanca",
+    "colorway": "Rojo · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/nationals-red.webp"
+    ]
+   },
+   {
+    "id": "nationals-navy",
+    "nombre": "Nationals Navy Tonal",
+    "colorway": "Azul marino · Tonal",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/nationals-navy.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G09",
+  "desc": "Nike verde oliva con ribete negro",
+  "fotos": [
+   7697,
+   7698,
+   7699,
+   7700,
+   7701,
+   7703,
+   7705
+  ],
+  "dudosas": [
+   7705
+  ],
+  "parecidas": [
+   {
+    "id": "royal-b-nike",
+    "nombre": "Royal B",
+    "colorway": "Azul rey · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/royal-b-nike.webp"
+    ]
+   },
+   {
+    "id": "nike-cafe-tonal",
+    "nombre": "Nike Chocolate Tonal",
+    "colorway": "Chocolate · Topo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/nike-cafe-tonal.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G10",
+  "desc": "Lacoste camel",
+  "fotos": [
+   7706,
+   7707,
+   7709,
+   7710,
+   7711,
+   7712,
+   7713,
+   7714
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G11",
+  "desc": "Negra con santo bordado en verde, visera de cuero y brillos",
+  "fotos": [
+   7715,
+   7716,
+   7717,
+   7718,
+   7719
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G12",
+  "desc": "Los Angeles Dodgers roja con LA negro",
+  "fotos": [
+   7721,
+   7723,
+   7724
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "dodgers-negra-1999",
+    "nombre": "Dodgers Negra 1999",
+    "colorway": "Negro · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-1999.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-1999-2.webp"
+    ]
+   },
+   {
+    "id": "dodgers-blanca-roja",
+    "nombre": "Dodgers Blanca / Roja",
+    "colorway": "Blanco · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-blanca-roja.webp"
+    ]
+   },
+   {
+    "id": "dodgers-camel-menta",
+    "nombre": "Dodgers Camel / Menta",
+    "colorway": "Camel · Menta",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-menta.webp"
+    ]
+   },
+   {
+    "id": "dodgers-malva",
+    "nombre": "Dodgers Malva / Lavanda",
+    "colorway": "Taupe · Lavanda",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-malva.webp"
+    ]
+   },
+   {
+    "id": "dodgers-crema-tonal",
+    "nombre": "Dodgers Marfil Tonal",
+    "colorway": "Marfil · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-crema-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-crema-tonal-2.webp"
+    ]
+   },
+   {
+    "id": "dodgers-camel-tonal",
+    "nombre": "Dodgers Caqui Tonal",
+    "colorway": "Caqui · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal-3.webp"
+    ]
+   },
+   {
+    "id": "dodgers-negra-tonal",
+    "nombre": "Dodgers Blackout",
+    "colorway": "Negro total",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-tonal-2.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G13",
+  "desc": "Detroit Tigers negra tonal tipo trucker",
+  "fotos": [
+   7725,
+   7726,
+   7727,
+   7728,
+   7729,
+   7731
+  ],
+  "dudosas": [
+   7725
+  ],
+  "parecidas": [
+   {
+    "id": "tigers-blanca",
+    "nombre": "Tigers Blanca",
+    "colorway": "Blanco · Negro",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/tigers-blanca.webp"
+    ]
+   },
+   {
+    "id": "tigers-camel",
+    "nombre": "Tigers Camel Tonal",
+    "colorway": "Camel · Tonal",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/tigers-camel.webp"
+    ]
+   },
+   {
+    "id": "tigers-navy-tonal",
+    "nombre": "Tigers Marino Total",
+    "colorway": "Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/tigers-navy-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/tigers-navy-tonal-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/tigers-navy-tonal-3.webp"
+    ]
+   },
+   {
+    "id": "tigers-trigo",
+    "nombre": "Tigers Trigo / Crema",
+    "colorway": "Trigo · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/tigers-trigo.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G14",
+  "desc": "Chicago White Sox negra tonal tipo trucker",
+  "fotos": [
+   7732,
+   7733,
+   7734,
+   7735,
+   7738
+  ],
+  "dudosas": [
+   7732
+  ],
+  "parecidas": [
+   {
+    "id": "whitesox-roja",
+    "nombre": "White Sox Roja",
+    "colorway": "Rojo · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-roja.webp"
+    ]
+   },
+   {
+    "id": "whitesox-vino",
+    "nombre": "White Sox Vino Tonal",
+    "colorway": "Vino · Tonal",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-vino.webp"
+    ]
+   },
+   {
+    "id": "whitesox-taupe",
+    "nombre": "White Sox Taupe",
+    "colorway": "Taupe · Azul rey",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-taupe.webp"
+    ]
+   },
+   {
+    "id": "whitesox-marfil",
+    "nombre": "White Sox Marfil",
+    "colorway": "Marfil · Azul cielo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-marfil.webp"
+    ]
+   },
+   {
+    "id": "whitesox-arena",
+    "nombre": "White Sox Arena Tonal",
+    "colorway": "Arena · Tonal",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-arena.webp"
+    ]
+   },
+   {
+    "id": "whitesox-crema-camel",
+    "nombre": "White Sox Crema / Camel",
+    "colorway": "Crema · Camel",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-crema-camel.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-crema-camel-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-crema-camel-3.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-crema-camel-4.webp"
+    ]
+   },
+   {
+    "id": "whitesox-khaki-tonal",
+    "nombre": "White Sox Caqui",
+    "colorway": "Caqui · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-khaki-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-khaki-tonal-2.webp"
+    ]
+   },
+   {
+    "id": "whitesox-negra-tonal",
+    "nombre": "White Sox Negra Total",
+    "colorway": "Negro",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-negra-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-negra-tonal-2.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G15",
+  "desc": "New York Yankees negra tonal tipo trucker",
+  "fotos": [
+   7741,
+   7743,
+   7744
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "yankees-navy-hueso",
+    "nombre": "Yankees Navy / Hueso",
+    "colorway": "Azul marino · Hueso",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-navy-hueso.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-navy-hueso-2.webp"
+    ]
+   },
+   {
+    "id": "yankees-roja-navy",
+    "nombre": "Yankees Roja / Navy",
+    "colorway": "Rojo · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-roja-navy.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-roja-navy-2.webp"
+    ]
+   },
+   {
+    "id": "yankees-white",
+    "nombre": "Yankees Blanca",
+    "colorway": "Blanco · Negro",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-white.webp"
+    ]
+   },
+   {
+    "id": "yankees-crema",
+    "nombre": "Yankees Crema",
+    "colorway": "Crema · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-crema.webp"
+    ]
+   },
+   {
+    "id": "yankees-hueso",
+    "nombre": "Yankees Hueso Tonal",
+    "colorway": "Hueso · Tonal",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-hueso.webp"
+    ]
+   },
+   {
+    "id": "yankees-script-vino",
+    "nombre": "Yankees Script Vino",
+    "colorway": "Vino · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-script-vino.webp"
+    ]
+   },
+   {
+    "id": "yankees-tophat-red",
+    "nombre": "Top Hat Roja / Verde",
+    "colorway": "Rojo · Verde azulado",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-tophat-red.webp"
+    ]
+   },
+   {
+    "id": "yankees-piedra-navy",
+    "nombre": "Yankees Piedra / Marino",
+    "colorway": "Piedra · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-piedra-navy.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-piedra-navy-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-piedra-navy-3.webp"
+    ]
+   },
+   {
+    "id": "yankees-roja-crema",
+    "nombre": "Yankees Escarlata / Crema",
+    "colorway": "Rojo · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-roja-crema.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-roja-crema-2.webp"
+    ]
+   },
+   {
+    "id": "yankees-crema-azul",
+    "nombre": "Yankees Marfil / Marino",
+    "colorway": "Marfil · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-crema-azul.webp"
+    ]
+   },
+   {
+    "id": "yankees-negra-1996",
+    "nombre": "Yankees Negra Total",
+    "colorway": "Negro",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-negra-1996.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-negra-1996-2.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G16",
+  "desc": "Negra con letras góticas rojas y sol rojo al costado",
+  "fotos": [
+   7745,
+   7746,
+   7747,
+   7748,
+   7749,
+   7750,
+   7751,
+   7752
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G17",
+  "desc": "Kansas City Royals blanca y negra con KC rojo",
+  "fotos": [
+   7753,
+   7754,
+   7755,
+   7756,
+   7757,
+   7758,
+   7759,
+   7760
+  ],
+  "dudosas": [
+   7757,
+   7758
+  ],
+  "parecidas": []
+ },
+ {
+  "id": "G18",
+  "desc": "San Francisco Giants gris oscuro tonal",
+  "fotos": [
+   7761,
+   7762,
+   7763,
+   7765,
+   7766,
+   7767
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "giants-mint",
+    "nombre": "Giants Gris Menta",
+    "colorway": "Gris menta · Naranja",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/giants-mint.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G19",
+  "desc": "Kansas City Royals negra con KC dorado",
+  "fotos": [
+   7769,
+   7770,
+   7771,
+   7772,
+   7773,
+   7774
+  ],
+  "dudosas": [],
+  "parecidas": []
+ },
+ {
+  "id": "G20",
+  "desc": "San Diego Padres caqui con SD blanco y visera blanca",
+  "fotos": [
+   7776,
+   7777,
+   7778,
+   7779,
+   7780
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "padres-black-gold",
+    "nombre": "Padres Negra / Dorada",
+    "colorway": "Negro · Dorado",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/padres-black-gold.webp"
+    ]
+   },
+   {
+    "id": "padres-piedra-navy",
+    "nombre": "Padres Piedra / Navy",
+    "colorway": "Piedra · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/padres-piedra-navy.webp"
+    ]
+   },
+   {
+    "id": "padres-blanca-navy",
+    "nombre": "Padres Blanca / Navy",
+    "colorway": "Blanco · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/padres-blanca-navy.webp"
+    ]
+   },
+   {
+    "id": "padres-rosa-azul",
+    "nombre": "Padres Rosa / Azul",
+    "colorway": "Rosa · Azul cielo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/padres-rosa-azul.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G21",
+  "desc": "Boston crema con letras café, parche World Series",
+  "fotos": [
+   7784,
+   7785,
+   7786,
+   7787,
+   7788,
+   7789,
+   7790,
+   7791
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "redsox-khaki-roja",
+    "nombre": "Red Sox Khaki / Roja",
+    "colorway": "Khaki · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-khaki-roja.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-khaki-roja-2.webp"
+    ]
+   },
+   {
+    "id": "redsox-navy-naranja",
+    "nombre": "Red Sox Navy / Naranja",
+    "colorway": "Azul marino · Naranja",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-navy-naranja.webp"
+    ]
+   },
+   {
+    "id": "redsox-navy-blanca",
+    "nombre": "Red Sox Navy / Blanca",
+    "colorway": "Azul marino · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-navy-blanca.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-navy-blanca-2.webp"
+    ]
+   },
+   {
+    "id": "boston-carmesi",
+    "nombre": "Boston Carmesí",
+    "colorway": "Carmesí · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/boston-carmesi.webp"
+    ]
+   },
+   {
+    "id": "redsox-negra-roja",
+    "nombre": "Red Sox Negra / Roja",
+    "colorway": "Negro · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-roja.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-roja-2.webp"
+    ]
+   },
+   {
+    "id": "redsox-negra-ws",
+    "nombre": "Red Sox World Series Negra",
+    "colorway": "Negro · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-ws.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-ws-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-ws-3.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G22",
+  "desc": "Atlanta Braves negra con A blanca",
+  "fotos": [
+   7792,
+   7793,
+   7794,
+   7795,
+   7796,
+   7797,
+   7798
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "braves-khaki-lila",
+    "nombre": "Braves Khaki / Lila",
+    "colorway": "Khaki · Lila",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-khaki-lila.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-khaki-lila-2.webp"
+    ]
+   },
+   {
+    "id": "braves-piedra",
+    "nombre": "Braves Piedra",
+    "colorway": "Piedra · Azul rey",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-piedra.webp"
+    ]
+   },
+   {
+    "id": "braves-navy-hueso",
+    "nombre": "Braves Navy / Chrome",
+    "colorway": "Navy · Hueso",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso-3.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G23",
+  "desc": "Crema con B verde oliva y visera oliva",
+  "fotos": [
+   7799,
+   7800,
+   7801,
+   7802,
+   7803,
+   7804,
+   7805
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "redsox-khaki-roja",
+    "nombre": "Red Sox Khaki / Roja",
+    "colorway": "Khaki · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-khaki-roja.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-khaki-roja-2.webp"
+    ]
+   },
+   {
+    "id": "dodgers-negra-1999",
+    "nombre": "Dodgers Negra 1999",
+    "colorway": "Negro · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-1999.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-1999-2.webp"
+    ]
+   },
+   {
+    "id": "redsox-navy-naranja",
+    "nombre": "Red Sox Navy / Naranja",
+    "colorway": "Azul marino · Naranja",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-navy-naranja.webp"
+    ]
+   },
+   {
+    "id": "redsox-navy-blanca",
+    "nombre": "Red Sox Navy / Blanca",
+    "colorway": "Azul marino · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-navy-blanca.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-navy-blanca-2.webp"
+    ]
+   },
+   {
+    "id": "boston-carmesi",
+    "nombre": "Boston Carmesí",
+    "colorway": "Carmesí · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/boston-carmesi.webp"
+    ]
+   },
+   {
+    "id": "dodgers-blanca-roja",
+    "nombre": "Dodgers Blanca / Roja",
+    "colorway": "Blanco · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-blanca-roja.webp"
+    ]
+   },
+   {
+    "id": "dodgers-camel-menta",
+    "nombre": "Dodgers Camel / Menta",
+    "colorway": "Camel · Menta",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-menta.webp"
+    ]
+   },
+   {
+    "id": "dodgers-malva",
+    "nombre": "Dodgers Malva / Lavanda",
+    "colorway": "Taupe · Lavanda",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-malva.webp"
+    ]
+   },
+   {
+    "id": "dodgers-crema-tonal",
+    "nombre": "Dodgers Marfil Tonal",
+    "colorway": "Marfil · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-crema-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-crema-tonal-2.webp"
+    ]
+   },
+   {
+    "id": "dodgers-camel-tonal",
+    "nombre": "Dodgers Caqui Tonal",
+    "colorway": "Caqui · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal-3.webp"
+    ]
+   },
+   {
+    "id": "dodgers-negra-tonal",
+    "nombre": "Dodgers Blackout",
+    "colorway": "Negro total",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-tonal-2.webp"
+    ]
+   },
+   {
+    "id": "redsox-negra-roja",
+    "nombre": "Red Sox Negra / Roja",
+    "colorway": "Negro · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-roja.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-roja-2.webp"
+    ]
+   },
+   {
+    "id": "redsox-negra-ws",
+    "nombre": "Red Sox World Series Negra",
+    "colorway": "Negro · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-ws.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-ws-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/redsox-negra-ws-3.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G24",
+  "desc": "Los Angeles Dodgers azul marino con LA blanco",
+  "fotos": [
+   7806,
+   7807,
+   7808,
+   7809
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "dodgers-negra-1999",
+    "nombre": "Dodgers Negra 1999",
+    "colorway": "Negro · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-1999.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-1999-2.webp"
+    ]
+   },
+   {
+    "id": "dodgers-blanca-roja",
+    "nombre": "Dodgers Blanca / Roja",
+    "colorway": "Blanco · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-blanca-roja.webp"
+    ]
+   },
+   {
+    "id": "dodgers-camel-menta",
+    "nombre": "Dodgers Camel / Menta",
+    "colorway": "Camel · Menta",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-menta.webp"
+    ]
+   },
+   {
+    "id": "dodgers-malva",
+    "nombre": "Dodgers Malva / Lavanda",
+    "colorway": "Taupe · Lavanda",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-malva.webp"
+    ]
+   },
+   {
+    "id": "dodgers-crema-tonal",
+    "nombre": "Dodgers Marfil Tonal",
+    "colorway": "Marfil · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-crema-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-crema-tonal-2.webp"
+    ]
+   },
+   {
+    "id": "dodgers-camel-tonal",
+    "nombre": "Dodgers Caqui Tonal",
+    "colorway": "Caqui · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal-3.webp"
+    ]
+   },
+   {
+    "id": "dodgers-negra-tonal",
+    "nombre": "Dodgers Blackout",
+    "colorway": "Negro total",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-tonal-2.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G25",
+  "desc": "Los Angeles Dodgers negra o marino con LA vino",
+  "fotos": [
+   7810,
+   7811,
+   7812,
+   7813,
+   7814,
+   7815
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "dodgers-negra-1999",
+    "nombre": "Dodgers Negra 1999",
+    "colorway": "Negro · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-1999.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-1999-2.webp"
+    ]
+   },
+   {
+    "id": "dodgers-blanca-roja",
+    "nombre": "Dodgers Blanca / Roja",
+    "colorway": "Blanco · Rojo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-blanca-roja.webp"
+    ]
+   },
+   {
+    "id": "dodgers-camel-menta",
+    "nombre": "Dodgers Camel / Menta",
+    "colorway": "Camel · Menta",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-menta.webp"
+    ]
+   },
+   {
+    "id": "dodgers-malva",
+    "nombre": "Dodgers Malva / Lavanda",
+    "colorway": "Taupe · Lavanda",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-malva.webp"
+    ]
+   },
+   {
+    "id": "dodgers-crema-tonal",
+    "nombre": "Dodgers Marfil Tonal",
+    "colorway": "Marfil · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-crema-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-crema-tonal-2.webp"
+    ]
+   },
+   {
+    "id": "dodgers-camel-tonal",
+    "nombre": "Dodgers Caqui Tonal",
+    "colorway": "Caqui · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-camel-tonal-3.webp"
+    ]
+   },
+   {
+    "id": "dodgers-negra-tonal",
+    "nombre": "Dodgers Blackout",
+    "colorway": "Negro total",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/dodgers-negra-tonal-2.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G26",
+  "desc": "Atlanta Braves caqui con A morada",
+  "fotos": [
+   7816,
+   7817,
+   7818,
+   7819,
+   7820,
+   7821,
+   7822,
+   7823,
+   7824,
+   8110
+  ],
+  "dudosas": [
+   8110
+  ],
+  "parecidas": [
+   {
+    "id": "braves-khaki-lila",
+    "nombre": "Braves Khaki / Lila",
+    "colorway": "Khaki · Lila",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-khaki-lila.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-khaki-lila-2.webp"
+    ]
+   },
+   {
+    "id": "braves-piedra",
+    "nombre": "Braves Piedra",
+    "colorway": "Piedra · Azul rey",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-piedra.webp"
+    ]
+   },
+   {
+    "id": "braves-navy-hueso",
+    "nombre": "Braves Navy / Chrome",
+    "colorway": "Navy · Hueso",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso-3.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G27",
+  "desc": "Chicago White Sox caqui con Sox azul",
+  "fotos": [
+   8111
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "whitesox-roja",
+    "nombre": "White Sox Roja",
+    "colorway": "Rojo · Blanco",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-roja.webp"
+    ]
+   },
+   {
+    "id": "whitesox-vino",
+    "nombre": "White Sox Vino Tonal",
+    "colorway": "Vino · Tonal",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-vino.webp"
+    ]
+   },
+   {
+    "id": "whitesox-taupe",
+    "nombre": "White Sox Taupe",
+    "colorway": "Taupe · Azul rey",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-taupe.webp"
+    ]
+   },
+   {
+    "id": "whitesox-marfil",
+    "nombre": "White Sox Marfil",
+    "colorway": "Marfil · Azul cielo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-marfil.webp"
+    ]
+   },
+   {
+    "id": "whitesox-arena",
+    "nombre": "White Sox Arena Tonal",
+    "colorway": "Arena · Tonal",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-arena.webp"
+    ]
+   },
+   {
+    "id": "whitesox-crema-camel",
+    "nombre": "White Sox Crema / Camel",
+    "colorway": "Crema · Camel",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-crema-camel.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-crema-camel-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-crema-camel-3.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-crema-camel-4.webp"
+    ]
+   },
+   {
+    "id": "whitesox-khaki-tonal",
+    "nombre": "White Sox Caqui",
+    "colorway": "Caqui · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-khaki-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-khaki-tonal-2.webp"
+    ]
+   },
+   {
+    "id": "whitesox-negra-tonal",
+    "nombre": "White Sox Negra Total",
+    "colorway": "Negro",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-negra-tonal.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/whitesox-negra-tonal-2.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G28",
+  "desc": "New York Yankees caqui con NY negro",
+  "fotos": [
+   8112
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "yankees-navy-hueso",
+    "nombre": "Yankees Navy / Hueso",
+    "colorway": "Azul marino · Hueso",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-navy-hueso.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-navy-hueso-2.webp"
+    ]
+   },
+   {
+    "id": "yankees-roja-navy",
+    "nombre": "Yankees Roja / Navy",
+    "colorway": "Rojo · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-roja-navy.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-roja-navy-2.webp"
+    ]
+   },
+   {
+    "id": "yankees-white",
+    "nombre": "Yankees Blanca",
+    "colorway": "Blanco · Negro",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-white.webp"
+    ]
+   },
+   {
+    "id": "yankees-crema",
+    "nombre": "Yankees Crema",
+    "colorway": "Crema · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-crema.webp"
+    ]
+   },
+   {
+    "id": "yankees-hueso",
+    "nombre": "Yankees Hueso Tonal",
+    "colorway": "Hueso · Tonal",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-hueso.webp"
+    ]
+   },
+   {
+    "id": "yankees-script-vino",
+    "nombre": "Yankees Script Vino",
+    "colorway": "Vino · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-script-vino.webp"
+    ]
+   },
+   {
+    "id": "yankees-tophat-red",
+    "nombre": "Top Hat Roja / Verde",
+    "colorway": "Rojo · Verde azulado",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-tophat-red.webp"
+    ]
+   },
+   {
+    "id": "yankees-piedra-navy",
+    "nombre": "Yankees Piedra / Marino",
+    "colorway": "Piedra · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-piedra-navy.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-piedra-navy-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-piedra-navy-3.webp"
+    ]
+   },
+   {
+    "id": "yankees-roja-crema",
+    "nombre": "Yankees Escarlata / Crema",
+    "colorway": "Rojo · Crema",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-roja-crema.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-roja-crema-2.webp"
+    ]
+   },
+   {
+    "id": "yankees-crema-azul",
+    "nombre": "Yankees Marfil / Marino",
+    "colorway": "Marfil · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-crema-azul.webp"
+    ]
+   },
+   {
+    "id": "yankees-negra-1996",
+    "nombre": "Yankees Negra Total",
+    "colorway": "Negro",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-negra-1996.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/yankees-negra-1996-2.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G29",
+  "desc": "San Diego Padres caqui con SD negro",
+  "fotos": [
+   8113
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "padres-black-gold",
+    "nombre": "Padres Negra / Dorada",
+    "colorway": "Negro · Dorado",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/padres-black-gold.webp"
+    ]
+   },
+   {
+    "id": "padres-piedra-navy",
+    "nombre": "Padres Piedra / Navy",
+    "colorway": "Piedra · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/padres-piedra-navy.webp"
+    ]
+   },
+   {
+    "id": "padres-blanca-navy",
+    "nombre": "Padres Blanca / Navy",
+    "colorway": "Blanco · Azul marino",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/padres-blanca-navy.webp"
+    ]
+   },
+   {
+    "id": "padres-rosa-azul",
+    "nombre": "Padres Rosa / Azul",
+    "colorway": "Rosa · Azul cielo",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/padres-rosa-azul.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G30",
+  "desc": "Charlotte Hornets caqui",
+  "fotos": [
+   8114
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "hornets-piedra",
+    "nombre": "Hornets Piedra",
+    "colorway": "Piedra · Azul",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/hornets-piedra.webp"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "G31",
+  "desc": "Atlanta Braves caqui con A azul",
+  "fotos": [
+   8115
+  ],
+  "dudosas": [],
+  "parecidas": [
+   {
+    "id": "braves-khaki-lila",
+    "nombre": "Braves Khaki / Lila",
+    "colorway": "Khaki · Lila",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-khaki-lila.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-khaki-lila-2.webp"
+    ]
+   },
+   {
+    "id": "braves-piedra",
+    "nombre": "Braves Piedra",
+    "colorway": "Piedra · Azul rey",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-piedra.webp"
+    ]
+   },
+   {
+    "id": "braves-navy-hueso",
+    "nombre": "Braves Navy / Chrome",
+    "colorway": "Navy · Hueso",
+    "fotos": [
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso-2.webp",
+     "C:/Users/Lenovo/Desktop/PROYECTOS-CLAUDE/crowcaps/assets/img/braves-navy-hueso-3.webp"
+    ]
+   }
+  ]
+ }
+]

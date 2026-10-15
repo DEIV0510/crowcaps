@@ -251,7 +251,7 @@
       $('#dPrice').innerHTML = cop(p.price) + ' <small>COP · envío gratis desde 2 gorras</small>';
       $('#dWaTxt').textContent = 'Comprar por ' + cop(p.price);
       $('#dTags').innerHTML = '<span class="tag">' + p.colorway + '</span>' +
-        p.colors.map(function (c) { return '<span class="tag">' + c + '</span>'; }).join('');
+        p.colors.map(function (c) { return '<span class="tag">' + (c === 'nuevas' ? 'Nueva' : c) + '</span>'; }).join('');
       $('#dFeats').innerHTML = p.features.map(function (f) { return '<li>' + f + '</li>'; }).join('');
       $('#dWa').href = waLink(p);
 

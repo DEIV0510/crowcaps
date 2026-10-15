@@ -49,6 +49,11 @@ const MAPA = [
   { clave: 'nav.wa_url', literal: WA_GENERAL, veces: 5 },
   { clave: 'nav.menu_ciudad', literal: 'Medellín · CO' },
 
+  /* ── Franja de envío (arriba de todo) ──────────────────────────────── */
+  { clave: 'aviso.texto', literal: 'Envío gratis a partir de 2 gorras',
+    busca: '<p class="topbar" id="topbar">Envío gratis a partir de 2 gorras</p>',
+    pon: '<p class="topbar" id="topbar">{{aviso.texto}}</p>' },
+
   /* ── Hero ────────────────────────────────────────────────────────────── */
   /* El espacio va en el HTML, NUNCA dentro del texto: al guardar desde el panel
      los textos se recortan (y con razón), así que un texto que dependa de un
@@ -168,6 +173,7 @@ const EXTRAS = {
   'medicion.meta_pixel': '',
   'medicion.google_tag': '',
 
+  'secciones.aviso': true,
   'secciones.hero': true,
   'secciones.coleccion': true,
   'secciones.perks': true,

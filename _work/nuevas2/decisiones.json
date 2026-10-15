@@ -1,0 +1,430 @@
+{
+  "gorras": [
+    {
+      "slug": "bass-pro-negra",
+      "nombre": "Bass Pro Shops Negra",
+      "equipo": "Bass Pro Shops",
+      "colorway": "Negro · Amarillo",
+      "colores": ["negras"],
+      "desc": "Toda negra, frente liso, malla y visera, para que el óvalo amarillo de Bass Pro Shops se lleve toda la atención. El pez rompe el óvalo por la izquierda con la boca abierta, y la visera curva lleva unas filas de pespunte en zigzag gris.",
+      "caracteristicas": [
+        "Parche ovalado amarillo al frente con «Bass Pro Shops» en letras rojas y ®, con borde gris oscuro",
+        "Pez verde y blanco con la boca abierta que rompe el óvalo por la izquierda",
+        "Frente negro liso con costuras en hilo gris; malla negra en los costados",
+        "Visera curva negra con filas de pespunte en zigzag gris y botón negro arriba"
+      ],
+      "fotos": [7685, 7692, 7687, 7690]
+    },
+    {
+      "slug": "bass-pro-camuflado-negro",
+      "nombre": "Bass Pro Camuflado Negro",
+      "equipo": "Bass Pro Shops",
+      "colorway": "Camuflado negro y gris · Negro",
+      "colores": ["negras"],
+      "desc": "El parche ovalado amarillo de Bass Pro Shops, con el pez saltando fuera del óvalo, va sobre un camuflado negro y gris de textura granulada. A los lados y atrás lleva malla negra. El camuflado tiene algo de brillo y, según le pegue la luz, pasa de casi negro a gris.",
+      "caracteristicas": [
+        "Parche ovalado amarillo al frente con el pez saltando y «Bass Pro Shops» en letras rojas, con ribete negro",
+        "Frente y visera en camuflado negro y gris, con textura granulada y algo de brillo",
+        "Malla negra en los costados y atrás",
+        "Visera curva con pespuntes en zigzag; por dentro, cinta con «Bass Pro Shops» repetido y etiqueta con el logo"
+      ],
+      "fotos": [7677, 7681, 7684, 7680]
+    },
+    {
+      "slug": "bass-pro-camo-arena",
+      "nombre": "Bass Pro Camo Arena",
+      "equipo": "Bass Pro Shops",
+      "colorway": "Camuflado arena · Negro",
+      "colores": ["beige", "bicolor"],
+      "desc": "Camuflado en arena, café claro, gris oliva y carbón adelante, con la malla de atrás toda en negro. El óvalo blanco de Bass Pro Shops lleva el pez y las letras bordados en hilo caramelo. La visera repite el camuflado con varias hileras de zigzag crema arriba y va en negro por debajo.",
+      "caracteristicas": [
+        "Parche ovalado al frente, de fondo blanco, con borde, pez y letras «Bass Pro Shops» bordados en caramelo",
+        "Corona en camuflado arena, café claro, gris oliva y carbón, con malla trasera negra",
+        "Visera curva en el mismo camuflado, con varias hileras de pespunte en zigzag color crema y la parte de abajo negra",
+        "Por dentro, cinta negra con «Bass Pro Shops» en letras blancas y etiqueta con el logo en amarillo, rojo y verde"
+      ],
+      "fotos": [7671, 7676, 7674, 7672]
+    },
+    {
+      "slug": "bass-pro-vino-negra",
+      "nombre": "Bass Pro Vino / Negra",
+      "equipo": "Bass Pro Shops",
+      "colorway": "Vino · Negro",
+      "colores": ["rojas", "bicolor"],
+      "desc": "Trucker de frente vino con la parte de atrás en malla negra. Al centro va el parche ovalado de Bass Pro Shops, con el pez de boca abierta que se sale del óvalo y las letras en blanco sobre fondo negro. La visera, del mismo vino que el frente, lleva pespuntes en zigzag del mismo tono que casi no se notan hasta que la miras de cerca.",
+      "caracteristicas": [
+        "Parche al frente con un pez y el texto «Bass Pro Shops» en blanco sobre negro; ribete blanco doble y el pez saliéndose del óvalo por la izquierda",
+        "Frente y visera en vino; laterales y parte de atrás en malla negra",
+        "Visera curva con pespuntes en zigzag del mismo tono",
+        "Botón superior forrado en vino y costuras oscuras entre el frente y la malla"
+      ],
+      "fotos": [7658, 7660, 7659]
+    },
+    {
+      "slug": "bass-pro-gris-negra",
+      "nombre": "Bass Pro Gris / Negra",
+      "equipo": "Bass Pro Shops",
+      "colorway": "Gris jaspeado · Negro",
+      "colores": ["negras", "bicolor"],
+      "desc": "Frente y visera en gris jaspeado, malla negra atrás. Todo el protagonismo es del parche ovalado blanco, con el pez y el «Bass Pro Shops» bordados en negro y un borde grueso que lo recorta contra el gris. Por dentro también firma: el nombre va repetido en las cintas de las costuras.",
+      "caracteristicas": [
+        "Parche ovalado blanco al frente con «Bass Pro Shops» y un pez de boca abierta bordados en negro, borde negro sobrehilado",
+        "Frente y visera curva en gris jaspeado, con hileras de pespuntes claros en la visera",
+        "Malla negra en los costados y atrás; botón superior gris",
+        "Visera negra por debajo y cintas interiores negras con «Bass Pro Shops» en letras blancas"
+      ],
+      "fotos": [7667, 7670, 7665, 7669]
+    },
+    {
+      "slug": "bass-pro-camuflado-gris",
+      "nombre": "Bass Pro Camuflado Gris",
+      "equipo": "Bass Pro Shops",
+      "colorway": "Camuflado gris · Negro",
+      "colores": ["negras"],
+      "desc": "Camuflado en grises y negro en el frente y la visera, con una textura granulada y un brillo leve que aparece cuando le pega la luz. A los costados, malla negra. Al frente, el parche ovalado de Bass Pro Shops: es lo único blanco a la vista y por eso salta de lejos.",
+      "caracteristicas": [
+        "Parche ovalado blanco al frente, con borde negro grueso, el pez dibujado en línea negra y «Bass Pro Shops» en letra con serifa",
+        "Frente y visera en camuflado gris y negro con textura granulada",
+        "Malla negra en los costados",
+        "Visera curva con varias filas de pespuntes en zigzag a la vista"
+      ],
+      "fotos": [7661, 7664, 7662]
+    },
+    {
+      "slug": "bass-pro-negra-blanca",
+      "nombre": "Bass Pro Negra / Blanca",
+      "equipo": "Bass Pro Shops",
+      "colorway": "Negro · Blanco",
+      "colores": ["negras"],
+      "desc": "Trucker negra de frente afelpado y malla atrás, con el óvalo de Bass Pro Shops bordado en blanco: el pez con la boca abierta, las letras y un borde grueso que lo enmarca. Por dentro sigue la marca, en la cinta de las costuras y en la etiqueta del logo a color.",
+      "caracteristicas": [
+        "Parche ovalado bordado al frente: pez y letras «Bass Pro Shops» en blanco sobre fondo negro, con borde blanco grueso",
+        "Frente y visera negros de tela mate y afelpada; visera curva con varias filas de pespunte",
+        "Malla negra en los paneles laterales y traseros, con el botón superior en la misma tela del frente",
+        "Por dentro, cinta con «Bass Pro Shops» en letras blancas y etiqueta con el logo a color"
+      ],
+      "fotos": [7655, 7656, 7657]
+    },
+    {
+      "slug": "lacoste-camel",
+      "nombre": "Lacoste Camel",
+      "equipo": "Lacoste",
+      "colorway": "Camel · Verde",
+      "colores": ["beige"],
+      "desc": "Camel en corona, visera, ojales y botón; hasta la pieza de la correa va a tono. Al frente, pequeño y corrido hacia un lado junto a la costura, el cocodrilo verde con borde blanco y boca roja. Por dentro es otra historia: cinta negra con LACOSTE en blanco y un estampado verde y blanco.",
+      "caracteristicas": [
+        "Cocodrilo verde con borde blanco en parche bordado al frente, junto a la costura central",
+        "«LACOSTE» bordado atrás en camel, tono sobre tono, encima de la abertura",
+        "Correa trasera con pieza a tono que lleva el cocodrilo en relieve, y argolla del mismo color que la pieza",
+        "Sello ovalado en relieve con «LACOSTE» y el cocodrilo debajo de la visera"
+      ],
+      "fotos": [7706, 7713, 7712, 7710, 7709]
+    },
+    {
+      "slug": "godspeed-negra-roja",
+      "nombre": "Godspeed Negra / Roja",
+      "equipo": "Godspeed",
+      "colorway": "Negro · Rojo",
+      "colores": ["negras"],
+      "desc": "Negra por fuera, con «Godspeed» bordado en relieve en letra gótica negra con contorno rojo y, debajo, un «4ever» más plano donde manda el rojo. En un costado lleva un sol rojo con un ojo en el centro, y el frente va salpicado de pequeñas piedras negras facetadas. Por dentro, la cinta de las costuras vuelve a decir «Godspeed».",
+      "caracteristicas": [
+        "«Godspeed» bordado en relieve al frente en letra gótica negra con contorno rojo, y «4ever» debajo en negro con contorno rojo grueso",
+        "Sol rojo bordado en un costado, con un ojo en el centro",
+        "Pequeñas piedras negras facetadas repartidas por los dos paneles del frente",
+        "Cinta interior negra con «Godspeed» en letra gótica blanca"
+      ],
+      "fotos": [7748, 7751, 7746, 7749]
+    },
+    {
+      "slug": "mexicaps-santo-negra",
+      "nombre": "Mexicaps Santo Negra",
+      "equipo": "Mexicaps",
+      "colorway": "Negro · Verde",
+      "colores": ["negras"],
+      "desc": "Corona negra mate salpicada de pedrería negra que brilla en puntos cuando le pega la luz. La visera es negra y lisa, con varias costuras paralelas. Lo que tiene color es el pin del frente, un santo de manto verde con bastón y aureola celeste, y por dentro el frente es lila.",
+      "caracteristicas": [
+        "Pin de colores al frente, a un lado: santo con manto verde, túnica blanca, bastón naranja y aureola celeste",
+        "Pedrería negra repartida por el frente y los costados de la corona",
+        "Visera negra lisa con varias líneas de costura paralelas",
+        "Por dentro, cinta negra con «MEXICAPS» en las costuras y el frente en lila"
+      ],
+      "fotos": [7715, 7719, 7716, 7717]
+    },
+    {
+      "slug": "royals-negra-dorada",
+      "nombre": "Royals Negra / Dorada",
+      "equipo": "Kansas City Royals",
+      "colorway": "Negro · Dorado",
+      "colores": ["negras"],
+      "desc": "Por fuera es negra entera y el color va solo en el hilo. El KC del frente es negro sobre negro y lo marca un contorno dorado, y el World Series bordado en el costado lleva el mismo tono. Al levantar la visera se ve el detalle que no esperas: por debajo es amarilla, con filas de pespuntes negros.",
+      "caracteristicas": [
+        "Logo KC bordado en relieve al frente: letras negras con contorno dorado",
+        "Bordado «World Series» en el costado, con el script dorado y una bola de béisbol encima",
+        "Visera negra por encima y amarilla por debajo, con pespuntes negros",
+        "Sticker Nike Classics en la visera y cinta interior con el logo Nike"
+      ],
+      "fotos": [7769, 7774, 7771, 7772]
+    },
+    {
+      "slug": "royals-blanca-negra-ws",
+      "nombre": "Royals World Series Blanca",
+      "equipo": "Kansas City Royals",
+      "colorway": "Blanco · Negro",
+      "colores": ["blancas", "bicolor"],
+      "desc": "Corona blanca, visera negra y al frente la KC bordada en relieve, negra con filo rojo. Ese rojo vuelve a salir en el parche «World Series» del costado, con la pelota arriba y la silueta de un bateador al pie.",
+      "caracteristicas": [
+        "Logo KC bordado en relieve al frente, en negro con contorno rojo",
+        "Parche «World Series» bordado en el costado derecho: letras cursivas rojas, pelota roja y silueta del bateador al pie",
+        "Frente de una sola pieza, sin costura al centro, y botón negro arriba",
+        "Visera negra con hileras de pespunte"
+      ],
+      "fotos": [7755, 7759, 7753, 7756]
+    },
+    {
+      "slug": "royals-blanca-nike",
+      "nombre": "Royals Blanca / Nike",
+      "equipo": "Kansas City Royals",
+      "colorway": "Blanco · Negro",
+      "colores": ["blancas", "bicolor"],
+      "desc": "Corona blanca con la KC bordada en negro y filo rojo al frente, y en el costado izquierdo solo el swoosh de Nike en negro. La visera negra es la que la distingue: lleva un calado de ranuras pequeñas en filas que se ve de cerca.",
+      "caracteristicas": [
+        "Logo KC bordado en relieve al frente, en negro con contorno rojo",
+        "Swoosh de Nike bordado en negro en el costado izquierdo",
+        "Visera negra con un calado de ranuras pequeñas en filas",
+        "Corona blanca con el botón de arriba a tono"
+      ],
+      "fotos": [7757, 7758]
+    },
+    {
+      "slug": "boston-crema-ws",
+      "nombre": "Boston World Series Crema",
+      "equipo": "Boston Red Sox",
+      "colorway": "Crema · Negro",
+      "colores": ["blancas"],
+      "desc": "Crema de punta a punta, con el BOSTON del frente bordado en negro y rodeado de un contorno camel que lo despega de la tela. El frente es de una sola pieza, sin costura al centro, así que las letras corren limpias de lado a lado. A un costado va World Series en negro y al otro, el swoosh de Nike.",
+      "caracteristicas": [
+        "BOSTON bordado en relieve al frente: letras negras con contorno camel",
+        "«World Series» bordado en negro en un costado, entre dos hileras de puntadas de béisbol también bordadas",
+        "Swoosh de Nike bordado en negro en el otro costado",
+        "Sticker Nike Classics en la visera y cinta interior negra con NIKE y el swoosh repetidos"
+      ],
+      "fotos": [7790, 7784, 7787, 7789, 7791]
+    },
+    {
+      "slug": "redsox-crema-oliva",
+      "nombre": "Red Sox Crema / Oliva",
+      "equipo": "Boston Red Sox",
+      "colorway": "Crema · Oliva",
+      "colores": ["blancas", "bicolor"],
+      "desc": "Corona crema y visera verde oliva, con todos los bordados en un oliva más oscuro: la B de Boston en relieve al frente, el swoosh en un costado y el emblema del World Series en el otro. El frente va liso, sin costura al centro, y hasta el botón de arriba es oliva: quitando el sticker, corona y visera no salen del crema y el verde.",
+      "caracteristicas": [
+        "B de Boston bordada en oliva oscuro y en relieve, sobre un frente liso sin costura al centro",
+        "Emblema del World Series bordado en oliva sobre el panel lateral, casi todo a contorno, con la pelota arriba y el script «World Series»",
+        "Swoosh bordado en oliva en el otro costado y sticker Nike Classics en la visera",
+        "Visera y botón superior en verde oliva, con pespuntes a tono"
+      ],
+      "fotos": [7799, 7805, 7800, 7803]
+    },
+    {
+      "slug": "braves-khaki-morado",
+      "nombre": "Braves Khaki / Morado",
+      "equipo": "Atlanta Braves",
+      "colorway": "Khaki · Morado",
+      "colores": ["beige"],
+      "desc": "Toda caqui por fuera, desde la corona y la visera hasta las costuras y el botón, y el morado solo donde suma. Lleva la A en relieve al frente, el parche World Series en un costado y un 47 chiquito en el otro. Al voltear la visera aparece el último toque de color: por debajo es morada entera.",
+      "caracteristicas": [
+        "A de los Braves bordada en relieve al frente, en morado",
+        "Parche «World Series» bordado en morado en un costado",
+        "47 pequeño bordado en morado en el costado opuesto",
+        "Visera caqui con la parte de abajo morada y sticker 59FIFTY de New Era"
+      ],
+      "fotos": [7816, 7821, 7818, 7820]
+    },
+    {
+      "slug": "braves-negra-nike",
+      "nombre": "Braves Negra / Celeste",
+      "equipo": "Atlanta Braves",
+      "colorway": "Negro · Celeste",
+      "colores": ["negras"],
+      "desc": "Negra de la corona a la visera, para que todo el peso lo lleve la A de los Braves: bordada en relieve, en un lila muy claro y con un contorno celeste que le hace sombra. El swoosh del costado repite ese celeste y el sticker Nike Classics sigue en la visera.",
+      "caracteristicas": [
+        "A de los Braves bordada en relieve al frente, lila muy claro con contorno celeste",
+        "Swoosh de Nike bordado en celeste en el panel lateral",
+        "Visera curva negra con el sticker Nike «Classics» puesto",
+        "Botón superior y costuras de los paneles en negro"
+      ],
+      "fotos": [7792, 7798, 7793, 7794]
+    },
+    {
+      "slug": "padres-caqui-blanca",
+      "nombre": "Padres Caqui / Blanca",
+      "equipo": "San Diego Padres",
+      "colorway": "Caqui · Blanco",
+      "colores": ["beige", "bicolor"],
+      "desc": "Corona caqui, visera blanca y todo el bordado en blanco: dos tonos y ni un color de más. Al frente va el SD entrelazado en relieve. Al costado, una pelota de béisbol bordada que reúne San Diego, el script Padres y el año 1969.",
+      "caracteristicas": [
+        "Logo SD entrelazado bordado en blanco con relieve al frente",
+        "Parche lateral bordado en blanco: pelota con costuras, «San Diego», script «Padres», «1969» y un SD pequeño",
+        "Visera blanca por encima y caqui por debajo, con sticker Nike «Classics»",
+        "Botón y ojales blancos; por dentro, interior claro con cinta negra marcada «Nike»"
+      ],
+      "fotos": [7776, 7780, 7777, 7778, 7779]
+    },
+    {
+      "slug": "dodgers-roja",
+      "nombre": "Dodgers Roja",
+      "equipo": "Los Angeles Dodgers",
+      "colorway": "Rojo · Negro",
+      "colores": ["rojas"],
+      "desc": "Roja de punta a punta, corona y visera del mismo tono, con el LA en negro perfilado en blanco y bordado en relieve para que salte de lejos. Por fuera solo la acompañan un swoosh negro en el costado izquierdo y el sticker Nike Classics de la visera; la sorpresa está adentro, con paneles lila y gris y cintas negras que repiten NIKE en cada costura.",
+      "caracteristicas": [
+        "Logo LA bordado en relieve al frente, negro con contorno blanco",
+        "Swoosh de Nike bordado en negro en el costado izquierdo; el costado derecho va limpio",
+        "Sticker Nike «Classics» en la visera, que es roja como la corona",
+        "Por dentro, paneles lila y gris con cintas negras que llevan NIKE y el swoosh en blanco"
+      ],
+      "fotos": [7723, 7721, 7724]
+    },
+    {
+      "slug": "dodgers-azul-pizarra",
+      "nombre": "Dodgers Azul Pizarra",
+      "equipo": "Los Angeles Dodgers",
+      "colorway": "Azul pizarra · Blanco",
+      "colores": ["azules"],
+      "desc": "Un azul con algo de gris que cambia con la luz: con claridad se ve azul y a la sombra tira a gris pizarra. Al frente manda el LA blanco en relieve, y cada costado tiene su propio detalle: en uno el parche de la Serie Mundial y en el otro el swoosh.",
+      "caracteristicas": [
+        "Logo LA bordado en blanco al frente, en relieve grueso",
+        "Parche bordado de la Serie Mundial en un costado, con la pelota arriba y «World Series» en cursiva, en hilo claro",
+        "Swoosh de Nike bordado en blanco en el otro costado",
+        "Visera del mismo azul de la corona, con pespuntes paralelos y sticker Nike Classics"
+      ],
+      "fotos": [7806, 7808, 7807]
+    },
+    {
+      "slug": "dodgers-negra-roja-puas",
+      "nombre": "Dodgers Negra / Roja",
+      "equipo": "Los Angeles Dodgers",
+      "colorway": "Negro · Rojo",
+      "colores": ["negras"],
+      "desc": "Negra de la corona a la visera. El LA del frente va bordado en negro con un contorno rojo que lo despega de la tela. A las letras les salen púas por los bordes, así que el logo se ve más filoso que el LA de siempre, y en el costado un parche World Series en rojo sobre negro repite la combinación.",
+      "caracteristicas": [
+        "Logo LA bordado en relieve al frente en negro, con contorno rojo y púas en las letras",
+        "Parche lateral con el script «World Series» y una pelota bordados en rojo sobre fondo negro",
+        "Corona, visera y botón superior en negro",
+        "Sticker Nike Classics en la visera"
+      ],
+      "fotos": [7813, 7815, 7812, 7810]
+    },
+    {
+      "slug": "giants-negra-tonal",
+      "nombre": "Giants Negra Total",
+      "equipo": "San Francisco Giants",
+      "colorway": "Negro",
+      "colores": ["negras"],
+      "desc": "Negra de punta a punta: el SF entrelazado del frente, el parche del costado y hasta el swoosh lateral van bordados en el mismo tono, así que se leen por el relieve y no por el color. Según cómo le pegue la luz va del negro cerrado a un grafito con reflejo frío. Por fuera, lo que más contrasta es el sticker Nike Classics de la visera.",
+      "caracteristicas": [
+        "Logo SF entrelazado bordado en relieve al frente, negro sobre negro",
+        "Parche bordado en un costado con una pelota y letras script, tono sobre tono",
+        "Swoosh de Nike bordado en el otro costado, también en negro",
+        "Cinta interior estampada con «NIKE» y swooshes; sticker Nike Classics en la visera"
+      ],
+      "fotos": [7763, 7767, 7762, 7765]
+    },
+    {
+      "slug": "tigers-negra-trucker",
+      "nombre": "Tigers Negra Trucker",
+      "equipo": "Detroit Tigers",
+      "colorway": "Negro · Tonal",
+      "colores": ["negras"],
+      "desc": "Toda negra: el frente es liso, los costados y la parte de atrás son de malla, y la D gótica de Detroit va bordada en un gris casi negro. El logo no destaca por el color sino por el relieve. En el costado, sobre la malla, hay un swoosh de Nike tan oscuro que hay que buscarlo.",
+      "caracteristicas": [
+        "D gótica de Detroit bordada en relieve al frente, gris oscuro sobre negro",
+        "Malla negra en los costados y la parte de atrás",
+        "Swoosh de Nike bordado en negro sobre la malla del costado izquierdo",
+        "Costuras grises a la vista en la visera, con sticker Nike «Classics99»"
+      ],
+      "fotos": [7726, 7729, 7725, 7727]
+    },
+    {
+      "slug": "whitesox-trucker-negra",
+      "nombre": "White Sox Trucker Negra",
+      "equipo": "Chicago White Sox",
+      "colorway": "Negro · Gris oscuro",
+      "colores": ["negras"],
+      "desc": "Trucker negra con el frente liso y malla en los costados y atrás. El SOX cruzado va bordado en relieve en un gris tan oscuro que casi se pierde en el negro y se nota más por la sombra que por el color. Unos pespuntes grises marcan las costuras del frente y la visera, y en la malla del costado va un swoosh negro bordado.",
+      "caracteristicas": [
+        "Logo SOX cruzado bordado en relieve al frente, en gris oscuro sobre negro",
+        "Frente negro liso con malla negra en los costados y atrás",
+        "Swoosh de Nike bordado en negro sobre la malla lateral",
+        "Pespuntes grises en las costuras del frente y en la visera, que lleva el sticker Nike"
+      ],
+      "fotos": [7735, 7738, 7732]
+    },
+    {
+      "slug": "yankees-negra-malla",
+      "nombre": "Yankees Negra Malla",
+      "equipo": "New York Yankees",
+      "colorway": "Negro",
+      "colores": ["negras"],
+      "desc": "Negra de punta a punta, con el frente liso y el costado en malla. El NY va bordado tono sobre tono y se nota más por el relieve que por el color; con luz directa el hilo brilla en gris oscuro. Lo que corta tanto negro son los pespuntes grises de la visera y del panel frontal, y el sticker blanco.",
+      "caracteristicas": [
+        "Logo NY bordado en relieve al frente, tono sobre tono",
+        "Costado en malla negra",
+        "Visera curva con pespuntes en gris, que también marcan las costuras del panel frontal",
+        "Sticker blanco en la visera con el swoosh de Nike y la leyenda «CLASSICS99»"
+      ],
+      "fotos": [7741, 7744, 7743]
+    },
+    {
+      "slug": "yankees-caqui-negra",
+      "nombre": "Yankees Caqui / Negra",
+      "equipo": "New York Yankees",
+      "colorway": "Caqui · Negro",
+      "colores": ["beige"],
+      "desc": "Caqui de la corona a la visera y un NY negro bordado en relieve al frente: dos colores y ninguno de sobra. El parche World Series del costado sigue la misma regla: todo su bordado va en negro sobre el mismo caqui.",
+      "caracteristicas": [
+        "Logo NY bordado en negro y en relieve al frente",
+        "Parche World Series bordado en negro sobre caqui en un costado",
+        "Visera del mismo caqui, con varias filas de pespunte en hilo del mismo tono",
+        "Sticker Nike Classics en la visera"
+      ],
+      "fotos": [8112]
+    },
+    {
+      "slug": "nike-oliva-ribete-negro",
+      "nombre": "Nike Oliva Ribete Negro",
+      "equipo": "Nike",
+      "colorway": "Verde oliva · Negro",
+      "colores": ["beige"],
+      "desc": "Verde oliva en la corona y en la visera, con el swoosh bordado en azul noche casi negro y un ribete negro que recorre todo el borde de la visera. Los pespuntes van en hilo caramelo, por los paneles y en varias filas sobre la visera, y le dan un contraste discreto que se nota de cerca. Por dentro todo es negro, con una cinta que lleva NIKE y swooshes en blanco.",
+      "caracteristicas": [
+        "Swoosh de Nike bordado en relieve al frente, en azul noche casi negro",
+        "Ribete negro en todo el borde de la visera, que por debajo también es negra",
+        "Pespuntes en hilo caramelo sobre los paneles y en varias filas de la visera",
+        "Por dentro, forro negro y cinta con «NIKE» y swooshes en blanco"
+      ],
+      "fotos": [7701, 7697, 7700, 7705]
+    }
+  ],
+  "agregarFotos": [
+    { "a": "nationals-navy", "fotos": [7694, 7695] },
+    { "a": "whitesox-taupe", "fotos": [8111] },
+    { "a": "braves-piedra", "fotos": [8115] },
+    { "a": "hornets-piedra", "fotos": [8114] },
+    { "a": "padres-piedra-navy", "fotos": [8113] }
+  ],
+  "primero": [
+    "bass-pro-negra", "bass-pro-camuflado-negro", "bass-pro-camo-arena", "bass-pro-vino-negra",
+    "bass-pro-gris-negra", "bass-pro-camuflado-gris", "bass-pro-negra-blanca", "lacoste-camel",
+    "godspeed-negra-roja", "mexicaps-santo-negra", "royals-negra-dorada", "royals-blanca-negra-ws",
+    "royals-blanca-nike", "boston-crema-ws", "braves-khaki-morado", "redsox-crema-oliva",
+    "braves-negra-nike", "padres-caqui-blanca", "dodgers-roja", "dodgers-azul-pizarra",
+    "dodgers-negra-roja-puas", "giants-negra-tonal", "tigers-negra-trucker", "whitesox-trucker-negra",
+    "yankees-negra-malla", "yankees-caqui-negra", "nike-oliva-ribete-negro",
+    "whitesox-taupe", "braves-piedra", "hornets-piedra", "padres-piedra-navy", "nationals-navy"
+  ],
+  "hero": {
+    "principal": "bass-pro-negra",
+    "destacadas": ["bass-pro-negra", "bass-pro-camuflado-negro", "lacoste-camel"]
+  }
+}

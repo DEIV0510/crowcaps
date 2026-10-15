@@ -48,6 +48,7 @@ const EDITABLES = new Set([
   'envios.texto_corto', 'envios.texto_ficha',
   'medicion.meta_pixel', 'medicion.google_tag',
   'ticker.palabras',
+  'aviso.texto', 'secciones.aviso',
   'secciones.hero', 'secciones.coleccion', 'secciones.perks', 'secciones.editorial',
   'secciones.about', 'secciones.feed', 'secciones.final',
 ]);
@@ -212,6 +213,7 @@ function armarProducto(fila, fotos) {
     destacado: !!fila.destacado,
     publicado: !!fila.publicado,
     orden: fila.orden,
+    creado: fila.creado,
     actualizado: fila.actualizado,
     imagenes: fotos.map((f) => ({
       id: f.id, src: f.src, sm: f.sm || f.src,

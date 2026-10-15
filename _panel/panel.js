@@ -903,6 +903,10 @@
 
   VISTAS.home = function () {
     return editorContenido('Portada', [
+      { titulo: 'Franja de arriba', nota: 'La línea fina que va encima del menú, en todas las pantallas.', campos: [
+        { clave: 'secciones.aviso', etiqueta: 'Mostrar la franja', tipo: 'switch' },
+        { clave: 'aviso.texto', etiqueta: 'Texto', pista: 'Corto: en el celular cabe una línea de unos 35 caracteres.' },
+      ] },
       { titulo: 'Secciones visibles', nota: 'Apaga una sección y desaparece de la tienda sin borrar nada.', campos: [
         { clave: 'secciones.hero', etiqueta: 'Portada (hero)', tipo: 'switch' },
         { clave: 'secciones.coleccion', etiqueta: 'Colección', tipo: 'switch' },

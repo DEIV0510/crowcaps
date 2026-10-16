@@ -6,6 +6,12 @@
   if raiz == '/'
     assign raiz = ''
   endif
+  # En la portada el enlace lleva solo el ancla: así no se recarga la página
+  # (los anuncios traen ?fbclid=… y /#coleccion cargaría todo de nuevo)
+  assign ancla = raiz | append: '/'
+  if template.name == 'index'
+    assign ancla = ''
+  endif
 -%}
 <!-- ============ FOOTER ============ -->
 <footer class="foot">
@@ -17,16 +23,16 @@
     <div>
       <h4>{{ section.settings.col2 | escape }}</h4>
       <ul>
-        <li><a href="{{ raiz }}/#coleccion">{{ section.settings.col2_l1 | escape }}</a></li>
-        <li><a href="{{ raiz }}/#marca">{{ section.settings.col2_l2 | escape }}</a></li>
-        <li><a href="{{ raiz }}/#feed">{{ section.settings.col2_l3 | escape }}</a></li>
+        <li><a href="{{ ancla }}#coleccion">{{ section.settings.col2_l1 | escape }}</a></li>
+        <li><a href="{{ ancla }}#marca">{{ section.settings.col2_l2 | escape }}</a></li>
+        <li><a href="{{ ancla }}#feed">{{ section.settings.col2_l3 | escape }}</a></li>
       </ul>
     </div>
     <div>
       <h4>{{ section.settings.col3 | escape }}</h4>
       <ul>
         <li><a href="{{ wa_general }}" target="_blank" rel="noopener">{{ section.settings.col3_wa | escape }}</a></li>
-        <li><a href="{{ raiz }}/#coleccion">{{ section.settings.col3_envio | escape }}</a></li>
+        <li><a href="{{ ancla }}#coleccion">{{ section.settings.col3_envio | escape }}</a></li>
       </ul>
     </div>
     <div>

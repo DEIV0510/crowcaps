@@ -17,7 +17,7 @@
     render 'cc-wa-producto', p: p
   endcapture
 
-  assign desc = p.description | split: '<ul' | first | strip_html | strip | replace: '&nbsp;', ' '
+  assign desc = p.description | split: '<ul' | first | replace: '<br>', ' ' | replace: '<br/>', ' ' | replace: '<br />', ' ' | strip_html | strip | replace: '&nbsp;', ' '
   assign feats = ''
   if p.description contains '<li'
     assign trozos = p.description | split: '<li'
@@ -31,17 +31,34 @@
   assign feats = feats | split: '§§'
 
   assign nombres_cat = section.settings.categorias | split: ','
-  assign etiquetas = ''
+  # Etiquetas en el orden de los filtros, y «Nueva» igual que en la portada
+  assign tags_h = '|'
+  assign alta = p.created_at
   for t in p.tags
-    assign th = t | handleize
-    for c in nombres_cat
-      assign cs = c | strip
-      assign ch = cs | handleize
-      if th == ch
-        assign etiquetas = etiquetas | append: cs | append: '§§'
-      endif
-    endfor
+    assign tl = t | downcase | strip
+    if tl contains 'alta-'
+      assign alta = tl | remove: 'alta-'
+    else
+      assign th = t | handleize
+      assign tags_h = tags_h | append: th | append: '|'
+    endif
   endfor
+  assign etiquetas = ''
+  for c in nombres_cat
+    assign cs = c | strip
+    assign ch = cs | handleize
+    assign buscado = '|' | append: ch | append: '|'
+    if ch != blank and tags_h contains buscado
+      assign etiquetas = etiquetas | append: cs | append: '§§'
+    endif
+  endfor
+  assign t_alta = alta | date: '%s' | plus: 0
+  assign ahora = 'now' | date: '%s' | plus: 0
+  assign edad = ahora | minus: t_alta
+  assign limite_nueva = settings.dias_nueva | times: 86400
+  if t_alta > 0 and edad < limite_nueva
+    assign etiquetas = etiquetas | append: 'Nueva' | append: '§§'
+  endif
   assign etiquetas = etiquetas | split: '§§'
 
   assign raiz = routes.root_url
@@ -104,7 +121,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": {{ 'Gorra ' | append: p.title | json }},
-  "brand": { "@type": "Brand", "name": {{ p.vendor | json }} },
+  "brand": { "@type": "Brand", "name": {{ settings.marca_nombre | json }} },
   "description": {{ desc | json }},
   "image": [{% for im in p.images %}{{ im | image_url: width: 1000 | prepend: 'https:' | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],
   "url": {{ shop.url | append: p.url | json }},
@@ -112,7 +129,7 @@
     "@type": "Offer",
     "price": {{ pesos }},
     "priceCurrency": "COP",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/{% if p.available %}InStock{% else %}OutOfStock{% endif %}",
     "url": {{ shop.url | append: p.url | json }}
   }
 }

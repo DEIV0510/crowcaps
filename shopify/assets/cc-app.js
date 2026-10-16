@@ -115,12 +115,19 @@
     }
     if (picks.length < 2) return;
 
+    /* Los botones ya vienen pintados desde la sección (así la portada no salta
+       al cargar); si no están, se crean aquí como antes. */
+    var hechos = $$('button', wrap);
     picks.forEach(function (p, i) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('aria-current', i === 0 ? 'true' : 'false');
-      b.setAttribute('aria-label', 'Ver ' + p.name);
-      b.innerHTML = '<img src="' + p.thumb + '" width="170" height="212" alt="" loading="lazy" decoding="async">';
+      var b = hechos[i];
+      var nuevo = !b;
+      if (nuevo) {
+        b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+        b.setAttribute('aria-label', 'Ver ' + p.name);
+        b.innerHTML = '<img src="' + p.thumb + '" width="170" height="212" alt="" loading="lazy" decoding="async">';
+      }
       b.addEventListener('click', function () {
         $$('button', wrap).forEach(function (x) { x.setAttribute('aria-current', 'false'); });
         b.setAttribute('aria-current', 'true');
@@ -132,7 +139,7 @@
           img.classList.remove('is-out');
         }, reduce ? 0 : 220);
       });
-      wrap.appendChild(b);
+      if (nuevo) wrap.appendChild(b);
     });
   })();
 

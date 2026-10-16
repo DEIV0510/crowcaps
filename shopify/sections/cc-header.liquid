@@ -6,6 +6,12 @@
   if raiz == '/'
     assign raiz = ''
   endif
+  # En la portada el enlace lleva solo el ancla: así no se recarga la página
+  # (los anuncios traen ?fbclid=… y /#coleccion cargaría todo de nuevo)
+  assign ancla = raiz | append: '/'
+  if template.name == 'index'
+    assign ancla = ''
+  endif
 -%}
 {%- if section.settings.aviso_visible and section.settings.aviso_texto != blank -%}
 <!-- ============ FRANJA DE ENVÍO ============ -->
@@ -19,9 +25,9 @@
     <img class="lg-ink" src="{{ 'cc-wordmark-ink.webp' | asset_url }}" width="87" height="32" alt="" aria-hidden="true">
   </a>
   <nav class="nav__menu" aria-label="Principal">
-    <a href="{{ raiz }}/#coleccion">{{ section.settings.nav_coleccion | escape }}</a>
-    <a href="{{ raiz }}/#marca">{{ section.settings.nav_marca | escape }}</a>
-    <a href="{{ raiz }}/#feed">{{ section.settings.nav_feed | escape }}</a>
+    <a href="{{ ancla }}#coleccion">{{ section.settings.nav_coleccion | escape }}</a>
+    <a href="{{ ancla }}#marca">{{ section.settings.nav_marca | escape }}</a>
+    <a href="{{ ancla }}#feed">{{ section.settings.nav_feed | escape }}</a>
   </nav>
   <div class="nav__right">
     <a class="btn btn--sm" href="{{ wa_general }}" target="_blank" rel="noopener">{{ section.settings.nav_cta | escape }} <span class="arw">→</span></a>
@@ -31,10 +37,10 @@
 
 <div class="mmenu" id="mmenu">
   <nav aria-label="Menú móvil">
-    <a href="{{ raiz }}/#coleccion" data-close>{{ section.settings.nav_coleccion | escape }}</a>
-    <a href="{{ raiz }}/#marca" data-close>{{ section.settings.nav_marca | escape }}</a>
-    <a href="{{ raiz }}/#feed" data-close>{{ section.settings.nav_feed | escape }}</a>
-    <a href="{{ raiz }}/#contacto" data-close>{{ section.settings.nav_contacto | escape }}</a>
+    <a href="{{ ancla }}#coleccion" data-close>{{ section.settings.nav_coleccion | escape }}</a>
+    <a href="{{ ancla }}#marca" data-close>{{ section.settings.nav_marca | escape }}</a>
+    <a href="{{ ancla }}#feed" data-close>{{ section.settings.nav_feed | escape }}</a>
+    <a href="{{ ancla }}#contacto" data-close>{{ section.settings.nav_contacto | escape }}</a>
   </nav>
   <div class="mmenu__foot">
     <a class="btn btn--light" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>

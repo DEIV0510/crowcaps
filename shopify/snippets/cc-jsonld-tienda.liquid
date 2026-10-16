@@ -60,7 +60,7 @@
       "item": {
         "@type": "Product",
         "name": {{ 'Gorra ' | append: p.title | json }},
-        "brand": { "@type": "Brand", "name": {{ p.vendor | json }} },
+        "brand": { "@type": "Brand", "name": {{ settings.marca_nombre | json }} },
         "description": {{ desc | json }},
         "image": {{ p.featured_image | image_url: width: 1000 | prepend: 'https:' | json }},
         "url": {{ shop.url | append: p.url | json }},
@@ -68,7 +68,7 @@
           "@type": "Offer",
           "price": {{ p.price | divided_by: 100 }},
           "priceCurrency": "COP",
-          "availability": "https://schema.org/InStock",
+          "availability": "https://schema.org/{% if p.available %}InStock{% else %}OutOfStock{% endif %}",
           "url": {{ shop.url | append: p.url | json }}
         }
       }

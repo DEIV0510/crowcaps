@@ -585,3 +585,25 @@ html:has(.topbar) { --aviso-h: 30px; }
   .pdp__grid { grid-template-columns: 1fr; }
   .pdp__media { position: static; }
 }
+
+/* Ajustes tras comparar con crowcaps.co */
+/* /collections/<x>: el título no puede quedar debajo del menú fijo */
+.tpl-collection #coleccion .shead { padding-top: calc(var(--aviso-h) + var(--nav-h) + 28px); }
+/* el sello del hero no estira la página en el celular */
+.hero { overflow-x: clip; }
+/* páginas cortas: el pie queda abajo, sin franja vacía debajo */
+body:not(.tpl-index) { min-height: 100svh; display: flex; flex-direction: column; }
+body:not(.tpl-index) > main { flex: 1 0 auto; }
+/* títulos de dos líneas con tilde */
+.pagina h1 { line-height: 1; }
+/* búsqueda: dos columnas en el celular y textos alineados */
+.pagina__item { align-content: start; }
+.pagina__pags { gap: 14px; }
+.pagina__pags .current { font-weight: 600; }
+@media (max-width: 760px) {
+  .pagina__res { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 10px; }
+}
+/* página de la gorra: en el computador la foto deja ver las miniaturas */
+@media (min-width: 761px) {
+  .pdp__hero { width: min(100%, calc((100svh - var(--aviso-h) - var(--nav-h) - 170px) * .8)); }
+}

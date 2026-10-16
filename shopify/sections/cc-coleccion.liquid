@@ -16,7 +16,8 @@
   El orden es el de la colección (Productos > Colecciones > Ordenar: manual).
 {%- endcomment -%}
 {%- liquid
-  if template.name == 'collection' and collection
+  # /collections/all mostraría también productos que no son de la tienda: ahí va la colección principal
+  if template.name == 'collection' and collection and collection.handle != 'all'
     assign coleccion = collection
   else
     assign coleccion = section.settings.coleccion | default: settings.coleccion_principal
@@ -27,7 +28,7 @@
   endcapture
 
   assign ahora = 'now' | date: '%s' | plus: 0
-  assign limite_nueva = section.settings.dias_nueva | times: 86400
+  assign limite_nueva = settings.dias_nueva | times: 86400
 
   assign nombres_cat = section.settings.categorias | split: ','
   assign slugs_cat = ''
@@ -84,21 +85,29 @@
       endif
       assign pesos = p.price | divided_by: 100
 
-      # Colores (categorías) y «Nueva»
+      # Colores (categorías) y «Nueva». Los colores salen en el orden de los
+      # filtros, no en el alfabético con que Shopify entrega las etiquetas.
       assign colores = ''
       assign alta = p.created_at
+      assign tags_h = '|'
       for t in p.tags
         assign tl = t | downcase | strip
         if tl contains 'alta-'
           assign alta = tl | remove: 'alta-'
         else
           assign th = t | handleize
-          assign buscado = '|' | append: th | append: '|'
-          if slugs_cat contains buscado
-            assign colores = colores | append: ' ' | append: th
-          endif
+          assign tags_h = tags_h | append: th | append: '|'
         endif
       endfor
+      for c in nombres_cat
+        assign s = c | strip | handleize
+        assign buscado = '|' | append: s | append: '|'
+        if s != blank and tags_h contains buscado
+          assign colores = colores | append: ' ' | append: s
+        endif
+      endfor
+      # el buscador no encuentra «nueva»: igual que antes
+      assign colores_buscar = colores | strip
       assign t_alta = alta | date: '%s' | plus: 0
       assign edad = ahora | minus: t_alta
       assign nueva = false
@@ -110,7 +119,7 @@
       assign colores = colores | strip
 
       # Descripción: párrafo + viñetas
-      assign desc = p.description | split: '<ul' | first | strip_html | strip | replace: '&nbsp;', ' '
+      assign desc = p.description | split: '<ul' | first | replace: '<br>', ' ' | replace: '<br/>', ' ' | replace: '<br />', ' ' | strip_html | strip | replace: '&nbsp;', ' '
       assign feats = ''
       if p.description contains '<li'
         assign trozos = p.description | split: '<li'
@@ -136,7 +145,7 @@
       if cw != blank
         assign alt = alt | append: ', colorway ' | append: cw
       endif
-      assign buscar = p.title | append: ' ' | append: p.vendor | append: ' ' | append: cw | append: ' ' | append: colores
+      assign buscar = p.title | append: ' ' | append: p.vendor | append: ' ' | append: cw | append: ' ' | append: colores_buscar
     -%}
     <article class="card{% if grande %} card--big{% endif %} reveal" data-id="{{ p.handle | escape }}" data-colors="{{ colores | escape }}" data-search="{{ buscar | escape }}">
     <button class="card__ver" type="button" aria-label="Ver ficha de la gorra {{ p.title | escape }}">
@@ -236,7 +245,6 @@
     { "type": "textarea", "id": "texto", "label": "Texto", "default": "Cada gorra tiene su propia ficha: colorway, bordados y detalles reales de la foto. Elige la tuya y la despachamos el mismo día hábil." },
     { "type": "text", "id": "buscador", "label": "Texto del buscador", "default": "Buscar equipo o color…" },
     { "type": "text", "id": "categorias", "label": "Filtros por color (separados por coma)", "info": "Cada gorra lleva como etiqueta el mismo nombre del filtro.", "default": "Negras, Blancas, Beige, Rojas, Azules, Bicolor" },
-    { "type": "range", "id": "dias_nueva", "label": "Días que una gorra sale como «Nueva»", "min": 1, "max": 90, "step": 1, "default": 30 },
     { "type": "text", "id": "texto_ver", "label": "Texto sobre la foto", "default": "Ver ficha" },
     { "type": "header", "content": "Sin resultados" },
     { "type": "text", "id": "vacio_titulo", "label": "Título", "default": "Nada por aquí" },

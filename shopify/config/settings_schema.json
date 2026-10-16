@@ -39,6 +39,15 @@
         "id": "texto_pedir",
         "label": "Texto de los botones de WhatsApp",
         "default": "Pedir por WhatsApp"
+      },
+      {
+        "type": "range",
+        "id": "dias_nueva",
+        "label": "Días que una gorra sale como «Nueva»",
+        "min": 1,
+        "max": 90,
+        "step": 1,
+        "default": 30
       }
     ]
   },

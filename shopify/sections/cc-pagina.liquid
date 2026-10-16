@@ -17,6 +17,13 @@
     {%- when 'page' -%}
       <h1>{{ page.title | escape }}</h1>
       <div class="pagina__rte">{{ page.content }}</div>
+      {%- if page.content == blank -%}
+      <p>{{ section.settings.texto_contacto | escape }}</p>
+      <div class="pagina__btns">
+        <a class="btn" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="{{ raiz }}/#coleccion">{{ section.settings.boton_coleccion | escape }}</a>
+      </div>
+      {%- endif -%}
 
     {%- when 'article' -%}
       <p class="eyebrow">{{ article.published_at | date: '%d/%m/%Y' }}</p>
@@ -32,7 +39,7 @@
     {%- when 'list-collections' -%}
       <h1>{{ section.settings.titulo_colecciones | escape }}</h1>
       <ul class="pagina__lista">
-        {%- for c in collections -%}{%- if c.products_count > 0 -%}<li><a href="{{ c.url }}">{{ c.title | escape }}</a></li>{%- endif -%}{%- endfor -%}
+        {%- for c in collections -%}{%- if c.handle == 'frontpage' -%}{%- continue -%}{%- endif -%}{%- if c.products_count > 0 -%}<li><a href="{{ c.url }}">{{ c.title | escape }}</a></li>{%- endif -%}{%- endfor -%}
       </ul>
 
     {%- when 'search' -%}
@@ -45,6 +52,7 @@
       </form>
       {%- if search.performed -%}
         {%- if search.results_count > 0 -%}
+        {%- paginate search.results by 48 -%}
         <div class="pagina__res">
           {%- for r in search.results -%}
             {%- if r.object_type == 'product' and r.featured_image -%}
@@ -52,10 +60,14 @@
               {%- render 'cc-img', img: r.featured_image, sizes: '(max-width: 760px) 50vw, 25vw', alt: r.title, clase: '' -%}
               <span class="card__team">{{ r.vendor | escape }}</span>
               <span class="card__name">{{ r.title | escape }}</span>
+              {%- assign pesos_r = r.price | divided_by: 100 -%}
+              <span class="card__price">{% render 'cc-cop', valor: pesos_r %}</span>
             </a>
             {%- endif -%}
           {%- endfor -%}
         </div>
+        {%- if paginate.pages > 1 -%}<nav class="pagina__btns pagina__pags">{{ paginate | default_pagination }}</nav>{%- endif -%}
+        {%- endpaginate -%}
         {%- else -%}
         <p>{{ section.settings.sin_resultados | escape }}</p>
         <a class="btn" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>
@@ -93,6 +105,7 @@
     { "type": "textarea", "id": "texto_carrito", "label": "Texto del carrito", "default": "Elige tu gorra en la colección y toca «Comprar»: te confirmamos disponibilidad y el envío por WhatsApp." },
     { "type": "text", "id": "titulo_busqueda", "label": "Título de la búsqueda", "default": "Buscar" },
     { "type": "text", "id": "sin_resultados", "label": "Sin resultados", "default": "No encontramos gorras con esa búsqueda. Escríbenos y te decimos qué hay disponible." },
+    { "type": "textarea", "id": "texto_contacto", "label": "Texto de una página vacía (p. ej. Contacto)", "default": "Escríbenos por WhatsApp y te confirmamos disponibilidad al instante. Ventas online desde Medellín, envíos a toda Colombia." },
     { "type": "text", "id": "titulo_colecciones", "label": "Título de la lista de colecciones", "default": "Colecciones" }
   ]
 }

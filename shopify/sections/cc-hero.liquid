@@ -58,7 +58,14 @@
         </div>
         <img class="hero__seal" src="{{ 'cc-badge.webp' | asset_url }}" width="340" height="341" alt="" aria-hidden="true">
       </div>
-      <div class="hero__pick" id="heroPick" role="group" aria-label="Cambiar gorra destacada"></div>
+      <div class="hero__pick" id="heroPick" role="group" aria-label="Cambiar gorra destacada">
+        {%- assign con_foto = destacadas | where: 'featured_image' -%}
+        {%- if con_foto.size > 1 -%}
+          {%- for p in con_foto -%}
+        <button type="button" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="Ver {{ p.title | escape }}"><img src="{{ p.featured_image | image_url: width: 360 }}" width="170" height="212" alt="" loading="lazy" decoding="async"></button>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
     </div>
   </div>
 

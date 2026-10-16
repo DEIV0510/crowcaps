@@ -53,6 +53,7 @@
 {%- endif %}
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ 'cc-favicon.ico' | asset_url }}" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="{{ 'cc-icon-48.png' | asset_url }}">
 <link rel="icon" type="image/png" sizes="96x96" href="{{ 'cc-icon-96.png' | asset_url }}">
 <link rel="icon" type="image/png" sizes="192x192" href="{{ 'cc-icon-192.png' | asset_url }}">
@@ -67,7 +68,7 @@
 {{ content_for_header }}
 </head>
 <body class="tpl-{{ template.name }}">
-<a class="skip" href="{{ routes.root_url }}#coleccion">Saltar a la colección</a>
+{%- if template.name == 'index' -%}<a class="skip" href="#coleccion">Saltar a la colección</a>{%- else -%}<a class="skip" href="#top">Saltar al contenido</a>{%- endif -%}
 
 {%- if template.name == 'index' -%}
 <!-- ============ LOADER ============ -->
@@ -100,7 +101,13 @@
     mascota: {{ 'cc-mascot.webp' | asset_url | json }}
   });
 </script>
-<script src="{{ 'cc-app.js' | asset_url }}" defer></script>
+{%- comment -%}
+  Sin defer a propósito: va al final del body (igual que en crowcaps.co). Con
+  defer esperaba a los scripts de Shopify y la pantalla de carga duraba el doble.
+{%- endcomment -%}
+{% # theme-check-disable ParserBlockingScript %}
+<script src="{{ 'cc-app.js' | asset_url }}"></script>
+{% # theme-check-enable ParserBlockingScript %}
 {%- render 'cc-pixeles' -%}
 </body>
 </html>

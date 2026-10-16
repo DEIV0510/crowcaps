@@ -1,0 +1,218 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "CrowCaps",
+    "theme_version": "1.0.0",
+    "theme_author": "CrowCaps",
+    "theme_documentation_url": "https://crowcaps.co",
+    "theme_support_url": "https://crowcaps.co"
+  },
+  {
+    "name": "Tienda",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "coleccion_principal",
+        "label": "Colección de la portada",
+        "info": "De aquí salen las gorras, su orden y el número de referencias."
+      },
+      {
+        "type": "text",
+        "id": "marca_nombre",
+        "label": "Nombre de la marca",
+        "default": "CrowCaps"
+      },
+      {
+        "type": "text",
+        "id": "marca_nombre_loader",
+        "label": "Nombre en la pantalla de carga",
+        "default": "Crowcaps"
+      },
+      {
+        "type": "text",
+        "id": "lema",
+        "label": "Lema",
+        "default": "It was a collective decision"
+      },
+      {
+        "type": "text",
+        "id": "texto_pedir",
+        "label": "Texto de los botones de WhatsApp",
+        "default": "Pedir por WhatsApp"
+      }
+    ]
+  },
+  {
+    "name": "WhatsApp",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_numero",
+        "label": "Número (con indicativo, solo dígitos)",
+        "default": "573207224241"
+      },
+      {
+        "type": "textarea",
+        "id": "mensaje_general",
+        "label": "Mensaje general",
+        "default": "Hola CrowCaps, quiero ver las gorras disponibles."
+      },
+      {
+        "type": "textarea",
+        "id": "mensaje_producto",
+        "label": "Mensaje al comprar una gorra",
+        "info": "Admite {producto}, {equipo}, {precio} y {enlace}. El enlace a la gorra se agrega solo al final si no lo pones: es lo que hace que salga la foto en el chat.",
+        "default": "Hola CrowCaps, estoy interesado en la Gorra {producto} ({equipo}) de {precio}. Quisiera conocer disponibilidad y realizar mi pedido."
+      },
+      {
+        "type": "textarea",
+        "id": "mensaje_busqueda",
+        "label": "Mensaje cuando no hay resultados",
+        "default": "Hola CrowCaps, estoy buscando una gorra en específico."
+      },
+      {
+        "type": "textarea",
+        "id": "mensaje_cierre",
+        "label": "Mensaje del cierre",
+        "default": "Hola CrowCaps, quiero pedir una gorra."
+      }
+    ]
+  },
+  {
+    "name": "Ficha de la gorra",
+    "settings": [
+      {
+        "type": "text",
+        "id": "ficha_incluye",
+        "label": "Incluye",
+        "default": "gorra + empaque especial."
+      },
+      {
+        "type": "text",
+        "id": "ficha_envio",
+        "label": "Envío GRATIS…",
+        "default": "llevando 2 gorras o más."
+      },
+      {
+        "type": "text",
+        "id": "ficha_disponibilidad",
+        "label": "Disponibilidad…",
+        "default": "confirmada por WhatsApp."
+      },
+      {
+        "type": "text",
+        "id": "ficha_nota_precio",
+        "label": "Nota bajo el botón",
+        "default": "Envío gratis desde 2 gorras · Confirmamos disponibilidad por WhatsApp."
+      }
+    ]
+  },
+  {
+    "name": "Redes",
+    "settings": [
+      {
+        "type": "text",
+        "id": "instagram_url",
+        "label": "Instagram",
+        "default": "https://instagram.com/crowcaps.co"
+      },
+      {
+        "type": "text",
+        "id": "instagram_etiqueta",
+        "label": "Texto de Instagram",
+        "default": "Instagram @crowcaps.co"
+      },
+      {
+        "type": "checkbox",
+        "id": "instagram_visible",
+        "label": "Mostrar Instagram",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "tiktok_url",
+        "label": "TikTok",
+        "default": "https://tiktok.com/@crowcaps.co"
+      },
+      {
+        "type": "text",
+        "id": "tiktok_etiqueta",
+        "label": "Texto de TikTok",
+        "default": "TikTok @crowcaps.co"
+      },
+      {
+        "type": "checkbox",
+        "id": "tiktok_visible",
+        "label": "Mostrar TikTok",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "facebook_url",
+        "label": "Facebook",
+        "default": "https://facebook.com/crowcaps"
+      },
+      {
+        "type": "text",
+        "id": "facebook_etiqueta",
+        "label": "Texto de Facebook",
+        "default": "Facebook CrowCaps"
+      },
+      {
+        "type": "checkbox",
+        "id": "facebook_visible",
+        "label": "Mostrar Facebook",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Buscadores y redes (SEO)",
+    "settings": [
+      {
+        "type": "text",
+        "id": "seo_titulo",
+        "label": "Título de la portada",
+        "default": "CrowCaps | Gorras y Streetwear en Colombia"
+      },
+      {
+        "type": "textarea",
+        "id": "seo_descripcion",
+        "label": "Descripción de la portada",
+        "info": "{total} se cambia por el número de gorras.",
+        "default": "Gorras seleccionadas en Medellín: beisboleras, urbanas y de equipo. {total} referencias reales, envío GRATIS a todo Colombia desde 2 gorras y pedidos directo por WhatsApp."
+      },
+      {
+        "type": "textarea",
+        "id": "og_descripcion",
+        "label": "Descripción al compartir",
+        "default": "Gorras seleccionadas en Medellín. Envío GRATIS a todo Colombia desde 2 gorras. Pide la tuya por WhatsApp."
+      },
+      {
+        "type": "image_picker",
+        "id": "og_imagen",
+        "label": "Foto al compartir la portada",
+        "info": "Si se deja vacía, va la primera gorra de la colección."
+      }
+    ]
+  },
+  {
+    "name": "Medición",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Pega aquí los identificadores. Si instalas las apps oficiales de Meta o Google, deja estos campos vacíos para no contar doble."
+      },
+      {
+        "type": "text",
+        "id": "meta_pixel",
+        "label": "Píxel de Meta (solo números)"
+      },
+      {
+        "type": "text",
+        "id": "google_tag",
+        "label": "Google (G-…, AW-… o GTM-…)"
+      }
+    ]
+  }
+]

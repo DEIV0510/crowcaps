@@ -15,3 +15,7 @@ node_modules/
 _work/nuevas2/min/
 _work/nuevas2/ver/
 _work/nuevas2/*.jpg
+
+# Copias de páginas para comparar el tema de Shopify
+_work/shopify/*.html
+_work/shopify/shopify-productos.json

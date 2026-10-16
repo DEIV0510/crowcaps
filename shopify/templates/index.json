@@ -1,0 +1,178 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cc-hero",
+      "settings": {
+        "producto": "bass-pro-negra",
+        "destacadas": [
+          "bass-pro-negra",
+          "bass-pro-camuflado-negro",
+          "lacoste-camel"
+        ]
+      }
+    },
+    "coleccion": {
+      "type": "cc-coleccion",
+      "settings": {}
+    },
+    "perks": {
+      "type": "cc-perks",
+      "blocks": {
+        "beneficio_1": {
+          "type": "beneficio",
+          "settings": {
+            "titulo": "Envío gratis",
+            "texto": "Llevando 2 gorras o más, a cualquier ciudad de Colombia."
+          }
+        },
+        "beneficio_2": {
+          "type": "beneficio",
+          "settings": {
+            "titulo": "Compra online",
+            "texto": "Sin punto físico: pides, confirmamos y despachamos."
+          }
+        },
+        "beneficio_3": {
+          "type": "beneficio",
+          "settings": {
+            "titulo": "Atención por WhatsApp",
+            "texto": "Responde una persona, no un bot."
+          }
+        },
+        "beneficio_4": {
+          "type": "beneficio",
+          "settings": {
+            "titulo": "Empaque especial",
+            "texto": "Tu gorra sale protegida y lista para regalo."
+          }
+        }
+      },
+      "block_order": [
+        "beneficio_1",
+        "beneficio_2",
+        "beneficio_3",
+        "beneficio_4"
+      ],
+      "settings": {}
+    },
+    "editorial": {
+      "type": "cc-editorial",
+      "settings": {}
+    },
+    "about": {
+      "type": "cc-about",
+      "settings": {}
+    },
+    "feed": {
+      "type": "cc-feed",
+      "blocks": {
+        "foto_1": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-yankees-navy-hueso.webp",
+            "ancho": 515,
+            "alto": 717,
+            "alt": "Gorra Yankees navy y hueso frente a un muro de grafiti"
+          }
+        },
+        "foto_2": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-mets-royal-sm.webp",
+            "ancho": 360,
+            "alto": 433,
+            "alt": "Gorra Mets azul rey puesta"
+          }
+        },
+        "foto_3": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-boston-carmesi-sm.webp",
+            "ancho": 360,
+            "alto": 456,
+            "alt": "Gorra Boston carmesí puesta"
+          }
+        },
+        "foto_4": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-oveja-negra-sm.webp",
+            "ancho": 360,
+            "alto": 479,
+            "alt": "Gorra negra con parche La Oveja Negra"
+          }
+        },
+        "foto_5": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-yankees-hueso-sm.webp",
+            "ancho": 360,
+            "alto": 489,
+            "alt": "Gorra Yankees hueso tonal"
+          }
+        },
+        "foto_6": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-redsox-khaki-roja-2-sm.webp",
+            "ancho": 360,
+            "alto": 506,
+            "alt": "Gorra Red Sox khaki con visera roja sobre una banca"
+          }
+        },
+        "foto_7": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-braves-piedra-sm.webp",
+            "ancho": 360,
+            "alto": 460,
+            "alt": "Gorra Braves piedra puesta"
+          }
+        },
+        "foto_8": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-whitesox-arena-sm.webp",
+            "ancho": 360,
+            "alto": 445,
+            "alt": "Gorra White Sox arena tonal en la mano"
+          }
+        },
+        "foto_9": {
+          "type": "foto",
+          "settings": {
+            "imagen_tema": "cc-foto-yankees-roja-navy-sm.webp",
+            "ancho": 360,
+            "alto": 505,
+            "alt": "Gorra Yankees roja con visera azul marino"
+          }
+        }
+      },
+      "block_order": [
+        "foto_1",
+        "foto_2",
+        "foto_3",
+        "foto_4",
+        "foto_5",
+        "foto_6",
+        "foto_7",
+        "foto_8",
+        "foto_9"
+      ],
+      "settings": {}
+    },
+    "final": {
+      "type": "cc-final",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "coleccion",
+    "perks",
+    "editorial",
+    "about",
+    "feed",
+    "final"
+  ]
+}

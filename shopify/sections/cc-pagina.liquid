@@ -1,0 +1,99 @@
+{%- comment -%}
+  Páginas sueltas con el mismo estilo de la tienda: página de texto, 404,
+  búsqueda, carrito (los pedidos van por WhatsApp), blog, artículo y lista de
+  colecciones.
+{%- endcomment -%}
+{%- liquid
+  capture wa_general
+    render 'cc-wa', mensaje: settings.mensaje_general
+  endcapture
+  assign raiz = routes.root_url
+  if raiz == '/'
+    assign raiz = ''
+  endif
+-%}
+<section class="pagina wrap">
+  {%- case template.name -%}
+    {%- when 'page' -%}
+      <h1>{{ page.title | escape }}</h1>
+      <div class="pagina__rte">{{ page.content }}</div>
+
+    {%- when 'article' -%}
+      <p class="eyebrow">{{ article.published_at | date: '%d/%m/%Y' }}</p>
+      <h1>{{ article.title | escape }}</h1>
+      <div class="pagina__rte">{{ article.content }}</div>
+
+    {%- when 'blog' -%}
+      <h1>{{ blog.title | escape }}</h1>
+      <ul class="pagina__lista">
+        {%- for a in blog.articles -%}<li><a href="{{ a.url }}">{{ a.title | escape }}</a></li>{%- endfor -%}
+      </ul>
+
+    {%- when 'list-collections' -%}
+      <h1>{{ section.settings.titulo_colecciones | escape }}</h1>
+      <ul class="pagina__lista">
+        {%- for c in collections -%}{%- if c.products_count > 0 -%}<li><a href="{{ c.url }}">{{ c.title | escape }}</a></li>{%- endif -%}{%- endfor -%}
+      </ul>
+
+    {%- when 'search' -%}
+      <h1>{{ section.settings.titulo_busqueda | escape }}</h1>
+      <form class="search pagina__buscar" action="{{ routes.search_url }}" method="get" role="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label class="sr" for="qs">Buscar gorra</label>
+        <input id="qs" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Buscar equipo o color…">
+        <input type="hidden" name="type" value="product">
+      </form>
+      {%- if search.performed -%}
+        {%- if search.results_count > 0 -%}
+        <div class="pagina__res">
+          {%- for r in search.results -%}
+            {%- if r.object_type == 'product' and r.featured_image -%}
+            <a class="pagina__item" href="{{ r.url }}">
+              {%- render 'cc-img', img: r.featured_image, sizes: '(max-width: 760px) 50vw, 25vw', alt: r.title, clase: '' -%}
+              <span class="card__team">{{ r.vendor | escape }}</span>
+              <span class="card__name">{{ r.title | escape }}</span>
+            </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        {%- else -%}
+        <p>{{ section.settings.sin_resultados | escape }}</p>
+        <a class="btn" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>
+        {%- endif -%}
+      {%- endif -%}
+
+    {%- when 'cart' -%}
+      <h1>{{ section.settings.titulo_carrito | escape }}</h1>
+      <p>{{ section.settings.texto_carrito | escape }}</p>
+      <div class="pagina__btns">
+        <a class="btn" href="{{ raiz }}/#coleccion">{{ section.settings.boton_coleccion | escape }} <span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }}</a>
+      </div>
+
+    {%- else -%}
+      <p class="eyebrow">404</p>
+      <h1>{{ section.settings.titulo_404 | escape }}</h1>
+      <p>{{ section.settings.texto_404 | escape }}</p>
+      <div class="pagina__btns">
+        <a class="btn" href="{{ raiz }}/#coleccion">{{ section.settings.boton_coleccion | escape }} <span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }}</a>
+      </div>
+  {%- endcase -%}
+</section>
+
+{% schema %}
+{
+  "name": "Página",
+  "class": "cc-pagina",
+  "settings": [
+    { "type": "text", "id": "boton_coleccion", "label": "Botón a la colección", "default": "Ver la colección" },
+    { "type": "text", "id": "titulo_404", "label": "Título de la página que no existe", "default": "Esta página ya no está" },
+    { "type": "textarea", "id": "texto_404", "label": "Texto de la página que no existe", "default": "Puede que esa gorra ya se haya vendido. Mira las que tenemos ahora o escríbenos por WhatsApp." },
+    { "type": "text", "id": "titulo_carrito", "label": "Título del carrito", "default": "Los pedidos van por WhatsApp" },
+    { "type": "textarea", "id": "texto_carrito", "label": "Texto del carrito", "default": "Elige tu gorra en la colección y toca «Comprar»: te confirmamos disponibilidad y el envío por WhatsApp." },
+    { "type": "text", "id": "titulo_busqueda", "label": "Título de la búsqueda", "default": "Buscar" },
+    { "type": "text", "id": "sin_resultados", "label": "Sin resultados", "default": "No encontramos gorras con esa búsqueda. Escríbenos y te decimos qué hay disponible." },
+    { "type": "text", "id": "titulo_colecciones", "label": "Título de la lista de colecciones", "default": "Colecciones" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,20 @@
+{%- comment -%}
+  Precio en pesos con punto de miles, igual que la tienda de antes: $85.000.
+  Recibe «valor» en pesos (no en centavos).
+{%- endcomment -%}
+{%- liquid
+  assign n = valor | plus: 0
+  assign millones = n | divided_by: 1000000
+  assign resto = n | modulo: 1000000
+  assign miles = resto | divided_by: 1000
+  assign unidades = n | modulo: 1000
+  assign s_miles = miles | prepend: '00' | slice: -3, 3
+  assign s_uni = unidades | prepend: '00' | slice: -3, 3
+  if millones > 0
+    echo '$' | append: millones | append: '.' | append: s_miles | append: '.' | append: s_uni
+  elsif miles > 0
+    echo '$' | append: miles | append: '.' | append: s_uni
+  else
+    echo '$' | append: unidades
+  endif
+-%}

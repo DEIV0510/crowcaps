@@ -1,0 +1,81 @@
+{%- comment -%}
+  Datos estructurados de la portada: la marca, el sitio y la lista de gorras
+  (cada una con su propia página y precio).
+{%- endcomment -%}
+{%- liquid
+  assign num = settings.whatsapp_numero | remove: '+' | remove: ' ' | remove: '-' | remove: '(' | remove: ')' | remove: '.'
+  assign logo = 'cc-icon-512.png' | asset_url | prepend: 'https:'
+  assign redes = ''
+  if settings.instagram_visible and settings.instagram_url != blank
+    assign redes = redes | append: settings.instagram_url | append: '|'
+  endif
+  if settings.tiktok_visible and settings.tiktok_url != blank
+    assign redes = redes | append: settings.tiktok_url | append: '|'
+  endif
+  if settings.facebook_visible and settings.facebook_url != blank
+    assign redes = redes | append: settings.facebook_url | append: '|'
+  endif
+  assign redes = redes | split: '|'
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ settings.marca_nombre | json }},
+  "url": {{ shop.url | append: '/' | json }},
+  "logo": { "@type": "ImageObject", "url": {{ logo | json }}, "width": 512, "height": 512 },
+  "image": {{ logo | json }},
+  "description": {{ settings.og_descripcion | json }},
+  "slogan": {{ settings.lema | json }},
+  "areaServed": { "@type": "Country", "name": "Colombia" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Medellín", "addressRegion": "Antioquia", "addressCountry": "CO" },
+  "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "telephone": {{ num | prepend: '+' | json }}, "areaServed": "CO", "availableLanguage": ["es"] },
+  "sameAs": {{ redes | json }}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ settings.marca_nombre | json }},
+  "url": {{ shop.url | append: '/' | json }},
+  "inLanguage": "es-CO",
+  "publisher": { "@type": "Organization", "name": {{ settings.marca_nombre | json }} }
+}
+</script>
+{%- if coleccion != blank -%}
+{%- paginate coleccion.products by 250 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ 'Colección ' | append: settings.marca_nombre | json }},
+  "numberOfItems": {{ coleccion.products_count }},
+  "itemListElement": [
+    {%- for p in coleccion.products -%}
+    {%- assign desc = p.description | split: '<ul' | first | strip_html | strip -%}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "Product",
+        "name": {{ 'Gorra ' | append: p.title | json }},
+        "brand": { "@type": "Brand", "name": {{ p.vendor | json }} },
+        "description": {{ desc | json }},
+        "image": {{ p.featured_image | image_url: width: 1000 | prepend: 'https:' | json }},
+        "url": {{ shop.url | append: p.url | json }},
+        "offers": {
+          "@type": "Offer",
+          "price": {{ p.price | divided_by: 100 }},
+          "priceCurrency": "COP",
+          "availability": "https://schema.org/InStock",
+          "url": {{ shop.url | append: p.url | json }}
+        }
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endpaginate -%}
+{%- endif -%}

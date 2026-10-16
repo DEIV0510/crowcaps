@@ -1,0 +1,14 @@
+[
+ {
+  "clave": "feed.imagenes",
+  "valor": "[{\"src\":\"assets/img/yankees-navy-hueso.webp\",\"alt\":\"Gorra Yankees navy y hueso frente a un muro de grafiti\",\"w\":515,\"h\":717},{\"src\":\"assets/img/mets-royal-sm.webp\",\"alt\":\"Gorra Mets azul rey puesta\",\"w\":360,\"h\":433},{\"src\":\"assets/img/boston-carmesi-sm.webp\",\"alt\":\"Gorra Boston carmesí puesta\",\"w\":360,\"h\":456},{\"src\":\"assets/img/oveja-negra-sm.webp\",\"alt\":\"Gorra negra con parche La Oveja Negra\",\"w\":360,\"h\":479},{\"src\":\"assets/img/yankees-hueso-sm.webp\",\"alt\":\"Gorra Yankees hueso tonal\",\"w\":360,\"h\":489},{\"src\":\"assets/img/redsox-khaki-roja-2-sm.webp\",\"alt\":\"Gorra Red Sox khaki con visera roja sobre una banca\",\"w\":360,\"h\":506},{\"src\":\"assets/img/braves-piedra-sm.webp\",\"alt\":\"Gorra Braves piedra puesta\",\"w\":360,\"h\":460},{\"src\":\"assets/img/whitesox-arena-sm.webp\",\"alt\":\"Gorra White Sox arena tonal en la mano\",\"w\":360,\"h\":445},{\"src\":\"assets/img/yankees-roja-navy-sm.webp\",\"alt\":\"Gorra Yankees roja con visera azul marino\",\"w\":360,\"h\":505}]"
+ },
+ {
+  "clave": "hero.principal",
+  "valor": "\"bass-pro-negra\""
+ },
+ {
+  "clave": "hero.destacadas",
+  "valor": "[\"bass-pro-negra\",\"bass-pro-camuflado-negro\",\"lacoste-camel\"]"
+ }
+]

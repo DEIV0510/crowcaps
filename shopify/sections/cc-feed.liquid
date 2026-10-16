@@ -1,0 +1,62 @@
+<!-- ============ FEED ============ -->
+<section class="wrap" id="feed">
+  <div class="shead">
+    <div class="shead__top">
+      <h2 class="reveal">{{ section.settings.titulo | escape }}</h2>
+      <p class="reveal reveal-d1">{{ section.settings.texto | escape }}</p>
+    </div>
+  </div>
+  <div class="feed__grid">
+    {%- for block in section.blocks -%}
+    {%- liquid
+      assign i = forloop.index0
+      if i < 2
+        assign d = ''
+      elsif i < 4
+        assign d = ' reveal-d1'
+      elsif i < 6
+        assign d = ' reveal-d2'
+      else
+        assign d = ' reveal-d3'
+      endif
+      assign enlace = block.settings.enlace | default: settings.instagram_url
+    -%}
+    <a class="feed__i reveal{{ d }}" href="{{ enlace }}" target="_blank" rel="noopener" data-cursor="IG" {{ block.shopify_attributes }}>
+      {%- if block.settings.imagen != blank -%}
+        {%- assign img = block.settings.imagen -%}
+        {%- assign w = img.width | at_most: 720 -%}
+        {%- assign h = img.height | times: w | divided_by: img.width -%}
+      <img src="{{ img | image_url: width: w }}" width="{{ w }}" height="{{ h }}" loading="lazy" decoding="async" alt="{{ block.settings.alt | escape }}">
+      {%- else -%}
+      <img src="{{ block.settings.imagen_tema | asset_url }}" width="{{ block.settings.ancho }}" height="{{ block.settings.alto }}" loading="lazy" decoding="async" alt="{{ block.settings.alt | escape }}">
+      {%- endif -%}
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feed",
+  "class": "cc-feed",
+  "settings": [
+    { "type": "text", "id": "titulo", "label": "Título", "default": "Follow the crow" },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "Fotos reales de las gorras que tenemos. Lo nuevo cae primero en Instagram y TikTok: @crowcaps.co" }
+  ],
+  "blocks": [
+    {
+      "type": "foto",
+      "name": "Foto",
+      "settings": [
+        { "type": "image_picker", "id": "imagen", "label": "Foto" },
+        { "type": "text", "id": "imagen_tema", "label": "Foto de siempre (archivo del tema, si no se elige otra)", "default": "cc-foto-mets-royal-sm.webp" },
+        { "type": "number", "id": "ancho", "label": "Ancho de la foto de siempre", "default": 360 },
+        { "type": "number", "id": "alto", "label": "Alto de la foto de siempre", "default": 480 },
+        { "type": "text", "id": "alt", "label": "Descripción de la foto" },
+        { "type": "url", "id": "enlace", "label": "Enlace (vacío = Instagram)" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Feed" }]
+}
+{% endschema %}

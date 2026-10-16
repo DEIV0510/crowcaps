@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "cc-coleccion",
+      "settings": {}
+    },
+    "final": {
+      "type": "cc-final",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "final"
+  ]
+}

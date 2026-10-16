@@ -2,3 +2,4 @@ _work/
 _datos/
 .env*
 node_modules/.cache/
+shopify/

@@ -1,0 +1,29 @@
+<!-- ============ MARCA ============ -->
+<section class="about wrap" id="marca">
+  <div class="about__grid">
+    <img class="about__stamp reveal" src="{{ 'cc-arch.webp' | asset_url }}" width="420" height="502" loading="lazy" decoding="async" alt="Sello {{ settings.marca_nombre | escape }}">
+    <div>
+      <p class="eyebrow reveal">{{ section.settings.eyebrow | escape }}</p>
+      <h2 class="reveal reveal-d1">{{ section.settings.titulo | escape }}</h2>
+      <p class="reveal reveal-d2">{{ section.settings.p1 | escape }}</p>
+      <p class="reveal reveal-d2">{{ section.settings.p2 | escape }}</p>
+      <p class="about__quote reveal reveal-d3">{{ section.settings.cita | escape }} <span>{{ section.settings.cita_autor | escape }}</span></p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sobre la marca",
+  "class": "cc-about",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Sobre nosotros" },
+    { "type": "text", "id": "titulo", "label": "Título", "default": "CrowCaps" },
+    { "type": "textarea", "id": "p1", "label": "Párrafo 1", "default": "Nacimos en Medellín con una idea sencilla: que conseguir una buena gorra no dependa de la suerte. Buscamos, elegimos y fotografiamos cada pieza como es, sin retoques que cambien el color real." },
+    { "type": "textarea", "id": "p2", "label": "Párrafo 2", "default": "No tenemos local. Tenemos WhatsApp, y del otro lado responde una persona que sabe qué hay disponible. Enviamos a cualquier ciudad del país, y desde 2 gorras el envío es gratis." },
+    { "type": "text", "id": "cita", "label": "Cita", "default": "“It was a collective decision.”" },
+    { "type": "text", "id": "cita_autor", "label": "Autor de la cita", "default": "— Lema de la casa" }
+  ],
+  "presets": [{ "name": "Sobre la marca" }]
+}
+{% endschema %}

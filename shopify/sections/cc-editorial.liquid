@@ -1,0 +1,39 @@
+{%- assign total = settings.coleccion_principal.products_count | default: 0 -%}
+<!-- ============ EDITORIAL ============ -->
+<section class="edito">
+  <div class="edito__img reveal">
+    {%- if section.settings.imagen != blank -%}
+      {%- assign img = section.settings.imagen -%}
+      {%- assign w = img.width | at_most: 1000 -%}
+      {%- assign h = img.height | times: w | divided_by: img.width -%}
+    <img src="{{ img | image_url: width: w }}" width="{{ w }}" height="{{ h }}" loading="lazy" decoding="async"
+         alt="{{ section.settings.img_alt | escape }}">
+    {%- else -%}
+    <img src="{{ section.settings.imagen_tema | asset_url }}" width="526" height="670" loading="lazy" decoding="async"
+         alt="{{ section.settings.img_alt | escape }}">
+    {%- endif -%}
+  </div>
+  <div class="edito__txt">
+    <p class="eyebrow reveal">{{ section.settings.eyebrow | escape }}</p>
+    <h2 class="reveal reveal-d1">{{ section.settings.titulo }}</h2>
+    <p class="reveal reveal-d2">{{ section.settings.texto | escape }}</p>
+    <div class="reveal reveal-d3"><a class="btn" href="#coleccion">{{ section.settings.cta | escape }} {{ total }} <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial",
+  "class": "cc-editorial",
+  "settings": [
+    { "type": "image_picker", "id": "imagen", "label": "Foto (si se deja vacía, va la de siempre)" },
+    { "type": "text", "id": "imagen_tema", "label": "Foto de siempre (archivo del tema)", "default": "cc-foto-nationals-navy.webp" },
+    { "type": "text", "id": "img_alt", "label": "Descripción de la foto", "default": "Hombre con gorra azul marino tonal en la calle" },
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Capítulo 01" },
+    { "type": "text", "id": "titulo", "label": "Título (admite <br> y <em>)", "default": "No es solo una gorra.<br>Es la primera <em>decisión</em> del día." },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "Te la pones antes de salir y ya definiste el tono de todo lo demás. Por eso no vendemos cualquiera: si no aporta, no entra." },
+    { "type": "text", "id": "cta", "label": "Botón (después va el número de gorras)", "default": "Ver las" }
+  ],
+  "presets": [{ "name": "Editorial" }]
+}
+{% endschema %}

@@ -1,0 +1,114 @@
+{%- liquid
+  capture wa_general
+    render 'cc-wa', mensaje: settings.mensaje_general
+  endcapture
+  assign coleccion = settings.coleccion_principal
+  assign total = coleccion.products_count | default: 0
+
+  comment
+    La gorra del hero: la elegida, o la primera de la colección si esa ya no está.
+  endcomment
+  assign hero = section.settings.producto
+  if hero == blank or hero.featured_image == blank
+    assign hero = coleccion.products.first
+  endif
+  assign destacadas = section.settings.destacadas
+  if destacadas == blank or destacadas.size == 0
+    assign destacadas = coleccion.products | slice: 0, 3
+  endif
+-%}
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow reveal">{{ section.settings.eyebrow_pre | escape }} <span id="refCount">{{ total }}</span> {{ section.settings.eyebrow_post | escape }}</p>
+      <h1 class="hero__title">
+        <span><i>{{ section.settings.titulo1 | escape }}</i></span>
+        <span><i>{{ section.settings.titulo2 | escape }}</i></span>
+        <span><i>{{ section.settings.titulo3 }}</i></span>
+      </h1>
+      <p class="hero__lead reveal reveal-d1">{{ section.settings.lead | escape }}</p>
+      <div class="hero__cta reveal reveal-d2">
+        <a class="btn" href="#coleccion">{{ section.settings.cta1 | escape }} <span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }}</a>
+      </div>
+      <div class="hero__stats reveal reveal-d3">
+        <div><b>{{ total }}</b><span>{{ section.settings.stat1_etiqueta | escape }}</span></div>
+        <div><b>{{ section.settings.stat2_valor | escape }}</b><span>{{ section.settings.stat2_etiqueta | escape }}</span></div>
+        <div><b>{{ section.settings.stat3_valor | escape }}</b><span>{{ section.settings.stat3_etiqueta | escape }}</span></div>
+      </div>
+    </div>
+
+    <div class="hero__stage reveal reveal-d1">
+      <div class="hero__frame">
+        <div class="hero__shot">
+          {%- if hero.featured_image -%}
+            {%- assign img = hero.featured_image -%}
+            {%- assign ancho = img.width | at_most: 1000 -%}
+            {%- assign alto = img.height | times: ancho | divided_by: img.width -%}
+          <link rel="preload" as="image" href="{{ img | image_url: width: ancho }}" fetchpriority="high">
+          <img id="heroImg" src="{{ img | image_url: width: ancho }}" width="{{ ancho }}" height="{{ alto }}"
+               alt="Gorra {{ hero.title | escape }}{% if hero.variants.first.option1 != 'Default Title' %} — {{ hero.variants.first.option1 | escape }}{% endif %}"
+               fetchpriority="high" decoding="async">
+          <span class="hero__tag" id="heroTag">{{ hero.title | escape }}</span>
+          {%- else -%}
+          <img id="heroImg" src="{{ 'cc-icon-512.png' | asset_url }}" width="512" height="512" alt="{{ settings.marca_nombre | escape }}" fetchpriority="high" decoding="async">
+          <span class="hero__tag" id="heroTag"></span>
+          {%- endif -%}
+        </div>
+        <img class="hero__seal" src="{{ 'cc-badge.webp' | asset_url }}" width="340" height="341" alt="" aria-hidden="true">
+      </div>
+      <div class="hero__pick" id="heroPick" role="group" aria-label="Cambiar gorra destacada"></div>
+    </div>
+  </div>
+
+  <!-- ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__row" id="tickRow"></div>
+    <div class="ticker__row" id="tickRow2"></div>
+  </div>
+</section>
+
+{%- liquid
+  assign palabras = section.settings.ticker | split: ','
+-%}
+<script>
+  window.CROWCAPS_CONFIG = Object.assign(window.CROWCAPS_CONFIG || {}, {
+    ticker: [{% for w in palabras %}{% assign w2 = w | strip %}{% if w2 != blank %}{{ w2 | json }}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}],
+    destacadas: [{% for p in destacadas %}{{ p.handle | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],
+    heroPicks: [
+      {%- for p in destacadas -%}
+        {%- if p.featured_image -%}
+          {%- assign cw = p.variants.first.option1 -%}{%- if cw == 'Default Title' -%}{%- assign cw = '' -%}{%- endif -%}
+      { "id": {{ p.handle | json }}, "name": {{ p.title | json }}, "colorway": {{ cw | json }},
+        "img": {{ p.featured_image | image_url: width: 1000 | json }}, "thumb": {{ p.featured_image | image_url: width: 360 | json }} }{% unless forloop.last %},{% endunless %}
+        {%- endif -%}
+      {%- endfor -%}
+    ]
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Portada (hero)",
+  "class": "cc-hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow_pre", "label": "Texto antes del número", "default": "Medellín · Colombia —" },
+    { "type": "text", "id": "eyebrow_post", "label": "Texto después del número", "default": "referencias" },
+    { "type": "text", "id": "titulo1", "label": "Titular, línea 1", "default": "La gorra" },
+    { "type": "text", "id": "titulo2", "label": "Titular, línea 2", "default": "decide" },
+    { "type": "inline_richtext", "id": "titulo3", "label": "Titular, línea 3 (la cursiva sale en rojo)", "default": "el <em>resto</em>." },
+    { "type": "textarea", "id": "lead", "label": "Texto", "default": "Gorras elegidas una por una y fotografiadas como llegan. Ni catálogo infinito ni relleno: solo las que aguantan el outfit completo." },
+    { "type": "text", "id": "cta1", "label": "Botón a la colección", "default": "Ver colección" },
+    { "type": "text", "id": "stat1_etiqueta", "label": "Cifra 1 (el número se cuenta solo)", "default": "Referencias" },
+    { "type": "text", "id": "stat2_valor", "label": "Cifra 2", "default": "Gratis" },
+    { "type": "text", "id": "stat2_etiqueta", "label": "Cifra 2, etiqueta", "default": "Envío desde 2 gorras" },
+    { "type": "text", "id": "stat3_valor", "label": "Cifra 3", "default": "MED" },
+    { "type": "text", "id": "stat3_etiqueta", "label": "Cifra 3, etiqueta", "default": "Origen" },
+    { "type": "product", "id": "producto", "label": "Gorra grande del hero" },
+    { "type": "product_list", "id": "destacadas", "label": "Miniaturas para cambiar la foto", "limit": 6 },
+    { "type": "text", "id": "ticker", "label": "Palabras de la cinta (separadas por coma)", "default": "Crowcaps, Streetwear, Medellín, Envío gratis desde 2 gorras, Crowcaps, Colombia" }
+  ],
+  "presets": [{ "name": "Portada (hero)" }]
+}
+{% endschema %}

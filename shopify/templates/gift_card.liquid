@@ -1,0 +1,18 @@
+{% layout none %}
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarjeta de regalo · {{ shop.name | escape }}</title>
+{{ 'cc-style.css' | asset_url | stylesheet_tag }}
+{{ content_for_header }}
+</head>
+<body>
+<section class="pagina wrap">
+  <h1>Tarjeta de regalo</h1>
+  <p>{{ gift_card.balance | money }}</p>
+  <p>Código: {{ gift_card.code | format_code }}</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- ============ BENEFICIOS ============ -->
+<section class="perks">
+  <div class="perks__grid">
+    {%- for block in section.blocks -%}
+    {%- liquid
+      assign d = forloop.index0 | at_most: 3
+      assign num = forloop.index | prepend: '0' | slice: -2, 2
+    -%}
+    <div class="reveal{% if d > 0 %} reveal-d{{ d }}{% endif %}" {{ block.shopify_attributes }}><span class="num">{{ num }}</span><h3>{{ block.settings.titulo | escape }}</h3><p>{{ block.settings.texto | escape }}</p></div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Beneficios",
+  "class": "cc-perks",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "beneficio",
+      "name": "Beneficio",
+      "settings": [
+        { "type": "text", "id": "titulo", "label": "Título", "default": "Envío gratis" },
+        { "type": "text", "id": "texto", "label": "Texto", "default": "Llevando 2 gorras o más, a cualquier ciudad de Colombia." }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Beneficios", "blocks": [{ "type": "beneficio" }, { "type": "beneficio" }, { "type": "beneficio" }, { "type": "beneficio" }] }]
+}
+{% endschema %}

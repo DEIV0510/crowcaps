@@ -1,0 +1,42 @@
+{%- comment -%}
+  Píxel de Meta y etiqueta de Google. Solo se cargan si el dueño pegó su
+  identificador en Personalizar > Configuración del tema > Medición. Sin
+  identificador no sale ninguna etiqueta. El clic a WhatsApp (la venta) se
+  avisa desde cc-app.js como «Contact» y «contacto_whatsapp».
+  Si más adelante se instalan las apps oficiales de Meta o Google, dejar estos
+  campos vacíos para no contar doble.
+{%- endcomment -%}
+{%- liquid
+  assign meta = settings.meta_pixel | strip
+  assign google = settings.google_tag | strip | upcase
+  assign meta_ok = false
+  if meta != blank and meta.size >= 8 and meta.size <= 20
+    assign solo_digitos = meta | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9'
+    if solo_digitos == blank
+      assign meta_ok = true
+    endif
+  endif
+  assign google_ok = false
+  if google != blank and google.size <= 20
+    assign limpio = google | remove: '-' | remove: '_'
+    assign raro = limpio | remove: 'A' | remove: 'B' | remove: 'C' | remove: 'D' | remove: 'E' | remove: 'F' | remove: 'G' | remove: 'H' | remove: 'I' | remove: 'J' | remove: 'K' | remove: 'L' | remove: 'M' | remove: 'N' | remove: 'O' | remove: 'P' | remove: 'Q' | remove: 'R' | remove: 'S' | remove: 'T' | remove: 'U' | remove: 'V' | remove: 'W' | remove: 'X' | remove: 'Y' | remove: 'Z' | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9'
+    assign prefijo = google | slice: 0, 3
+    if raro == blank
+      if prefijo == 'GTM' or prefijo == 'AW-' or google contains 'G-'
+        assign google_ok = true
+      endif
+    endif
+  endif
+-%}
+{%- if meta_ok -%}
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init",{{ meta | json }});fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id={{ meta | url_encode }}&ev=PageView&noscript=1"></noscript>
+{%- endif -%}
+{%- if google_ok -%}
+  {%- if google contains 'GTM-' -%}
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer",{{ google | json }});</script>
+  {%- else -%}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ google | url_encode }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config",{{ google | json }});</script>
+  {%- endif -%}
+{%- endif -%}

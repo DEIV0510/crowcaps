@@ -1,0 +1,19 @@
+<section class="pagina wrap">
+  <img src="{{ 'cc-wordmark-ink.webp' | asset_url }}" width="87" height="32" alt="{{ shop.name | escape }}">
+  <h1>{{ section.settings.titulo | escape }}</h1>
+  {%- if shop.password_message != blank -%}<p>{{ shop.password_message | escape }}</p>{%- endif -%}
+  {%- form 'storefront_password' -%}
+    {{ form.errors | default_errors }}
+    <label class="sr" for="clave">Contraseña</label>
+    <input id="clave" type="password" name="password" autocomplete="current-password" placeholder="Contraseña">
+    <button class="btn" type="submit">Entrar</button>
+  {%- endform -%}
+</section>
+{% schema %}
+{
+  "name": "Tienda cerrada",
+  "settings": [
+    { "type": "text", "id": "titulo", "label": "Título", "default": "Volvemos pronto" }
+  ]
+}
+{% endschema %}

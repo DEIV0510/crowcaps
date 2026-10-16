@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es-CO" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{%- liquid
+  assign coleccion = settings.coleccion_principal
+  assign total = coleccion.products_count | default: 0
+  if template.name == 'index'
+    assign titulo = settings.seo_titulo
+    assign descripcion = settings.seo_descripcion | replace: '{total}', total
+  else
+    assign titulo = page_title | append: ' | ' | append: settings.marca_nombre
+    assign descripcion = page_description | default: settings.og_descripcion
+  endif
+
+  comment
+    Imagen para compartir: en una gorra, su propia foto; en la portada, la de la
+    gorra del hero. Siempre JPEG cuadrado sobre papel: WhatsApp lee mal WebP.
+  endcomment
+  assign og_img = blank
+  if template.name == 'product' and product.featured_image
+    assign og_img = product.featured_image
+  elsif settings.og_imagen != blank
+    assign og_img = settings.og_imagen
+  elsif coleccion.products.first.featured_image
+    assign og_img = coleccion.products.first.featured_image
+  endif
+-%}
+<title>{{ titulo | escape }}</title>
+<meta name="description" content="{{ descripcion | strip_html | escape }}">
+<meta name="theme-color" content="#efeae1">
+<link rel="canonical" href="{{ canonical_url }}">
+<meta property="og:type" content="{% if template.name == 'product' %}product{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ settings.marca_nombre | escape }}">
+{%- if template.name == 'product' -%}
+  {%- assign pesos_og = product.price | divided_by: 100 -%}
+  {%- capture precio_og -%}{%- render 'cc-cop', valor: pesos_og -%}{%- endcapture -%}
+<meta property="og:title" content="Gorra {{ product.title | escape }} · {{ precio_og }}">
+<meta property="og:description" content="{{ product.vendor | escape }} · {{ settings.og_descripcion | escape }}">
+{%- else -%}
+<meta property="og:title" content="{{ titulo | escape }}">
+<meta property="og:description" content="{{ settings.og_descripcion | escape }}">
+{%- endif %}
+<meta property="og:url" content="{{ canonical_url }}">
+{%- if og_img != blank %}
+<meta property="og:image" content="https:{{ og_img | image_url: width: 800, height: 800, format: 'pjpg', pad_color: 'efeae1' }}">
+<meta property="og:image:secure_url" content="https:{{ og_img | image_url: width: 800, height: 800, format: 'pjpg', pad_color: 'efeae1' }}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="{{ og_img.alt | default: titulo | escape }}">
+{%- endif %}
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ 'cc-icon-48.png' | asset_url }}">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ 'cc-icon-96.png' | asset_url }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ 'cc-icon-192.png' | asset_url }}">
+<link rel="apple-touch-icon" href="{{ 'cc-apple-touch-icon.png' | asset_url }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rubik:wght@700;900&display=swap" rel="stylesheet">
+{{ 'cc-style.css' | asset_url | stylesheet_tag }}
+{%- if template.name == 'index' -%}{%- render 'cc-jsonld-tienda', coleccion: coleccion -%}{%- endif -%}
+<script>document.documentElement.className = 'js';</script>
+{{ content_for_header }}
+</head>
+<body class="tpl-{{ template.name }}">
+<a class="skip" href="{{ routes.root_url }}#coleccion">Saltar a la colección</a>
+
+{%- if template.name == 'index' -%}
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__in">
+    <img class="loader__badge" src="{{ 'cc-badge.webp' | asset_url }}" width="340" height="341" alt="">
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <div class="loader__meta">
+      <span class="eyebrow">{{ settings.marca_nombre_loader | escape }}</span>
+      <span class="eyebrow" id="loaderPct">00</span>
+    </div>
+  </div>
+</div>
+<div class="loader__curtain" id="curtain" aria-hidden="true"></div>
+{%- endif -%}
+
+<!-- ============ CURSOR ============ -->
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorTxt">VER</span></div>
+
+{% section 'cc-header' %}
+
+<main id="top">
+{{ content_for_layout }}
+</main>
+
+{% section 'cc-footer' %}
+
+<script>
+  window.CROWCAPS_CONFIG = Object.assign(window.CROWCAPS_CONFIG || {}, {
+    mascota: {{ 'cc-mascot.webp' | asset_url | json }}
+  });
+</script>
+<script src="{{ 'cc-app.js' | asset_url }}" defer></script>
+{%- render 'cc-pixeles' -%}
+</body>
+</html>

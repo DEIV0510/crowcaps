@@ -1,0 +1,66 @@
+{%- liquid
+  capture wa_general
+    render 'cc-wa', mensaje: settings.mensaje_general
+  endcapture
+  assign raiz = routes.root_url
+  if raiz == '/'
+    assign raiz = ''
+  endif
+-%}
+{%- if section.settings.aviso_visible and section.settings.aviso_texto != blank -%}
+<!-- ============ FRANJA DE ENVÍO ============ -->
+<p class="topbar" id="topbar">{{ section.settings.aviso_texto | escape }}</p>
+{%- endif %}
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="{% if template.name == 'index' %}#top{% else %}{{ routes.root_url }}{% endif %}" aria-label="{{ settings.marca_nombre | escape }}, inicio">
+    <img class="lg-paper" src="{{ 'cc-wordmark.webp' | asset_url }}" width="87" height="32" alt="{{ settings.marca_nombre | escape }}">
+    <img class="lg-ink" src="{{ 'cc-wordmark-ink.webp' | asset_url }}" width="87" height="32" alt="" aria-hidden="true">
+  </a>
+  <nav class="nav__menu" aria-label="Principal">
+    <a href="{{ raiz }}/#coleccion">{{ section.settings.nav_coleccion | escape }}</a>
+    <a href="{{ raiz }}/#marca">{{ section.settings.nav_marca | escape }}</a>
+    <a href="{{ raiz }}/#feed">{{ section.settings.nav_feed | escape }}</a>
+  </nav>
+  <div class="nav__right">
+    <a class="btn btn--sm" href="{{ wa_general }}" target="_blank" rel="noopener">{{ section.settings.nav_cta | escape }} <span class="arw">→</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mmenu" aria-label="Abrir menú"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <nav aria-label="Menú móvil">
+    <a href="{{ raiz }}/#coleccion" data-close>{{ section.settings.nav_coleccion | escape }}</a>
+    <a href="{{ raiz }}/#marca" data-close>{{ section.settings.nav_marca | escape }}</a>
+    <a href="{{ raiz }}/#feed" data-close>{{ section.settings.nav_feed | escape }}</a>
+    <a href="{{ raiz }}/#contacto" data-close>{{ section.settings.nav_contacto | escape }}</a>
+  </nav>
+  <div class="mmenu__foot">
+    <a class="btn btn--light" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>
+    <div class="mmenu__soc">
+      {%- if settings.instagram_url != blank %}<a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+      {%- if settings.tiktok_url != blank %}<a href="{{ settings.tiktok_url }}" target="_blank" rel="noopener">TikTok</a>{% endif %}
+      <span>{{ section.settings.menu_ciudad | escape }}</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Encabezado",
+  "class": "cc-header",
+  "settings": [
+    { "type": "header", "content": "Franja de arriba" },
+    { "type": "checkbox", "id": "aviso_visible", "label": "Mostrar la franja", "default": true },
+    { "type": "text", "id": "aviso_texto", "label": "Texto de la franja", "default": "Envío gratis a partir de 2 gorras" },
+    { "type": "header", "content": "Menú" },
+    { "type": "text", "id": "nav_coleccion", "label": "Enlace a la colección", "default": "Colección" },
+    { "type": "text", "id": "nav_marca", "label": "Enlace a la marca", "default": "Marca" },
+    { "type": "text", "id": "nav_feed", "label": "Enlace al feed", "default": "Feed" },
+    { "type": "text", "id": "nav_contacto", "label": "Enlace a contacto (solo celular)", "default": "Contacto" },
+    { "type": "text", "id": "nav_cta", "label": "Botón de WhatsApp", "default": "Comprar" },
+    { "type": "text", "id": "menu_ciudad", "label": "Ciudad en el menú del celular", "default": "Medellín · CO" }
+  ]
+}
+{% endschema %}

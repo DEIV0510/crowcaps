@@ -1,0 +1,130 @@
+{%- comment -%}
+  Página de una gorra (/products/<gorra>). Es la que abre el enlace que viaja
+  por WhatsApp: muestra lo mismo que la ficha de la portada, pero como página
+  propia, para que Google también la pueda mostrar.
+{%- endcomment -%}
+{%- liquid
+  assign p = product
+  assign cw = p.variants.first.option1
+  if cw == 'Default Title'
+    assign cw = ''
+  endif
+  assign pesos = p.price | divided_by: 100
+  capture precio
+    render 'cc-cop', valor: pesos
+  endcapture
+  capture wa
+    render 'cc-wa-producto', p: p
+  endcapture
+
+  assign desc = p.description | split: '<ul' | first | strip_html | strip | replace: '&nbsp;', ' '
+  assign feats = ''
+  if p.description contains '<li'
+    assign trozos = p.description | split: '<li'
+    for tr in trozos offset: 1
+      assign f = tr | prepend: '<li' | split: '</li>' | first | strip_html | strip
+      if f != blank
+        assign feats = feats | append: f | append: '§§'
+      endif
+    endfor
+  endif
+  assign feats = feats | split: '§§'
+
+  assign nombres_cat = section.settings.categorias | split: ','
+  assign etiquetas = ''
+  for t in p.tags
+    assign th = t | handleize
+    for c in nombres_cat
+      assign cs = c | strip
+      assign ch = cs | handleize
+      if th == ch
+        assign etiquetas = etiquetas | append: cs | append: '§§'
+      endif
+    endfor
+  endfor
+  assign etiquetas = etiquetas | split: '§§'
+
+  assign raiz = routes.root_url
+  if raiz == '/'
+    assign raiz = ''
+  endif
+-%}
+<section class="pdp wrap">
+  <a class="pdp__back eyebrow" href="{{ raiz }}/#coleccion">← {{ section.settings.volver | escape }}</a>
+  <div class="pdp__grid">
+    <div class="pdp__media">
+      <div class="drawer__hero pdp__hero">
+        {%- if p.featured_image -%}
+          {%- assign img = p.featured_image -%}
+          {%- assign w = img.width | at_most: 1000 -%}
+          {%- assign h = img.height | times: w | divided_by: img.width -%}
+        <img id="pImg" src="{{ img | image_url: width: w }}" width="{{ w }}" height="{{ h }}" alt="Gorra {{ p.title | escape }}{% if cw != blank %} — {{ cw | escape }}{% endif %}" fetchpriority="high" decoding="async">
+        {%- endif -%}
+      </div>
+      {%- if p.images.size > 1 -%}
+      <div class="drawer__thumbs pdp__thumbs" id="pThumbs">
+        {%- for im in p.images -%}
+        <button type="button" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="Imagen {{ forloop.index }} de {{ p.images.size }}" data-src="{{ im | image_url: width: 1000 }}">
+          <img src="{{ im | image_url: width: 360 }}" width="360" height="{{ im.height | times: 360 | divided_by: im.width }}" alt="" decoding="async" loading="lazy">
+        </button>
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+    </div>
+
+    <div class="drawer__txt pdp__txt">
+      <p class="eyebrow">{{ p.vendor | escape }}</p>
+      <h1>{{ p.title | escape }}</h1>
+      <div class="drawer__meta">
+        {%- if cw != blank -%}<span class="tag">{{ cw | escape }}</span>{%- endif -%}
+        {%- for e in etiquetas -%}<span class="tag">{{ e | escape }}</span>{%- endfor -%}
+      </div>
+      {%- if desc != blank -%}<p class="drawer__desc">{{ desc | escape }}</p>{%- endif -%}
+      {%- if feats.size > 0 -%}
+      <ul class="drawer__feats">
+        {%- for f in feats -%}<li>{{ f | escape }}</li>{%- endfor -%}
+      </ul>
+      {%- endif -%}
+      <p class="drawer__amount">{{ precio }} <small>COP · envío gratis desde 2 gorras</small></p>
+      <div class="drawer__ship">
+        <span>📦 <b>Incluye:</b> {{ settings.ficha_incluye | escape }}</span>
+        <span>🚚 <b>Envío GRATIS</b> {{ settings.ficha_envio | escape }}</span>
+        <span>💬 <b>Disponibilidad</b> {{ settings.ficha_disponibilidad | escape }}</span>
+      </div>
+      <div class="pdp__buy">
+        <a class="btn" href="{{ wa }}" target="_blank" rel="noopener" data-cursor="COMPRAR">Comprar por {{ precio }} <span class="arw">→</span></a>
+        <span class="drawer__price">{{ settings.ficha_nota_precio | escape }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ 'Gorra ' | append: p.title | json }},
+  "brand": { "@type": "Brand", "name": {{ p.vendor | json }} },
+  "description": {{ desc | json }},
+  "image": [{% for im in p.images %}{{ im | image_url: width: 1000 | prepend: 'https:' | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],
+  "url": {{ shop.url | append: p.url | json }},
+  "offers": {
+    "@type": "Offer",
+    "price": {{ pesos }},
+    "priceCurrency": "COP",
+    "availability": "https://schema.org/InStock",
+    "url": {{ shop.url | append: p.url | json }}
+  }
+}
+</script>
+
+{% schema %}
+{
+  "name": "Gorra",
+  "class": "cc-producto",
+  "settings": [
+    { "type": "text", "id": "volver", "label": "Enlace para volver", "default": "Toda la colección" },
+    { "type": "text", "id": "categorias", "label": "Filtros por color que se muestran como etiqueta (separados por coma)", "default": "Negras, Blancas, Beige, Rojas, Azules, Bicolor" }
+  ]
+}
+{% endschema %}

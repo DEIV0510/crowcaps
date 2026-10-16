@@ -1,0 +1,248 @@
+{%- comment -%}
+  La colección completa: filtros, buscador, grilla de 12 en 12 y la ficha que se
+  abre al tocar una gorra. Cada tarjeta lleva «Comprar», que va directo a
+  WhatsApp con el enlace de esa gorra (y así llega su foto al chat).
+
+  De dónde sale cada dato de la gorra:
+    · nombre ........ título del producto
+    · equipo ........ proveedor (vendor)
+    · colorway ...... valor de la opción «Color» de la variante
+    · precio ........ precio de la variante
+    · descripción ... el párrafo de la descripción; la lista (viñetas) son las
+                      características
+    · colores ....... etiquetas que coincidan con las categorías de abajo
+    · «Nueva» ....... 30 días desde la etiqueta alta-AAAA-MM-DD, o desde que
+                      se creó el producto si no la tiene
+  El orden es el de la colección (Productos > Colecciones > Ordenar: manual).
+{%- endcomment -%}
+{%- liquid
+  if template.name == 'collection' and collection
+    assign coleccion = collection
+  else
+    assign coleccion = section.settings.coleccion | default: settings.coleccion_principal
+  endif
+
+  capture wa_busqueda
+    render 'cc-wa', mensaje: settings.mensaje_busqueda
+  endcapture
+
+  assign ahora = 'now' | date: '%s' | plus: 0
+  assign limite_nueva = section.settings.dias_nueva | times: 86400
+
+  assign nombres_cat = section.settings.categorias | split: ','
+  assign slugs_cat = ''
+  for c in nombres_cat
+    assign s = c | strip | handleize
+    assign slugs_cat = slugs_cat | append: '|' | append: s
+  endfor
+  assign slugs_cat = slugs_cat | append: '|'
+
+  assign sizes_grande = '(max-width: 760px) 100vw, (max-width: 1180px) 66vw, 50vw'
+  assign sizes_normal = '(max-width: 760px) 50vw, (max-width: 1180px) 33vw, 25vw'
+  assign hay_nuevas = false
+  assign datos = ''
+-%}
+<!-- ============ COLECCIÓN ============ -->
+<section id="coleccion" class="wrap">
+  <div class="shead">
+    <div class="shead__top">
+      <h2 class="reveal">{% if template.name == 'collection' %}{{ coleccion.title | escape }}{% else %}{{ section.settings.titulo | escape }}{% endif %}</h2>
+      <p class="reveal reveal-d1">{{ section.settings.texto | escape }}</p>
+    </div>
+  </div>
+
+  <div class="tools">
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por color"></div>
+    <div class="tools__right">
+      <span class="tally" id="tally" aria-live="polite"></span>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label class="sr" for="q">Buscar gorra</label>
+        <input id="q" type="search" placeholder="{{ section.settings.buscador | escape }}" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" id="grid">
+  {%- if coleccion != blank -%}
+  {%- paginate coleccion.products by 250 -%}
+  {%- assign n_card = 0 -%}
+  {%- for p in coleccion.products -%}
+    {%- if p.featured_image == blank -%}{%- continue -%}{%- endif -%}
+    {%- liquid
+      assign idx = n_card
+      assign n_card = n_card | plus: 1
+      assign numero = n_card | prepend: '00' | slice: -3, 3
+      assign grande = false
+      if idx == 0 or idx == 14
+        assign grande = true
+      endif
+
+      assign cw = p.variants.first.option1
+      if cw == 'Default Title'
+        assign cw = ''
+      endif
+      assign pesos = p.price | divided_by: 100
+
+      # Colores (categorías) y «Nueva»
+      assign colores = ''
+      assign alta = p.created_at
+      for t in p.tags
+        assign tl = t | downcase | strip
+        if tl contains 'alta-'
+          assign alta = tl | remove: 'alta-'
+        else
+          assign th = t | handleize
+          assign buscado = '|' | append: th | append: '|'
+          if slugs_cat contains buscado
+            assign colores = colores | append: ' ' | append: th
+          endif
+        endif
+      endfor
+      assign t_alta = alta | date: '%s' | plus: 0
+      assign edad = ahora | minus: t_alta
+      assign nueva = false
+      if t_alta > 0 and edad < limite_nueva
+        assign nueva = true
+        assign hay_nuevas = true
+        assign colores = colores | append: ' nuevas'
+      endif
+      assign colores = colores | strip
+
+      # Descripción: párrafo + viñetas
+      assign desc = p.description | split: '<ul' | first | strip_html | strip | replace: '&nbsp;', ' '
+      assign feats = ''
+      if p.description contains '<li'
+        assign trozos = p.description | split: '<li'
+        for tr in trozos offset: 1
+          assign f = tr | prepend: '<li' | split: '</li>' | first | strip_html | strip
+          if f != blank
+            assign feats = feats | append: f | append: '§§'
+          endif
+        endfor
+      endif
+      assign feats = feats | split: '§§'
+
+      capture wa
+        render 'cc-wa-producto', p: p
+      endcapture
+
+      if grande
+        assign sizes = sizes_grande
+      else
+        assign sizes = sizes_normal
+      endif
+      assign alt = 'Gorra ' | append: p.title | append: ' de ' | append: p.vendor
+      if cw != blank
+        assign alt = alt | append: ', colorway ' | append: cw
+      endif
+      assign buscar = p.title | append: ' ' | append: p.vendor | append: ' ' | append: cw | append: ' ' | append: colores
+    -%}
+    <article class="card{% if grande %} card--big{% endif %} reveal" data-id="{{ p.handle | escape }}" data-colors="{{ colores | escape }}" data-search="{{ buscar | escape }}">
+    <button class="card__ver" type="button" aria-label="Ver ficha de la gorra {{ p.title | escape }}">
+    <span class="card__media">
+      <span class="card__n">Nº {{ numero }}</span>{% if nueva %}<span class="card__nueva">Nueva</span>{% endif %}
+      {% render 'cc-img', img: p.featured_image, sizes: sizes, alt: alt, clase: '' %}
+      {%- if p.images.size > 1 %}
+      {% render 'cc-img', img: p.images[1], sizes: sizes, alt: '', clase: 'alt' %}
+      {%- endif %}
+      <span class="card__go">{{ section.settings.texto_ver | escape }}</span>
+    </span>
+    <span class="card__info">
+      <span class="card__team">{{ p.vendor | escape }}</span>
+      <span class="card__name">{{ p.title | escape }}</span>
+      <span class="card__color">{{ cw | escape }}</span>
+      <span class="card__price">{% render 'cc-cop', valor: pesos %}</span>
+    </span>
+    </button>
+    <a class="btn btn--ghost card__comprar" href="{{ wa }}" target="_blank" rel="noopener" data-cursor="COMPRAR" aria-label="Comprar la gorra {{ p.title | escape }} por WhatsApp">Comprar <span class="arw">→</span></a>
+  </article>
+    {%- capture uno -%}
+    {"id":{{ p.handle | json }},"team":{{ p.vendor | json }},"name":{{ p.title | json }},"colorway":{{ cw | json }},"colors":{{ colores | split: ' ' | json }},"price":{{ pesos }},"desc":{{ desc | json }},"features":{{ feats | json }},"url":{{ p.url | json }},"imgs":[{% for im in p.images %}{{ im | image_url: width: 1000 | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],"thumbs":[{% for im in p.images %}{{ im | image_url: width: 360 | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],"wa":{{ wa | json }}}
+    {%- endcapture -%}
+    {%- liquid
+      if datos != ''
+        assign datos = datos | append: ','
+      endif
+      assign datos = datos | append: uno
+    -%}
+  {%- endfor -%}
+  {%- endpaginate -%}
+  {%- endif -%}
+  </div>
+
+  <div class="more" id="more" hidden>
+    <button class="btn btn--ghost" id="moreBtn" type="button"><span id="moreTxt">Ver 12 más</span> <span class="arw">↓</span></button>
+  </div>
+
+  <div class="empty" id="empty" hidden>
+    <h3>{{ section.settings.vacio_titulo | escape }}</h3>
+    <p>{{ section.settings.vacio_texto | escape }}</p>
+    <a class="btn" href="{{ wa_busqueda }}" target="_blank" rel="noopener">{{ section.settings.vacio_cta | escape }} <span class="arw">→</span></a>
+  </div>
+</section>
+
+<!-- ============ FICHA (DRAWER) ============ -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dName" aria-hidden="true">
+  <div class="drawer__bg" data-dclose></div>
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <span class="eyebrow" id="dNum">Nº 001</span>
+      <button class="drawer__close" data-dclose aria-label="Cerrar ficha">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <div class="drawer__body" id="dBody">
+      <div class="drawer__hero"><img id="dImg" alt="" width="640" height="800" decoding="async"></div>
+      <div class="drawer__thumbs" id="dThumbs"></div>
+      <div class="drawer__txt">
+        <p class="eyebrow" id="dTeam"></p>
+        <h3 id="dName"></h3>
+        <div class="drawer__meta" id="dTags"></div>
+        <p class="drawer__desc" id="dDesc"></p>
+        <ul class="drawer__feats" id="dFeats"></ul>
+        <p class="drawer__amount" id="dPrice"></p>
+        <div class="drawer__ship">
+          <span>📦 <b>Incluye:</b> {{ settings.ficha_incluye | escape }}</span>
+          <span>🚚 <b>Envío GRATIS</b> {{ settings.ficha_envio | escape }}</span>
+          <span>💬 <b>Disponibilidad</b> {{ settings.ficha_disponibilidad | escape }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="drawer__foot">
+      <a class="btn" id="dWa" href="#" target="_blank" rel="noopener"><span id="dWaTxt">{{ settings.texto_pedir | escape }}</span> <span class="arw">→</span></a>
+      <span class="drawer__price">{{ settings.ficha_nota_precio | escape }}</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.CROWCAPS_PRODUCTS = [{{ datos }}];
+  window.CROWCAPS_CONFIG = Object.assign(window.CROWCAPS_CONFIG || {}, {
+    categorias: [
+      {%- if hay_nuevas -%}{ "slug": "nuevas", "nombre": "Nuevas" },{%- endif -%}
+      {%- for c in nombres_cat -%}{%- assign nom = c | strip -%}{%- if nom != blank -%}{ "slug": {{ nom | handleize | json }}, "nombre": {{ nom | json }} }{% unless forloop.last %},{% endunless %}{%- endif -%}{%- endfor -%}
+    ]
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Colección",
+  "class": "cc-coleccion",
+  "settings": [
+    { "type": "collection", "id": "coleccion", "label": "Colección que se muestra (vacío = la de la configuración del tema)" },
+    { "type": "text", "id": "titulo", "label": "Título", "default": "La colección" },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "Cada gorra tiene su propia ficha: colorway, bordados y detalles reales de la foto. Elige la tuya y la despachamos el mismo día hábil." },
+    { "type": "text", "id": "buscador", "label": "Texto del buscador", "default": "Buscar equipo o color…" },
+    { "type": "text", "id": "categorias", "label": "Filtros por color (separados por coma)", "info": "Cada gorra lleva como etiqueta el mismo nombre del filtro.", "default": "Negras, Blancas, Beige, Rojas, Azules, Bicolor" },
+    { "type": "range", "id": "dias_nueva", "label": "Días que una gorra sale como «Nueva»", "min": 1, "max": 90, "step": 1, "default": 30 },
+    { "type": "text", "id": "texto_ver", "label": "Texto sobre la foto", "default": "Ver ficha" },
+    { "type": "header", "content": "Sin resultados" },
+    { "type": "text", "id": "vacio_titulo", "label": "Título", "default": "Nada por aquí" },
+    { "type": "textarea", "id": "vacio_texto", "label": "Texto", "default": "No encontramos gorras con esa búsqueda. Prueba con otro equipo o escríbenos y te decimos qué hay disponible." },
+    { "type": "text", "id": "vacio_cta", "label": "Botón", "default": "Preguntar por WhatsApp" }
+  ],
+  "presets": [{ "name": "Colección" }]
+}
+{% endschema %}

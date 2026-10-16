@@ -1,0 +1,2634 @@
+[
+ {
+  "id": 64,
+  "slug": "bass-pro-negra",
+  "nombre": "Bass Pro Shops Negra",
+  "equipo": "Bass Pro Shops",
+  "modelo": null,
+  "colorway": "Negro · Amarillo",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Toda negra, frente liso, malla y visera, para que el óvalo amarillo de Bass Pro Shops se lleve toda la atención. El pez rompe el óvalo por la izquierda con la boca abierta, y la visera curva lleva unas filas de pespunte en zigzag gris.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Parche ovalado amarillo al frente con «Bass Pro Shops» en letras rojas y ®, con borde gris oscuro\",\"Pez verde y blanco con la boca abierta que rompe el óvalo por la izquierda\",\"Frente negro liso con costuras en hilo gris; malla negra en los costados\",\"Visera curva negra con filas de pespunte en zigzag gris y botón negro arriba\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 1,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:41.851Z",
+  "actualizado": "2026-10-15T23:06:41.853Z",
+  "imagenes": [
+   {
+    "producto_id": 64,
+    "src": "assets/img/bass-pro-negra-7685.webp",
+    "sm": "assets/img/bass-pro-negra-7685-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 64,
+    "src": "assets/img/bass-pro-negra-7692.webp",
+    "sm": "assets/img/bass-pro-negra-7692-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 64,
+    "src": "assets/img/bass-pro-negra-7687.webp",
+    "sm": "assets/img/bass-pro-negra-7687-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 64,
+    "src": "assets/img/bass-pro-negra-7690.webp",
+    "sm": "assets/img/bass-pro-negra-7690-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 65,
+  "slug": "bass-pro-camuflado-negro",
+  "nombre": "Bass Pro Camuflado Negro",
+  "equipo": "Bass Pro Shops",
+  "modelo": null,
+  "colorway": "Camuflado negro y gris · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "El parche ovalado amarillo de Bass Pro Shops, con el pez saltando fuera del óvalo, va sobre un camuflado negro y gris de textura granulada. A los lados y atrás lleva malla negra. El camuflado tiene algo de brillo y, según le pegue la luz, pasa de casi negro a gris.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Parche ovalado amarillo al frente con el pez saltando y «Bass Pro Shops» en letras rojas, con ribete negro\",\"Frente y visera en camuflado negro y gris, con textura granulada y algo de brillo\",\"Malla negra en los costados y atrás\",\"Visera curva con pespuntes en zigzag; por dentro, cinta con «Bass Pro Shops» repetido y etiqueta con el logo\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 2,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:42.747Z",
+  "actualizado": "2026-10-15T23:06:42.747Z",
+  "imagenes": [
+   {
+    "producto_id": 65,
+    "src": "assets/img/bass-pro-camuflado-negro-7677.webp",
+    "sm": "assets/img/bass-pro-camuflado-negro-7677-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 65,
+    "src": "assets/img/bass-pro-camuflado-negro-7681.webp",
+    "sm": "assets/img/bass-pro-camuflado-negro-7681-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 65,
+    "src": "assets/img/bass-pro-camuflado-negro-7684.webp",
+    "sm": "assets/img/bass-pro-camuflado-negro-7684-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 65,
+    "src": "assets/img/bass-pro-camuflado-negro-7680.webp",
+    "sm": "assets/img/bass-pro-camuflado-negro-7680-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 66,
+  "slug": "bass-pro-camo-arena",
+  "nombre": "Bass Pro Camo Arena",
+  "equipo": "Bass Pro Shops",
+  "modelo": null,
+  "colorway": "Camuflado arena · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Camuflado en arena, café claro, gris oliva y carbón adelante, con la malla de atrás toda en negro. El óvalo blanco de Bass Pro Shops lleva el pez y las letras bordados en hilo caramelo. La visera repite el camuflado con varias hileras de zigzag crema arriba y va en negro por debajo.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Parche ovalado al frente, de fondo blanco, con borde, pez y letras «Bass Pro Shops» bordados en caramelo\",\"Corona en camuflado arena, café claro, gris oliva y carbón, con malla trasera negra\",\"Visera curva en el mismo camuflado, con varias hileras de pespunte en zigzag color crema y la parte de abajo negra\",\"Por dentro, cinta negra con «Bass Pro Shops» en letras blancas y etiqueta con el logo en amarillo, rojo y verde\"]",
+  "categorias": "[\"beige\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 3,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:43.361Z",
+  "actualizado": "2026-10-15T23:06:43.361Z",
+  "imagenes": [
+   {
+    "producto_id": 66,
+    "src": "assets/img/bass-pro-camo-arena-7671.webp",
+    "sm": "assets/img/bass-pro-camo-arena-7671-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 66,
+    "src": "assets/img/bass-pro-camo-arena-7676.webp",
+    "sm": "assets/img/bass-pro-camo-arena-7676-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 66,
+    "src": "assets/img/bass-pro-camo-arena-7674.webp",
+    "sm": "assets/img/bass-pro-camo-arena-7674-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 66,
+    "src": "assets/img/bass-pro-camo-arena-7672.webp",
+    "sm": "assets/img/bass-pro-camo-arena-7672-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 67,
+  "slug": "bass-pro-vino-negra",
+  "nombre": "Bass Pro Vino / Negra",
+  "equipo": "Bass Pro Shops",
+  "modelo": null,
+  "colorway": "Vino · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Trucker de frente vino con la parte de atrás en malla negra. Al centro va el parche ovalado de Bass Pro Shops, con el pez de boca abierta que se sale del óvalo y las letras en blanco sobre fondo negro. La visera, del mismo vino que el frente, lleva pespuntes en zigzag del mismo tono que casi no se notan hasta que la miras de cerca.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Parche al frente con un pez y el texto «Bass Pro Shops» en blanco sobre negro; ribete blanco doble y el pez saliéndose del óvalo por la izquierda\",\"Frente y visera en vino; laterales y parte de atrás en malla negra\",\"Visera curva con pespuntes en zigzag del mismo tono\",\"Botón superior forrado en vino y costuras oscuras entre el frente y la malla\"]",
+  "categorias": "[\"rojas\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 4,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:43.960Z",
+  "actualizado": "2026-10-15T23:06:43.960Z",
+  "imagenes": [
+   {
+    "producto_id": 67,
+    "src": "assets/img/bass-pro-vino-negra-7658.webp",
+    "sm": "assets/img/bass-pro-vino-negra-7658-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 67,
+    "src": "assets/img/bass-pro-vino-negra-7660.webp",
+    "sm": "assets/img/bass-pro-vino-negra-7660-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 67,
+    "src": "assets/img/bass-pro-vino-negra-7659.webp",
+    "sm": "assets/img/bass-pro-vino-negra-7659-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 68,
+  "slug": "bass-pro-gris-negra",
+  "nombre": "Bass Pro Gris / Negra",
+  "equipo": "Bass Pro Shops",
+  "modelo": null,
+  "colorway": "Gris jaspeado · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Frente y visera en gris jaspeado, malla negra atrás. Todo el protagonismo es del parche ovalado blanco, con el pez y el «Bass Pro Shops» bordados en negro y un borde grueso que lo recorta contra el gris. Por dentro también firma: el nombre va repetido en las cintas de las costuras.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Parche ovalado blanco al frente con «Bass Pro Shops» y un pez de boca abierta bordados en negro, borde negro sobrehilado\",\"Frente y visera curva en gris jaspeado, con hileras de pespuntes claros en la visera\",\"Malla negra en los costados y atrás; botón superior gris\",\"Visera negra por debajo y cintas interiores negras con «Bass Pro Shops» en letras blancas\"]",
+  "categorias": "[\"negras\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 5,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:44.451Z",
+  "actualizado": "2026-10-15T23:06:44.451Z",
+  "imagenes": [
+   {
+    "producto_id": 68,
+    "src": "assets/img/bass-pro-gris-negra-7667.webp",
+    "sm": "assets/img/bass-pro-gris-negra-7667-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 68,
+    "src": "assets/img/bass-pro-gris-negra-7670.webp",
+    "sm": "assets/img/bass-pro-gris-negra-7670-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 68,
+    "src": "assets/img/bass-pro-gris-negra-7665.webp",
+    "sm": "assets/img/bass-pro-gris-negra-7665-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 68,
+    "src": "assets/img/bass-pro-gris-negra-7669.webp",
+    "sm": "assets/img/bass-pro-gris-negra-7669-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 69,
+  "slug": "bass-pro-camuflado-gris",
+  "nombre": "Bass Pro Camuflado Gris",
+  "equipo": "Bass Pro Shops",
+  "modelo": null,
+  "colorway": "Camuflado gris · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Camuflado en grises y negro en el frente y la visera, con una textura granulada y un brillo leve que aparece cuando le pega la luz. A los costados, malla negra. Al frente, el parche ovalado de Bass Pro Shops: es lo único blanco a la vista y por eso salta de lejos.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Parche ovalado blanco al frente, con borde negro grueso, el pez dibujado en línea negra y «Bass Pro Shops» en letra con serifa\",\"Frente y visera en camuflado gris y negro con textura granulada\",\"Malla negra en los costados\",\"Visera curva con varias filas de pespuntes en zigzag a la vista\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 6,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:45.067Z",
+  "actualizado": "2026-10-15T23:06:45.067Z",
+  "imagenes": [
+   {
+    "producto_id": 69,
+    "src": "assets/img/bass-pro-camuflado-gris-7661.webp",
+    "sm": "assets/img/bass-pro-camuflado-gris-7661-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 69,
+    "src": "assets/img/bass-pro-camuflado-gris-7664.webp",
+    "sm": "assets/img/bass-pro-camuflado-gris-7664-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 69,
+    "src": "assets/img/bass-pro-camuflado-gris-7662.webp",
+    "sm": "assets/img/bass-pro-camuflado-gris-7662-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 70,
+  "slug": "bass-pro-negra-blanca",
+  "nombre": "Bass Pro Negra / Blanca",
+  "equipo": "Bass Pro Shops",
+  "modelo": null,
+  "colorway": "Negro · Blanco",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Trucker negra de frente afelpado y malla atrás, con el óvalo de Bass Pro Shops bordado en blanco: el pez con la boca abierta, las letras y un borde grueso que lo enmarca. Por dentro sigue la marca, en la cinta de las costuras y en la etiqueta del logo a color.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Parche ovalado bordado al frente: pez y letras «Bass Pro Shops» en blanco sobre fondo negro, con borde blanco grueso\",\"Frente y visera negros de tela mate y afelpada; visera curva con varias filas de pespunte\",\"Malla negra en los paneles laterales y traseros, con el botón superior en la misma tela del frente\",\"Por dentro, cinta con «Bass Pro Shops» en letras blancas y etiqueta con el logo a color\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 7,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:45.586Z",
+  "actualizado": "2026-10-15T23:06:45.586Z",
+  "imagenes": [
+   {
+    "producto_id": 70,
+    "src": "assets/img/bass-pro-negra-blanca-7655.webp",
+    "sm": "assets/img/bass-pro-negra-blanca-7655-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 70,
+    "src": "assets/img/bass-pro-negra-blanca-7656.webp",
+    "sm": "assets/img/bass-pro-negra-blanca-7656-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 70,
+    "src": "assets/img/bass-pro-negra-blanca-7657.webp",
+    "sm": "assets/img/bass-pro-negra-blanca-7657-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 71,
+  "slug": "lacoste-camel",
+  "nombre": "Lacoste Camel",
+  "equipo": "Lacoste",
+  "modelo": null,
+  "colorway": "Camel · Verde",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Camel en corona, visera, ojales y botón; hasta la pieza de la correa va a tono. Al frente, pequeño y corrido hacia un lado junto a la costura, el cocodrilo verde con borde blanco y boca roja. Por dentro es otra historia: cinta negra con LACOSTE en blanco y un estampado verde y blanco.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Cocodrilo verde con borde blanco en parche bordado al frente, junto a la costura central\",\"«LACOSTE» bordado atrás en camel, tono sobre tono, encima de la abertura\",\"Correa trasera con pieza a tono que lleva el cocodrilo en relieve, y argolla del mismo color que la pieza\",\"Sello ovalado en relieve con «LACOSTE» y el cocodrilo debajo de la visera\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 8,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:46.104Z",
+  "actualizado": "2026-10-15T23:06:46.104Z",
+  "imagenes": [
+   {
+    "producto_id": 71,
+    "src": "assets/img/lacoste-camel-7706.webp",
+    "sm": "assets/img/lacoste-camel-7706-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 71,
+    "src": "assets/img/lacoste-camel-7713.webp",
+    "sm": "assets/img/lacoste-camel-7713-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 71,
+    "src": "assets/img/lacoste-camel-7712.webp",
+    "sm": "assets/img/lacoste-camel-7712-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 71,
+    "src": "assets/img/lacoste-camel-7710.webp",
+    "sm": "assets/img/lacoste-camel-7710-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   },
+   {
+    "producto_id": 71,
+    "src": "assets/img/lacoste-camel-7709.webp",
+    "sm": "assets/img/lacoste-camel-7709-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 4
+   }
+  ]
+ },
+ {
+  "id": 72,
+  "slug": "godspeed-negra-roja",
+  "nombre": "Godspeed Negra / Roja",
+  "equipo": "Godspeed",
+  "modelo": null,
+  "colorway": "Negro · Rojo",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Negra por fuera, con «Godspeed» bordado en relieve en letra gótica negra con contorno rojo y, debajo, un «4ever» más plano donde manda el rojo. En un costado lleva un sol rojo con un ojo en el centro, y el frente va salpicado de pequeñas piedras negras facetadas. Por dentro, la cinta de las costuras vuelve a decir «Godspeed».",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"«Godspeed» bordado en relieve al frente en letra gótica negra con contorno rojo, y «4ever» debajo en negro con contorno rojo grueso\",\"Sol rojo bordado en un costado, con un ojo en el centro\",\"Pequeñas piedras negras facetadas repartidas por los dos paneles del frente\",\"Cinta interior negra con «Godspeed» en letra gótica blanca\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 9,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:46.812Z",
+  "actualizado": "2026-10-15T23:06:46.813Z",
+  "imagenes": [
+   {
+    "producto_id": 72,
+    "src": "assets/img/godspeed-negra-roja-7748.webp",
+    "sm": "assets/img/godspeed-negra-roja-7748-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 72,
+    "src": "assets/img/godspeed-negra-roja-7751.webp",
+    "sm": "assets/img/godspeed-negra-roja-7751-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 72,
+    "src": "assets/img/godspeed-negra-roja-7746.webp",
+    "sm": "assets/img/godspeed-negra-roja-7746-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 72,
+    "src": "assets/img/godspeed-negra-roja-7749.webp",
+    "sm": "assets/img/godspeed-negra-roja-7749-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 73,
+  "slug": "mexicaps-santo-negra",
+  "nombre": "Mexicaps Santo Negra",
+  "equipo": "Mexicaps",
+  "modelo": null,
+  "colorway": "Negro · Verde",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona negra mate salpicada de pedrería negra que brilla en puntos cuando le pega la luz. La visera es negra y lisa, con varias costuras paralelas. Lo que tiene color es el pin del frente, un santo de manto verde con bastón y aureola celeste, y por dentro el frente es lila.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Pin de colores al frente, a un lado: santo con manto verde, túnica blanca, bastón naranja y aureola celeste\",\"Pedrería negra repartida por el frente y los costados de la corona\",\"Visera negra lisa con varias líneas de costura paralelas\",\"Por dentro, cinta negra con «MEXICAPS» en las costuras y el frente en lila\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 10,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:47.450Z",
+  "actualizado": "2026-10-15T23:06:47.450Z",
+  "imagenes": [
+   {
+    "producto_id": 73,
+    "src": "assets/img/mexicaps-santo-negra-7715.webp",
+    "sm": "assets/img/mexicaps-santo-negra-7715-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 73,
+    "src": "assets/img/mexicaps-santo-negra-7719.webp",
+    "sm": "assets/img/mexicaps-santo-negra-7719-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 73,
+    "src": "assets/img/mexicaps-santo-negra-7716.webp",
+    "sm": "assets/img/mexicaps-santo-negra-7716-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 73,
+    "src": "assets/img/mexicaps-santo-negra-7717.webp",
+    "sm": "assets/img/mexicaps-santo-negra-7717-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 74,
+  "slug": "royals-negra-dorada",
+  "nombre": "Royals Negra / Dorada",
+  "equipo": "Kansas City Royals",
+  "modelo": null,
+  "colorway": "Negro · Dorado",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Por fuera es negra entera y el color va solo en el hilo. El KC del frente es negro sobre negro y lo marca un contorno dorado, y el World Series bordado en el costado lleva el mismo tono. Al levantar la visera se ve el detalle que no esperas: por debajo es amarilla, con filas de pespuntes negros.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo KC bordado en relieve al frente: letras negras con contorno dorado\",\"Bordado «World Series» en el costado, con el script dorado y una bola de béisbol encima\",\"Visera negra por encima y amarilla por debajo, con pespuntes negros\",\"Sticker Nike Classics en la visera y cinta interior con el logo Nike\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 11,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:48.052Z",
+  "actualizado": "2026-10-15T23:06:48.052Z",
+  "imagenes": [
+   {
+    "producto_id": 74,
+    "src": "assets/img/royals-negra-dorada-7769.webp",
+    "sm": "assets/img/royals-negra-dorada-7769-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 74,
+    "src": "assets/img/royals-negra-dorada-7774.webp",
+    "sm": "assets/img/royals-negra-dorada-7774-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 74,
+    "src": "assets/img/royals-negra-dorada-7771.webp",
+    "sm": "assets/img/royals-negra-dorada-7771-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 74,
+    "src": "assets/img/royals-negra-dorada-7772.webp",
+    "sm": "assets/img/royals-negra-dorada-7772-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 75,
+  "slug": "royals-blanca-negra-ws",
+  "nombre": "Royals World Series Blanca",
+  "equipo": "Kansas City Royals",
+  "modelo": null,
+  "colorway": "Blanco · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona blanca, visera negra y al frente la KC bordada en relieve, negra con filo rojo. Ese rojo vuelve a salir en el parche «World Series» del costado, con la pelota arriba y la silueta de un bateador al pie.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo KC bordado en relieve al frente, en negro con contorno rojo\",\"Parche «World Series» bordado en el costado derecho: letras cursivas rojas, pelota roja y silueta del bateador al pie\",\"Frente de una sola pieza, sin costura al centro, y botón negro arriba\",\"Visera negra con hileras de pespunte\"]",
+  "categorias": "[\"blancas\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 12,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:48.657Z",
+  "actualizado": "2026-10-15T23:06:48.657Z",
+  "imagenes": [
+   {
+    "producto_id": 75,
+    "src": "assets/img/royals-blanca-negra-ws-7755.webp",
+    "sm": "assets/img/royals-blanca-negra-ws-7755-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 75,
+    "src": "assets/img/royals-blanca-negra-ws-7759.webp",
+    "sm": "assets/img/royals-blanca-negra-ws-7759-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 75,
+    "src": "assets/img/royals-blanca-negra-ws-7753.webp",
+    "sm": "assets/img/royals-blanca-negra-ws-7753-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 75,
+    "src": "assets/img/royals-blanca-negra-ws-7756.webp",
+    "sm": "assets/img/royals-blanca-negra-ws-7756-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 76,
+  "slug": "royals-blanca-nike",
+  "nombre": "Royals Blanca / Nike",
+  "equipo": "Kansas City Royals",
+  "modelo": null,
+  "colorway": "Blanco · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona blanca con la KC bordada en negro y filo rojo al frente, y en el costado izquierdo solo el swoosh de Nike en negro. La visera negra es la que la distingue: lleva un calado de ranuras pequeñas en filas que se ve de cerca.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo KC bordado en relieve al frente, en negro con contorno rojo\",\"Swoosh de Nike bordado en negro en el costado izquierdo\",\"Visera negra con un calado de ranuras pequeñas en filas\",\"Corona blanca con el botón de arriba a tono\"]",
+  "categorias": "[\"blancas\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 13,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:49.287Z",
+  "actualizado": "2026-10-15T23:06:49.287Z",
+  "imagenes": [
+   {
+    "producto_id": 76,
+    "src": "assets/img/royals-blanca-nike-7757.webp",
+    "sm": "assets/img/royals-blanca-nike-7757-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 76,
+    "src": "assets/img/royals-blanca-nike-7758.webp",
+    "sm": "assets/img/royals-blanca-nike-7758-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 77,
+  "slug": "boston-crema-ws",
+  "nombre": "Boston World Series Crema",
+  "equipo": "Boston Red Sox",
+  "modelo": null,
+  "colorway": "Crema · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Crema de punta a punta, con el BOSTON del frente bordado en negro y rodeado de un contorno camel que lo despega de la tela. El frente es de una sola pieza, sin costura al centro, así que las letras corren limpias de lado a lado. A un costado va World Series en negro y al otro, el swoosh de Nike.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"BOSTON bordado en relieve al frente: letras negras con contorno camel\",\"«World Series» bordado en negro en un costado, entre dos hileras de puntadas de béisbol también bordadas\",\"Swoosh de Nike bordado en negro en el otro costado\",\"Sticker Nike Classics en la visera y cinta interior negra con NIKE y el swoosh repetidos\"]",
+  "categorias": "[\"blancas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 14,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:49.668Z",
+  "actualizado": "2026-10-15T23:06:49.668Z",
+  "imagenes": [
+   {
+    "producto_id": 77,
+    "src": "assets/img/boston-crema-ws-7790.webp",
+    "sm": "assets/img/boston-crema-ws-7790-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 77,
+    "src": "assets/img/boston-crema-ws-7784.webp",
+    "sm": "assets/img/boston-crema-ws-7784-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 77,
+    "src": "assets/img/boston-crema-ws-7787.webp",
+    "sm": "assets/img/boston-crema-ws-7787-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 77,
+    "src": "assets/img/boston-crema-ws-7789.webp",
+    "sm": "assets/img/boston-crema-ws-7789-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   },
+   {
+    "producto_id": 77,
+    "src": "assets/img/boston-crema-ws-7791.webp",
+    "sm": "assets/img/boston-crema-ws-7791-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 4
+   }
+  ]
+ },
+ {
+  "id": 79,
+  "slug": "braves-khaki-morado",
+  "nombre": "Braves Khaki / Morado",
+  "equipo": "Atlanta Braves",
+  "modelo": null,
+  "colorway": "Khaki · Morado",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Toda caqui por fuera, desde la corona y la visera hasta las costuras y el botón, y el morado solo donde suma. Lleva la A en relieve al frente, el parche World Series en un costado y un 47 chiquito en el otro. Al voltear la visera aparece el último toque de color: por debajo es morada entera.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"A de los Braves bordada en relieve al frente, en morado\",\"Parche «World Series» bordado en morado en un costado\",\"47 pequeño bordado en morado en el costado opuesto\",\"Visera caqui con la parte de abajo morada y sticker 59FIFTY de New Era\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 15,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:51.005Z",
+  "actualizado": "2026-10-15T23:06:51.005Z",
+  "imagenes": [
+   {
+    "producto_id": 79,
+    "src": "assets/img/braves-khaki-morado-7816.webp",
+    "sm": "assets/img/braves-khaki-morado-7816-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 79,
+    "src": "assets/img/braves-khaki-morado-7821.webp",
+    "sm": "assets/img/braves-khaki-morado-7821-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 79,
+    "src": "assets/img/braves-khaki-morado-7818.webp",
+    "sm": "assets/img/braves-khaki-morado-7818-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 79,
+    "src": "assets/img/braves-khaki-morado-7820.webp",
+    "sm": "assets/img/braves-khaki-morado-7820-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 78,
+  "slug": "redsox-crema-oliva",
+  "nombre": "Red Sox Crema / Oliva",
+  "equipo": "Boston Red Sox",
+  "modelo": null,
+  "colorway": "Crema · Oliva",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona crema y visera verde oliva, con todos los bordados en un oliva más oscuro: la B de Boston en relieve al frente, el swoosh en un costado y el emblema del World Series en el otro. El frente va liso, sin costura al centro, y hasta el botón de arriba es oliva: quitando el sticker, corona y visera no salen del crema y el verde.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"B de Boston bordada en oliva oscuro y en relieve, sobre un frente liso sin costura al centro\",\"Emblema del World Series bordado en oliva sobre el panel lateral, casi todo a contorno, con la pelota arriba y el script «World Series»\",\"Swoosh bordado en oliva en el otro costado y sticker Nike Classics en la visera\",\"Visera y botón superior en verde oliva, con pespuntes a tono\"]",
+  "categorias": "[\"blancas\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 16,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:50.398Z",
+  "actualizado": "2026-10-15T23:06:50.398Z",
+  "imagenes": [
+   {
+    "producto_id": 78,
+    "src": "assets/img/redsox-crema-oliva-7799.webp",
+    "sm": "assets/img/redsox-crema-oliva-7799-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 78,
+    "src": "assets/img/redsox-crema-oliva-7805.webp",
+    "sm": "assets/img/redsox-crema-oliva-7805-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 78,
+    "src": "assets/img/redsox-crema-oliva-7800.webp",
+    "sm": "assets/img/redsox-crema-oliva-7800-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 78,
+    "src": "assets/img/redsox-crema-oliva-7803.webp",
+    "sm": "assets/img/redsox-crema-oliva-7803-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "slug": "braves-negra-nike",
+  "nombre": "Braves Negra / Celeste",
+  "equipo": "Atlanta Braves",
+  "modelo": null,
+  "colorway": "Negro · Celeste",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Negra de la corona a la visera, para que todo el peso lo lleve la A de los Braves: bordada en relieve, en un lila muy claro y con un contorno celeste que le hace sombra. El swoosh del costado repite ese celeste y el sticker Nike Classics sigue en la visera.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"A de los Braves bordada en relieve al frente, lila muy claro con contorno celeste\",\"Swoosh de Nike bordado en celeste en el panel lateral\",\"Visera curva negra con el sticker Nike «Classics» puesto\",\"Botón superior y costuras de los paneles en negro\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 17,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:51.602Z",
+  "actualizado": "2026-10-15T23:06:51.602Z",
+  "imagenes": [
+   {
+    "producto_id": 80,
+    "src": "assets/img/braves-negra-nike-7792.webp",
+    "sm": "assets/img/braves-negra-nike-7792-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 80,
+    "src": "assets/img/braves-negra-nike-7798.webp",
+    "sm": "assets/img/braves-negra-nike-7798-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 80,
+    "src": "assets/img/braves-negra-nike-7793.webp",
+    "sm": "assets/img/braves-negra-nike-7793-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 80,
+    "src": "assets/img/braves-negra-nike-7794.webp",
+    "sm": "assets/img/braves-negra-nike-7794-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 81,
+  "slug": "padres-caqui-blanca",
+  "nombre": "Padres Caqui / Blanca",
+  "equipo": "San Diego Padres",
+  "modelo": null,
+  "colorway": "Caqui · Blanco",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona caqui, visera blanca y todo el bordado en blanco: dos tonos y ni un color de más. Al frente va el SD entrelazado en relieve. Al costado, una pelota de béisbol bordada que reúne San Diego, el script Padres y el año 1969.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo SD entrelazado bordado en blanco con relieve al frente\",\"Parche lateral bordado en blanco: pelota con costuras, «San Diego», script «Padres», «1969» y un SD pequeño\",\"Visera blanca por encima y caqui por debajo, con sticker Nike «Classics»\",\"Botón y ojales blancos; por dentro, interior claro con cinta negra marcada «Nike»\"]",
+  "categorias": "[\"beige\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 18,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:52.218Z",
+  "actualizado": "2026-10-15T23:06:52.218Z",
+  "imagenes": [
+   {
+    "producto_id": 81,
+    "src": "assets/img/padres-caqui-blanca-7776.webp",
+    "sm": "assets/img/padres-caqui-blanca-7776-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 81,
+    "src": "assets/img/padres-caqui-blanca-7780.webp",
+    "sm": "assets/img/padres-caqui-blanca-7780-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 81,
+    "src": "assets/img/padres-caqui-blanca-7777.webp",
+    "sm": "assets/img/padres-caqui-blanca-7777-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 81,
+    "src": "assets/img/padres-caqui-blanca-7778.webp",
+    "sm": "assets/img/padres-caqui-blanca-7778-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   },
+   {
+    "producto_id": 81,
+    "src": "assets/img/padres-caqui-blanca-7779.webp",
+    "sm": "assets/img/padres-caqui-blanca-7779-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 4
+   }
+  ]
+ },
+ {
+  "id": 82,
+  "slug": "dodgers-roja",
+  "nombre": "Dodgers Roja",
+  "equipo": "Los Angeles Dodgers",
+  "modelo": null,
+  "colorway": "Rojo · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Roja de punta a punta, corona y visera del mismo tono, con el LA en negro perfilado en blanco y bordado en relieve para que salte de lejos. Por fuera solo la acompañan un swoosh negro en el costado izquierdo y el sticker Nike Classics de la visera; la sorpresa está adentro, con paneles lila y gris y cintas negras que repiten NIKE en cada costura.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo LA bordado en relieve al frente, negro con contorno blanco\",\"Swoosh de Nike bordado en negro en el costado izquierdo; el costado derecho va limpio\",\"Sticker Nike «Classics» en la visera, que es roja como la corona\",\"Por dentro, paneles lila y gris con cintas negras que llevan NIKE y el swoosh en blanco\"]",
+  "categorias": "[\"rojas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 19,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:52.922Z",
+  "actualizado": "2026-10-15T23:06:52.922Z",
+  "imagenes": [
+   {
+    "producto_id": 82,
+    "src": "assets/img/dodgers-roja-7723.webp",
+    "sm": "assets/img/dodgers-roja-7723-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 82,
+    "src": "assets/img/dodgers-roja-7721.webp",
+    "sm": "assets/img/dodgers-roja-7721-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 82,
+    "src": "assets/img/dodgers-roja-7724.webp",
+    "sm": "assets/img/dodgers-roja-7724-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 83,
+  "slug": "dodgers-azul-pizarra",
+  "nombre": "Dodgers Azul Pizarra",
+  "equipo": "Los Angeles Dodgers",
+  "modelo": null,
+  "colorway": "Azul pizarra · Blanco",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Un azul con algo de gris que cambia con la luz: con claridad se ve azul y a la sombra tira a gris pizarra. Al frente manda el LA blanco en relieve, y cada costado tiene su propio detalle: en uno el parche de la Serie Mundial y en el otro el swoosh.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo LA bordado en blanco al frente, en relieve grueso\",\"Parche bordado de la Serie Mundial en un costado, con la pelota arriba y «World Series» en cursiva, en hilo claro\",\"Swoosh de Nike bordado en blanco en el otro costado\",\"Visera del mismo azul de la corona, con pespuntes paralelos y sticker Nike Classics\"]",
+  "categorias": "[\"azules\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 20,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:53.425Z",
+  "actualizado": "2026-10-15T23:06:53.425Z",
+  "imagenes": [
+   {
+    "producto_id": 83,
+    "src": "assets/img/dodgers-azul-pizarra-7806.webp",
+    "sm": "assets/img/dodgers-azul-pizarra-7806-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 83,
+    "src": "assets/img/dodgers-azul-pizarra-7808.webp",
+    "sm": "assets/img/dodgers-azul-pizarra-7808-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 83,
+    "src": "assets/img/dodgers-azul-pizarra-7807.webp",
+    "sm": "assets/img/dodgers-azul-pizarra-7807-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 84,
+  "slug": "dodgers-negra-roja-puas",
+  "nombre": "Dodgers Negra / Roja",
+  "equipo": "Los Angeles Dodgers",
+  "modelo": null,
+  "colorway": "Negro · Rojo",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Negra de la corona a la visera. El LA del frente va bordado en negro con un contorno rojo que lo despega de la tela. A las letras les salen púas por los bordes, así que el logo se ve más filoso que el LA de siempre, y en el costado un parche World Series en rojo sobre negro repite la combinación.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo LA bordado en relieve al frente en negro, con contorno rojo y púas en las letras\",\"Parche lateral con el script «World Series» y una pelota bordados en rojo sobre fondo negro\",\"Corona, visera y botón superior en negro\",\"Sticker Nike Classics en la visera\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 21,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:53.903Z",
+  "actualizado": "2026-10-15T23:06:53.903Z",
+  "imagenes": [
+   {
+    "producto_id": 84,
+    "src": "assets/img/dodgers-negra-roja-puas-7813.webp",
+    "sm": "assets/img/dodgers-negra-roja-puas-7813-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 84,
+    "src": "assets/img/dodgers-negra-roja-puas-7815.webp",
+    "sm": "assets/img/dodgers-negra-roja-puas-7815-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 84,
+    "src": "assets/img/dodgers-negra-roja-puas-7812.webp",
+    "sm": "assets/img/dodgers-negra-roja-puas-7812-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 84,
+    "src": "assets/img/dodgers-negra-roja-puas-7810.webp",
+    "sm": "assets/img/dodgers-negra-roja-puas-7810-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 85,
+  "slug": "giants-negra-tonal",
+  "nombre": "Giants Negra Total",
+  "equipo": "San Francisco Giants",
+  "modelo": null,
+  "colorway": "Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Negra de punta a punta: el SF entrelazado del frente, el parche del costado y hasta el swoosh lateral van bordados en el mismo tono, así que se leen por el relieve y no por el color. Según cómo le pegue la luz va del negro cerrado a un grafito con reflejo frío. Por fuera, lo que más contrasta es el sticker Nike Classics de la visera.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo SF entrelazado bordado en relieve al frente, negro sobre negro\",\"Parche bordado en un costado con una pelota y letras script, tono sobre tono\",\"Swoosh de Nike bordado en el otro costado, también en negro\",\"Cinta interior estampada con «NIKE» y swooshes; sticker Nike Classics en la visera\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 22,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:54.500Z",
+  "actualizado": "2026-10-15T23:06:54.500Z",
+  "imagenes": [
+   {
+    "producto_id": 85,
+    "src": "assets/img/giants-negra-tonal-7763.webp",
+    "sm": "assets/img/giants-negra-tonal-7763-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 85,
+    "src": "assets/img/giants-negra-tonal-7767.webp",
+    "sm": "assets/img/giants-negra-tonal-7767-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 85,
+    "src": "assets/img/giants-negra-tonal-7762.webp",
+    "sm": "assets/img/giants-negra-tonal-7762-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 85,
+    "src": "assets/img/giants-negra-tonal-7765.webp",
+    "sm": "assets/img/giants-negra-tonal-7765-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 86,
+  "slug": "tigers-negra-trucker",
+  "nombre": "Tigers Negra Trucker",
+  "equipo": "Detroit Tigers",
+  "modelo": null,
+  "colorway": "Negro · Tonal",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Toda negra: el frente es liso, los costados y la parte de atrás son de malla, y la D gótica de Detroit va bordada en un gris casi negro. El logo no destaca por el color sino por el relieve. En el costado, sobre la malla, hay un swoosh de Nike tan oscuro que hay que buscarlo.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"D gótica de Detroit bordada en relieve al frente, gris oscuro sobre negro\",\"Malla negra en los costados y la parte de atrás\",\"Swoosh de Nike bordado en negro sobre la malla del costado izquierdo\",\"Costuras grises a la vista en la visera, con sticker Nike «Classics99»\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 23,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:55.153Z",
+  "actualizado": "2026-10-15T23:06:55.153Z",
+  "imagenes": [
+   {
+    "producto_id": 86,
+    "src": "assets/img/tigers-negra-trucker-7726.webp",
+    "sm": "assets/img/tigers-negra-trucker-7726-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 86,
+    "src": "assets/img/tigers-negra-trucker-7729.webp",
+    "sm": "assets/img/tigers-negra-trucker-7729-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 86,
+    "src": "assets/img/tigers-negra-trucker-7725.webp",
+    "sm": "assets/img/tigers-negra-trucker-7725-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 86,
+    "src": "assets/img/tigers-negra-trucker-7727.webp",
+    "sm": "assets/img/tigers-negra-trucker-7727-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 87,
+  "slug": "whitesox-trucker-negra",
+  "nombre": "White Sox Trucker Negra",
+  "equipo": "Chicago White Sox",
+  "modelo": null,
+  "colorway": "Negro · Gris oscuro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Trucker negra con el frente liso y malla en los costados y atrás. El SOX cruzado va bordado en relieve en un gris tan oscuro que casi se pierde en el negro y se nota más por la sombra que por el color. Unos pespuntes grises marcan las costuras del frente y la visera, y en la malla del costado va un swoosh negro bordado.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo SOX cruzado bordado en relieve al frente, en gris oscuro sobre negro\",\"Frente negro liso con malla negra en los costados y atrás\",\"Swoosh de Nike bordado en negro sobre la malla lateral\",\"Pespuntes grises en las costuras del frente y en la visera, que lleva el sticker Nike\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 24,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:55.761Z",
+  "actualizado": "2026-10-15T23:06:55.761Z",
+  "imagenes": [
+   {
+    "producto_id": 87,
+    "src": "assets/img/whitesox-trucker-negra-7735.webp",
+    "sm": "assets/img/whitesox-trucker-negra-7735-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 87,
+    "src": "assets/img/whitesox-trucker-negra-7738.webp",
+    "sm": "assets/img/whitesox-trucker-negra-7738-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 87,
+    "src": "assets/img/whitesox-trucker-negra-7732.webp",
+    "sm": "assets/img/whitesox-trucker-negra-7732-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 88,
+  "slug": "yankees-negra-malla",
+  "nombre": "Yankees Negra Malla",
+  "equipo": "New York Yankees",
+  "modelo": null,
+  "colorway": "Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Negra de punta a punta, con el frente liso y el costado en malla. El NY va bordado tono sobre tono y se nota más por el relieve que por el color; con luz directa el hilo brilla en gris oscuro. Lo que corta tanto negro son los pespuntes grises de la visera y del panel frontal, y el sticker blanco.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo NY bordado en relieve al frente, tono sobre tono\",\"Costado en malla negra\",\"Visera curva con pespuntes en gris, que también marcan las costuras del panel frontal\",\"Sticker blanco en la visera con el swoosh de Nike y la leyenda «CLASSICS99»\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 25,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:56.258Z",
+  "actualizado": "2026-10-15T23:06:56.258Z",
+  "imagenes": [
+   {
+    "producto_id": 88,
+    "src": "assets/img/yankees-negra-malla-7741.webp",
+    "sm": "assets/img/yankees-negra-malla-7741-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 88,
+    "src": "assets/img/yankees-negra-malla-7744.webp",
+    "sm": "assets/img/yankees-negra-malla-7744-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 88,
+    "src": "assets/img/yankees-negra-malla-7743.webp",
+    "sm": "assets/img/yankees-negra-malla-7743-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 89,
+  "slug": "yankees-caqui-negra",
+  "nombre": "Yankees Caqui / Negra",
+  "equipo": "New York Yankees",
+  "modelo": null,
+  "colorway": "Caqui · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Caqui de la corona a la visera y un NY negro bordado en relieve al frente: dos colores y ninguno de sobra. El parche World Series del costado sigue la misma regla: todo su bordado va en negro sobre el mismo caqui.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo NY bordado en negro y en relieve al frente\",\"Parche World Series bordado en negro sobre caqui en un costado\",\"Visera del mismo caqui, con varias filas de pespunte en hilo del mismo tono\",\"Sticker Nike Classics en la visera\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 26,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:56.733Z",
+  "actualizado": "2026-10-15T23:06:56.733Z",
+  "imagenes": [
+   {
+    "producto_id": 89,
+    "src": "assets/img/yankees-caqui-negra-8112.webp",
+    "sm": "assets/img/yankees-caqui-negra-8112-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 90,
+  "slug": "nike-oliva-ribete-negro",
+  "nombre": "Nike Oliva Ribete Negro",
+  "equipo": "Nike",
+  "modelo": null,
+  "colorway": "Verde oliva · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Verde oliva en la corona y en la visera, con el swoosh bordado en azul noche casi negro y un ribete negro que recorre todo el borde de la visera. Los pespuntes van en hilo caramelo, por los paneles y en varias filas sobre la visera, y le dan un contraste discreto que se nota de cerca. Por dentro todo es negro, con una cinta que lleva NIKE y swooshes en blanco.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Swoosh de Nike bordado en relieve al frente, en azul noche casi negro\",\"Ribete negro en todo el borde de la visera, que por debajo también es negra\",\"Pespuntes en hilo caramelo sobre los paneles y en varias filas de la visera\",\"Por dentro, forro negro y cinta con «NIKE» y swooshes en blanco\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 27,
+  "eliminado": null,
+  "creado": "2026-10-15T23:06:57.018Z",
+  "actualizado": "2026-10-15T23:06:57.018Z",
+  "imagenes": [
+   {
+    "producto_id": 90,
+    "src": "assets/img/nike-oliva-ribete-negro-7701.webp",
+    "sm": "assets/img/nike-oliva-ribete-negro-7701-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 0
+   },
+   {
+    "producto_id": 90,
+    "src": "assets/img/nike-oliva-ribete-negro-7697.webp",
+    "sm": "assets/img/nike-oliva-ribete-negro-7697-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 90,
+    "src": "assets/img/nike-oliva-ribete-negro-7700.webp",
+    "sm": "assets/img/nike-oliva-ribete-negro-7700-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   },
+   {
+    "producto_id": 90,
+    "src": "assets/img/nike-oliva-ribete-negro-7705.webp",
+    "sm": "assets/img/nike-oliva-ribete-negro-7705-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "slug": "whitesox-taupe",
+  "nombre": "White Sox Taupe",
+  "equipo": "Chicago White Sox",
+  "modelo": null,
+  "colorway": "Taupe · Azul rey",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Taupe cálido con el Sox en azul rey y blanco. El tipo de gorra que arma el outfit en vez de acompañarlo.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona taupe completa\",\"Logo «Sox» bordado en azul rey con contorno blanco\",\"Parche lateral bordado en azul\",\"Visera curva a tono\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 28,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:10.158Z",
+  "actualizado": "2026-10-15T23:06:58.448Z",
+  "imagenes": [
+   {
+    "producto_id": 20,
+    "src": "assets/img/whitesox-taupe.webp",
+    "sm": "assets/img/whitesox-taupe-sm.webp",
+    "w": 535,
+    "h": 667,
+    "orden": 0
+   },
+   {
+    "producto_id": 20,
+    "src": "assets/img/whitesox-taupe-8111.webp",
+    "sm": "assets/img/whitesox-taupe-8111-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 32,
+  "slug": "braves-piedra",
+  "nombre": "Braves Piedra",
+  "equipo": "Atlanta Braves",
+  "modelo": null,
+  "colorway": "Piedra · Azul rey",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Piedra con la A en azul rey. Neutra en la base, intensa en el detalle: la mezcla que mejor funciona todo el año.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona en tono piedra\",\"Logo «A» bordado en azul rey\",\"Parche lateral bordado en azul\",\"Etiqueta 59FIFTY visible en la visera\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 29,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:13.858Z",
+  "actualizado": "2026-10-15T23:06:58.906Z",
+  "imagenes": [
+   {
+    "producto_id": 32,
+    "src": "assets/img/braves-piedra.webp",
+    "sm": "assets/img/braves-piedra-sm.webp",
+    "w": 532,
+    "h": 680,
+    "orden": 0
+   },
+   {
+    "producto_id": 32,
+    "src": "assets/img/braves-piedra-8115.webp",
+    "sm": "assets/img/braves-piedra-8115-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "slug": "hornets-piedra",
+  "nombre": "Hornets Piedra",
+  "equipo": "Charlotte Hornets",
+  "modelo": null,
+  "colorway": "Piedra · Azul",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Base piedra, avispa bordada al frente y el lettering «Hornets The Finals» en el costado. Referencia de básquet para quien sabe leerla.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona en tono piedra\",\"Mascota bordada al frente en azules y blanco\",\"Lettering lateral «Hornets · The Finals»\",\"Visera curva a tono\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 30,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:14.444Z",
+  "actualizado": "2026-10-15T23:06:59.358Z",
+  "imagenes": [
+   {
+    "producto_id": 34,
+    "src": "assets/img/hornets-piedra.webp",
+    "sm": "assets/img/hornets-piedra-sm.webp",
+    "w": 527,
+    "h": 672,
+    "orden": 0
+   },
+   {
+    "producto_id": 34,
+    "src": "assets/img/hornets-piedra-8114.webp",
+    "sm": "assets/img/hornets-piedra-8114-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "slug": "padres-piedra-navy",
+  "nombre": "Padres Piedra / Navy",
+  "equipo": "San Diego Padres",
+  "modelo": null,
+  "colorway": "Piedra · Azul marino",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Piedra con bordados azul marino. El SD grande al frente, el parche al costado y punto: no necesita nada más.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona en tono piedra\",\"Logo «SD» bordado en azul marino\",\"Parche lateral World Series bordado\",\"Visera curva a tono\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 31,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:11.023Z",
+  "actualizado": "2026-10-15T23:06:59.813Z",
+  "imagenes": [
+   {
+    "producto_id": 23,
+    "src": "assets/img/padres-piedra-navy.webp",
+    "sm": "assets/img/padres-piedra-navy-sm.webp",
+    "w": 532,
+    "h": 682,
+    "orden": 0
+   },
+   {
+    "producto_id": 23,
+    "src": "assets/img/padres-piedra-navy-8113.webp",
+    "sm": "assets/img/padres-piedra-navy-8113-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "slug": "nationals-navy",
+  "nombre": "Nationals Navy Tonal",
+  "equipo": "Washington Nationals",
+  "modelo": null,
+  "colorway": "Azul marino · Tonal",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Azul marino completo con la W bordada en el mismo tono. Blackout azul: para el que quiere pasar limpio sin pasar desapercibido.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona y visera en azul marino\",\"Logo «W» bordado tono sobre tono\",\"Bordado lateral de marca a tono\",\"Acabado uniforme\"]",
+  "categorias": "[\"azules\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 32,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:12.631Z",
+  "actualizado": "2026-10-15T23:06:58.000Z",
+  "imagenes": [
+   {
+    "producto_id": 28,
+    "src": "assets/img/nationals-navy.webp",
+    "sm": "assets/img/nationals-navy-sm.webp",
+    "w": 526,
+    "h": 670,
+    "orden": 0
+   },
+   {
+    "producto_id": 28,
+    "src": "assets/img/nationals-navy-7694.webp",
+    "sm": "assets/img/nationals-navy-7694-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 1
+   },
+   {
+    "producto_id": 28,
+    "src": "assets/img/nationals-navy-7695.webp",
+    "sm": "assets/img/nationals-navy-7695-sm.webp",
+    "w": 1000,
+    "h": 1500,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "slug": "braves-khaki-lila",
+  "nombre": "Braves Khaki / Lila",
+  "equipo": "Atlanta Braves",
+  "modelo": null,
+  "colorway": "Khaki · Lila",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Khaki arriba, lila y azul cielo abajo. Una paleta suave, distinta, para el que ya tiene las negras y quiere algo que se note.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona khaki con visera en degradado lila\",\"Logo «A» bordado en azul con hacha\",\"Botón superior a tono lila\",\"Etiqueta 59FIFTY visible en la visera\"]",
+  "categorias": "[\"beige\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 33,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:04.437Z",
+  "actualizado": "2026-09-09T02:14:04.437Z",
+  "imagenes": [
+   {
+    "producto_id": 3,
+    "src": "assets/img/braves-khaki-lila.webp",
+    "sm": "assets/img/braves-khaki-lila-sm.webp",
+    "w": 512,
+    "h": 700,
+    "orden": 0
+   },
+   {
+    "producto_id": 3,
+    "src": "assets/img/braves-khaki-lila-2.webp",
+    "sm": "assets/img/braves-khaki-lila-2-sm.webp",
+    "w": 512,
+    "h": 710,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "slug": "redsox-khaki-roja",
+  "nombre": "Red Sox Khaki / Roja",
+  "equipo": "Boston Red Sox",
+  "modelo": null,
+  "colorway": "Khaki · Rojo",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Tierra y rojo. La B en escarlata sobre khaki y una visera roja que remata el conjunto: contraste cálido, calle pura.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona khaki con visera roja\",\"Logo «B» bordado en rojo con borde blanco\",\"Parche lateral World Series\",\"Botón superior rojo a tono\"]",
+  "categorias": "[\"beige\",\"rojas\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 1,
+  "publicado": 1,
+  "orden": 34,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:04.860Z",
+  "actualizado": "2026-09-09T02:14:04.860Z",
+  "imagenes": [
+   {
+    "producto_id": 4,
+    "src": "assets/img/redsox-khaki-roja.webp",
+    "sm": "assets/img/redsox-khaki-roja-sm.webp",
+    "w": 515,
+    "h": 721,
+    "orden": 0
+   },
+   {
+    "producto_id": 4,
+    "src": "assets/img/redsox-khaki-roja-2.webp",
+    "sm": "assets/img/redsox-khaki-roja-2-sm.webp",
+    "w": 507,
+    "h": 712,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "slug": "mets-navy",
+  "nombre": "Mets Navy",
+  "equipo": "New York Mets",
+  "modelo": null,
+  "colorway": "Azul marino · Azul",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Azul marino de arriba abajo con el NY entrelazado en azul brillante. Sobria de lejos, con detalle cuando te acercas.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona y visera en azul marino\",\"NY entrelazado bordado en azul\",\"Bordado lateral discreto de marca\",\"Visera curva\"]",
+  "categorias": "[\"azules\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 35,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:05.648Z",
+  "actualizado": "2026-09-09T02:14:05.648Z",
+  "imagenes": [
+   {
+    "producto_id": 6,
+    "src": "assets/img/mets-navy.webp",
+    "sm": "assets/img/mets-navy-sm.webp",
+    "w": 511,
+    "h": 675,
+    "orden": 0
+   },
+   {
+    "producto_id": 6,
+    "src": "assets/img/mets-navy-2.webp",
+    "sm": "assets/img/mets-navy-2-sm.webp",
+    "w": 512,
+    "h": 665,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "slug": "padres-black-gold",
+  "nombre": "Padres Negra / Dorada",
+  "equipo": "San Diego Padres",
+  "modelo": null,
+  "colorway": "Negro · Dorado",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Negro y dorado, la fórmula más costosa que existe. El SD bordado en oro se lleva toda la luz.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona negra lisa\",\"Logo «SD» bordado en dorado\",\"Parche lateral World Series en dorado\",\"Etiqueta de marca visible en la visera\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 36,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:06.459Z",
+  "actualizado": "2026-09-09T02:14:06.459Z",
+  "imagenes": [
+   {
+    "producto_id": 8,
+    "src": "assets/img/padres-black-gold.webp",
+    "sm": "assets/img/padres-black-gold-sm.webp",
+    "w": 535,
+    "h": 676,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "slug": "oveja-negra",
+  "nombre": "La Oveja Negra",
+  "equipo": "La Oveja Negra",
+  "modelo": null,
+  "colorway": "Negro · Cuero natural",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "La distinta del catálogo. Negra, perforada y con un parche tipo cuero grabado: «La Oveja Negra». Sin logos de equipos, solo carácter.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona negra con perforaciones en todos los paneles\",\"Parche frontal grabado en tono cuero\",\"Visera negra a tono\",\"Frontal sin estructura marcada\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 37,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:06.751Z",
+  "actualizado": "2026-09-09T02:14:06.751Z",
+  "imagenes": [
+   {
+    "producto_id": 9,
+    "src": "assets/img/oveja-negra.webp",
+    "sm": "assets/img/oveja-negra-sm.webp",
+    "w": 535,
+    "h": 712,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "slug": "yankees-white",
+  "nombre": "Yankees Blanca",
+  "equipo": "New York Yankees",
+  "modelo": null,
+  "colorway": "Blanco · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Blanca impecable con el NY en negro. Limpia, luminosa y con un parche lila en el costado que rompe la simetría justo lo necesario.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona blanca en seis paneles\",\"NY bordado en negro\",\"Parche lateral bordado en lila\",\"Etiqueta de marca visible en la visera\"]",
+  "categorias": "[\"blancas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 38,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:07.046Z",
+  "actualizado": "2026-09-09T02:14:07.046Z",
+  "imagenes": [
+   {
+    "producto_id": 10,
+    "src": "assets/img/yankees-white.webp",
+    "sm": "assets/img/yankees-white-sm.webp",
+    "w": 530,
+    "h": 687,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "slug": "yankees-script-vino",
+  "nombre": "Yankees Script Vino",
+  "equipo": "New York Yankees",
+  "modelo": null,
+  "colorway": "Vino · Crema",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Vino profundo y el script «Yankees» bordado en crema y rojo cruzando el frente. De las más vistosas sin caer en lo obvio.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona vino tinto\",\"Script «Yankees» bordado al frente en crema y rojo\",\"Parche lateral bordado a tono\",\"Etiqueta de marca visible en la visera\"]",
+  "categorias": "[\"rojas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 39,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:07.916Z",
+  "actualizado": "2026-09-09T02:14:07.916Z",
+  "imagenes": [
+   {
+    "producto_id": 13,
+    "src": "assets/img/yankees-script-vino.webp",
+    "sm": "assets/img/yankees-script-vino-sm.webp",
+    "w": 536,
+    "h": 667,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "slug": "boston-carmesi",
+  "nombre": "Boston Carmesí",
+  "equipo": "Boston Red Sox",
+  "modelo": null,
+  "colorway": "Carmesí · Rojo",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Sin logo: la palabra BOSTON bordada a lo ancho del frente, tono sobre tono en carmesí. Directa y con presencia.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona carmesí completa\",\"Wordmark «BOSTON» bordado al frente\",\"Parche lateral World Series\",\"Visera curva a tono\"]",
+  "categorias": "[\"rojas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 40,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:09.246Z",
+  "actualizado": "2026-09-09T02:14:09.246Z",
+  "imagenes": [
+   {
+    "producto_id": 17,
+    "src": "assets/img/boston-carmesi.webp",
+    "sm": "assets/img/boston-carmesi-sm.webp",
+    "w": 531,
+    "h": 672,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "slug": "whitesox-roja",
+  "nombre": "White Sox Roja",
+  "equipo": "Chicago White Sox",
+  "modelo": null,
+  "colorway": "Rojo · Blanco",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Rojo pleno con el Sox bordado en blanco. Es la que se pone cuando el resto del outfit está en negro.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona roja completa\",\"Logo «Sox» bordado en blanco\",\"Parche lateral World Series en blanco y rojo\",\"Etiqueta de marca visible en la visera\"]",
+  "categorias": "[\"rojas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 41,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:09.540Z",
+  "actualizado": "2026-09-09T02:14:09.540Z",
+  "imagenes": [
+   {
+    "producto_id": 18,
+    "src": "assets/img/whitesox-roja.webp",
+    "sm": "assets/img/whitesox-roja-sm.webp",
+    "w": 532,
+    "h": 701,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "slug": "whitesox-vino",
+  "nombre": "White Sox Vino Tonal",
+  "equipo": "Chicago White Sox",
+  "modelo": null,
+  "colorway": "Vino · Tonal",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Vino sobre vino: logo y parche bordados en el mismo tono de la corona. Discreta, madura, de las que más duran en rotación.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona vino tinto\",\"Logo «Sox» bordado tono sobre tono\",\"Parche lateral World Series a tono\",\"Visera curva vino\"]",
+  "categorias": "[\"rojas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 42,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:09.850Z",
+  "actualizado": "2026-09-09T02:14:09.850Z",
+  "imagenes": [
+   {
+    "producto_id": 19,
+    "src": "assets/img/whitesox-vino.webp",
+    "sm": "assets/img/whitesox-vino-sm.webp",
+    "w": 532,
+    "h": 612,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "slug": "whitesox-arena",
+  "nombre": "White Sox Arena Tonal",
+  "equipo": "Chicago White Sox",
+  "modelo": null,
+  "colorway": "Arena · Tonal",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Arena completa, con el logo y el lettering lateral bordados en el mismo tono. Textura pura, cero contraste.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona y visera en tono arena\",\"Logo «Sox» bordado tono sobre tono\",\"Lettering lateral bordado a tono\",\"Etiqueta 59FIFTY visible en la visera\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 43,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:10.731Z",
+  "actualizado": "2026-09-09T02:14:10.732Z",
+  "imagenes": [
+   {
+    "producto_id": 22,
+    "src": "assets/img/whitesox-arena.webp",
+    "sm": "assets/img/whitesox-arena-sm.webp",
+    "w": 515,
+    "h": 636,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "slug": "padres-blanca-navy",
+  "nombre": "Padres Blanca / Navy",
+  "equipo": "San Diego Padres",
+  "modelo": null,
+  "colorway": "Blanco · Azul marino",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Blanca total con el SD y los parches en azul marino. Nítida, veraniega y fácil de combinar.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona blanca completa\",\"Logo «SD» bordado en azul marino\",\"Parche lateral World Series\",\"Segundo parche bordado en el panel derecho\"]",
+  "categorias": "[\"blancas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 44,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:11.395Z",
+  "actualizado": "2026-09-09T02:14:11.395Z",
+  "imagenes": [
+   {
+    "producto_id": 24,
+    "src": "assets/img/padres-blanca-navy.webp",
+    "sm": "assets/img/padres-blanca-navy-sm.webp",
+    "w": 535,
+    "h": 692,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "slug": "nationals-white",
+  "nombre": "Nationals Blanca",
+  "equipo": "Washington Nationals",
+  "modelo": null,
+  "colorway": "Blanco · Azul marino",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Blanca con la W curva bordada en azul marino y dos parches en los costados. Deportiva, limpia y sin esfuerzo.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona blanca en seis paneles\",\"Logo «W» bordado en azul marino\",\"Parches bordados en ambos paneles laterales\",\"Visera curva blanca\"]",
+  "categorias": "[\"blancas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 45,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:11.998Z",
+  "actualizado": "2026-09-09T02:14:11.998Z",
+  "imagenes": [
+   {
+    "producto_id": 26,
+    "src": "assets/img/nationals-white.webp",
+    "sm": "assets/img/nationals-white-sm.webp",
+    "w": 510,
+    "h": 637,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "slug": "nationals-red",
+  "nombre": "Nationals Roja / Blanca",
+  "equipo": "Washington Nationals",
+  "modelo": null,
+  "colorway": "Rojo · Blanco",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona roja, visera blanca y la W en blanco al frente. Bicolor de manual, con toda la energía deportiva.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona roja con visera blanca\",\"Logo «W» bordado en blanco\",\"Contraste bicolor marcado\",\"Visera curva\"]",
+  "categorias": "[\"rojas\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 46,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:12.325Z",
+  "actualizado": "2026-09-09T02:14:12.325Z",
+  "imagenes": [
+   {
+    "producto_id": 27,
+    "src": "assets/img/nationals-red.webp",
+    "sm": "assets/img/nationals-red-sm.webp",
+    "w": 510,
+    "h": 612,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "slug": "mets-royal",
+  "nombre": "Mets Azul Rey",
+  "equipo": "New York Mets",
+  "modelo": null,
+  "colorway": "Azul rey · Naranja",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Azul rey con el NY en naranja y dos destellos bordados al lado. Color puro, sin miedo.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona azul rey\",\"NY bordado en naranja\",\"Detalles de destellos bordados en blanco\",\"Bordado lateral de marca en blanco\"]",
+  "categorias": "[\"azules\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 47,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:12.928Z",
+  "actualizado": "2026-09-09T02:14:12.928Z",
+  "imagenes": [
+   {
+    "producto_id": 29,
+    "src": "assets/img/mets-royal.webp",
+    "sm": "assets/img/mets-royal-sm.webp",
+    "w": 525,
+    "h": 632,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 30,
+  "slug": "tigers-blanca",
+  "nombre": "Tigers Blanca",
+  "equipo": "Detroit Tigers",
+  "modelo": null,
+  "colorway": "Blanco · Negro",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Blanco total y la D gótica en negro. Contraste máximo, cero adornos: la definición de limpio.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona blanca completa\",\"Logo «D» gótico bordado en negro\",\"Visera curva blanca\",\"Etiqueta de marca visible en la visera\"]",
+  "categorias": "[\"blancas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 48,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:13.226Z",
+  "actualizado": "2026-09-09T02:14:13.226Z",
+  "imagenes": [
+   {
+    "producto_id": 30,
+    "src": "assets/img/tigers-blanca.webp",
+    "sm": "assets/img/tigers-blanca-sm.webp",
+    "w": 530,
+    "h": 657,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 35,
+  "slug": "dodgers-blanca-roja",
+  "nombre": "Dodgers Blanca / Roja",
+  "equipo": "Los Angeles Dodgers",
+  "modelo": null,
+  "colorway": "Blanco · Rojo",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Blanca con visera roja y el LA bordado en rojo. Bicolor clásico, de los que no se pasan de moda.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona blanca con visera roja\",\"Logo «LA» bordado en rojo\",\"Parche lateral World Series en rojo\",\"Botón superior rojo a tono\"]",
+  "categorias": "[\"blancas\",\"rojas\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 49,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:14.748Z",
+  "actualizado": "2026-09-09T02:14:14.748Z",
+  "imagenes": [
+   {
+    "producto_id": 35,
+    "src": "assets/img/dodgers-blanca-roja.webp",
+    "sm": "assets/img/dodgers-blanca-roja-sm.webp",
+    "w": 522,
+    "h": 652,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "slug": "rangers-white",
+  "nombre": "Rangers Blanca",
+  "equipo": "Texas Rangers",
+  "modelo": null,
+  "colorway": "Blanco · Rojo",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Blanco sobre blanco con la T bordada en rojo y azul. Fresca, deportiva y de las más fáciles de llevar.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona blanca completa\",\"Logo «T» bordado en rojo, azul y blanco\",\"Visera curva blanca\",\"Etiqueta de marca visible en la visera\"]",
+  "categorias": "[\"blancas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 50,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:15.039Z",
+  "actualizado": "2026-09-09T02:14:15.039Z",
+  "imagenes": [
+   {
+    "producto_id": 36,
+    "src": "assets/img/rangers-white.webp",
+    "sm": "assets/img/rangers-white-sm.webp",
+    "w": 507,
+    "h": 657,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 37,
+  "slug": "royal-b-nike",
+  "nombre": "Royal B",
+  "equipo": "Nike",
+  "modelo": null,
+  "colorway": "Azul rey · Blanco",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Azul rey saturado con la B blanca al frente y el swoosh bordado al costado. Silueta deportiva, lectura urbana.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona azul rey\",\"Logo «B» bordado en blanco\",\"Swoosh bordado en el panel lateral\",\"Visera curva a tono\"]",
+  "categorias": "[\"azules\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 51,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:15.330Z",
+  "actualizado": "2026-09-09T02:14:15.330Z",
+  "imagenes": [
+   {
+    "producto_id": 37,
+    "src": "assets/img/royal-b-nike.webp",
+    "sm": "assets/img/royal-b-nike-sm.webp",
+    "w": 531,
+    "h": 640,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "slug": "whitesox-crema-camel",
+  "nombre": "White Sox Crema / Camel",
+  "equipo": "Chicago White Sox",
+  "modelo": null,
+  "colorway": "Crema · Camel",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona hueso arriba, visera camel abajo: dos tonos cálidos que se separan a la vista. El Sox va bordado en cacao con relieve grueso, y el filo negro del borde de la visera le baja el dulce justo a tiempo.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo Sox bordado en relieve grueso, tono cacao\",\"Visera camel con filo negro en el borde\",\"Logo New Era bordado en el lateral, en el mismo café\",\"Botón superior camel, a juego con la visera\"]",
+  "categorias": "[\"beige\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 52,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:15.621Z",
+  "actualizado": "2026-09-09T02:14:15.621Z",
+  "imagenes": [
+   {
+    "producto_id": 38,
+    "src": "assets/img/whitesox-crema-camel.webp",
+    "sm": "assets/img/whitesox-crema-camel-sm.webp",
+    "w": 482,
+    "h": 727,
+    "orden": 0
+   },
+   {
+    "producto_id": 38,
+    "src": "assets/img/whitesox-crema-camel-2.webp",
+    "sm": "assets/img/whitesox-crema-camel-2-sm.webp",
+    "w": 517,
+    "h": 766,
+    "orden": 1
+   },
+   {
+    "producto_id": 38,
+    "src": "assets/img/whitesox-crema-camel-3.webp",
+    "sm": "assets/img/whitesox-crema-camel-3-sm.webp",
+    "w": 512,
+    "h": 722,
+    "orden": 2
+   },
+   {
+    "producto_id": 38,
+    "src": "assets/img/whitesox-crema-camel-4.webp",
+    "sm": "assets/img/whitesox-crema-camel-4-sm.webp",
+    "w": 516,
+    "h": 685,
+    "orden": 3
+   }
+  ]
+ },
+ {
+  "id": 48,
+  "slug": "dodgers-camel-tonal",
+  "nombre": "Dodgers Caqui Tonal",
+  "equipo": "Los Angeles Dodgers",
+  "modelo": null,
+  "colorway": "Caqui · Crema",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Caqui de arriba abajo y el LA bordado apenas medio tono más claro: se lee de cerca, no grita. Al lado, el escudo de Los Angeles con la pelota y el home, también tono sobre tono, y los pespuntes claros marcando la visera.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona alta y estructurada, con costura al centro del frente\",\"Logo LA bordado en relieve, crema sobre caqui (tono sobre tono)\",\"Escudo «Los Angeles» bordado al lado: pelota, home y logo MLB\",\"Pespuntes en tono claro a la vista en visera y paneles\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 53,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:19.695Z",
+  "actualizado": "2026-09-09T02:14:19.695Z",
+  "imagenes": [
+   {
+    "producto_id": 48,
+    "src": "assets/img/dodgers-camel-tonal.webp",
+    "sm": "assets/img/dodgers-camel-tonal-sm.webp",
+    "w": 515,
+    "h": 666,
+    "orden": 0
+   },
+   {
+    "producto_id": 48,
+    "src": "assets/img/dodgers-camel-tonal-2.webp",
+    "sm": "assets/img/dodgers-camel-tonal-2-sm.webp",
+    "w": 515,
+    "h": 686,
+    "orden": 1
+   },
+   {
+    "producto_id": 48,
+    "src": "assets/img/dodgers-camel-tonal-3.webp",
+    "sm": "assets/img/dodgers-camel-tonal-3-sm.webp",
+    "w": 507,
+    "h": 706,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 51,
+  "slug": "redsox-negra-ws",
+  "nombre": "Red Sox World Series Negra",
+  "equipo": "Boston Red Sox",
+  "modelo": null,
+  "colorway": "Negro · Rojo",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Negra de arriba abajo —corona, visera y botón— y el rojo puesto en solo dos sitios: la B de Boston en relieve al frente y el globo del World Series bordado a contorno en el costado. El frente va liso, sin costura al centro, así que la B se queda con el panel entero.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona negra alta y estructurada, con el frente liso y sin costura al centro\",\"B de Boston bordada en rojo sólido y en relieve, sin contorno\",\"Logo del World Series bordado en rojo a contorno, directo sobre el panel lateral\",\"Visera curva y botón superior en el mismo negro, sin contrastes\"]",
+  "categorias": "[\"negras\",\"rojas\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 54,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:21.025Z",
+  "actualizado": "2026-09-09T02:14:21.026Z",
+  "imagenes": [
+   {
+    "producto_id": 51,
+    "src": "assets/img/redsox-negra-ws.webp",
+    "sm": "assets/img/redsox-negra-ws-sm.webp",
+    "w": 507,
+    "h": 627,
+    "orden": 0
+   },
+   {
+    "producto_id": 51,
+    "src": "assets/img/redsox-negra-ws-2.webp",
+    "sm": "assets/img/redsox-negra-ws-2-sm.webp",
+    "w": 512,
+    "h": 677,
+    "orden": 1
+   },
+   {
+    "producto_id": 51,
+    "src": "assets/img/redsox-negra-ws-3.webp",
+    "sm": "assets/img/redsox-negra-ws-3-sm.webp",
+    "w": 507,
+    "h": 692,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 52,
+  "slug": "angels-crema",
+  "nombre": "Angels Hueso / Halo Dorado",
+  "equipo": "Los Angeles Angels",
+  "modelo": null,
+  "colorway": "Hueso · Dorado",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Hueso en la corona, en la visera y hasta en el botón forrado, con un solo golpe de color: el halo dorado sobre la A. De lejos se lee lisa; de cerca aparecen los bordados tono sobre tono y el bajo visera oscuro.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona alta y estructurada en hueso, con costura central al frente y el botón forrado en la misma tela\",\"\\\"A\\\" de Angels bordada tono sobre tono, con el halo en hilo dorado\",\"Lateral con ANGELS bordado tonal entre dos costuras de béisbol y el logo MLB debajo\",\"Visera curva del mismo hueso, con pespuntes a la vista, bajo visera oscuro y sticker dorado sobre negro\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 55,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:21.538Z",
+  "actualizado": "2026-09-09T02:14:21.538Z",
+  "imagenes": [
+   {
+    "producto_id": 52,
+    "src": "assets/img/angels-crema.webp",
+    "sm": "assets/img/angels-crema-sm.webp",
+    "w": 506,
+    "h": 646,
+    "orden": 0
+   },
+   {
+    "producto_id": 52,
+    "src": "assets/img/angels-crema-2.webp",
+    "sm": "assets/img/angels-crema-2-sm.webp",
+    "w": 515,
+    "h": 697,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "slug": "angels-negra",
+  "nombre": "Angels Negra Halo",
+  "equipo": "Los Angeles Angels",
+  "modelo": null,
+  "colorway": "Negro · Dorado",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Aquí todo el negro es el mismo negro: la A va bordada tono sobre tono y lo único que se sale es el halo, en amarillo dorado. El resto del trabajo está en el relieve, y el emblema del lateral solo aparece cuando le pega la luz.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"A de los Angels bordada en negro sobre negro, en relieve sobre el frente\",\"Halo amarillo dorado, el único color a la vista en la gorra\",\"Corona alta y estructurada, frente liso sin costura al centro y visera curva\",\"Emblema grande bordado en el panel lateral, también en negro tonal\"]",
+  "categorias": "[\"negras\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 56,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:21.944Z",
+  "actualizado": "2026-09-09T02:14:21.944Z",
+  "imagenes": [
+   {
+    "producto_id": 53,
+    "src": "assets/img/angels-negra.webp",
+    "sm": "assets/img/angels-negra-sm.webp",
+    "w": 500,
+    "h": 652,
+    "orden": 0
+   }
+  ]
+ },
+ {
+  "id": 54,
+  "slug": "angels-navy-blanca",
+  "nombre": "Angels World Series",
+  "equipo": "Los Angeles Angels",
+  "modelo": null,
+  "colorway": "Navy · Blanco",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Azul marino arriba, blanco abajo, sin degradados ni adornos: el corte entre la corona y la visera hace todo el contraste. El dorado aparece medido, en el contorno del bordado, en el parche de World Series y en el swoosh del costado.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona azul marino con visera plana blanca\",\"«ANGELS» bordado al frente en letra blanca con contorno dorado\",\"La A es el logo con halo del equipo, en blanco con el mismo filo dorado\",\"Parche de World Series en un costado y swoosh dorado en el panel opuesto\"]",
+  "categorias": "[\"azules\",\"blancas\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 57,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:22.230Z",
+  "actualizado": "2026-09-09T02:14:22.230Z",
+  "imagenes": [
+   {
+    "producto_id": 54,
+    "src": "assets/img/angels-navy-blanca.webp",
+    "sm": "assets/img/angels-navy-blanca-sm.webp",
+    "w": 515,
+    "h": 677,
+    "orden": 0
+   },
+   {
+    "producto_id": 54,
+    "src": "assets/img/angels-navy-blanca-2.webp",
+    "sm": "assets/img/angels-navy-blanca-2-sm.webp",
+    "w": 507,
+    "h": 676,
+    "orden": 1
+   },
+   {
+    "producto_id": 54,
+    "src": "assets/img/angels-navy-blanca-3.webp",
+    "sm": "assets/img/angels-navy-blanca-3-sm.webp",
+    "w": 512,
+    "h": 657,
+    "orden": 2
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "slug": "athletics-crema",
+  "nombre": "Athletics Crema / Cacao",
+  "equipo": "Oakland Athletics",
+  "modelo": null,
+  "colorway": "Crema · Cacao",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona crema y visera café chocolate: el contraste se ve desde lejos. El A's va bordado en alto relieve, tan grueso que levanta sombra sobre el panel. Y al voltearla aparece el detalle que nadie espera: la cara interna de la visera en lila.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Logo A's bordado en alto relieve, en café chocolate\",\"Corona crema tono hueso, parejo en los paneles frontales y laterales\",\"Visera plana: café chocolate por fuera, lila por dentro\",\"Bandera bordada en el panel lateral, contorno café y relleno crema\"]",
+  "categorias": "[\"beige\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 58,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:24.067Z",
+  "actualizado": "2026-09-09T02:14:24.068Z",
+  "imagenes": [
+   {
+    "producto_id": 58,
+    "src": "assets/img/athletics-crema.webp",
+    "sm": "assets/img/athletics-crema-sm.webp",
+    "w": 516,
+    "h": 727,
+    "orden": 0
+   },
+   {
+    "producto_id": 58,
+    "src": "assets/img/athletics-crema-2.webp",
+    "sm": "assets/img/athletics-crema-2-sm.webp",
+    "w": 512,
+    "h": 722,
+    "orden": 1
+   }
+  ]
+ },
+ {
+  "id": 59,
+  "slug": "bluejays-crema-azul",
+  "nombre": "Blue Jays Hueso / Azul Rey",
+  "equipo": "Toronto Blue Jays",
+  "modelo": null,
+  "colorway": "Hueso · Azul rey",
+  "precio": 85000,
+  "precio_antes": null,
+  "descripcion": "Corona color hueso, visera plana azul rey y el pájaro bordado en azul y blanco con la hoja de arce roja saliendo del ala. Contraste limpio y sin logos de más: el bordado del frente y el botón azul de arriba hacen todo el trabajo.",
+  "descripcion_corta": null,
+  "caracteristicas": "[\"Corona color hueso con visera plana azul rey\",\"Pájaro bordado en azul rey y blanco con hoja de arce roja\",\"Botón superior azul rey a juego con la visera\",\"Sticker dorado 59FIFTY todavía pegado en la visera\"]",
+  "categorias": "[\"blancas\",\"azules\",\"bicolor\"]",
+  "incluye": null,
+  "envio": null,
+  "destacado": 0,
+  "publicado": 1,
+  "orden": 59,
+  "eliminado": null,
+  "creado": "2026-09-09T02:14:24.462Z",
+  "actualizado": "2026-09-09T02:14:24.462Z",
+  "imagenes": [
+   {
+    "producto_id": 59,
+    "src": "assets/img/bluejays-crema-azul.webp",
+    "sm": "assets/img/bluejays-crema-azul-sm.webp",
+    "w": 511,
+    "h": 677,
+    "orden": 0
+   },
+   {
+    "producto_id": 59,
+    "src": "assets/img/bluejays-crema-azul-2.webp",
+    "sm": "assets/img/bluejays-crema-azul-2-sm.webp",
+    "w": 512,
+    "h": 746,
+    "orden": 1
+   }
+  ]
+ }
+]

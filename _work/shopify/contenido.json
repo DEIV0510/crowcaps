@@ -1,0 +1,223 @@
+{
+ "about": {
+  "eyebrow": "Sobre nosotros",
+  "p1": "Nacimos en Medellín con una idea sencilla: que conseguir una buena gorra no dependa de la suerte. Buscamos, elegimos y fotografiamos cada pieza como es, sin retoques que cambien el color real.",
+  "p2": "No tenemos local. Tenemos WhatsApp, y del otro lado responde una persona que sabe qué hay disponible. Enviamos a cualquier ciudad del país, y desde 2 gorras el envío es gratis.",
+  "cita": "“It was a collective decision.”",
+  "cita_autor": "— Lema de la casa"
+ },
+ "aviso": {
+  "texto": "Envío gratis a partir de 2 gorras"
+ },
+ "coleccion": {
+  "titulo": "La colección",
+  "texto": "Cada gorra tiene su propia ficha: colorway, bordados y detalles reales de la foto. Elige la tuya y la despachamos el mismo día hábil.",
+  "buscador": "Buscar equipo o color…",
+  "vacio_titulo": "Nada por aquí",
+  "vacio_texto": "No encontramos gorras con esa búsqueda. Prueba con otro equipo o escríbenos y te decimos qué hay disponible.",
+  "vacio_cta": "Preguntar por WhatsApp",
+  "vacio_wa": "https://wa.me/573207224241?text=Hola%20CrowCaps%2C%20estoy%20buscando%20una%20gorra%20en%20espec%C3%ADfico."
+ },
+ "contacto": {
+  "whatsapp": "573207224241",
+  "whatsapp_visible": "+57 320 722 4241",
+  "mensaje_general": "Hola CrowCaps, quiero ver las gorras disponibles.",
+  "mensaje_producto": "Hola CrowCaps, estoy interesado en la Gorra {producto} ({equipo}) de {precio}. Quisiera conocer disponibilidad y realizar mi pedido.",
+  "mensaje_busqueda": "Hola CrowCaps, estoy buscando una gorra en específico.",
+  "mensaje_cierre": "Hola CrowCaps, quiero pedir una gorra."
+ },
+ "editorial": {
+  "img_alt": "Hombre con gorra azul marino tonal en la calle",
+  "eyebrow": "Capítulo 01",
+  "titulo": "No es solo una gorra.<br>Es la primera <em>decisión</em> del día.",
+  "texto": "Te la pones antes de salir y ya definiste el tono de todo lo demás. Por eso no vendemos cualquiera: si no aporta, no entra.",
+  "cta": "Ver las",
+  "imagen": "assets/img/nationals-navy.webp"
+ },
+ "envios": {
+  "texto_corto": "Envío GRATIS",
+  "texto_ficha": "Incluye"
+ },
+ "feed": {
+  "titulo": "Follow the crow",
+  "texto": "Fotos reales de las gorras que tenemos. Lo nuevo cae primero en Instagram y TikTok: @crowcaps.co",
+  "imagenes": []
+ },
+ "feed.imagenes": [
+  {
+   "src": "assets/img/yankees-navy-hueso.webp",
+   "alt": "Gorra Yankees navy y hueso frente a un muro de grafiti",
+   "w": 515,
+   "h": 717
+  },
+  {
+   "src": "assets/img/mets-royal-sm.webp",
+   "alt": "Gorra Mets azul rey puesta",
+   "w": 360,
+   "h": 433
+  },
+  {
+   "src": "assets/img/boston-carmesi-sm.webp",
+   "alt": "Gorra Boston carmesí puesta",
+   "w": 360,
+   "h": 456
+  },
+  {
+   "src": "assets/img/oveja-negra-sm.webp",
+   "alt": "Gorra negra con parche La Oveja Negra",
+   "w": 360,
+   "h": 479
+  },
+  {
+   "src": "assets/img/yankees-hueso-sm.webp",
+   "alt": "Gorra Yankees hueso tonal",
+   "w": 360,
+   "h": 489
+  },
+  {
+   "src": "assets/img/redsox-khaki-roja-2-sm.webp",
+   "alt": "Gorra Red Sox khaki con visera roja sobre una banca",
+   "w": 360,
+   "h": 506
+  },
+  {
+   "src": "assets/img/braves-piedra-sm.webp",
+   "alt": "Gorra Braves piedra puesta",
+   "w": 360,
+   "h": 460
+  },
+  {
+   "src": "assets/img/whitesox-arena-sm.webp",
+   "alt": "Gorra White Sox arena tonal en la mano",
+   "w": 360,
+   "h": 445
+  },
+  {
+   "src": "assets/img/yankees-roja-navy-sm.webp",
+   "alt": "Gorra Yankees roja con visera azul marino",
+   "w": 360,
+   "h": 505
+  }
+ ],
+ "ficha": {
+  "incluye": "gorra + empaque especial.",
+  "envio": "llevando 2 gorras o más.",
+  "disponibilidad": "confirmada por WhatsApp.",
+  "nota_precio": "Envío gratis desde 2 gorras · Confirmamos disponibilidad por WhatsApp."
+ },
+ "final": {
+  "titulo": "¿Ya encontraste<br><em>la tuya?</em>",
+  "texto": "Escríbenos con el nombre de la gorra y te confirmamos disponibilidad al instante. Desde 2 gorras, el envío es gratis a toda Colombia.",
+  "cta_wa": "https://wa.me/573207224241?text=Hola%20CrowCaps%2C%20quiero%20pedir%20una%20gorra."
+ },
+ "footer": {
+  "nota": "Medellín, Antioquia, Colombia. Ventas online — no contamos con punto físico.",
+  "col2": "Tienda",
+  "col2_l1": "Colección",
+  "col2_l2": "Sobre CrowCaps",
+  "col2_l3": "Feed",
+  "col3": "Contacto",
+  "col3_wa": "WhatsApp +57 320 722 4241",
+  "col3_envio": "Envío gratis desde 2 gorras",
+  "col4": "Redes",
+  "copyright": "© 2026 CrowCaps. Todos los derechos reservados.",
+  "lema": "It was a collective decision"
+ },
+ "hero": {
+  "eyebrow_pre": "Medellín · Colombia —",
+  "eyebrow_post": "referencias",
+  "titulo1": "La gorra",
+  "titulo2": "decide",
+  "titulo3": "el <em>resto</em>.",
+  "lead": "Gorras elegidas una por una y fotografiadas como llegan. Ni catálogo infinito ni relleno: solo las que aguantan el outfit completo.",
+  "cta1": "Ver colección",
+  "cta2": "Pedir por WhatsApp",
+  "stat1_etiqueta": "Referencias",
+  "stat2_valor": "Gratis",
+  "stat2_etiqueta": "Envío desde 2 gorras",
+  "stat3_valor": "MED",
+  "stat3_etiqueta": "Origen",
+  "destacadas": [
+   "yankees-navy-hueso",
+   "redsox-khaki-roja",
+   "padres-rosa-azul"
+  ],
+  "principal": "yankees-navy-hueso"
+ },
+ "hero.destacadas": [
+  "bass-pro-negra",
+  "bass-pro-camuflado-negro",
+  "lacoste-camel"
+ ],
+ "hero.principal": "bass-pro-negra",
+ "marca": {
+  "nombre": "CrowCaps",
+  "nombre_loader": "Crowcaps"
+ },
+ "medicion": {
+  "meta_pixel": "",
+  "google_tag": ""
+ },
+ "nav": {
+  "coleccion": "Colección",
+  "coleccion_movil": "Colección",
+  "marca": "Marca",
+  "marca_movil": "Marca",
+  "feed": "Feed",
+  "feed_movil": "Feed",
+  "contacto": "Contacto",
+  "cta": "Comprar",
+  "wa_url": "https://wa.me/573207224241?text=Hola%20CrowCaps%2C%20quiero%20ver%20las%20gorras%20disponibles.",
+  "menu_ciudad": "Medellín · CO"
+ },
+ "perks": {
+  "1_titulo": "Envío gratis",
+  "1_texto": "Llevando 2 gorras o más, a cualquier ciudad de Colombia.",
+  "2_titulo": "Compra online",
+  "2_texto": "Sin punto físico: pides, confirmamos y despachamos.",
+  "3_titulo": "Atención por WhatsApp",
+  "3_texto": "Responde una persona, no un bot.",
+  "4_titulo": "Empaque especial",
+  "4_texto": "Tu gorra sale protegida y lista para regalo."
+ },
+ "redes": {
+  "instagram_url": "https://instagram.com/crowcaps.co",
+  "tiktok_url": "https://tiktok.com/@crowcaps.co",
+  "facebook_url": "https://facebook.com/crowcaps",
+  "instagram_etiqueta": "Instagram @crowcaps.co",
+  "tiktok_etiqueta": "TikTok @crowcaps.co",
+  "facebook_etiqueta": "Facebook CrowCaps",
+  "instagram_visible": true,
+  "tiktok_visible": true,
+  "facebook_visible": true
+ },
+ "secciones": {
+  "aviso": true,
+  "hero": true,
+  "coleccion": true,
+  "perks": true,
+  "editorial": true,
+  "about": true,
+  "feed": true,
+  "final": true
+ },
+ "seo": {
+  "titulo": "CrowCaps | Gorras y Streetwear en Colombia",
+  "descripcion": "Gorras seleccionadas en Medellín: beisboleras, urbanas y de equipo. 61 referencias reales, envío GRATIS a todo Colombia desde 2 gorras y pedidos directo por WhatsApp.",
+  "canonical": "https://crowcaps.co/",
+  "og_url": "https://crowcaps.co/",
+  "og_descripcion": "Gorras seleccionadas en Medellín. Envío GRATIS a todo Colombia desde 2 gorras. Pide la tuya por WhatsApp.",
+  "og_imagen": "https://crowcaps.co/assets/img/yankees-navy-hueso.webp",
+  "og_imagen_alt": "Gorra Yankees azul marino con visera hueso"
+ },
+ "ticker": {
+  "palabras": [
+   "Crowcaps",
+   "Streetwear",
+   "Medellín",
+   "Envío gratis desde 2 gorras",
+   "Crowcaps",
+   "Colombia"
+  ]
+ }
+}

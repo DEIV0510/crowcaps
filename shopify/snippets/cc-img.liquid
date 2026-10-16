@@ -1,0 +1,31 @@
+{%- comment -%}
+  Foto de una tarjeta con srcset honesto: solo anchos que la foto original de
+  verdad tiene (nunca se pide una versión más grande que la original).
+  360 para celulares en dos columnas, 600 para pantallas densas, 1000 la grande.
+{%- endcomment -%}
+{%- liquid
+  assign w = img.width | at_most: 1000
+  assign h = img.height | times: w | divided_by: img.width
+  assign srcset = ''
+  assign anchos = '360,600' | split: ','
+  for a in anchos
+    assign an = a | plus: 0
+    if an < w
+      capture trozo
+        echo img | image_url: width: an
+        echo ' '
+        echo an
+        echo 'w, '
+      endcapture
+      assign srcset = srcset | append: trozo
+    endif
+  endfor
+  capture ultimo
+    echo img | image_url: width: w
+    echo ' '
+    echo w
+    echo 'w'
+  endcapture
+  assign srcset = srcset | append: ultimo
+-%}
+<img{% if clase != blank %} class="{{ clase }}"{% endif %} src="{{ img | image_url: width: w }}" srcset="{{ srcset }}" sizes="{{ sizes }}" width="{{ w }}" height="{{ h }}" alt="{{ alt | escape }}" loading="lazy" decoding="async">

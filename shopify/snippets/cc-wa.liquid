@@ -1,0 +1,10 @@
+{%- comment -%}
+  Enlace de WhatsApp con mensaje: https://wa.me/<número>?text=<mensaje>.
+  El número se escribe en los ajustes del tema; aquí se le quita todo lo que no
+  sea dígito. Los espacios van como %20 (no como +), igual que antes.
+{%- endcomment -%}
+{%- liquid
+  assign num = settings.whatsapp_numero | remove: '+' | remove: ' ' | remove: '-' | remove: '(' | remove: ')' | remove: '.'
+  assign txt = mensaje | url_encode | replace: '+', '%20'
+  echo 'https://wa.me/' | append: num | append: '?text=' | append: txt
+-%}

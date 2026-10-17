@@ -96,9 +96,15 @@
 
 {% section 'cc-footer' %}
 
+{%- render 'cc-carrito' -%}
+
 <script>
   window.CROWCAPS_CONFIG = Object.assign(window.CROWCAPS_CONFIG || {}, {
-    mascota: {{ 'cc-mascot.webp' | asset_url | json }}
+    mascota: {{ 'cc-mascot.webp' | asset_url | json }},
+    rutas: { cart: {{ routes.cart_url | json }}, add: {{ routes.cart_add_url | json }}, change: {{ routes.cart_change_url | json }} },
+    envioGratis: {{ settings.envio_gratis_desde | default: 0 }},
+    textoFalta: {{ settings.texto_envio_falta | json }},
+    textoGratis: {{ settings.texto_envio_gratis | json }}
   });
 </script>
 {%- comment -%}

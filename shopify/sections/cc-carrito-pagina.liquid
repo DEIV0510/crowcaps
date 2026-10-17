@@ -1,0 +1,58 @@
+{%- comment -%}
+  Página /cart. Funciona sin JavaScript: cambiar cantidades con «Actualizar»,
+  quitar con el enlace y «Pagar» manda al checkout de Shopify.
+{%- endcomment -%}
+{%- liquid
+  assign raiz = routes.root_url
+  if raiz == '/'
+    assign raiz = ''
+  endif
+  assign subtotal = cart.items_subtotal_price | divided_by: 100
+  assign falta = settings.envio_gratis_desde | minus: subtotal
+-%}
+<section class="pagina wrap cartp">
+  <h1>{{ settings.carrito_titulo | escape }}</h1>
+  {%- if cart.item_count == 0 -%}
+    <p>{{ settings.carrito_vacio | escape }}</p>
+    <a class="btn" href="{{ raiz }}/#coleccion">{{ settings.carrito_ver | escape }} <span class="arw">→</span></a>
+  {%- else -%}
+    <form class="cartp__form" action="{{ routes.cart_url }}" method="post">
+      <p class="cartd__envio{% if falta <= 0 %} is-ok{% endif %}">{% if falta > 0 %}{{ settings.texto_envio_falta | escape }}{% else %}{{ settings.texto_envio_gratis | escape }}{% endif %}</p>
+      <ul class="cartd__items">
+        {%- for item in cart.items -%}
+          {%- assign linea = item.final_line_price | divided_by: 100 -%}
+        <li class="cartd__item">
+          <a class="cartd__img" href="{{ item.url }}">
+            {%- if item.image -%}<img src="{{ item.image | image_url: width: 200 }}" alt="" width="72" height="90" loading="lazy">{%- endif -%}
+          </a>
+          <div class="cartd__info">
+            <p class="card__team">{{ item.vendor | escape }}</p>
+            <p class="cartd__name">{{ item.product.title | escape }}</p>
+            {%- if item.variant.title != 'Default Title' -%}<p class="card__color">{{ item.variant.title | escape }}</p>{%- endif -%}
+            <label class="sr" for="cant-{{ forloop.index }}">Cantidad</label>
+            <input class="cartp__cant" id="cant-{{ forloop.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" inputmode="numeric">
+          </div>
+          <div class="cartd__right">
+            <b>{% render 'cc-cop', valor: linea %}</b>
+            <a class="cartd__quitar" href="{{ item.url_to_remove }}">Quitar</a>
+          </div>
+        </li>
+        {%- endfor -%}
+      </ul>
+      <div class="cartd__total"><span>Subtotal</span><b>{% render 'cc-cop', valor: subtotal %}</b></div>
+      <div class="pagina__btns">
+        <button class="btn" type="submit" name="checkout">{{ settings.carrito_pagar | escape }} <span class="arw">→</span></button>
+        <button class="btn btn--ghost" type="submit" name="update">Actualizar</button>
+      </div>
+      <p class="drawer__price">{{ settings.carrito_nota | escape }}</p>
+    </form>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Carrito",
+  "class": "cc-carrito-pagina",
+  "settings": []
+}
+{% endschema %}

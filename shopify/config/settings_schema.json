@@ -112,7 +112,65 @@
         "type": "text",
         "id": "ficha_nota_precio",
         "label": "Nota bajo el botón",
-        "default": "Envío gratis desde 2 gorras · Confirmamos disponibilidad por WhatsApp."
+        "default": "Envío gratis desde 2 gorras · Pago seguro con Mercado Pago."
+      }
+    ]
+  },
+  {
+    "name": "Carrito y envío",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "El cobro del envío se configura en Configuración > Envío y entrega. Aquí van solo los textos que ve el cliente."
+      },
+      {
+        "type": "number",
+        "id": "envio_gratis_desde",
+        "label": "Envío gratis desde (pesos)",
+        "info": "Debe ser el mismo importe mínimo de la tarifa de envío.",
+        "default": 170000
+      },
+      {
+        "type": "text",
+        "id": "texto_envio_falta",
+        "label": "Aviso cuando falta para el envío gratis",
+        "default": "Agrega otra gorra y el envío es GRATIS"
+      },
+      {
+        "type": "text",
+        "id": "texto_envio_gratis",
+        "label": "Aviso con envío gratis",
+        "default": "Tu envío es GRATIS"
+      },
+      {
+        "type": "text",
+        "id": "carrito_titulo",
+        "label": "Título del carrito",
+        "default": "Tu carrito"
+      },
+      {
+        "type": "text",
+        "id": "carrito_vacio",
+        "label": "Carrito vacío",
+        "default": "Tu carrito está vacío."
+      },
+      {
+        "type": "text",
+        "id": "carrito_ver",
+        "label": "Botón del carrito vacío",
+        "default": "Ver la colección"
+      },
+      {
+        "type": "text",
+        "id": "carrito_pagar",
+        "label": "Botón de pagar",
+        "default": "Pagar"
+      },
+      {
+        "type": "text",
+        "id": "carrito_nota",
+        "label": "Nota bajo el botón de pagar",
+        "default": "Pago seguro con Mercado Pago: tarjeta, PSE o Bancolombia. Envío $19.900, GRATIS desde 2 gorras."
       }
     ]
   },

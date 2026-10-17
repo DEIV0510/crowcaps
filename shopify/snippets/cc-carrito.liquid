@@ -1,0 +1,32 @@
+{%- comment -%}
+  Panel lateral del carrito. Lo llena cc-app.js con /cart.js al abrirlo.
+  «Pagar» envía el carrito al checkout de Shopify (Mercado Pago). El envío se
+  cobra según Configuración > Envío: $19.900, gratis desde $170.000 (2 gorras).
+{%- endcomment -%}
+<div class="drawer cartd" id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+  <div class="drawer__bg" data-cclose></div>
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <span class="eyebrow" id="cartTitle">{{ settings.carrito_titulo | escape }}</span>
+      <button class="drawer__close" type="button" data-cclose aria-label="Cerrar carrito">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <div class="drawer__body cartd__body">
+      <p class="cartd__envio" id="cartEnvio" hidden></p>
+      <ul class="cartd__items" id="cartItems"></ul>
+      <div class="cartd__vacio" id="cartVacio" hidden>
+        <p>{{ settings.carrito_vacio | escape }}</p>
+        <a class="btn btn--ghost" href="{% if template.name == 'index' %}#coleccion{% else %}{{ routes.root_url }}#coleccion{% endif %}" data-cclose>{{ settings.carrito_ver | escape }} <span class="arw">→</span></a>
+      </div>
+      <p class="cartd__error" id="cartError" role="alert" hidden></p>
+    </div>
+    <div class="drawer__foot cartd__foot" id="cartFoot" hidden>
+      <div class="cartd__total"><span>Subtotal</span><b id="cartTotal">$0</b></div>
+      <form action="{{ routes.cart_url }}" method="post">
+        <button class="btn" type="submit" name="checkout">{{ settings.carrito_pagar | escape }} <span class="arw">→</span></button>
+      </form>
+      <span class="drawer__price">{{ settings.carrito_nota | escape }}</span>
+    </div>
+  </div>
+</div>

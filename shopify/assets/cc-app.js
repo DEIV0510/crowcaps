@@ -268,7 +268,16 @@
       $('#dName').textContent = p.name;
       $('#dDesc').textContent = p.desc;
       $('#dPrice').innerHTML = cop(p.price) + ' <small>COP · envío gratis desde 2 gorras</small>';
-      $('#dWaTxt').textContent = 'Comprar por ' + cop(p.price);
+      /* «Agregar al carrito · $85.000»; WhatsApp queda como segunda opción */
+      var add = $('#dAdd'), addTxt = $('#dAddTxt');
+      if (add) {
+        add.dataset.add = p.variant || '';
+        add.disabled = !p.variant || p.available === false;
+        if (addTxt) {
+          if (!addTxt.dataset.base) addTxt.dataset.base = addTxt.textContent;
+          addTxt.textContent = addTxt.dataset.base + ' · ' + cop(p.price);
+        }
+      }
       $('#dTags').innerHTML = '<span class="tag">' + p.colorway + '</span>' +
         p.colors.map(function (c) { return '<span class="tag">' + (c === 'nuevas' ? 'Nueva' : c) + '</span>'; }).join('');
       $('#dFeats').innerHTML = p.features.map(function (f) { return '<li>' + f + '</li>'; }).join('');
@@ -312,8 +321,8 @@
     }
 
     document.addEventListener('click', function (e) {
-      /* «Comprar» es un enlace a WhatsApp: ese clic no abre la ficha */
-      if (e.target.closest && e.target.closest('.card__comprar')) return;
+      /* «Agregar al carrito» y el WhatsApp de la tarjeta no abren la ficha */
+      if (e.target.closest && e.target.closest('.card__acc')) return;
       var card = e.target.closest ? e.target.closest('.card') : null;
       if (card && card.dataset.id) { e.preventDefault(); open(card.dataset.id); return; }
       if (e.target.closest && e.target.closest('[data-dclose]')) close();
@@ -352,6 +361,177 @@
         $$('button', th).forEach(function (x) { x.setAttribute('aria-current', 'false'); });
         b.setAttribute('aria-current', 'true');
       });
+    });
+  })();
+
+  /* ---------- 7c. Carrito (Shopify) ----------
+     «Agregar al carrito» suma la gorra con /cart/add.js y abre el panel. El
+     panel se arma con /cart.js; «Pagar» manda al checkout de Shopify. Si algo
+     falla, el botón del encabezado sigue llevando a la página /cart. */
+  (function carrito() {
+    var c = $('#cart');
+    if (!c) return;
+    var R = CFG.rutas || {};
+    var rutaCart = R.cart || '/cart', rutaAdd = R.add || '/cart/add', rutaChange = R.change || '/cart/change';
+    var lista = $('#cartItems'), vacio = $('#cartVacio'), pie = $('#cartFoot');
+    var total = $('#cartTotal'), envio = $('#cartEnvio'), error = $('#cartError');
+    var cuenta = $('#cartCount'), boton = $('#cartBtn');
+    var lastFocus = null, ocupado = false;
+
+    function cop(n) { return '$' + Number(n || 0).toLocaleString('es-CO'); }
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, function (ch) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch];
+      });
+    }
+    function chica(u) { return u ? u + (u.indexOf('?') > -1 ? '&' : '?') + 'width=200' : ''; }
+
+    function pedir(url, datos) {
+      return fetch(url, {
+        method: datos ? 'POST' : 'GET',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: datos ? JSON.stringify(datos) : undefined,
+        credentials: 'same-origin'
+      }).then(function (r) {
+        return r.json().then(function (j) { if (!r.ok) throw j; return j; });
+      });
+    }
+
+    function avisar(msg) {
+      if (!error) return;
+      error.textContent = msg || '';
+      error.hidden = !msg;
+    }
+
+    function pintar(cart) {
+      var n = cart.item_count || 0;
+      if (cuenta) { cuenta.textContent = n; cuenta.hidden = n === 0; }
+      if (boton) boton.setAttribute('aria-label', 'Carrito, ' + n + (n === 1 ? ' gorra' : ' gorras'));
+      vacio.hidden = n > 0;
+      pie.hidden = n === 0;
+      /* items_subtotal_price y no total_price: la respuesta de /cart/change.js
+         a veces trae el envío estimado sumado en total_price */
+      var sub = (cart.items_subtotal_price != null ? cart.items_subtotal_price : cart.total_price) / 100;
+      total.textContent = cop(sub);
+      var umbral = Number(CFG.envioGratis || 0);
+      if (envio) {
+        envio.hidden = n === 0 || !umbral;
+        var gratis = sub >= umbral;
+        envio.textContent = gratis ? (CFG.textoGratis || '') : (CFG.textoFalta || '');
+        envio.classList.toggle('is-ok', gratis);
+      }
+      lista.innerHTML = (cart.items || []).map(function (it) {
+        var color = it.variant_title && it.variant_title !== 'Default Title' ? it.variant_title : '';
+        return '<li class="cartd__item" data-key="' + esc(it.key) + '" data-q="' + it.quantity + '">' +
+          '<a class="cartd__img" href="' + esc(it.url) + '">' + (it.image ? '<img src="' + esc(chica(it.image)) + '" alt="" width="72" height="90" loading="lazy" decoding="async">' : '') + '</a>' +
+          '<div class="cartd__info">' +
+            '<p class="card__team">' + esc(it.vendor) + '</p>' +
+            '<p class="cartd__name">' + esc(it.product_title) + '</p>' +
+            (color ? '<p class="card__color">' + esc(color) + '</p>' : '') +
+            '<div class="cartd__qty"><button type="button" data-cambio="-1" aria-label="Una menos">−</button>' +
+            '<span aria-live="polite">' + it.quantity + '</span>' +
+            '<button type="button" data-cambio="1" aria-label="Una más">+</button></div>' +
+          '</div>' +
+          '<div class="cartd__right"><b>' + cop(it.final_line_price / 100) + '</b>' +
+            '<button type="button" class="cartd__quitar" data-cambio="0">Quitar</button></div>' +
+        '</li>';
+      }).join('');
+    }
+
+    function cargar() { return pedir(rutaCart + '.js').then(pintar); }
+
+    function abrir() {
+      lastFocus = document.activeElement;
+      c.classList.add('is-open');
+      c.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('is-locked');
+      setTimeout(function () { var x = $('.drawer__close', c); if (x) x.focus(); }, 60);
+    }
+    function cerrar() {
+      c.classList.remove('is-open');
+      c.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('is-locked');
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    function agregar(id, b) {
+      if (!id || ocupado) return;
+      ocupado = true;
+      if (b) { b.disabled = true; b.classList.add('is-busy'); }
+      avisar('');
+      pedir(rutaAdd + '.js', { items: [{ id: Number(id), quantity: 1 }] })
+        .then(function (r) {
+          var it = (r.items || [])[0] || {};
+          try {
+            if (typeof window.fbq === 'function') window.fbq('track', 'AddToCart', { content_name: it.product_title || '', value: (it.final_price || 0) / 100, currency: 'COP' });
+            if (typeof window.gtag === 'function') window.gtag('event', 'add_to_cart', { currency: 'COP', value: (it.final_price || 0) / 100, items: [{ item_name: it.product_title || '' }] });
+          } catch (_) { /* medir nunca puede romper la compra */ }
+          return cargar();
+        })
+        .then(function () {
+          /* Si se agregó desde la ficha, se cierra para mostrar el carrito */
+          var ficha = $('#drawer');
+          if (ficha && ficha.classList.contains('is-open')) {
+            var x = $('.drawer__close', ficha);
+            if (x) x.click();
+            setTimeout(abrir, reduce ? 0 : 320);
+          } else {
+            abrir();
+          }
+        })
+        .catch(function (e) {
+          cargar().catch(function () {});
+          abrir();
+          avisar((e && (e.description || e.message)) || 'No pudimos agregar la gorra. Intenta de nuevo o escríbenos por WhatsApp.');
+        })
+        .then(function () {
+          ocupado = false;
+          if (b) { b.disabled = false; b.classList.remove('is-busy'); }
+        });
+    }
+
+    function cambiar(key, cantidad) {
+      if (ocupado) return;
+      ocupado = true;
+      avisar('');
+      pedir(rutaChange + '.js', { id: key, quantity: cantidad })
+        .then(pintar)
+        .catch(function () { avisar('No pudimos actualizar el carrito. Intenta de nuevo.'); })
+        .then(function () { ocupado = false; });
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target : null;
+      if (!t) return;
+      var add = t.closest('[data-add]');
+      if (add) { e.preventDefault(); e.stopPropagation(); agregar(add.dataset.add, add); return; }
+      if (t.closest('#cartBtn')) {
+        e.preventDefault();
+        cargar().then(abrir).catch(function () { location.href = rutaCart; });
+        return;
+      }
+      var cambio = t.closest('[data-cambio]');
+      if (cambio && c.contains(cambio)) {
+        var li = cambio.closest('.cartd__item');
+        var d = Number(cambio.dataset.cambio);
+        var q = Number(li.dataset.q || 0);
+        cambiar(li.dataset.key, d === 0 ? 0 : Math.max(0, q + d));
+        return;
+      }
+      if (t.closest('[data-cclose]') && c.contains(t)) cerrar();
+    }, true);
+
+    document.addEventListener('keydown', function (e) {
+      if (!c.classList.contains('is-open')) return;
+      if (e.key === 'Escape') cerrar();
+      if (e.key === 'Tab') {
+        var f = $$('a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])', c)
+          .filter(function (n) { return n.offsetParent !== null; });
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
   })();
 

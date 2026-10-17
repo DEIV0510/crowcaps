@@ -109,7 +109,10 @@
         <span>💬 <b>Disponibilidad</b> {{ settings.ficha_disponibilidad | escape }}</span>
       </div>
       <div class="pdp__buy">
-        <a class="btn" href="{{ wa }}" target="_blank" rel="noopener" data-cursor="COMPRAR">Comprar por {{ precio }} <span class="arw">→</span></a>
+        {%- if p.available -%}
+        <button class="btn" type="button" data-add="{{ p.selected_or_first_available_variant.id }}" data-cursor="AGREGAR">{{ section.settings.texto_agregar | escape }} · {{ precio }} <span class="arw">→</span></button>
+        {%- endif -%}
+        <a class="btn btn--ghost" href="{{ wa }}" target="_blank" rel="noopener" data-cursor="WHATSAPP">{{ settings.texto_pedir | escape }}</a>
         <span class="drawer__price">{{ settings.ficha_nota_precio | escape }}</span>
       </div>
     </div>
@@ -141,6 +144,7 @@
   "class": "cc-producto",
   "settings": [
     { "type": "text", "id": "volver", "label": "Enlace para volver", "default": "Toda la colección" },
+    { "type": "text", "id": "texto_agregar", "label": "Botón de agregar al carrito", "default": "Agregar al carrito" },
     { "type": "text", "id": "categorias", "label": "Filtros por color que se muestran como etiqueta (separados por coma)", "default": "Negras, Blancas, Beige, Rojas, Azules, Bicolor" }
   ]
 }

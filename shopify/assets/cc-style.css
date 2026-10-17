@@ -611,3 +611,72 @@ body:not(.tpl-index) > main { flex: 1 0 auto; }
 @media (min-width: 761px) {
   .pdp__hero { width: min(100%, calc((100svh - var(--aviso-h) - var(--nav-h) - 170px) * .8)); }
 }
+
+/* ===========================================================================
+   SHOPIFY: carrito
+   =========================================================================== */
+/* Botón del carrito en el encabezado (visible también en el celular) */
+.nav__cart { position: relative; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: var(--ink); transition: color .25s var(--ease); }
+.nav__cart:hover, .nav__cart:focus-visible { color: var(--red); }
+.nav__cart-n {
+  position: absolute; top: 3px; right: 1px; min-width: 18px; height: 18px; padding: 0 5px;
+  display: grid; place-items: center; border-radius: 999px; background: var(--red); color: var(--paper);
+  font-size: 10px; font-weight: 600; line-height: 1;
+}
+.nav__cart-n[hidden] { display: none; }
+
+/* Tarjeta: «Agregar al carrito» + WhatsApp al lado */
+.card__acc { display: flex; gap: 8px; margin-top: 12px; }
+.card__acc .card__comprar { margin-top: 0; flex: 1 1 auto; min-width: 0; }
+.card__comprar[disabled] { opacity: .45; pointer-events: none; }
+.card__comprar.is-busy, #dAdd.is-busy { opacity: .6; }
+.card__wa {
+  flex: 0 0 auto; width: 42px; display: grid; place-items: center; border: 1px solid var(--ink);
+  border-radius: 999px; color: var(--ink); transition: background .25s var(--ease), color .25s var(--ease);
+}
+.card__wa:hover, .card__wa:focus-visible { background: var(--ink); color: var(--paper); }
+.t-corto { display: none; }
+
+/* Ficha y página de la gorra: dos botones */
+.drawer__foot #dWa, .pdp__buy .btn--ghost { justify-content: center; }
+#dAdd[disabled] { opacity: .45; }
+
+/* Panel del carrito */
+.cartd .drawer__panel { width: min(460px, 100%); }
+.cartd__body { padding: 18px var(--pad); display: grid; align-content: start; gap: 6px; }
+.cartd__envio {
+  font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  padding: 11px 12px; background: var(--paper-2); color: var(--ink);
+}
+.cartd__envio.is-ok { background: var(--ink); color: var(--paper); }
+.cartd__envio[hidden], .cartd__vacio[hidden], .cartd__foot[hidden], .cartd__error[hidden] { display: none; }
+.cartd__items { display: grid; }
+.cartd__item { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.cartd__img img { width: 72px; height: 90px; object-fit: cover; background: var(--paper-2); }
+.cartd__info { display: grid; align-content: start; gap: 2px; }
+.cartd__name { font-family: var(--f-display); font-weight: 700; font-size: 15px; letter-spacing: -.015em; text-transform: uppercase; line-height: 1.1; }
+.cartd__qty { display: inline-flex; align-items: center; justify-self: start; margin-top: 8px; border: 1px solid var(--line); border-radius: 999px; }
+.cartd__qty button { width: 32px; height: 32px; display: grid; place-items: center; font-size: 16px; color: var(--ink); }
+.cartd__qty button:hover { color: var(--red); }
+.cartd__qty span { min-width: 20px; text-align: center; font-size: 13px; font-weight: 600; }
+.cartd__right { display: grid; justify-items: end; align-content: space-between; gap: 8px; }
+.cartd__right b { font-family: var(--f-display); font-weight: 700; font-size: 15px; white-space: nowrap; }
+.cartd__quitar { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); text-decoration: underline; text-underline-offset: 3px; }
+.cartd__quitar:hover { color: var(--red); }
+.cartd__vacio { display: grid; gap: 16px; justify-items: start; padding: 18px 0; color: var(--ink-2); }
+.cartd__error { font-size: 13px; color: var(--red); padding-top: 8px; }
+.cartd__total { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.cartd__total b { font-family: var(--f-display); font-weight: 900; font-size: 26px; letter-spacing: -.02em; }
+.cartd__foot form .btn { width: 100%; justify-content: center; }
+
+/* Página /cart */
+.cartp__form { width: min(100%, 720px); display: grid; gap: 14px; }
+.cartp__cant { width: 64px; margin-top: 8px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; font: inherit; font-size: 14px; background: transparent; color: var(--ink); }
+
+@media (max-width: 760px) {
+  .t-largo { display: none; }
+  .t-corto { display: inline; }
+  .card__acc { gap: 6px; }
+  .card__wa { width: 38px; }
+  .nav__cart { margin-right: -4px; }
+}

@@ -58,13 +58,16 @@
         </div>
         <img class="hero__seal" src="{{ 'cc-badge.webp' | asset_url }}" width="340" height="341" alt="" aria-hidden="true">
       </div>
-      <div class="hero__pick" id="heroPick" role="group" aria-label="Cambiar gorra destacada">
-        {%- assign con_foto = destacadas | where: 'featured_image' -%}
-        {%- if con_foto.size > 1 -%}
-          {%- for p in con_foto -%}
-        <button type="button" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="Ver {{ p.title | escape }}"><img src="{{ p.featured_image | image_url: width: 360 }}" width="170" height="212" alt="" loading="lazy" decoding="async"></button>
-          {%- endfor -%}
-        {%- endif -%}
+      {%- comment -%}
+        Abajo van solo las OTRAS gorras destacadas: la que está grande no se
+        repite. Al tocar una, cambia de lugar con la grande (cc-app.js).
+      {%- endcomment -%}
+      <div class="hero__pick hero__pick--otras" id="heroPick" role="group" aria-label="Cambiar gorra destacada">
+        {%- for p in destacadas -%}
+          {%- if p.featured_image and p.handle != hero.handle -%}
+        <button type="button" aria-label="Ver {{ p.title | escape }}"><img src="{{ p.featured_image | image_url: width: 360 }}" width="170" height="212" alt="" loading="lazy" decoding="async"></button>
+          {%- endif -%}
+        {%- endfor -%}
       </div>
     </div>
   </div>
@@ -83,12 +86,18 @@
   window.CROWCAPS_CONFIG = Object.assign(window.CROWCAPS_CONFIG || {}, {
     ticker: [{% for w in palabras %}{% assign w2 = w | strip %}{% if w2 != blank %}{{ w2 | json }}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}],
     destacadas: [{% for p in destacadas %}{{ p.handle | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],
+    {%- comment -%} La primera es la grande; las demás, las de abajo en el mismo orden {%- endcomment -%}
     heroPicks: [
+      {%- if hero.featured_image -%}
+        {%- assign cw = hero.variants.first.option1 -%}{%- if cw == 'Default Title' -%}{%- assign cw = '' -%}{%- endif -%}
+      { "id": {{ hero.handle | json }}, "name": {{ hero.title | json }}, "colorway": {{ cw | json }},
+        "img": {{ hero.featured_image | image_url: width: 1000 | json }}, "thumb": {{ hero.featured_image | image_url: width: 360 | json }} }
+      {%- endif -%}
       {%- for p in destacadas -%}
-        {%- if p.featured_image -%}
+        {%- if p.featured_image and p.handle != hero.handle -%}
           {%- assign cw = p.variants.first.option1 -%}{%- if cw == 'Default Title' -%}{%- assign cw = '' -%}{%- endif -%}
-      { "id": {{ p.handle | json }}, "name": {{ p.title | json }}, "colorway": {{ cw | json }},
-        "img": {{ p.featured_image | image_url: width: 1000 | json }}, "thumb": {{ p.featured_image | image_url: width: 360 | json }} }{% unless forloop.last %},{% endunless %}
+      ,{ "id": {{ p.handle | json }}, "name": {{ p.title | json }}, "colorway": {{ cw | json }},
+        "img": {{ p.featured_image | image_url: width: 1000 | json }}, "thumb": {{ p.featured_image | image_url: width: 360 | json }} }
         {%- endif -%}
       {%- endfor -%}
     ]

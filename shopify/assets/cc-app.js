@@ -104,42 +104,49 @@
   (function heroPick() {
     var wrap = $('#heroPick'), img = $('#heroImg'), tag = $('#heroTag');
     if (!wrap || !img) return;
-    /* En Shopify las miniaturas llegan armadas desde la sección del hero */
+    /* CFG.heroPicks llega de la sección del hero: la primera es la gorra
+       grande y las demás son las miniaturas de abajo, en el mismo orden. La
+       grande nunca se repite abajo: al tocar una miniatura, esa gorra sube y
+       la que estaba arriba ocupa su lugar. */
     var picks = (CFG.heroPicks || []).filter(function (x) { return x && x.img; });
-    if (!picks.length && P.length) {
-      var ids = (CFG.destacadas && CFG.destacadas.length) ? CFG.destacadas : P.slice(0, 3).map(function (x) { return x.id; });
-      picks = ids.map(function (id) {
-        var p = P.filter(function (x) { return x.id === id; })[0];
-        return p ? { id: p.id, name: p.name, colorway: p.colorway, img: foto(p, 0), thumb: mini(p, 0) } : null;
-      }).filter(Boolean);
-    }
     if (picks.length < 2) return;
+    var actual = picks[0];
+    var abajo = picks.slice(1);
 
     /* Los botones ya vienen pintados desde la sección (así la portada no salta
-       al cargar); si no están, se crean aquí como antes. */
-    var hechos = $$('button', wrap);
-    picks.forEach(function (p, i) {
-      var b = hechos[i];
-      var nuevo = !b;
-      if (nuevo) {
-        b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('aria-current', i === 0 ? 'true' : 'false');
-        b.setAttribute('aria-label', 'Ver ' + p.name);
-        b.innerHTML = '<img src="' + p.thumb + '" width="170" height="212" alt="" loading="lazy" decoding="async">';
-      }
+       al cargar); si faltan, se crean aquí. */
+    var botones = $$('button', wrap);
+    abajo.forEach(function (p, k) {
+      if (botones[k]) return;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.innerHTML = '<img src="' + p.thumb + '" width="170" height="212" alt="" loading="lazy" decoding="async">';
+      wrap.appendChild(b);
+      botones[k] = b;
+    });
+
+    function pintar(b, p) {
+      b.setAttribute('aria-label', 'Ver ' + p.name);
+      var miniatura = b.querySelector('img');
+      if (miniatura && miniatura.getAttribute('src') !== p.thumb) miniatura.src = p.thumb;
+    }
+
+    botones.forEach(function (b, k) {
+      if (!abajo[k]) { b.hidden = true; return; }
+      pintar(b, abajo[k]);
       b.addEventListener('click', function () {
-        $$('button', wrap).forEach(function (x) { x.setAttribute('aria-current', 'false'); });
-        b.setAttribute('aria-current', 'true');
+        var sube = abajo[k];
+        abajo[k] = actual;
+        actual = sube;
         img.classList.add('is-out');
         setTimeout(function () {
-          img.src = p.img;
-          img.alt = 'Gorra ' + p.name + (p.colorway ? ' — ' + p.colorway : '');
-          if (tag) tag.textContent = p.name;
+          img.src = sube.img;
+          img.alt = 'Gorra ' + sube.name + (sube.colorway ? ' — ' + sube.colorway : '');
+          if (tag) tag.textContent = sube.name;
           img.classList.remove('is-out');
+          pintar(b, abajo[k]);
         }, reduce ? 0 : 220);
       });
-      if (nuevo) wrap.appendChild(b);
     });
   })();
 

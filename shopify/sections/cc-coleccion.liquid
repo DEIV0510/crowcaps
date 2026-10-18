@@ -165,7 +165,10 @@
     </span>
     </button>
     <div class="card__acc">
-      <button class="btn btn--ghost card__comprar" type="button" data-add="{{ p.selected_or_first_available_variant.id }}" data-cursor="AGREGAR" aria-label="Agregar la gorra {{ p.title | escape }} al carrito"{% unless p.available %} disabled{% endunless %}><span class="t-largo">{{ section.settings.texto_agregar | escape }}</span><span class="t-corto">{{ section.settings.texto_agregar_corto | escape }}</span></button>
+      <form class="card__form" action="{{ routes.cart_add_url }}" method="post">
+        <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+        <button class="btn btn--ghost card__comprar" type="submit" data-add="{{ p.selected_or_first_available_variant.id }}" data-cursor="AGREGAR" aria-label="{{ section.settings.texto_agregar | escape }}: {{ p.title | escape }}"{% unless p.available %} disabled{% endunless %}><span class="t-largo">{{ section.settings.texto_agregar | escape }}</span><span class="t-corto">{{ section.settings.texto_agregar_corto | escape }}</span></button>
+      </form>
       <a class="card__wa" href="{{ wa }}" target="_blank" rel="noopener" data-cursor="WHATSAPP" aria-label="Pedir la gorra {{ p.title | escape }} por WhatsApp">{% render 'cc-icono-wa', t: 18 %}</a>
     </div>
   </article>
@@ -184,13 +187,13 @@
   </div>
 
   <div class="more" id="more" hidden>
-    <button class="btn btn--ghost" id="moreBtn" type="button"><span id="moreTxt">Ver 12 más</span> <span class="arw">↓</span></button>
+    <button class="btn btn--ghost" id="moreBtn" type="button"><span id="moreTxt">Ver 12 más</span> <span class="arw" aria-hidden="true">↓</span></button>
   </div>
 
   <div class="empty" id="empty" hidden>
     <h3>{{ section.settings.vacio_titulo | escape }}</h3>
     <p>{{ section.settings.vacio_texto | escape }}</p>
-    <a class="btn" href="{{ wa_busqueda }}" target="_blank" rel="noopener">{{ section.settings.vacio_cta | escape }} <span class="arw">→</span></a>
+    <a class="btn" href="{{ wa_busqueda }}" target="_blank" rel="noopener">{{ section.settings.vacio_cta | escape }} <span class="arw" aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -222,7 +225,7 @@
       </div>
     </div>
     <div class="drawer__foot">
-      <button class="btn" id="dAdd" type="button" data-add=""><span id="dAddTxt">{{ section.settings.texto_agregar | escape }}</span> <span class="arw">→</span></button>
+      <button class="btn" id="dAdd" type="button" data-add=""><span id="dAddTxt">{{ section.settings.texto_agregar | escape }}</span> <span class="arw" aria-hidden="true">→</span></button>
       <a class="btn btn--ghost" id="dWa" href="#" target="_blank" rel="noopener"><span id="dWaTxt">{{ settings.texto_pedir | escape }}</span></a>
       <span class="drawer__price">{{ settings.ficha_nota_precio | escape }}</span>
     </div>

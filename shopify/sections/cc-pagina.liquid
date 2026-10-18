@@ -20,7 +20,7 @@
       {%- if page.content == blank -%}
       <p>{{ section.settings.texto_contacto | escape }}</p>
       <div class="pagina__btns">
-        <a class="btn" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>
+        <a class="btn" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw" aria-hidden="true">→</span></a>
         <a class="btn btn--ghost" href="{{ raiz }}/#coleccion">{{ section.settings.boton_coleccion | escape }}</a>
       </div>
       {%- endif -%}
@@ -70,7 +70,7 @@
         {%- endpaginate -%}
         {%- else -%}
         <p>{{ section.settings.sin_resultados | escape }}</p>
-        <a class="btn" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>
+        <a class="btn" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw" aria-hidden="true">→</span></a>
         {%- endif -%}
       {%- endif -%}
 
@@ -78,7 +78,7 @@
       <h1>{{ section.settings.titulo_carrito | escape }}</h1>
       <p>{{ section.settings.texto_carrito | escape }}</p>
       <div class="pagina__btns">
-        <a class="btn" href="{{ raiz }}/#coleccion">{{ section.settings.boton_coleccion | escape }} <span class="arw">→</span></a>
+        <a class="btn" href="{{ raiz }}/#coleccion">{{ section.settings.boton_coleccion | escape }} <span class="arw" aria-hidden="true">→</span></a>
         <a class="btn btn--ghost" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }}</a>
       </div>
 
@@ -87,7 +87,7 @@
       <h1>{{ section.settings.titulo_404 | escape }}</h1>
       <p>{{ section.settings.texto_404 | escape }}</p>
       <div class="pagina__btns">
-        <a class="btn" href="{{ raiz }}/#coleccion">{{ section.settings.boton_coleccion | escape }} <span class="arw">→</span></a>
+        <a class="btn" href="{{ raiz }}/#coleccion">{{ section.settings.boton_coleccion | escape }} <span class="arw" aria-hidden="true">→</span></a>
         <a class="btn btn--ghost" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }}</a>
       </div>
   {%- endcase -%}

@@ -680,3 +680,27 @@ body:not(.tpl-index) > main { flex: 1 0 auto; }
   .card__wa { width: 38px; }
   .nav__cart { margin-right: -4px; }
 }
+
+/* Ajustes tras la revisión del carrito */
+/* Foco de teclado en botones de borde: texto claro sobre el relleno rojo */
+.btn--ghost:focus-visible, .btn--light:focus-visible { color: var(--paper); }
+/* Cualquier «Agregar» ocupado se nota (tarjeta, ficha y página de la gorra) */
+[data-add].is-busy { opacity: .6; cursor: progress; }
+/* El formulario de la tarjeta no cambia el diseño */
+.card__acc .card__form { display: flex; flex: 1 1 auto; min-width: 0; }
+.card__acc .card__form .card__comprar { margin-top: 0; width: 100%; }
+.pdp__buy form .btn { width: 100%; justify-content: center; }
+/* Objetivos táctiles más cómodos en el carrito */
+.cartd .drawer__close { width: 44px; height: 44px; }
+.cartd__qty button { width: 40px; height: 40px; }
+.cartd__quitar { display: inline-block; padding: 12px 0 12px 12px; margin: -12px 0 -12px -12px; }
+.cartd__item.is-quitando { opacity: .45; }
+/* Con el menú del celular abierto, el encabezado queda transparente sobre el
+   fondo oscuro (si no, la X y la bolsa no se ven después de bajar) */
+.is-menu .nav::before { opacity: 0; }
+.is-menu .nav__cart { color: var(--paper); }
+@media (max-width: 760px) {
+  .card__wa { width: 42px; }
+}
+/* Sin JavaScript no hay quien quite la pantalla de carga: no se muestra */
+.no-js .loader, .no-js .loader__curtain, .no-js .cursor { display: none; }

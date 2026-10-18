@@ -17,16 +17,17 @@
       <ul class="cartd__items" id="cartItems"></ul>
       <div class="cartd__vacio" id="cartVacio" hidden>
         <p>{{ settings.carrito_vacio | escape }}</p>
-        <a class="btn btn--ghost" href="{% if template.name == 'index' %}#coleccion{% else %}{{ routes.root_url }}#coleccion{% endif %}" data-cclose>{{ settings.carrito_ver | escape }} <span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="{% if template.name == 'index' %}#coleccion{% else %}{{ routes.root_url }}#coleccion{% endif %}" data-cclose>{{ settings.carrito_ver | escape }} <span class="arw" aria-hidden="true">→</span></a>
       </div>
       <p class="cartd__error" id="cartError" role="alert" hidden></p>
     </div>
     <div class="drawer__foot cartd__foot" id="cartFoot" hidden>
       <div class="cartd__total"><span>Subtotal</span><b id="cartTotal">$0</b></div>
       <form action="{{ routes.cart_url }}" method="post">
-        <button class="btn" type="submit" name="checkout">{{ settings.carrito_pagar | escape }} <span class="arw">→</span></button>
+        <button class="btn" type="submit" name="checkout">{{ settings.carrito_pagar | escape }} <span class="arw" aria-hidden="true">→</span></button>
       </form>
       <span class="drawer__price">{{ settings.carrito_nota | escape }}</span>
     </div>
   </div>
 </div>
+<p class="sr" id="cartStatus" role="status" aria-live="polite"></p>

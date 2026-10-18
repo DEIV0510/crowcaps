@@ -110,7 +110,10 @@
       </div>
       <div class="pdp__buy">
         {%- if p.available -%}
-        <button class="btn" type="button" data-add="{{ p.selected_or_first_available_variant.id }}" data-cursor="AGREGAR">{{ section.settings.texto_agregar | escape }} · {{ precio }} <span class="arw">→</span></button>
+        <form action="{{ routes.cart_add_url }}" method="post">
+          <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+          <button class="btn" type="submit" data-add="{{ p.selected_or_first_available_variant.id }}" data-cursor="AGREGAR">{{ section.settings.texto_agregar | escape }} · {{ precio }} <span class="arw" aria-hidden="true">→</span></button>
+        </form>
         {%- endif -%}
         <a class="btn btn--ghost" href="{{ wa }}" target="_blank" rel="noopener" data-cursor="WHATSAPP">{{ settings.texto_pedir | escape }}</a>
         <span class="drawer__price">{{ settings.ficha_nota_precio | escape }}</span>

@@ -30,7 +30,7 @@
     <a href="{{ ancla }}#feed">{{ section.settings.nav_feed | escape }}</a>
   </nav>
   <div class="nav__right">
-    <a class="btn btn--sm" href="{{ wa_general }}" target="_blank" rel="noopener">{{ section.settings.nav_cta | escape }} <span class="arw">→</span></a>
+    <a class="btn btn--sm" href="{{ wa_general }}" target="_blank" rel="noopener">{{ section.settings.nav_cta | escape }} <span class="arw" aria-hidden="true">→</span></a>
     <a class="nav__cart" id="cartBtn" href="{{ routes.cart_url }}" aria-label="Carrito, {{ cart.item_count }} {% if cart.item_count == 1 %}gorra{% else %}gorras{% endif %}">
       <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
       <b class="nav__cart-n" id="cartCount"{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</b>
@@ -47,7 +47,7 @@
     <a href="{{ ancla }}#contacto" data-close>{{ section.settings.nav_contacto | escape }}</a>
   </nav>
   <div class="mmenu__foot">
-    <a class="btn btn--light" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>
+    <a class="btn btn--light" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw" aria-hidden="true">→</span></a>
     <div class="mmenu__soc">
       {%- if settings.instagram_url != blank %}<a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
       {%- if settings.tiktok_url != blank %}<a href="{{ settings.tiktok_url }}" target="_blank" rel="noopener">TikTok</a>{% endif %}

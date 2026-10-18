@@ -4,7 +4,7 @@
   <img class="final__mascot" src="{{ 'cc-mascot.webp' | asset_url }}" width="320" height="286" loading="lazy" decoding="async" alt="">
   <h2 class="reveal">{{ section.settings.titulo }}</h2>
   <p class="reveal reveal-d1">{{ section.settings.texto | escape }}</p>
-  <a class="btn btn--light reveal reveal-d2" href="{{ wa_cierre }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw">→</span></a>
+  <a class="btn btn--light reveal reveal-d2" href="{{ wa_cierre }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }} <span class="arw" aria-hidden="true">→</span></a>
 </section>
 
 {% schema %}

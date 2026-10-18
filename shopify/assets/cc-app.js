@@ -15,6 +15,12 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  /* Libera el scroll de la página solo si ya no queda nada abierto: ficha,
+     carrito o menú. Si uno se cierra con otro abierto, la página sigue quieta. */
+  var soltar = function () {
+    if (document.querySelector('.drawer.is-open') || document.documentElement.classList.contains('is-menu')) return;
+    document.body.classList.remove('is-locked');
+  };
 
   /* ---------- 1. Loader ---------- */
   (function loader() {
@@ -59,12 +65,13 @@
     var close = function () {
       document.documentElement.classList.remove('is-menu');
       burger.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('is-locked');
+      soltar();
     };
     burger.addEventListener('click', function () {
       var open = document.documentElement.classList.toggle('is-menu');
       burger.setAttribute('aria-expanded', String(open));
-      document.body.classList.toggle('is-locked', open);
+      if (open) document.body.classList.add('is-locked');
+      else soltar();
     });
     $$('#mmenu [data-close]').forEach(function (a) { a.addEventListener('click', close); });
     window.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
@@ -316,7 +323,7 @@
     function close() {
       d.classList.remove('is-open');
       d.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('is-locked');
+      soltar();
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
 
@@ -367,16 +374,27 @@
   /* ---------- 7c. Carrito (Shopify) ----------
      «Agregar al carrito» suma la gorra con /cart/add.js y abre el panel. El
      panel se arma con /cart.js; «Pagar» manda al checkout de Shopify. Si algo
-     falla, el botón del encabezado sigue llevando a la página /cart. */
+     falla, el botón del encabezado sigue llevando a la página /cart, y sin
+     JavaScript cada «Agregar» es un formulario normal a /cart/add. */
   (function carrito() {
     var c = $('#cart');
     if (!c) return;
     var R = CFG.rutas || {};
-    var rutaCart = R.cart || '/cart', rutaAdd = R.add || '/cart/add', rutaChange = R.change || '/cart/change';
+    var rutaCart = R.cart || '/cart', rutaAdd = R.add || '/cart/add';
     var lista = $('#cartItems'), vacio = $('#cartVacio'), pie = $('#cartFoot');
-    var total = $('#cartTotal'), envio = $('#cartEnvio'), error = $('#cartError');
+    var total = $('#cartTotal'), envio = $('#cartEnvio'), error = $('#cartError'), estado = $('#cartStatus');
     var cuenta = $('#cartCount'), boton = $('#cartBtn');
-    var lastFocus = null, ocupado = false;
+    /* En /cart el botón de la bolsa solo recarga la página: si abriera el
+       panel, lo que se cambiara ahí se desharía al tocar «Pagar» en la página */
+    var enPaginaCarrito = !!$('.cartp');
+    var lastFocus = null;
+    /* Una sola petición a la vez. Lo que llega mientras tanto no se pierde:
+       los «Agregar» hacen fila y los +/− se juntan en un solo envío. */
+    var ocupado = false, filaAgregar = [], pendientes = {}, hayPendientes = false, tCambio = null, focoTras = null;
+
+    var MSG_AGREGAR = 'No pudimos agregar la gorra. Intenta de nuevo o escríbenos por WhatsApp.';
+    var MSG_AGOTADA = 'Esta gorra ya no está disponible. Escríbenos por WhatsApp y te ayudamos.';
+    var MSG_CAMBIAR = 'No pudimos actualizar el carrito. Intenta de nuevo.';
 
     function cop(n) { return '$' + Number(n || 0).toLocaleString('es-CO'); }
     function esc(s) {
@@ -386,14 +404,26 @@
     }
     function chica(u) { return u ? u + (u.indexOf('?') > -1 ? '&' : '?') + 'width=200' : ''; }
 
+    /* fetch con tiempo límite (15 s) y sin mensajes técnicos: si la respuesta
+       no es JSON se trata como error vacío y el cliente ve un texto en español */
     function pedir(url, datos) {
+      var ac = window.AbortController ? new AbortController() : null;
+      var tm = ac ? setTimeout(function () { ac.abort(); }, 15000) : null;
       return fetch(url, {
         method: datos ? 'POST' : 'GET',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: datos ? JSON.stringify(datos) : undefined,
-        credentials: 'same-origin'
+        credentials: 'same-origin',
+        signal: ac ? ac.signal : undefined
       }).then(function (r) {
-        return r.json().then(function (j) { if (!r.ok) throw j; return j; });
+        clearTimeout(tm);
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok) { j = j || {}; j.estado = r.status; throw j; }
+          return j;
+        });
+      }, function (e) {
+        clearTimeout(tm);
+        throw { estado: 0, causa: e };
       });
     }
 
@@ -402,6 +432,29 @@
       error.textContent = msg || '';
       error.hidden = !msg;
     }
+    /* Región viva fuera del panel: el lector la anuncia aunque el panel aún
+       se esté abriendo */
+    function anunciar(msg) {
+      if (!estado) return;
+      estado.textContent = '';
+      setTimeout(function () { estado.textContent = msg || ''; }, 50);
+    }
+
+    function subtotal(cart) {
+      /* items_subtotal_price y no total_price: la respuesta de /cart/change.js
+         a veces trae el envío estimado sumado en total_price */
+      return (cart.items_subtotal_price != null ? cart.items_subtotal_price : cart.total_price) / 100;
+    }
+    function textoEnvio(sub) {
+      var umbral = Number(CFG.envioGratis || 0);
+      if (!umbral) return '';
+      return sub >= umbral ? (CFG.textoGratis || '') : (CFG.textoFalta || '');
+    }
+    function resumen(cart) {
+      var n = cart.item_count || 0;
+      if (!n) return 'Tu carrito está vacío.';
+      return n + (n === 1 ? ' gorra' : ' gorras') + ', subtotal ' + cop(subtotal(cart)) + '. ' + textoEnvio(subtotal(cart));
+    }
 
     function pintar(cart) {
       var n = cart.item_count || 0;
@@ -409,95 +462,176 @@
       if (boton) boton.setAttribute('aria-label', 'Carrito, ' + n + (n === 1 ? ' gorra' : ' gorras'));
       vacio.hidden = n > 0;
       pie.hidden = n === 0;
-      /* items_subtotal_price y no total_price: la respuesta de /cart/change.js
-         a veces trae el envío estimado sumado en total_price */
-      var sub = (cart.items_subtotal_price != null ? cart.items_subtotal_price : cart.total_price) / 100;
+      var sub = subtotal(cart);
       total.textContent = cop(sub);
-      var umbral = Number(CFG.envioGratis || 0);
       if (envio) {
+        var umbral = Number(CFG.envioGratis || 0);
         envio.hidden = n === 0 || !umbral;
-        var gratis = sub >= umbral;
-        envio.textContent = gratis ? (CFG.textoGratis || '') : (CFG.textoFalta || '');
-        envio.classList.toggle('is-ok', gratis);
+        envio.textContent = textoEnvio(sub);
+        envio.classList.toggle('is-ok', sub >= umbral);
       }
       lista.innerHTML = (cart.items || []).map(function (it) {
         var color = it.variant_title && it.variant_title !== 'Default Title' ? it.variant_title : '';
+        var nom = esc(it.product_title);
         return '<li class="cartd__item" data-key="' + esc(it.key) + '" data-q="' + it.quantity + '">' +
-          '<a class="cartd__img" href="' + esc(it.url) + '">' + (it.image ? '<img src="' + esc(chica(it.image)) + '" alt="" width="72" height="90" loading="lazy" decoding="async">' : '') + '</a>' +
+          '<a class="cartd__img" href="' + esc(it.url) + '" tabindex="-1" aria-hidden="true">' + (it.image ? '<img src="' + esc(chica(it.image)) + '" alt="" width="72" height="90" loading="lazy" decoding="async">' : '') + '</a>' +
           '<div class="cartd__info">' +
             '<p class="card__team">' + esc(it.vendor) + '</p>' +
-            '<p class="cartd__name">' + esc(it.product_title) + '</p>' +
+            '<p class="cartd__name">' + nom + '</p>' +
             (color ? '<p class="card__color">' + esc(color) + '</p>' : '') +
-            '<div class="cartd__qty"><button type="button" data-cambio="-1" aria-label="Una menos">−</button>' +
-            '<span aria-live="polite">' + it.quantity + '</span>' +
-            '<button type="button" data-cambio="1" aria-label="Una más">+</button></div>' +
+            '<div class="cartd__qty"><button type="button" data-cambio="-1" aria-label="Una menos de ' + nom + '">−</button>' +
+            '<span>' + it.quantity + '</span>' +
+            '<button type="button" data-cambio="1" aria-label="Una más de ' + nom + '">+</button></div>' +
           '</div>' +
           '<div class="cartd__right"><b>' + cop(it.final_line_price / 100) + '</b>' +
-            '<button type="button" class="cartd__quitar" data-cambio="0">Quitar</button></div>' +
+            '<button type="button" class="cartd__quitar" data-cambio="0" aria-label="Quitar ' + nom + ' del carrito">Quitar</button></div>' +
         '</li>';
       }).join('');
+      return cart;
     }
 
     function cargar() { return pedir(rutaCart + '.js').then(pintar); }
 
-    function abrir() {
-      lastFocus = document.activeElement;
+    function abrir(origen) {
+      /* El menú del celular se cierra: el carrito no se abre encima de él */
+      var h = document.documentElement;
+      if (h.classList.contains('is-menu')) {
+        h.classList.remove('is-menu');
+        var bg = $('#burger');
+        if (bg) bg.setAttribute('aria-expanded', 'false');
+      }
+      if (!c.classList.contains('is-open')) {
+        lastFocus = (origen && document.contains(origen)) ? origen : document.activeElement;
+      }
       c.classList.add('is-open');
       c.setAttribute('aria-hidden', 'false');
+      if (boton) boton.setAttribute('aria-expanded', 'true');
       document.body.classList.add('is-locked');
       setTimeout(function () { var x = $('.drawer__close', c); if (x) x.focus(); }, 60);
     }
     function cerrar() {
       c.classList.remove('is-open');
       c.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('is-locked');
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
+      if (boton) boton.setAttribute('aria-expanded', 'false');
+      soltar();
+      if (lastFocus && lastFocus.focus && document.contains(lastFocus)) lastFocus.focus();
+    }
+    /* Si la ficha está abierta, se cierra primero (su foco vuelve a la
+       tarjeta) y después aparece el carrito; así nunca quedan los dos abiertos */
+    function mostrar(origen) {
+      var ficha = $('#drawer');
+      if (ficha && ficha.classList.contains('is-open')) {
+        var x = $('.drawer__close', ficha);
+        if (x) x.click();
+        setTimeout(function () {
+          var a = document.activeElement;
+          abrir(a && a !== document.body ? a : origen);
+        }, reduce ? 0 : 320);
+      } else {
+        abrir(origen);
+      }
+    }
+
+    /* aria-disabled y no disabled: Chrome le quita el foco a un botón
+       desactivado y el teclado quedaría perdido en el body */
+    function ocupar(b, si) {
+      if (!b) return;
+      if (si) { b.setAttribute('aria-disabled', 'true'); b.classList.add('is-busy'); }
+      else { b.removeAttribute('aria-disabled'); b.classList.remove('is-busy'); }
+    }
+
+    function siguiente() {
+      if (ocupado) return;
+      if (hayPendientes) { enviarCambios(); return; }
+      var sig = filaAgregar.shift();
+      if (sig) { ocupar(sig[1], false); agregar(sig[0], sig[1]); }
     }
 
     function agregar(id, b) {
-      if (!id || ocupado) return;
+      if (!id) return;
+      if (b && b.getAttribute('aria-disabled') === 'true') return;
+      if (ocupado) { filaAgregar.push([id, b]); ocupar(b, true); return; }
       ocupado = true;
-      if (b) { b.disabled = true; b.classList.add('is-busy'); }
+      ocupar(b, true);
       avisar('');
+      var nombre = '';
       pedir(rutaAdd + '.js', { items: [{ id: Number(id), quantity: 1 }] })
         .then(function (r) {
           var it = (r.items || [])[0] || {};
+          nombre = it.product_title || '';
           try {
-            if (typeof window.fbq === 'function') window.fbq('track', 'AddToCart', { content_name: it.product_title || '', value: (it.final_price || 0) / 100, currency: 'COP' });
-            if (typeof window.gtag === 'function') window.gtag('event', 'add_to_cart', { currency: 'COP', value: (it.final_price || 0) / 100, items: [{ item_name: it.product_title || '' }] });
+            if (typeof window.fbq === 'function') window.fbq('track', 'AddToCart', { content_name: nombre, value: (it.final_price || 0) / 100, currency: 'COP' });
+            if (typeof window.gtag === 'function') window.gtag('event', 'add_to_cart', { currency: 'COP', value: (it.final_price || 0) / 100, items: [{ item_name: nombre }] });
           } catch (_) { /* medir nunca puede romper la compra */ }
           return cargar();
         })
-        .then(function () {
-          /* Si se agregó desde la ficha, se cierra para mostrar el carrito */
-          var ficha = $('#drawer');
-          if (ficha && ficha.classList.contains('is-open')) {
-            var x = $('.drawer__close', ficha);
-            if (x) x.click();
-            setTimeout(abrir, reduce ? 0 : 320);
-          } else {
-            abrir();
-          }
+        .then(function (cart) {
+          mostrar(b);
+          anunciar('Agregaste ' + nombre + ' al carrito. ' + resumen(cart));
         })
         .catch(function (e) {
           cargar().catch(function () {});
-          abrir();
-          avisar((e && (e.description || e.message)) || 'No pudimos agregar la gorra. Intenta de nuevo o escríbenos por WhatsApp.');
+          mostrar(b);
+          var msg = e && (e.estado === 422 || e.estado === 404) ? MSG_AGOTADA : MSG_AGREGAR;
+          avisar(msg);
+          anunciar(msg);
         })
         .then(function () {
           ocupado = false;
-          if (b) { b.disabled = false; b.classList.remove('is-busy'); }
+          ocupar(b, false);
+          siguiente();
         });
     }
 
-    function cambiar(key, cantidad) {
-      if (ocupado) return;
+    function devolverFoco(foco) {
+      var dest = null;
+      if (foco) {
+        var li = $$('.cartd__item', lista).filter(function (x) { return x.dataset.key === foco.key; })[0];
+        if (li) dest = $('[data-cambio="' + foco.tipo + '"]', li) || $('[data-cambio]', li);
+      }
+      if (!dest) dest = $('.cartd__quitar', lista) || $('.drawer__close', c);
+      if (dest) dest.focus();
+    }
+
+    function enviarCambios() {
+      if (!hayPendientes || ocupado) return;
+      var cambios = pendientes, foco = focoTras;
+      pendientes = {}; hayPendientes = false; focoTras = null;
       ocupado = true;
       avisar('');
-      pedir(rutaChange + '.js', { id: key, quantity: cantidad })
-        .then(pintar)
-        .catch(function () { avisar('No pudimos actualizar el carrito. Intenta de nuevo.'); })
-        .then(function () { ocupado = false; });
+      pedir(rutaCart + '/update.js', { updates: cambios })
+        .then(function (cart) {
+          var a = document.activeElement;
+          var dentro = c.contains(a) || a === document.body;
+          pintar(cart);
+          anunciar(resumen(cart));
+          if (dentro && c.classList.contains('is-open')) devolverFoco(foco);
+        })
+        .catch(function () {
+          avisar(MSG_CAMBIAR);
+          anunciar(MSG_CAMBIAR);
+          return cargar().catch(function () {});
+        })
+        .then(function () { ocupado = false; siguiente(); });
+    }
+
+    function programarCambio(key, cantidad, tipo) {
+      pendientes[key] = cantidad;
+      hayPendientes = true;
+      focoTras = { key: key, tipo: tipo };
+      clearTimeout(tCambio);
+      tCambio = setTimeout(enviarCambios, 280);
+    }
+
+    /* La bolsa se anuncia como botón que abre un diálogo (fuera de /cart) */
+    if (boton && !enPaginaCarrito) {
+      boton.setAttribute('role', 'button');
+      boton.setAttribute('aria-haspopup', 'dialog');
+      boton.setAttribute('aria-controls', 'cart');
+      boton.setAttribute('aria-expanded', 'false');
+      boton.addEventListener('keydown', function (e) {
+        if (e.key === ' ') { e.preventDefault(); boton.click(); }
+      });
     }
 
     document.addEventListener('click', function (e) {
@@ -506,16 +640,23 @@
       var add = t.closest('[data-add]');
       if (add) { e.preventDefault(); e.stopPropagation(); agregar(add.dataset.add, add); return; }
       if (t.closest('#cartBtn')) {
+        if (enPaginaCarrito) return;
         e.preventDefault();
-        cargar().then(abrir).catch(function () { location.href = rutaCart; });
+        avisar('');
+        cargar().then(function () { abrir(boton); }).catch(function () { location.href = rutaCart; });
         return;
       }
       var cambio = t.closest('[data-cambio]');
       if (cambio && c.contains(cambio)) {
+        /* La cantidad cambia ya en pantalla; el envío a Shopify se junta */
         var li = cambio.closest('.cartd__item');
         var d = Number(cambio.dataset.cambio);
-        var q = Number(li.dataset.q || 0);
-        cambiar(li.dataset.key, d === 0 ? 0 : Math.max(0, q + d));
+        var q = d === 0 ? 0 : Math.max(0, Number(li.dataset.q || 0) + d);
+        li.dataset.q = q;
+        var sp = $('.cartd__qty span', li);
+        if (sp) sp.textContent = q;
+        li.classList.toggle('is-quitando', q === 0);
+        programarCambio(li.dataset.key, q, cambio.dataset.cambio);
         return;
       }
       if (t.closest('[data-cclose]') && c.contains(t)) cerrar();
@@ -525,7 +666,7 @@
       if (!c.classList.contains('is-open')) return;
       if (e.key === 'Escape') cerrar();
       if (e.key === 'Tab') {
-        var f = $$('a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])', c)
+        var f = $$('a[href]:not([tabindex="-1"]), button:not([disabled]), input, [tabindex]:not([tabindex="-1"])', c)
           .filter(function (n) { return n.offsetParent !== null; });
         if (!f.length) return;
         var first = f[0], last = f[f.length - 1];

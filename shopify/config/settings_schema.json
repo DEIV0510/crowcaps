@@ -112,7 +112,7 @@
         "type": "text",
         "id": "ficha_nota_precio",
         "label": "Nota bajo el botón",
-        "default": "Envío gratis desde 2 gorras · Pago seguro con Mercado Pago."
+        "default": "Envío gratis desde 2 gorras · Paga con Mercado Pago o contra entrega."
       }
     ]
   },
@@ -127,8 +127,8 @@
         "type": "number",
         "id": "envio_gratis_desde",
         "label": "Envío gratis desde (pesos)",
-        "info": "Debe ser el mismo importe mínimo de la tarifa de envío.",
-        "default": 170000
+        "info": "Debe ser el mismo importe mínimo de las tarifas de envío (hoy $139.800 = 2 Bass Pro).",
+        "default": 139800
       },
       {
         "type": "text",
@@ -170,7 +170,7 @@
         "type": "text",
         "id": "carrito_nota",
         "label": "Nota bajo el botón de pagar",
-        "default": "Pago seguro con Mercado Pago: tarjeta, PSE o Bancolombia. Envío $19.900, GRATIS desde 2 gorras."
+        "default": "Paga con Mercado Pago (tarjeta, PSE o Bancolombia) o contra entrega. Envío desde $14.900, GRATIS desde 2 gorras."
       }
     ]
   },

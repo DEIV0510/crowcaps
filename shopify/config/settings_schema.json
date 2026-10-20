@@ -100,7 +100,7 @@
         "type": "text",
         "id": "ficha_envio",
         "label": "Envío GRATIS…",
-        "default": "llevando 2 gorras o más."
+        "default": "llevando 2 gorras o más y pagando en línea."
       },
       {
         "type": "text",
@@ -112,7 +112,7 @@
         "type": "text",
         "id": "ficha_nota_precio",
         "label": "Nota bajo el botón",
-        "default": "Envío gratis desde 2 gorras · Paga con Mercado Pago o contra entrega."
+        "default": "Envío gratis desde 2 gorras pagando en línea · También contra entrega."
       }
     ]
   },
@@ -134,13 +134,13 @@
         "type": "text",
         "id": "texto_envio_falta",
         "label": "Aviso cuando falta para el envío gratis",
-        "default": "Agrega otra gorra y el envío es GRATIS"
+        "default": "Agrega otra gorra y el envío es GRATIS pagando en línea"
       },
       {
         "type": "text",
         "id": "texto_envio_gratis",
         "label": "Aviso con envío gratis",
-        "default": "Tu envío es GRATIS"
+        "default": "Tu envío es GRATIS pagando en línea"
       },
       {
         "type": "text",
@@ -170,7 +170,7 @@
         "type": "text",
         "id": "carrito_nota",
         "label": "Nota bajo el botón de pagar",
-        "default": "Paga con Mercado Pago (tarjeta, PSE o Bancolombia) o contra entrega. Envío desde $14.900, GRATIS desde 2 gorras."
+        "default": "Pagando en línea con Mercado Pago (tarjeta, PSE o Bancolombia): envío $14.900, GRATIS desde 2 gorras. Contra entrega: envío $20.000."
       }
     ]
   },

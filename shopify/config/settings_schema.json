@@ -170,7 +170,7 @@
         "type": "text",
         "id": "carrito_nota",
         "label": "Nota bajo el botón de pagar",
-        "default": "Pagando en línea con Mercado Pago (tarjeta, PSE o Bancolombia): envío $14.900, GRATIS desde 2 gorras. Contra entrega: envío $20.000."
+        "default": "Pagando en línea con Mercado Pago (tarjeta, PSE o Bancolombia): envío $17.500, GRATIS desde 2 gorras. Contra entrega: envío $19.500."
       }
     ]
   },

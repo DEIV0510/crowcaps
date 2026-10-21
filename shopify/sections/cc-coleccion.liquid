@@ -1,7 +1,7 @@
 {%- comment -%}
   La colección completa: filtros, buscador, grilla de 12 en 12 y la ficha que se
-  abre al tocar una gorra. Cada tarjeta lleva «Comprar», que va directo a
-  WhatsApp con el enlace de esa gorra (y así llega su foto al chat).
+  abre al tocar una gorra. Cada tarjeta lleva «Agregar al carrito»: la compra
+  va por la tienda (sin botón de pedir por WhatsApp, a pedido del dueño).
 
   De dónde sale cada dato de la gorra:
     · nombre ........ título del producto
@@ -132,10 +132,6 @@
       endif
       assign feats = feats | split: '§§'
 
-      capture wa
-        render 'cc-wa-producto', p: p
-      endcapture
-
       if grande
         assign sizes = sizes_grande
       else
@@ -169,11 +165,10 @@
         <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
         <button class="btn btn--ghost card__comprar" type="submit" data-add="{{ p.selected_or_first_available_variant.id }}" data-cursor="AGREGAR" aria-label="{{ section.settings.texto_agregar | escape }}: {{ p.title | escape }}"{% unless p.available %} disabled{% endunless %}><span class="t-largo">{{ section.settings.texto_agregar | escape }}</span><span class="t-corto">{{ section.settings.texto_agregar_corto | escape }}</span></button>
       </form>
-      <a class="card__wa" href="{{ wa }}" target="_blank" rel="noopener" data-cursor="WHATSAPP" aria-label="Pedir la gorra {{ p.title | escape }} por WhatsApp">{% render 'cc-icono-wa', t: 18 %}</a>
     </div>
   </article>
     {%- capture uno -%}
-    {"id":{{ p.handle | json }},"team":{{ p.vendor | json }},"name":{{ p.title | json }},"colorway":{{ cw | json }},"colors":{{ colores | split: ' ' | json }},"price":{{ pesos }},"desc":{{ desc | json }},"features":{{ feats | json }},"url":{{ p.url | json }},"variant":{{ p.selected_or_first_available_variant.id | json }},"available":{{ p.available | json }},"imgs":[{% for im in p.images %}{{ im | image_url: width: 1000 | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],"thumbs":[{% for im in p.images %}{{ im | image_url: width: 360 | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],"wa":{{ wa | json }}}
+    {"id":{{ p.handle | json }},"team":{{ p.vendor | json }},"name":{{ p.title | json }},"colorway":{{ cw | json }},"colors":{{ colores | split: ' ' | json }},"price":{{ pesos }},"desc":{{ desc | json }},"features":{{ feats | json }},"url":{{ p.url | json }},"variant":{{ p.selected_or_first_available_variant.id | json }},"available":{{ p.available | json }},"imgs":[{% for im in p.images %}{{ im | image_url: width: 1000 | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],"thumbs":[{% for im in p.images %}{{ im | image_url: width: 360 | json }}{% unless forloop.last %},{% endunless %}{% endfor %}]}
     {%- endcapture -%}
     {%- liquid
       if datos != ''
@@ -226,7 +221,6 @@
     </div>
     <div class="drawer__foot">
       <button class="btn" id="dAdd" type="button" data-add=""><span id="dAddTxt">{{ section.settings.texto_agregar | escape }}</span> <span class="arw" aria-hidden="true">→</span></button>
-      <a class="btn btn--ghost" id="dWa" href="#" target="_blank" rel="noopener"><span id="dWaTxt">{{ settings.texto_pedir | escape }}</span></a>
       <span class="drawer__price">{{ settings.ficha_nota_precio | escape }}</span>
     </div>
   </div>

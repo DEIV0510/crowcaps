@@ -262,10 +262,6 @@
 
     function cop(n) { return '$' + Number(n).toLocaleString('es-CO'); }
 
-    /* El enlace viene ya armado del servidor con el número y el mensaje que
-       haya configurado el administrador. */
-    function waLink(p) { return p.wa || '#'; }
-
     function open(id) {
       var rec = byId[id];
       if (!rec) return;
@@ -275,7 +271,7 @@
       $('#dName').textContent = p.name;
       $('#dDesc').textContent = p.desc;
       $('#dPrice').innerHTML = cop(p.price) + ' <small>COP · envío gratis desde 2 gorras</small>';
-      /* «Agregar al carrito · $85.000»; WhatsApp queda como segunda opción */
+      /* «Agregar al carrito · $85.000»: la compra va por la tienda, no por WhatsApp */
       var add = $('#dAdd'), addTxt = $('#dAddTxt');
       if (add) {
         add.dataset.add = p.variant || '';
@@ -288,7 +284,6 @@
       $('#dTags').innerHTML = '<span class="tag">' + p.colorway + '</span>' +
         p.colors.map(function (c) { return '<span class="tag">' + (c === 'nuevas' ? 'Nueva' : c) + '</span>'; }).join('');
       $('#dFeats').innerHTML = p.features.map(function (f) { return '<li>' + f + '</li>'; }).join('');
-      $('#dWa').href = waLink(p);
 
       var main = $('#dImg');
       main.src = foto(p, 0);
@@ -328,7 +323,7 @@
     }
 
     document.addEventListener('click', function (e) {
-      /* «Agregar al carrito» y el WhatsApp de la tarjeta no abren la ficha */
+      /* «Agregar al carrito» de la tarjeta no abre la ficha */
       if (e.target.closest && e.target.closest('.card__acc')) return;
       var card = e.target.closest ? e.target.closest('.card') : null;
       if (card && card.dataset.id) { e.preventDefault(); open(card.dataset.id); return; }
@@ -726,9 +721,9 @@
   if (rc && P.length) rc.textContent = P.length;
 
   /* ---------- 12. Avisar del clic a WhatsApp ----------
-     Aquí no hay carrito ni pago: el pedido se hace por WhatsApp, así que ESE
-     clic es la venta. Sin esto, Meta y Google solo contarían visitas y no
-     sabrían qué anuncio trae clientes de verdad.
+     La venta va por el carrito; el WhatsApp queda solo para consultas
+     (botón flotante, pie y páginas sueltas), y ese clic se cuenta como
+     «Contact» para saber qué anuncio trae gente que pregunta.
      Si no hay píxel configurado, no pasa nada: ninguna de las dos funciones
      existe y se sale sin hacer nada. */
   document.addEventListener('click', function (e) {

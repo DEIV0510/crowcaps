@@ -37,8 +37,8 @@
       {
         "type": "text",
         "id": "texto_pedir",
-        "label": "Texto de los botones de WhatsApp",
-        "default": "Pedir por WhatsApp"
+        "label": "Texto de los botones de WhatsApp (solo consultas)",
+        "default": "Escríbenos por WhatsApp"
       },
       {
         "type": "range",
@@ -63,27 +63,14 @@
       {
         "type": "textarea",
         "id": "mensaje_general",
-        "label": "Mensaje general",
-        "default": "Hola CrowCaps, quiero ver las gorras disponibles."
-      },
-      {
-        "type": "textarea",
-        "id": "mensaje_producto",
-        "label": "Mensaje al comprar una gorra",
-        "info": "Admite {producto}, {equipo}, {precio} y {enlace}. El enlace a la gorra se agrega solo al final si no lo pones: es lo que hace que salga la foto en el chat.",
-        "default": "Hola CrowCaps, estoy interesado en la Gorra {producto} ({equipo}) de {precio}. Quisiera conocer disponibilidad y realizar mi pedido."
+        "label": "Mensaje general (botón flotante, pie y páginas)",
+        "default": "Hola CrowCaps, tengo una pregunta."
       },
       {
         "type": "textarea",
         "id": "mensaje_busqueda",
         "label": "Mensaje cuando no hay resultados",
         "default": "Hola CrowCaps, estoy buscando una gorra en específico."
-      },
-      {
-        "type": "textarea",
-        "id": "mensaje_cierre",
-        "label": "Mensaje del cierre",
-        "default": "Hola CrowCaps, quiero pedir una gorra."
       }
     ]
   },
@@ -247,13 +234,13 @@
         "id": "seo_descripcion",
         "label": "Descripción de la portada",
         "info": "{total} se cambia por el número de gorras.",
-        "default": "Gorras seleccionadas en Medellín: beisboleras, urbanas y de equipo. {total} referencias reales, envío GRATIS a todo Colombia desde 2 gorras y pedidos directo por WhatsApp."
+        "default": "Gorras seleccionadas en Medellín: beisboleras, urbanas y de equipo. {total} referencias reales. Compra en línea con Mercado Pago o paga contra entrega; envío GRATIS desde 2 gorras pagando en línea."
       },
       {
         "type": "textarea",
         "id": "og_descripcion",
         "label": "Descripción al compartir",
-        "default": "Gorras seleccionadas en Medellín. Envío GRATIS a todo Colombia desde 2 gorras. Pide la tuya por WhatsApp."
+        "default": "Gorras seleccionadas en Medellín. Compra en línea o paga contra entrega. Envío GRATIS desde 2 gorras pagando en línea."
       },
       {
         "type": "image_picker",

@@ -625,20 +625,13 @@ body:not(.tpl-index) > main { flex: 1 0 auto; }
 }
 .nav__cart-n[hidden] { display: none; }
 
-/* Tarjeta: «Agregar al carrito» + WhatsApp al lado */
+/* Tarjeta: «Agregar al carrito» */
 .card__acc { display: flex; gap: 8px; margin-top: 12px; }
 .card__acc .card__comprar { margin-top: 0; flex: 1 1 auto; min-width: 0; }
 .card__comprar[disabled] { opacity: .45; pointer-events: none; }
 .card__comprar.is-busy, #dAdd.is-busy { opacity: .6; }
-.card__wa {
-  flex: 0 0 auto; width: 42px; display: grid; place-items: center; border: 1px solid var(--ink);
-  border-radius: 999px; color: var(--ink); transition: background .25s var(--ease), color .25s var(--ease);
-}
-.card__wa:hover, .card__wa:focus-visible { background: var(--ink); color: var(--paper); }
 .t-corto { display: none; }
 
-/* Ficha y página de la gorra: dos botones */
-.drawer__foot #dWa, .pdp__buy .btn--ghost { justify-content: center; }
 #dAdd[disabled] { opacity: .45; }
 
 /* Panel del carrito */
@@ -676,8 +669,6 @@ body:not(.tpl-index) > main { flex: 1 0 auto; }
 @media (max-width: 760px) {
   .t-largo { display: none; }
   .t-corto { display: inline; }
-  .card__acc { gap: 6px; }
-  .card__wa { width: 38px; }
   .nav__cart { margin-right: -4px; }
 }
 
@@ -699,8 +690,5 @@ body:not(.tpl-index) > main { flex: 1 0 auto; }
    fondo oscuro (si no, la X y la bolsa no se ven después de bajar) */
 .is-menu .nav::before { opacity: 0; }
 .is-menu .nav__cart { color: var(--paper); }
-@media (max-width: 760px) {
-  .card__wa { width: 42px; }
-}
 /* Sin JavaScript no hay quien quite la pantalla de carga: no se muestra */
 .no-js .loader, .no-js .loader__curtain, .no-js .cursor { display: none; }

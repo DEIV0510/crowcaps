@@ -1,7 +1,4 @@
 {%- liquid
-  capture wa_general
-    render 'cc-wa', mensaje: settings.mensaje_general
-  endcapture
   assign coleccion = settings.coleccion_principal
   assign total = coleccion.products_count | default: 0
 
@@ -30,7 +27,6 @@
       <p class="hero__lead reveal reveal-d1">{{ section.settings.lead | escape }}</p>
       <div class="hero__cta reveal reveal-d2">
         <a class="btn" href="#coleccion">{{ section.settings.cta1 | escape }} <span class="arw" aria-hidden="true">→</span></a>
-        <a class="btn btn--ghost" href="{{ wa_general }}" target="_blank" rel="noopener">{{ settings.texto_pedir | escape }}</a>
       </div>
       <div class="hero__stats reveal reveal-d3">
         <div><b>{{ total }}</b><span>{{ section.settings.stat1_etiqueta | escape }}</span></div>
